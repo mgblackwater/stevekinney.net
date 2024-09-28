@@ -168,7 +168,7 @@ This cycle is often referred to as **Red-Green-Refactor**.
 
 ### Implementing the Application with TDD
 
-#### 1. Creating the `ToDoList` Component
+#### Creating the `ToDoList` Component
 
 ##### Step 1: Write the Test (Red)
 
@@ -273,11 +273,11 @@ The test should pass.
 
 No immediate refactoring needed.
 
-#### 2. Fetching To-Dos From an API
+#### Fetching To-Dos From an API
 
 We've already implemented fetching to-dos in the previous step.
 
-#### 3. Adding a New To-Do
+#### Adding a New To-Do
 
 ##### Step 1: Write the Test (Red)
 
@@ -404,7 +404,7 @@ The test should pass.
 
 Consider error handling and optimizing state updates.
 
-#### 4. Marking a To-Do as Completed
+#### Marking a To-Do as Completed
 
 ##### Step 1: Write the Test (Red)
 
@@ -494,7 +494,7 @@ The test should pass.
 
 Optimize `fetchTodos` to avoid unnecessary network calls.
 
-#### 5. Deleting a To-Do
+#### Deleting a To-Do
 
 ##### Step 1: Write the Test (Red)
 

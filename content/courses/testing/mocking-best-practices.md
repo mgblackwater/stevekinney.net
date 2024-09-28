@@ -4,12 +4,12 @@ description: Learn best practices and avoid common pitfalls when mocking.
 modified: 2024-09-28T11:31:15-06:00
 ---
 
-## 1. Mock Only What You Need
+## Mock Only What You Need
 
 - **Avoid Over-Mocking**: Mocking too much can make tests less valuable.
 - **Mock External Dependencies**: Focus on mocking APIs, databases, or modules outside your control.
 
-## 2. Reset Mocks Between Tests
+## Reset Mocks Between Tests
 
 - **Ensure Isolation**: Use `vi.clearAllMocks()` or `vi.resetAllMocks()` in `afterEach` to reset mocks.
 
@@ -19,16 +19,16 @@ afterEach(() => {
 });
 ```
 
-## 3. Use Spies to Verify Interactions
+## Use Spies to Verify Interactions
 
 - **When Not to Mock**: If you want to test the actual implementation but still verify interactions, use spies.
 
-## 4. Keep Tests Readable
+## Keep Tests Readable
 
 - **Descriptive Names**: Name your mocks and spies clearly to enhance readability.
 - **Arrange-Act-Assert Pattern**: Organize tests into setup, execution, and verification phases.
 
-## 5. Be Cautious with Global Mocks
+## Be Cautious with Global Mocks
 
 - **Restore Globals**: When mocking global objects (like `fetch` or `console`), ensure they are restored after the test.
 

@@ -4,7 +4,7 @@ description: A guide to behavior-driven development (BDD) using Vitest.
 modified: 2024-09-28T11:31:16-06:00
 ---
 
-## 1. Getting Started with BDD in Vitest
+## Getting Started with BDD in Vitest
 
 Alright, let’s talk about **Behavior-Driven Development**, or BDD, with **Vitest**. BDD is all about writing tests that describe the *behavior* of your application in a way that both devs and non-devs can understand. So instead of saying, “this function returns `x`,” we’re saying, “the user should see `x` when they click this button.” The tests end up being more like a specification for what your app *should* do, not just what *does* happen under the hood.
 
@@ -12,7 +12,7 @@ Thankfully, **Vitest** makes working with BDD pretty dang easy. Vitest works rea
 
 Let’s dive in!
 
-## 2. Setting Up Vitest
+## Setting Up Vitest
 
 First up, we need Vitest in our project. Head over to your terminal and give it the old:
 
@@ -44,7 +44,7 @@ Once that’s in place, you can run your tests with:
 npx vitest
 ```
 
-## 3. Writing Our First BDD Test
+## Writing Our First BDD Test
 
 Let’s say we’ve got a function called `add`. Here’s what the simple behavior might look like:
 
@@ -83,7 +83,7 @@ Ah, clean and readable. Even just reading these tests, you're gathering what the
 
 **`it`**: Inside each describe, you’ve got `it` blocks. These outline specific behaviors or requirements. It follows the format: **“it should do X behavior”**. This is *way* more readable for anyone who’s trying to grok your code.
 
-## 4. Testing User Behavior (A More "Real-World" Example)
+## Testing User Behavior (A More "Real-World" Example)
 
 Okay cool, `add` is working, but let’s up our game. Let’s assume we’ve got a button that increments a counter when clicked. We want to test that the user sees the count increase.
 
@@ -149,7 +149,7 @@ describe('Counter app', () => {
 
 Rather than testing the internal state directly, we’re checking **the thing we care about most**—what the user sees: that number goes up when the button is clicked. Now when some poor soul is maintaining your app in the future, they can *immediately tell* what’s going on—oh, button click equals counter change, cool. They don’t have to dig into how the inner state of `count` works.
 
-## 5. Mocking DOM Methods
+## Mocking DOM Methods
 
 Sometimes you need to mock up DOM methods or third-party services—stuff that gets a little trickier in tests. Let’s mock the `getElementById` function to see how easy it is in Vitest:
 
@@ -174,7 +174,7 @@ describe('DOM tests', () => {
 
 Bam! You just mocked `getElementById` and verified it was called. Vitest comes with a mocking library built-in, so you don’t need to yank in extra dependencies just for the basics like spies, mocks, and stubs.
 
-## 6. Conclusion
+## Conclusion
 
 And there you have it—a quick taste of BDD using Vitest! The big idea here is that BDD is about writing **tests that reflect real-world behavior**. Instead of getting bogged down in the implementation details, you’re checking if the thing *works* the way users and other devs expect it to.
 

@@ -22,7 +22,7 @@ Continuous Integration (CI) is a crucial practice in modern software development
 
 ## Step-by-Step Guide
 
-### 1. Set Up Your Vitest Testing Scripts
+### Set Up Your Vitest Testing Scripts
 
 Ensure that your `package.json` has a script to run your tests. Typically, you'd have something like:
 
@@ -36,7 +36,7 @@ Ensure that your `package.json` has a script to run your tests. Typically, you'd
 
 If you use any specific flags, such as coverage, you can adjust the script accordingly.
 
-### 2. Create a GitHub Actions Workflow File
+### Create a GitHub Actions Workflow File
 
 In your repository, create a directory called `.github/workflows` if it doesn't exist. Inside this directory, create a new YAML file for your workflow, such as `ci.yml`.
 
@@ -47,7 +47,7 @@ your-repo/
 │       └── ci.yml
 ```
 
-### 3. Define the Workflow Configuration
+### Define the Workflow Configuration
 
 Open `ci.yml` and define the workflow:
 
@@ -93,7 +93,7 @@ jobs:
 - **`strategy.matrix.node-version`**: Allows testing on different Node.js versions (adjust as needed).
 - **`steps`**: Lists the steps to execute in the job.
 
-### 4. Breakdown of Workflow Steps
+### Breakdown of Workflow Steps
 
 - **Checkout Code**
 
@@ -132,7 +132,7 @@ jobs:
 
   - Executes the test script defined in your `package.json`.
 
-### 5. Commit and Push the Workflow File
+### Commit and Push the Workflow File
 
 Add the workflow file to your repository and push it to GitHub:
 
@@ -142,7 +142,7 @@ git commit -m "Add CI workflow for running Vitest tests"
 git push origin main
 ```
 
-### 6. Verify the Workflow Execution
+### Verify the Workflow Execution
 
 After pushing the workflow file:
 
@@ -151,7 +151,7 @@ After pushing the workflow file:
 - You should see the **CI** workflow listed.
 - Click on it to see the details of the workflow runs.
 
-### 7. Test the Workflow with a Pull Request
+### Test the Workflow with a Pull Request
 
 To ensure everything is working:
 
@@ -176,7 +176,7 @@ To ensure everything is working:
 
 - Check the PR page to see the status of the checks.
 
-### 8. Handling Test Failures
+### Handling Test Failures
 
 If your tests fail:
 
@@ -186,7 +186,7 @@ If your tests fail:
 - Fix the tests or code causing the failure.
 - Push the changes; the workflow will rerun.
 
-### 9. Adding Coverage Reporting (Optional)
+### Adding Coverage Reporting (Optional)
 
 If you want to include coverage reporting:
 

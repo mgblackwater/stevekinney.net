@@ -24,7 +24,7 @@ It’s a **quantitative** measurement—it tells you *how much*, but not *how we
 
 Let’s consider this in practice. You’ve got your features all tested, but there are little pockets of imperfection: maybe some error-handling logic, a dead-end function that’s rarely used. And you think, “I’ll just test this real quick to push that coverage up!” But here’s what that process could look like:
 
-#### 1. Writing Silly, Useless Tests
+#### Writing Silly, Useless Tests
 
 To hit that sweet 100%, chances are you’ll end up writing tests that don’t do anything valuable:
 
@@ -36,11 +36,11 @@ it('loads with no errors', () => {
 
 Yeah, you ran some code. Congratulations? Getting those extra percentage points by writing trivial tests can feel satisfying, but in reality, you’ve added zero value. You’re testing for the sake of testing, not to catch potential issues or improve the design of your code.
 
-#### 2. Ignoring Tests with Actual Value
+#### Ignoring Tests with Actual Value
 
 You’re too focused on coverage, so you bypass tests that predict real-world failures. Like, what happens when users give you bizarre input? Or your database goes on vacation? These are valuable scenarios to handle, and they almost always require thinking beyond “Did I run this line of code?” But if you're obsessed with that last 2% of coverage, you might just forget to cover *bad cases*, and that’s where bugs love to live.
 
-#### 3. You’re Encouraging Fragile Tests
+#### You’re Encouraging Fragile Tests
 
 Congrats, you hit 100%! But now someone refactors just one set of error handling paths, or they change up the internals slightly. All your coverage-pumping tests break, and they’re breaking because they weren’t *actually testing the important stuff*. That’s a mess. And nobody’s happy when suddenly you’re looking at 30 failed tests, none of which are helping you understand why reality is falling apart.
 
@@ -48,17 +48,17 @@ Congrats, you hit 100%! But now someone refactors just one set of error handling
 
 So instead of chasing 100% just to see those green bars light up, **focus on testing what actually matters**.
 
-#### 1. Prioritize Critical Code Paths
+#### Prioritize Critical Code Paths
 
 You want to make sure you’re thoroughly testing the critical parts of your app—the kind of stuff that users are hitting all the time. Logging in, creating accounts, fetching data, handling payments. Make sure these workflows are airtight.
 
 Pro tip: Use Vitest’s built-in coverage tool just as a **guide** to identify parts of your program you're not thinking about as much. If you’re missing important paths in the code, or any particularly ugly edge cases? Use the coverage report to focus you, but not to control you.
 
-#### 2. Test for Real-World Scenarios
+#### Test for Real-World Scenarios
 
 Think: “What could actually go wrong? What happens when the sun is shining and when it all goes bad?” Focus on tests that simulate realistic (and freakish) user behavior. For example, what does your app do if someone inputs 30,000 characters into a search box? Or if a third-party service returns a 500 error? Those aren’t lines covered, but **real scenarios guarded against**.
 
-#### 3. Write Meaningful, Maintainable Tests
+#### Write Meaningful, Maintainable Tests
 
 Every test you write should make sense to a future version of yourself or someone else who has to work on the code. Avoid testing implementation details! The more you tie your tests to the internal workings, the harder refactoring becomes.
 

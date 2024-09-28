@@ -93,7 +93,7 @@ export default defineConfig({
 
 This turns each test file into its own bubble. That means if you're changing `global variables`, messing with servers, or tweaking API states, Vitest will restore the peace and clean up the neighborhood automatically after each file.
 
-## 3. Test Timeouts and Reruns
+## Test Timeouts and Reruns
 
 So, what happens when one of your tests drags on, like… for-ev-er. Maybe it depends on network latency or takes a second to spin up resources. You don’t want your test suite hanging just because one test feels a little lazy, right? Vitest lets you set **global timeouts**, but you can configure them on a *test-by-test* basis too. Get ready to save precious minutes of your life:
 
@@ -123,7 +123,7 @@ export default defineConfig({
 
 Boom—no more "it failed on CI but passed locally" headbanging. But hey, if it's failing more than twice, it's time for **you** to shine your detective cap.
 
-## 4. Fine-Tuning Watch Mode
+## Fine-Tuning Watch Mode
 
 Here's what usually happens after you start integrating **watch mode** into your life: you make a tiny code change, Vitest detects it, runs hundreds of tests, and suddenly your CPU is on fire. 🔥 Yeah, running everything might be overkill. Luckily, we can refine which tests are run on each watch cycle for better speed.
 
@@ -142,7 +142,7 @@ export default defineConfig({
 
 This way, you're far more selective during your test runs—letting you focus only on the changes that matter.
 
-## 5. Conclusion
+## Conclusion
 
 Well, if you’ve hung with me til now, you’re *fully equipped*. We’ve touched on extending Vitest’s test configuration, smoothing out rough edges, and speeding up your development experience with more intelligent settings.
 

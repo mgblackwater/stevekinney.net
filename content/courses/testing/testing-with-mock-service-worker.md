@@ -27,13 +27,13 @@ MSW is a JavaScript library that lets you mock API requests by intercepting them
 
 ## Setting Up MSW with Vitest
 
-### 1. Install MSW
+### Install MSW
 
 ```bash
 npm install --save-dev msw
 ```
 
-### 2. Configure MSW in Your Project
+### Configure MSW in Your Project
 
 Create a `src/mocks` directory and set up the handlers for your API endpoints.
 
@@ -56,7 +56,7 @@ export const handlers = [
 ];
 ```
 
-### 3. Set Up the Server for Testing
+### Set Up the Server for Testing
 
 Create a file to initialize the MSW server for testing.
 
@@ -68,7 +68,7 @@ import { handlers } from './handlers';
 export const server = setupServer(…handlers);
 ```
 
-### 4. Configure Vitest to Use MSW
+### Configure Vitest to Use MSW
 
 In your test setup file (e.g., `setupTests.js`), start the server before tests run and clean up afterward.
 
@@ -196,7 +196,7 @@ test('handles server error', async () => {
 
 ## Best Practices with MSW
 
-### 1. Centralize Request Handlers
+### Centralize Request Handlers
 
 Define all your request handlers in one place (`handlers.js`) to keep your mocks organized.
 
@@ -205,7 +205,7 @@ Define all your request handlers in one place (`handlers.js`) to keep your mocks
 - **Maintainability**: Easier to update and manage mock responses.
 - **Reusability**: Handlers can be reused across multiple tests.
 
-### 2. Use Contextual Request Handlers for Specific Tests
+### Use Contextual Request Handlers for Specific Tests
 
 Override handlers within tests to simulate different scenarios.
 
@@ -222,7 +222,7 @@ server.use(
 - **Flexibility**: Test edge cases and error conditions without affecting other tests.
 - **Isolation**: Changes to handlers in one test don't impact others.
 
-### 3. Verify Requests in Tests
+### Verify Requests in Tests
 
 You can assert that certain requests were made with expected parameters.
 
@@ -247,7 +247,7 @@ test('submits form data correctly', async () => {
 });
 ```
 
-### 4. Handle Unhandled Requests
+### Handle Unhandled Requests
 
 Configure MSW to alert you to unhandled requests, helping catch missing handlers.
 
@@ -261,13 +261,13 @@ Options for `onUnhandledRequest`:
 - `'warn'`: Logs a warning for unhandled requests.
 - `'error'`: Throws an error for unhandled requests.
 
-### 5. Use TypeScript for Better Type Safety (Optional)
+### Use TypeScript for Better Type Safety (Optional)
 
 If you're using TypeScript, MSW provides type definitions to enhance your development experience.
 
 ## Potential Pitfalls and How to Avoid Them
 
-### 1. Forgetting to Reset Handlers
+### Forgetting to Reset Handlers
 
 **Issue**: Overridden handlers persist across tests, causing unexpected behavior.
 
@@ -279,7 +279,7 @@ If you're using TypeScript, MSW provides type definitions to enhance your develo
 afterEach(() => server.resetHandlers());
 ```
 
-### 2. Mocking Incorrectly Formatted Responses
+### Mocking Incorrectly Formatted Responses
 
 **Issue**: Returning responses that don't match the expected format can cause test failures.
 
@@ -287,7 +287,7 @@ afterEach(() => server.resetHandlers());
 
 - Ensure that mocked responses match the shape and structure expected by the code under test.
 
-### 3. Ignoring Unhandled Requests
+### Ignoring Unhandled Requests
 
 **Issue**: Missing handlers for API calls can lead to unhandled requests, causing tests to pass when they should fail.
 
@@ -295,7 +295,7 @@ afterEach(() => server.resetHandlers());
 
 - Set `onUnhandledRequest` to `'error'` during testing to catch unhandled requests.
 
-### 4. Over-Mocking
+### Over-Mocking
 
 **Issue**: Over-mocking can lead to tests that don't reflect real-world behavior.
 

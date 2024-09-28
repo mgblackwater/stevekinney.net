@@ -4,13 +4,13 @@ description: Learn how to test React hooks using Vitest and Testing Library.
 modified: 2024-09-28T11:31:14-06:00
 ---
 
-## 1. Setting the Stage: Testing React Hooks
+## Setting the Stage: Testing React Hooks
 
 Ah, hooks. You love ’em for making your functional components infinitely more powerful, but how do you test them? Let’s be honest, if you’ve ever sat down, cracked a cold one (coffee… probably), and tried to test a hook, you might have found it… frustrating. Good news: Vitest has your back! I’ll walk you through testing hooks in a way that makes your productivity (and sanity) skyrocket.
 
 We’re going to use Vitest along with the `@testing-library/react-hooks` package. This magical package lets you test hooks in isolation, without any of the noise of rendering a full component. So it's like putting your hook inside a little bubble, free from distraction.
 
-## 2. Install Vitest and the React Hooks Testing Library
+## Install Vitest and the React Hooks Testing Library
 
 First things first, we gotta set up the tools:
 
@@ -20,7 +20,7 @@ npm install vitest @testing-library/react-hooks
 
 That’s all you need to get going!
 
-## 3. Writing a Simple Hook
+## Writing a Simple Hook
 
 Let’s assume you’ve got a hook that tracks how much coffee you've consumed. Nothing too fancy, just a basic counter.
 
@@ -41,7 +41,7 @@ export function useCoffeeCounter() {
 
 Cool, a little hook that increases the number of cups you’ve consumed. Now let’s write some tests for it.
 
-## 4. Setting Up a Basic Hook Test
+## Setting Up a Basic Hook Test
 
 With `@testing-library/react-hooks`, you can safely test your hook in isolation. Here’s how you roll:
 
@@ -75,7 +75,7 @@ Alright, let’s break it down.
 - `result.current` is essentially the return value of your hook. It’s where your state and functions, like `cups` and `drinkCoffee`, live.
 - `act` is a necessary helper anytime you're making changes that will affect your hook’s state or side effects. Gotta wrap those state changes!
 
-## 5. Handling More Complex Hooks
+## Handling More Complex Hooks
 
 Let’s imagine you’re tracking not only the coffee but also your productivity levels (because caffeine is magic). Now, our hook looks like this:
 
@@ -128,7 +128,7 @@ describe('useCoffeeCounter', () => {
 
 And just like that, you’ve covered both cases: one where drinking coffee boosts productivity (as it should!) and one where no coffee keeps you at baseline (a bleak existence, really).
 
-## 6. Wrapping Up Testing Hooks
+## Wrapping Up Testing Hooks
 
 Testing hooks doesn’t have to be the hair-pulling, coffee-chugging ordeal you thought it was. With `renderHook` and `act`, the `@testing-library/react-hooks` makes it super easy to check the state and behavior of your hook in isolation.
 

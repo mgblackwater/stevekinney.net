@@ -77,7 +77,7 @@ describe('Test Suite Name', () => {
 
 ### Best Practices
 
-#### 1. Group Tests by Functionality
+#### Group Tests by Functionality
 
 Organize tests around specific functionalities or features.
 
@@ -93,7 +93,7 @@ describe('Math Utilities', () => {
 });
 ```
 
-#### 2. Use Nested `describe` Blocks for Complex Structures
+#### Use Nested `describe` Blocks for Complex Structures
 
 For complex modules, nesting can mirror the application's structure.
 
@@ -117,7 +117,7 @@ describe('User Module', () => {
 });
 ```
 
-#### 3. Write Clear and Descriptive Names
+#### Write Clear and Descriptive Names
 
 Names should clearly state what is being tested.
 
@@ -131,7 +131,7 @@ describe('Array Methods', () => {
 });
 ```
 
-#### 4. Utilize Hooks Within `describe` Blocks
+#### Utilize Hooks Within `describe` Blocks
 
 Use `beforeEach`, `afterEach`, `beforeAll`, and `afterAll` to manage setup and teardown specific to a test suite.
 
@@ -155,7 +155,7 @@ describe('Database Tests', () => {
 });
 ```
 
-#### 5. Keep Tests Focused and Independent
+#### Keep Tests Focused and Independent
 
 Each test should focus on a single aspect, and tests within a `describe` block should be related but independent.
 
@@ -171,7 +171,7 @@ describe('String Manipulation', () => {
 });
 ```
 
-#### 6. Avoid Excessive Nesting
+#### Avoid Excessive Nesting
 
 Too much nesting can make tests hard to read. Keep the structure as flat as possible while maintaining clarity.
 
@@ -195,7 +195,7 @@ describe('Component B - Function C', () => {
 });
 ```
 
-#### 7. Use `describe` for Shared Context
+#### Use `describe` for Shared Context
 
 Group tests that share the same setup or context.
 
@@ -215,7 +215,7 @@ describe('When user is authenticated', () => {
 });
 ```
 
-#### 8. Employ `describe.only` and `describe.skip` During Development
+#### Employ `describe.only` and `describe.skip` During Development
 
 Focus on specific test suites without running the entire test suite.
 
@@ -234,7 +234,7 @@ describe.skip('Deprecated Functionality Tests', () => {
 
 Remember to remove `.only` and `.skip` before finalizing your code to ensure all tests are executed.
 
-#### 9. Mirror Project Structure in Test Files
+#### Mirror Project Structure in Test Files
 
 Organize test files to reflect the structure of your source code, enhancing navigation and maintainability.
 

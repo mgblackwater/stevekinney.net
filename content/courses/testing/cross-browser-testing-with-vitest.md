@@ -4,13 +4,13 @@ description: Learn how to perform cross-browser testing with Vitest and Playwrig
 modified: 2024-09-28T11:31:16-06:00
 ---
 
-## 1. Cross-Browser Testing with Vitest
+## Cross-Browser Testing with Vitest
 
 Alright, let’s talk about cross-browser testing, because let’s be real, the odds that your app is only ever going to be used on the latest Chrome version are about as good as finishing a Friday without hitting *at least* one merge conflict. You’ve got users out there with different setups—Safari, Firefox, Edge, maybe even IE11 (gasp!). The good news? You can catch a bunch of browser-specific issues before your users find them… with Vitest! And no, it doesn’t have to be painful.
 
 Let’s explore a quick and practical way to set up cross-browser testing so you can handle browser quirks without rage-clicking into oblivion.
 
-## 2. Install Vitest with Playwright
+## Install Vitest with Playwright
 
 To test an app across multiple browsers, we need a headless browser automation tool to simulate them. We're going to use **Playwright** because it allows us to run tests in different browsers like Chrome (or its shy sibling, Chromium), Firefox, and WebKit (covers Safari). Best part? It snaps right into your Vitest setup.
 
@@ -22,7 +22,7 @@ npm install vitest @playwright/test
 
 That gives you access to Playwright’s automated browsers inside Vitest. It’s like peanut butter and jelly, but for JavaScript testing.
 
-## 3. Configure Vitest for Playwright
+## Configure Vitest for Playwright
 
 Next up: managing browser environments with Vitest. However, before we jump in, let’s set up our Playwright config. Create a file `playwright.config.ts` in your root directory:
 
@@ -43,7 +43,7 @@ export default defineConfig({
 
 Make sure your local server runs on port 3000. You can change that up, depending on your setup. Playwright’s built-in config is super helpful here because it knows how to control browser settings.
 
-## 4. Writing a Cross-Browser Test
+## Writing a Cross-Browser Test
 
 Now, let’s write a feature test and run it through a bunch of browsers.
 
@@ -75,7 +75,7 @@ test.describe('Cross-browser button test', () => {
 
 You could get fancier with this, but we’re trying to keep it simple for now. Here, Vitest is forcing Chrome (via `chromium`), Firefox, and WebKit (hello, Safari!) to go to `localhost:3000` and check if the button labeled 'Submit' exists. It's like a check-in for all major browsers.
 
-## 5. Running the Tests
+## Running the Tests
 
 To kick off your tests, create a simple script in your `package.json`:
 
@@ -93,7 +93,7 @@ npm run test:e2e
 
 Vitest will spin up the Playwright scripts, pull up virtual browsers, and run the tests. The browsers don’t actually pop open on your screen because we’re in `headless` mode, but trust me—they're doing the hard work in the background.
 
-## 6. Test in Multiple Browsers Simultaneously
+## Test in Multiple Browsers Simultaneously
 
 If you'd rather **test multiple browsers in parallel**, you can modify the syntax with loops or Playwright's `projects` feature. Playwright can run tests across multiple browsers like a multitasking wizard, but without making you burn extra brain cycles:
 
@@ -112,7 +112,7 @@ test('firefox test', async ({ page }) => {
 
 This efficiently loops through the browser tests so you're not cluttering your `test.describe`.
 
-## 7. Wrapping Up
+## Wrapping Up
 
 Boom! Now you're testing across multiple browsers like a pro. The great thing is that Vitest lets Playwright do most of the heavy lifting, running your app inside the simulated browsers with minimal setup. Not only do you get faster feedback, but you've also got some serious coverage across the major browsers without installing half a dozen VMs or keeping an ancient version of IE lying around.
 

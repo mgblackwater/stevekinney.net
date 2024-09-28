@@ -80,7 +80,7 @@ test('renders greeting message', () => {
 
 ## Best Practices with Testing Library
 
-### 1. Querying Elements the Right Way
+### Querying Elements the Right Way
 
 Testing Library provides various queries:
 
@@ -114,7 +114,7 @@ test('calls onClick when clicked', () => {
 
 - Using `getByRole('button')` is preferred as it reflects how users (including those using assistive technologies) interact with the application.
 
-### 2. Avoid Testing Implementation Details
+### Avoid Testing Implementation Details
 
 Focus on what the component renders, not how it renders it.
 
@@ -131,7 +131,7 @@ const div = container.querySelector('.my-class');
 const element = screen.getByText(/some text/i);
 ```
 
-### 3. Use `userEvent` for Simulating User Interactions
+### Use `userEvent` for Simulating User Interactions
 
 `userEvent` simulates real user interactions more accurately than `fireEvent`.
 
@@ -149,7 +149,7 @@ test('checkbox toggles correctly', async () => {
 });
 ```
 
-### 4. Async-Await with Asynchronous Updates
+### Async-Await with Asynchronous Updates
 
 When testing components that update asynchronously, use `findBy` queries and `waitFor`.
 
@@ -165,11 +165,11 @@ test('loads and displays data', async () => {
 });
 ```
 
-### 5. Clean Up After Tests
+### Clean Up After Tests
 
 Testing Library automatically cleans up the DOM after each test, but if you have additional cleanup, handle it in `afterEach`.
 
-### 6. Use `jest-dom` Matchers
+### Use `jest-dom` Matchers
 
 Enhance your assertions with matchers like `toBeInTheDocument`, `toBeVisible`, etc.
 
@@ -203,7 +203,7 @@ expect(element).toBeVisible();
 
 ## Potential Pitfalls and How to Avoid Them
 
-### 1. Over-Reliance on `getByTestId`
+### Over-Reliance on `getByTestId`
 
 **Issue**: Using `data-testid` attributes can lead to tests that are more coupled to implementation details.
 
@@ -212,7 +212,7 @@ expect(element).toBeVisible();
 - Prefer queries that reflect how users interact with the UI.
 - Use `getByTestId` only when no other query is suitable.
 
-### 2. Ignoring Accessibility Considerations
+### Ignoring Accessibility Considerations
 
 **Issue**: Not using accessible queries can miss out on testing the component's accessibility.
 
@@ -220,7 +220,7 @@ expect(element).toBeVisible();
 
 - Use queries like `getByRole`, `getByLabelText`, which encourage accessible coding practices.
 
-### 3. Not Waiting for Asynchronous Updates
+### Not Waiting for Asynchronous Updates
 
 **Issue**: Tests may pass or fail inconsistently if they don't account for asynchronous state updates.
 
@@ -228,7 +228,7 @@ expect(element).toBeVisible();
 
 - Use `findBy` queries or `waitFor` to wait for asynchronous changes.
 
-### 4. Testing Implementation Details
+### Testing Implementation Details
 
 **Issue**: Querying specific DOM nodes or component internals can make tests fragile.
 
@@ -237,7 +237,7 @@ expect(element).toBeVisible();
 - Focus on the component's output and user interactions.
 - Avoid reaching into component internals or relying on specific HTML structures.
 
-### 5. Mocking Too Much
+### Mocking Too Much
 
 **Issue**: Over-mocking components and modules can lead to tests that don't reflect actual behavior.
 

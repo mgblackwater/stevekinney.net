@@ -4,13 +4,13 @@ description: Learn how to test TypeScript type guards using Vitest.
 modified: 2024-09-28T11:31:14-06:00
 ---
 
-## 1. Testing TypeScript Type Guards with Vitest
+## Testing TypeScript Type Guards with Vitest
 
 You’ve got your TypeScript project chugging along beautifully, types are saving you from 90% of the worst mistakes, and you're feeling good. But now you’ve dipped your toes into **type guards**, and you realize—”Wait, how do I even test these things?”
 
 Good news! Testing type guards with Vitest is pretty straightforward (and dare I say, fun). Let's walk through it together.
 
-### 2. What’s A Type Guard Again?
+### What’s A Type Guard Again?
 
 First, let's take a hot second to refresh our memory. A **type guard** is just a fancy name for a function that checks if a variable is a certain type. Sure, it’s not the most exciting thing you’ll ever do in JavaScript, but it's **super helpful** in making TypeScript a bit smarter.
 
@@ -27,7 +27,7 @@ function isAnimal(obj: any): obj is Animal {
 
 Alright, **`isAnimal`** here is a type guard that checks whether a given object is of type `Animal`. If you feed it trash, it returns false. If you give it an `Animal`, it returns true. Now, let's walk through testing this.
 
-### 3. Setting Up Vitest
+### Setting Up Vitest
 
 You’re already using TypeScript, so let’s use Vitest with it. Go ahead and install it:
 
@@ -46,7 +46,7 @@ Next, throw this into your `package.json` to hook everything up:
 
 After that, you’re rolling. Let's write some tests for our type guard, shall we?
 
-### 4. Writing Tests for Your Type Guard
+### Writing Tests for Your Type Guard
 
 Here comes the fun part: actually seeing if our type guard passes the sniff test! We want to make sure `isAnimal` correctly identifies animals. So let's start simple.
 
@@ -89,7 +89,7 @@ Let’s break this down real quick:
 - The next tests some decidedly **un-animal-like** things: what if someone tries to pass a car? You better make sure it returns `false`.
 - The third and fourth tests make sure your type guard handles edge cases that **always** pop up in the real world—stuff like `undefined`, `null`, and random garbage people accidentally (or purposefully) pass in.
 
-### 5. Running Your Tests
+### Running Your Tests
 
 You’ve written those awesome tests. Hands on your keyboard, run them now:
 
@@ -99,7 +99,7 @@ npm run test
 
 Vitest should give you a friendly green confirmation that your type guard is as solid as a house with bricks for walls. If something fails? Debug it, but you knew that already, right?
 
-### 6. Adding a Little Extra
+### Adding a Little Extra
 
 Ready for a bonus round? Sometimes it’s not enough to check if an object is an `Animal`; you might need to discern **what kind of animal**. For that, you’d extend your type guard to check further properties:
 
@@ -113,7 +113,7 @@ function isDog(obj: any): obj is Dog {
 
 Test this the same way, adding specific cases for **dogs** while leveraging the original `isAnimal`. The key is incremental thinking: **add specificity, test that specificity**. Developers build confidence in their code this way.
 
-### 7. Wrapping Up
+### Wrapping Up
 
 TypeScript type guards might seem like just another syntax rule, but they’re a powerful ally when writing bulletproof code. And testing them? It’s **pretty chill**—Vitest makes it easy to check those tricky edge cases that will inevitably arise.
 

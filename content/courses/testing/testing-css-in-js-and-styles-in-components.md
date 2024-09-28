@@ -4,7 +4,7 @@ description: Learn how to test components using CSS-in-JS with Vitest.
 modified: 2024-09-28T11:31:14-06:00
 ---
 
-## 1. Testing CSS-in-JS with Vitest
+## Testing CSS-in-JS with Vitest
 
 Ah, testing CSS in JavaScript! It’s not something many of us jump for joy about, but we’ve gotta do what we’ve gotta do, right? When you have components with styles baked right into them using CSS-in-JS (think styled-components, Emotion, or even just some inline styles you've sprinkled in), you might wonder, "Uh… how the heck do I test this?"
 
@@ -14,7 +14,7 @@ For this walkthrough, I'll assume you're using something like `styled-components
 
 Okay, enough prelude. Let’s jump right in!
 
-## 2. Setting Up Vitest with a Styled Component
+## Setting Up Vitest with a Styled Component
 
 First things first, if you haven’t already got `Vitest` set up in your project, do that. It’s quick and relatively painless. Here’s a basic install for your project:
 
@@ -54,7 +54,7 @@ export default MyButton;
 
 This button is super simple—it’s either green if it’s primary, or gray if it’s not. Let’s see how to test that the right styles are being applied.
 
-## 3. Writing Your First Test
+## Writing Your First Test
 
 How do we check that ticking `primary={true}` paints the button green? Vitest to the rescue, along with something like `@testing-library/react` to help us interact with the rendered component.
 
@@ -84,7 +84,7 @@ test('renders a primary button with green background', () => {
 
 That’s it! We’re rendering the button, grabbing it by its role (side note: `getByRole` is your BFF for accessibility goodness), and checking the background color matches what we expect when the `primary` prop is passed.
 
-## 4. Testing Non-primary Styles
+## Testing Non-primary Styles
 
 But we’re not done yet. We should also check what happens when the button *isn’t* primary:
 
@@ -100,7 +100,7 @@ test('renders a non-primary button with gray background', () => {
 
 Boom! You see what we're doing here? Render, grab the element, and check the style. Rinse and repeat. If all goes well, Vitest will give you the green checkmark of approval.
 
-## 5. Bonus: Inline Styles
+## Bonus: Inline Styles
 
 Maybe you’re doing things old school and just chucking some inline styles into your JSX. That’s cool; Vitest can handle that too. Let’s pretend we’ve got this kind of component:
 
@@ -123,13 +123,13 @@ test('renders a button with blue background using inline styles', () => {
 
 Easy stuff, right? Same process, whether you’re using `styled-components`, inline styles, or something similar.
 
-## 6. Mocking Your Way to Happiness (Advanced Tip)
+## Mocking Your Way to Happiness (Advanced Tip)
 
 Now, if you’re using something that dynamically generates class names (like `Emotion` or other libraries), the `.toHaveStyle` may not always be your best bet. In those cases, you might want to test if the correct class is applied or even mock the styles entirely for more complex scenarios. But honestly? For 95% of use-cases, just checking styles directly is gonna get you where you need to go.
 
 So don’t go stressing yourself out over mocks unless you really, really need them!
 
-## 7. Conclusion
+## Conclusion
 
 Testing CSS-in-JS? Not as bad as it sounds. Vitest and `@testing-library/react` make it feel *almost* fun. Almost.
 

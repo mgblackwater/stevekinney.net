@@ -4,11 +4,11 @@ description: Explore alternatives to snapshot tests for efficient testing.
 modified: 2024-09-28T11:31:15-06:00
 ---
 
-## 1. Snapshot Test Alternatives
+## Snapshot Test Alternatives
 
 Snapshot tests—love them or hate them. They seem *so* helpful at first! "Look, I just got this test to pass by updating the snapshot!" But then, a month later, when that snapshot has 1,200 lines of JSON and you can't even remember what you're testing? Yeah, we’ve all been there. So, if you want to avoid the trap of snapshot tests becoming a maintenance nightmare, what can you do instead? Let’s explore some real-world alternatives that’ll keep your test suite both useful and maintainable.
 
-### 2. Testing Individual Pieces of Output
+### Testing Individual Pieces of Output
 
 Snapshots are super tempting because you just "capture" a component's output in one fell swoop. But nine times out of ten, you’re probably not interested in *everything* that comes out. What you **really** care about is that specific little chunk of output—a CSS class, a tag, some text.
 
@@ -34,7 +34,7 @@ describe('Button', () => {
 
 Boom. You’re now testing exactly what matters… and you won’t get overwhelmed with endless diffs when the padding on the button changes.
 
-### 3. Testing Behavior Instead of Output
+### Testing Behavior Instead of Output
 
 Snapshots focus *heavily* on the "what" (what does the output look like?). But have you ever thought about the "how"? You don't write components just to *look* pretty; they should, you know, *do* something.
 
@@ -62,7 +62,7 @@ describe('Button', () => {
 
 There you go—tests behavior, not the markup. If the button now has pixel margins that change, or some new obscure span element nesting, you're not going to balk at pointless diffs.
 
-### 4. Using Textual Assertions, Not Snapshots
+### Using Textual Assertions, Not Snapshots
 
 For larger components that render more intricate layouts, a textual representation can be easier to reason about than raw HTML output. Textual assertions are your friend when you’re focused on user-facing content.
 
@@ -88,7 +88,7 @@ describe('UserProfile', () => {
 
 Next time the layout changes, no huge diff worries. You’re asserting against the only thing that actually matters to users—what they *see* and *read*.
 
-### 5. Custom Matchers
+### Custom Matchers
 
 Sometimes, JSON snapshots sneak into the party. If you find yourself in that scenario, consider writing custom matchers to make the test more explicit. With Vitest, you can create matchers to simplify those complex assertions.
 
@@ -116,13 +116,13 @@ expect(button).toHaveTextContent('Click Me');
 
 This helps keep things readable—and avoids snapshot hell.
 
-### 6. When (and If) Snapshots Might Actually Help
+### When (and If) Snapshots Might Actually Help
 
 Alright, I'm not telling you to delete **all** snapshots from your life. There are times when they’re pretty convenient—like tracking a huge chunk of config objects or API response mock data where you need the full picture.
 
 But the trick is to use them **sparingly**. Focus your tests on the critical parts of your UI and interactions, and keep the snapshots for data or when the structure *really* matters.
 
-### 7. Final Thoughts
+### Final Thoughts
 
 Snapshots can seem appealing because they look like a "set-it-and-forget-it" safety net, but too often, they turn into a "set-it-and-please-forget-this-PR-even-happened" nightmare. Stick with the alternatives: test the behavior, test specific output, and if you ever reach for a snapshot, try testing just the part that really matters. You'll thank yourself when you're not drowning in snapshot diffs on your next Friday night deploy.
 

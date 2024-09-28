@@ -149,13 +149,13 @@ Code coverage quantifies the amount of code executed during automated tests. It 
 
 Vitest uses **C8**, a code coverage tool based on **V8 JavaScript engine's** built-in code coverage capabilities. Here's how to set it up.
 
-##### 1. Install Vitest (if Not Already installed)
+##### Install Vitest (if Not Already installed)
 
 ```bash
 npm install --save-dev vitest
 ```
 
-##### 2. Configure Vitest
+##### Configure Vitest
 
 Create a `vitest.config.js` file in your project's root directory if you haven't already.
 
@@ -170,7 +170,7 @@ export default defineConfig({
 });
 ```
 
-##### 3. Enable Code Coverage
+##### Enable Code Coverage
 
 You can enable code coverage by adding the `--coverage` flag when running Vitest.
 
@@ -200,7 +200,7 @@ export default defineConfig({
 - **`reporter`**: Determines the output formats (e.g., `'text'`, `'html'`, `'lcov'`).
 - **`include`/`exclude`**: Controls which files are included or excluded from coverage analysis.
 
-##### 4. Run Tests with Coverage
+##### Run Tests with Coverage
 
 Execute Vitest with the coverage option:
 
@@ -280,12 +280,12 @@ export default defineConfig({
 });
 ````
 
-##### 4. Regularly Review Coverage Reports
+##### Regularly Review Coverage Reports
 
 - **Identify Gaps**: Use reports to find untested code areas.
 - **Refactor Tests**: Improve existing tests to cover missing branches or statements.
 
-##### 5. Integrate Coverage into Continuous Integration (CI)
+##### Integrate Coverage into Continuous Integration (CI)
 
 - **Automate Coverage Reporting**: Run coverage analysis as part of your CI pipeline.
 - **Set Coverage Thresholds**: Fail the build if coverage drops below a certain percentage.
@@ -306,14 +306,14 @@ export default defineConfig({
 });
 ```
 
-##### 6. Use Coverage Badges in Documentation
+##### Use Coverage Badges in Documentation
 
 - **Visibility**: Display coverage status in your project's README file.
 - **Motivation**: Encourages contributors to maintain or improve coverage.
 
 #### Common Pitfalls and How to Avoid Them
 
-##### 1. Misinterpreting Coverage Metrics
+##### Misinterpreting Coverage Metrics
 
 **Issue**: Assuming that 100% coverage means no bugs.
 
@@ -322,7 +322,7 @@ export default defineConfig({
 - Understand that coverage metrics indicate which code is executed, not whether the code behaves correctly.
 - Focus on writing meaningful tests that assert correct behavior.
 
-##### 2. Overlooking Uncovered Branches
+##### Overlooking Uncovered Branches
 
 **Issue**: Missing coverage for conditional branches.
 
@@ -331,7 +331,7 @@ export default defineConfig({
 - Examine branch coverage to identify untested `if`/`else` conditions.
 - Write tests that cover different logical paths.
 
-##### 3. Ignoring Integration and End-to-End Tests
+##### Ignoring Integration and End-to-End Tests
 
 **Issue**: Relying solely on unit tests for coverage.
 
@@ -340,7 +340,7 @@ export default defineConfig({
 - Incorporate integration and end-to-end tests to cover interactions between components.
 - Use tools like **Playwright** for end-to-end testing.
 
-##### 4. Including Unnecessary Files
+##### Including Unnecessary Files
 
 **Issue**: Coverage reports include files that should be excluded, skewing metrics.
 
@@ -348,7 +348,7 @@ export default defineConfig({
 
 - Use `include` and `exclude` patterns in your configuration to focus on relevant files.
 
-##### 5. Not Cleaning Up Before Coverage Runs
+##### Not Cleaning Up Before Coverage Runs
 
 **Issue**: Old coverage data persists, causing inaccurate reports.
 

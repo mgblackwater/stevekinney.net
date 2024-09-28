@@ -4,11 +4,11 @@ description: Learn the difference between parallel and serial test execution.
 modified: 2024-09-28T11:31:15-06:00
 ---
 
-## 1. Parallel and Serial Test Execution in Vitest
+## Parallel and Serial Test Execution in Vitest
 
 Alright, let’s talk about test execution! You’ve probably been there… staring at a terminal, watching tests crawl through one at a time, making you question your life choices. But there's good news—Vitest can run your tests in parallel or serially. And each has its place, depending on what you're testing. Let’s break it down.
 
-### 2. Parallel Test Execution
+### Parallel Test Execution
 
 By default, Vitest tries to make your life better by running tests in parallel. What does this mean? Well, it means Vitest will spin up multiple worker threads and run different test files on them simultaneously. This is fantastic because it can shave serious time off your test suite, especially in larger projects.
 
@@ -31,7 +31,7 @@ Boom. That's it. Your tests are parallel unless *you* tell them otherwise.
 
 Parallel is great—until it’s not. If your tests are making assumptions about data or the state of the world (like global variables or shared databases), running them in parallel can lead to some strange, difficult-to-track-down bugs. So, yes, it makes things fast, but as always, there’s danger hiding in the shadows.
 
-### 3. Serial Test Execution
+### Serial Test Execution
 
 But wait, what if you want to run things *in order*? Maybe you're testing something like the progression of a workflow or interacting with a global variable that needs to stay consistent across tests. You don’t want Vitest going all "Wild Wild West" on your workflow by running them at the same time. In those cases, you can switch to running tests serially!
 
@@ -67,7 +67,7 @@ test.serial('should do one thing after another', () => {
 - You’ve got tests with global state (ugh) or databases where one test depends on the result of another.
 - You need to simulate a sequence of steps that must happen in a specific order.
 
-### 4. Best Practices for Test Execution
+### Best Practices for Test Execution
 
 Let's solve the world’s problems (or at least a few testing-related ones):
 
@@ -75,7 +75,7 @@ Let's solve the world’s problems (or at least a few testing-related ones):
 2. **Use serial sparingly**: Once you start having tons of serial tests, what you’re really doing is introducing potential bottlenecks. Look twice at those tests and see if there's a design flaw you can fix before you resort to serial.
 3. **Decouple state**: If your tests *need* to be run in a specific order, ask yourself if there's a better way to write those tests. Could you stub that global state? Could you mock that database? Often, the answer is yes.
 
-### 5. Wrapping Up
+### Wrapping Up
 
 Vitest has your back when it comes to both parallel and serial execution. Which one should you pick? Well, parallel should be your go-to. It’s fast, it’s efficient, and it keeps your feedback loop nice and tight. But don’t forget you’ve got that sequential ace in your pocket for those tricky tests where order matters.
 

@@ -47,7 +47,7 @@ We'll use TDD to implement the following features:
 2. Performing calculations when the equals button is clicked.
 3. Clearing the display when the clear button is clicked.
 
-### 1. Displaying Numbers When Buttons Are Clicked
+### Displaying Numbers When Buttons Are Clicked
 
 ### Step 0: Load the Calculator into the DOM
 
@@ -282,7 +282,7 @@ The test should now pass.
 
 Consider handling more operators and ensuring the code is clean.
 
-### 3. Exercise: Clearing the Display
+### Exercise: Clearing the Display
 
 #### Step 1: Write the Test (Red)
 

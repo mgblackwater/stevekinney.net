@@ -4,7 +4,7 @@ description: Exploring TDD with Vitest through the Red-Green-Refactor cycle.
 modified: 2024-09-28T11:31:15-06:00
 ---
 
-## 1. What is Test-Driven Development
+## What is Test-Driven Development
 
 Alright, so you're a developer—and like me, you probably ship first and ask questions later. But hey, sometimes we gotta be grown-ups. Enter **Test-Driven Development**, or as the cool kids call it, **TDD**.
 
@@ -14,7 +14,7 @@ But trust me—this weird workflow can be magical. TDD forces you to think about
 
 Since we’re using **Vitest**—our trusty sidekick for this adventure—let’s dive in.
 
-## 2. Setting Up Vitest
+## Setting Up Vitest
 
 You probably already have a project. If not, spin up a new one however you like: `npm init` or whatever floats your boat. Then, install **Vitest**:
 
@@ -45,7 +45,7 @@ Let’s create a simple directory structure:
 
 We're all set! Now, on to the good stuff—writing tests before code like the productive wizards we know we can be.
 
-## 3. The Red-Green-Refactor Cycle
+## The Red-Green-Refactor Cycle
 
 TDD lives by this principle: **Red-Green-Refactor**.
 
@@ -117,7 +117,7 @@ Congrats—you’ve written a failing test and made it pass. Bravo, take a bow.
 
 Surprise, surprise—there’s not much we can refactor here. But the important thing to take away is this: you can **safely refactor your code without fear**, because you have tests to back you up. If you did something wrong in your refactor, the tests will catch it.
 
-## 4. Let’s TDD Some Edge Cases
+## Let’s TDD Some Edge Cases
 
 The party’s not over. What happens if someone tries to use our `add` function with non-numbers?
 
@@ -149,7 +149,7 @@ export const add = (a, b) => {
 
 Run the test again, and boom, we’re green again.
 
-## 5. Recap of TDD with Vitest
+## Recap of TDD with Vitest
 
 There you have it! We journeyed from failure to success using the magic formula of **Red-Green-Refactor**. We wrote the test **first** (which, let’s be real—that’s usually the hard part), and only then did we write the actual logic.
 

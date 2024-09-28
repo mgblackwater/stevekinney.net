@@ -60,7 +60,7 @@ When intentional changes are made to the output, you can update the snapshots:
 
 ## Best Practices for Snapshot Testing
 
-### 1. Keep Snapshots Readable
+### Keep Snapshots Readable
 
 Ensure that snapshot files are human-readable:
 
@@ -73,7 +73,7 @@ Example:
 expect(JSON.stringify(largeObject, null, 2)).toMatchSnapshot();
 ```
 
-### 2. Use Descriptive Test Names
+### Use Descriptive Test Names
 
 Clear test names help identify which snapshot corresponds to which test.
 
@@ -83,21 +83,21 @@ test('formats user information with full details', () => {
 });
 ```
 
-### 3. Review Snapshots During Code Reviews
+### Review Snapshots During Code Reviews
 
 Treat snapshot updates with the same scrutiny as code changes:
 
 - Verify that changes are intentional.
 - Ensure that unexpected changes are investigated.
 
-### 4. Limit Snapshot Size
+### Limit Snapshot Size
 
 Large snapshots are harder to review and maintain:
 
 - Avoid snapshotting entire large objects or responses.
 - Focus on the relevant parts of the output.
 
-### 5. Combine with Other Assertions
+### Combine with Other Assertions
 
 Use snapshots alongside explicit assertions for critical values:
 
@@ -125,7 +125,7 @@ expect(formattedUser).toMatchSnapshot();
 
 ## Potential Pitfalls of Snapshot Testing
 
-### 1. Brittle Snapshots
+### Brittle Snapshots
 
 **Issue**: Snapshots can become brittle if they capture irrelevant changes, leading to frequent unnecessary updates.
 
@@ -144,7 +144,7 @@ expect(user).toMatchSnapshot({
 });
 ```
 
-### 2. Over-reliance on Snapshots
+### Over-reliance on Snapshots
 
 **Issue**: Relying solely on snapshots may lead to missed bugs if the snapshot changes are not carefully reviewed.
 
@@ -153,7 +153,7 @@ expect(user).toMatchSnapshot({
 - Use snapshots as a complement to, not a replacement for, explicit assertions.
 - Regularly review snapshot changes during code reviews.
 
-### 3. Large and Unwieldy Snapshots
+### Large and Unwieldy Snapshots
 
 **Issue**: Large snapshots are hard to read and maintain, reducing their effectiveness.
 
@@ -162,7 +162,7 @@ expect(user).toMatchSnapshot({
 - Limit the size of snapshots.
 - Break down tests to focus on specific parts of the output.
 
-### 4. Ignoring Snapshot Failures
+### Ignoring Snapshot Failures
 
 **Issue**: Developers may become desensitized to snapshot failures and update snapshots without proper investigation.
 
