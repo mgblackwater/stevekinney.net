@@ -52,7 +52,7 @@ it('should create a person with a first name and last name', () => {
 
 ![The test fails because of a random id](assets/failing-test-due-to-random-id.png)
 
-We don't really care what the `id` is but maybe we want to make sure that there _is_ an `id` and that it's a string.
+We don't really care what the `id` is but maybe we want to make sure that there *is* an `id` and that it's a string.
 
 ```javascript
 it('should create a person with a first name and last name', () => {

@@ -6,9 +6,9 @@ modified: 2024-09-28T11:31:16-06:00
 
 ## Understanding `toBeTruthy` in Vitest
 
-Alright, let’s talk about `toBeTruthy`. The `.toBeTruthy()` matcher is a pretty straightforward tool in your testing toolbox. You’ll want to bust this one out when you need to confirm that _something_ evaluates to `true` in a "truthy" way. Now, let's pause for a sec and define "truthy" here.
+Alright, let’s talk about `toBeTruthy`. The `.toBeTruthy()` matcher is a pretty straightforward tool in your testing toolbox. You’ll want to bust this one out when you need to confirm that *something* evaluates to `true` in a "truthy" way. Now, let's pause for a sec and define "truthy" here.
 
-In JavaScript, "truthy" values are things that aren't `false`, `0`, `null`, `undefined`, `NaN`, or an empty string (`""`). Basically, it's testing if something has a value that JavaScript considers "truthy." It doesn’t care if the value is strictly `true`, just _something_ that isn't "falsy."
+In JavaScript, "truthy" values are things that aren't `false`, `0`, `null`, `undefined`, `NaN`, or an empty string (`""`). Basically, it's testing if something has a value that JavaScript considers "truthy." It doesn’t care if the value is strictly `true`, just *something* that isn't "falsy."
 
 You’d use `.toBeTruthy()` when the actual value doesn’t need to exactly be `true`, but it needs to be something that can stand in for `true`.
 
@@ -48,5 +48,4 @@ In the second test, `getArtistName(artistWithoutAName)` returns an empty string 
 Now you're armed and ready to call `.toBeTruthy()` whenever you're validating something lightweight, like "Does this exist?", "Is this non-null?" or "Is this just not flat-out false?" 🤘
 
 ```ts
-
 ```

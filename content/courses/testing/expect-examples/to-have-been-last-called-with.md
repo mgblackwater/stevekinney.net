@@ -6,9 +6,9 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## ToHaveBeenLastCalledWith In Vitest
 
-Okay, so picture this: You've got a function, right? Let's say it's `createAlbum`. You’re calling it left and right in your app with different arguments, but you only _really_ care about the very last call it got. Like, who cares about the first one from some random place in the app, right?
+Okay, so picture this: You've got a function, right? Let's say it's `createAlbum`. You’re calling it left and right in your app with different arguments, but you only *really* care about the very last call it got. Like, who cares about the first one from some random place in the app, right?
 
-That’s where **toHaveBeenLastCalledWith** comes in. This matcher is specifically about making sure your mock/stub/spy was called _most recently_ with the exact arguments you expected. It doesn't matter if it was called before with other arguments, as long as the _last call_ checks out.
+That’s where **toHaveBeenLastCalledWith** comes in. This matcher is specifically about making sure your mock/stub/spy was called *most recently* with the exact arguments you expected. It doesn't matter if it was called before with other arguments, as long as the *last call* checks out.
 
 You'll want to use this when you:
 
@@ -47,6 +47,6 @@ describe('adding songs to albums', () => {
 });
 ```
 
-In this case, **toHaveBeenLastCalledWith** is like playing referee. It doesn't care about that first time `addSongToAlbum` was called with `song1`. But it will make sure _the last time it got called_—it was with `album` and `song2`. And notice how we didn’t have to bother about how many other calls happened before. We just focus on the final one.
+In this case, **toHaveBeenLastCalledWith** is like playing referee. It doesn't care about that first time `addSongToAlbum` was called with `song1`. But it will make sure *the last time it got called*—it was with `album` and `song2`. And notice how we didn’t have to bother about how many other calls happened before. We just focus on the final one.
 
 It’s especially useful in scenarios where the function is getting hit multiple times in your code, but only the last one matters for the test you’re writing.

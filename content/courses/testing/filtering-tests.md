@@ -39,7 +39,7 @@ Sometimes, we don't want all of our tests to run. Some times we only want certai
 
 ## Only Run Certain Tests
 
-You can use `.only` if you want to run _only_ a few of your tests.
+You can use `.only` if you want to run *only* a few of your tests.
 
 ```ts
 it.only('should work', () => {
@@ -67,7 +67,7 @@ test.skip('works with "test" as well', () => {
 });
 ```
 
-Alternatively, you can use `todo` to signify that you want to skip this test for now, _but_ it's because you intend to write an implementation for it… eventually.
+Alternatively, you can use `todo` to signify that you want to skip this test for now, *but* it's because you intend to write an implementation for it… eventually.
 
 ```ts
 it('should work', () => {
@@ -127,7 +127,7 @@ npm test foo
 
 ```
 
-This will run `foo.test.ts`, but _not_ `bar.test.ts`.
+This will run `foo.test.ts`, but *not* `bar.test.ts`.
 
 ## `vitest related`
 
@@ -145,9 +145,8 @@ Inside of `examples/getting-started`:
 2. Run `npx vitest words --run` and look at which test files run.
 3. Run `npx vitest related ./math.ts --run` and look at which test files run.
 4. Run `npx vitest related ./exponent.ts --run` and look at which test files run.
-5. Assuming you don't have any un-staged or uncommitted changes, run `npx vitest --changed HEAD --run` and look at which test files—umm—_didn't_ run.
+5. Assuming you don't have any un-staged or uncommitted changes, run `npx vitest --changed HEAD --run` and look at which test files—umm—*didn't* run.
 6. Make a change to `words.ts` (or any other file, really) and then run `npx vitest --changed HEAD --run` and see what tests run.
 
 ```ts
-
 ```

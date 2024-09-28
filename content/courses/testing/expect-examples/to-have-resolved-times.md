@@ -50,5 +50,4 @@ You’d use this matcher when you care about the number of successful resolves a
 Isn’t it sweet when your tests make sure async code behaves like you expect? Now get out there and control your promises!
 
 ```ts
-
 ```

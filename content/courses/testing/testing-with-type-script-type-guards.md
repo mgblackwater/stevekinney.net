@@ -122,5 +122,4 @@ So if you ever catch yourself wondering: "Do I really need to test this?" The an
 Now, go break some TypeScript! (Or better yet, make sure it's **not** broken).
 
 ```ts
-
 ```

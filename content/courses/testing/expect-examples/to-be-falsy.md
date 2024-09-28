@@ -21,7 +21,7 @@ Basically, anything that doesn't stand up in a conditional context like `if (val
 
 ### When You’d Use It
 
-Use `toBeFalsy()` when you don’t care exactly _what_ falsy value something is, but you just want to check if it is, in fact, **not truthy**. For example, does a function return `undefined` when it fails? Or maybe it returns an empty string? `toBeFalsy()` is your broad-strokes check for situations where any falsy value will satisfy the condition.
+Use `toBeFalsy()` when you don’t care exactly *what* falsy value something is, but you just want to check if it is, in fact, **not truthy**. For example, does a function return `undefined` when it fails? Or maybe it returns an empty string? `toBeFalsy()` is your broad-strokes check for situations where any falsy value will satisfy the condition.
 
 ### Example
 
@@ -50,8 +50,7 @@ Here, `findArtist` returns `undefined` if an artist isn't in our list. We're tes
 
 ### Why Use It
 
-Sometimes you don’t care _which_ falsy thing it is, you just care that it **ain’t true**. That’s when `toBeFalsy()` shines—it’s kinda like taking the test with a pencil that has a huge eraser. You’re ready for just about anything the JavaScript universe can throw at you that evaluates to false.
+Sometimes you don’t care *which* falsy thing it is, you just care that it **ain’t true**. That’s when `toBeFalsy()` shines—it’s kinda like taking the test with a pencil that has a huge eraser. You’re ready for just about anything the JavaScript universe can throw at you that evaluates to false.
 
 ```ts
-
 ```

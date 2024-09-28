@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:16-06:00
 
 ## 1. Getting Started with BDD in Vitest
 
-Alright, let’s talk about **Behavior-Driven Development**, or BDD, with **Vitest**. BDD is all about writing tests that describe the _behavior_ of your application in a way that both devs and non-devs can understand. So instead of saying, “this function returns `x`,” we’re saying, “the user should see `x` when they click this button.” The tests end up being more like a specification for what your app _should_ do, not just what _does_ happen under the hood.
+Alright, let’s talk about **Behavior-Driven Development**, or BDD, with **Vitest**. BDD is all about writing tests that describe the *behavior* of your application in a way that both devs and non-devs can understand. So instead of saying, “this function returns `x`,” we’re saying, “the user should see `x` when they click this button.” The tests end up being more like a specification for what your app *should* do, not just what *does* happen under the hood.
 
 Thankfully, **Vitest** makes working with BDD pretty dang easy. Vitest works really well with **Jest-styled syntax**, which is great because it leans into a readable testing flow using **describe** and **it** blocks. It even has the **expect** assertion framework baked right in, so you can focus on that glorious behavior rather than setup.
 
@@ -54,7 +54,7 @@ function add(a, b) {
 }
 ```
 
-In a strictly academic world, we’d just test that `add(2, 3)` gives us `5`. But in BDD-land, we care more about _what behavior_ our function exhibits.
+In a strictly academic world, we’d just test that `add(2, 3)` gives us `5`. But in BDD-land, we care more about *what behavior* our function exhibits.
 
 Here’s what that test could look like:
 
@@ -77,11 +77,11 @@ describe('Math functions', () => {
 });
 ```
 
-Ah, clean and readable. Even just reading these tests, you're gathering what the `add` function should _do_, rather than just how it fulfills a functional contract.
+Ah, clean and readable. Even just reading these tests, you're gathering what the `add` function should *do*, rather than just how it fulfills a functional contract.
 
 **`describe`**: This block groups the tests logically. Here, we group things around “Math functions.” A `describe` block basically describes the suite of tests we’re running.
 
-**`it`**: Inside each describe, you’ve got `it` blocks. These outline specific behaviors or requirements. It follows the format: **“it should do X behavior”**. This is _way_ more readable for anyone who’s trying to grok your code.
+**`it`**: Inside each describe, you’ve got `it` blocks. These outline specific behaviors or requirements. It follows the format: **“it should do X behavior”**. This is *way* more readable for anyone who’s trying to grok your code.
 
 ## 4. Testing User Behavior (A More "Real-World" Example)
 
@@ -147,7 +147,7 @@ describe('Counter app', () => {
 });
 ```
 
-Rather than testing the internal state directly, we’re checking **the thing we care about most**—what the user sees: that number goes up when the button is clicked. Now when some poor soul is maintaining your app in the future, they can _immediately tell_ what’s going on—oh, button click equals counter change, cool. They don’t have to dig into how the inner state of `count` works.
+Rather than testing the internal state directly, we’re checking **the thing we care about most**—what the user sees: that number goes up when the button is clicked. Now when some poor soul is maintaining your app in the future, they can *immediately tell* what’s going on—oh, button click equals counter change, cool. They don’t have to dig into how the inner state of `count` works.
 
 ## 5. Mocking DOM Methods
 
@@ -176,12 +176,11 @@ Bam! You just mocked `getElementById` and verified it was called. Vitest comes w
 
 ## 6. Conclusion
 
-And there you have it—a quick taste of BDD using Vitest! The big idea here is that BDD is about writing **tests that reflect real-world behavior**. Instead of getting bogged down in the implementation details, you’re checking if the thing _works_ the way users and other devs expect it to.
+And there you have it—a quick taste of BDD using Vitest! The big idea here is that BDD is about writing **tests that reflect real-world behavior**. Instead of getting bogged down in the implementation details, you’re checking if the thing *works* the way users and other devs expect it to.
 
-At the end of the day, you want your tests to make sense at a glance. They shouldn’t feel like they’re written in some abstract machine language that only you, right now with your eyes squinted just the right way, can read. They should **tell a story**—what is the thing, and _how_ is it supposed to behave.
+At the end of the day, you want your tests to make sense at a glance. They shouldn’t feel like they’re written in some abstract machine language that only you, right now with your eyes squinted just the right way, can read. They should **tell a story**—what is the thing, and *how* is it supposed to behave.
 
 Now, we’ve just scratched the surface here, but even with this little setup, you’re off to the races with BDD in Vitest. Go on, test behaviors like a boss!
 
 ```ts
-
 ```

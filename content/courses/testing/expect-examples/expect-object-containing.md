@@ -6,15 +6,15 @@ modified: 2024-09-28T11:29:44-06:00
 
 ## expect.objectContaining
 
-Alright, let’s break down `expect.objectContaining`. This is one of those matchers that’s like your friend who always shows up _just enough_ to help you out—but not too much to overwhelm you. You’ll use this when you’re testing an object but you don’t really care about _all_ the properties it has, just a few key ones.
+Alright, let’s break down `expect.objectContaining`. This is one of those matchers that’s like your friend who always shows up *just enough* to help you out—but not too much to overwhelm you. You’ll use this when you’re testing an object but you don’t really care about *all* the properties it has, just a few key ones.
 
-In practice, it’s super useful when you want to ensure that an object has a certain set of properties and values **but you don’t necessarily want to enforce the complete structure** of the object. Your test would pass if the object contains _just_ those expected properties, even if it has a bunch of extra ones hanging around.
+In practice, it’s super useful when you want to ensure that an object has a certain set of properties and values **but you don’t necessarily want to enforce the complete structure** of the object. Your test would pass if the object contains *just* those expected properties, even if it has a bunch of extra ones hanging around.
 
 ### When Would You Use It?
 
 Imagine you're dealing with some sort of API response—maybe you requested your album info from the music library. The response has a lot of stuff: `id`, `createdAt`, `updatedAt`, maybe a bunch of other metadata you don't care about in your test. But you do care about, say, the artist and album name, because you’re more concerned with whether those hook up right.
 
-Let’s say, for example, you're testing out a function that fetches album details, and the returned object is supposed to have `artist` and `title` in the properties. The object might actually have a bunch of other stuff—created timestamps or whatever—but you don’t want to write your test to care about _all_ that. This is where `expect.objectContaining` comes in.
+Let’s say, for example, you're testing out a function that fetches album details, and the returned object is supposed to have `artist` and `title` in the properties. The object might actually have a bunch of other stuff—created timestamps or whatever—but you don’t want to write your test to care about *all* that. This is where `expect.objectContaining` comes in.
 
 ### Example of Using `expect.objectContaining`
 
@@ -55,7 +55,7 @@ describe('getAlbum', () => {
 });
 ```
 
-**Boom!** The test is passing as long as our `album` object contains those two key pieces we care about—`artist` and `title`. It can have any other stuff in there, and Vitest won’t mind, because you’re _only holding it accountable for the things that truly matter_ in your assertion.
+**Boom!** The test is passing as long as our `album` object contains those two key pieces we care about—`artist` and `title`. It can have any other stuff in there, and Vitest won’t mind, because you’re *only holding it accountable for the things that truly matter* in your assertion.
 
 So leave the other details (like that random `id` and `metadata`) aside unless you explicitly care about them. Keep your tests as focused and to the point as possible—that’s the magic of `expect.objectContaining`.
 
@@ -64,5 +64,4 @@ So leave the other details (like that random `id` and `metadata`) aside unless y
 Use `expect.objectContaining` when you are testing an object but only want to check that it has some specific properties. This is especially useful when your objects are big or have lots of irrelevant fields that you don't want to lock down in your unit test.
 
 ```ts
-
 ```

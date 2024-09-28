@@ -8,7 +8,7 @@ modified: 2024-09-28T11:31:16-06:00
 
 Alright, let’s talk about promises. You’ve got this nice promise, but testing them isn't always as smooth as you’d like, right? Enter `resolves`. In Vitest, `expect(…).resolves` is something you're going to use when you're working with promises that need a little expectation love.
 
-In short, if you’ve got a function that returns a promise and you want to test what happens when that promise _resolves_, you use `resolves`. It basically says, “Hey, Vitest, I expect this promise to _actually fulfill_ and when it does, here's what I expect to be delivered on that promise.”
+In short, if you’ve got a function that returns a promise and you want to test what happens when that promise *resolves*, you use `resolves`. It basically says, “Hey, Vitest, I expect this promise to *actually fulfill* and when it does, here's what I expect to be delivered on that promise.”
 
 ### When to Use it
 
@@ -50,12 +50,11 @@ it('resolves Green Day artist data', async () => {
 
 ### What's Happening?
 
-We’re telling Vitest to wait for `fetchArtist()` to resolve and then checking that the resolved value is what we expect. As in, we _expect_ the promise to deliver exact, glorious details of Green Day and their associated punk rock genre.
+We’re telling Vitest to wait for `fetchArtist()` to resolve and then checking that the resolved value is what we expect. As in, we *expect* the promise to deliver exact, glorious details of Green Day and their associated punk rock genre.
 
 No more oversleeping your awaits and missing out on testing those promise resolutions. Pretty slick and simple, right?
 
 When your code needs to test what's popping out of a resolved promise, you know where to go: `resolves`. It's like waiting for your coffee to brew, but instead of coffee, you get testable data! 🌟
 
 ```ts
-
 ```

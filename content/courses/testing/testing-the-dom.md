@@ -122,5 +122,4 @@ Both **JSDOM** and **Happy DOM** are JavaScript libraries used to simulate the b
 | **Best for**     | Complex web apps, real-world browser behavior | Fast unit/integration tests, simple DOM   |
 
 ```ts
-
 ```

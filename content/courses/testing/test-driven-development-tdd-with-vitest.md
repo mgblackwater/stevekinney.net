@@ -158,5 +158,4 @@ With Vitest handling the messy parts (like running all the tests for you), we go
 Testing might feel like a chore, but with **TDD**, it’s like having a safety net while you’re trapezing through code. You can ship with confidence and maybe—just maybe—spend fewer hours debugging.
 
 ```ts
-
 ```

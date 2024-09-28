@@ -130,9 +130,7 @@ The `userEvent` API is more asynchronous than `fireEvent`, so we need to use `aw
 In this refactored test suite, we used `userEvent` to simulate real user interactions with the `Counter` component. This method is more reliable and representative of how users interact with your app, and it prepares your tests to handle more complex interactions in the future.
 
 ```ts
-
 ```
 
 ```ts
-
 ```

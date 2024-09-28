@@ -6,11 +6,11 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## Mocking Reading and Writing Files in Vitest
 
-Alright, let’s talk about something every JavaScript developer has to deal with eventually—reading and writing files. Usually, when you're testing something like file operations, you don’t actually want your tests messing around with your file system. We don't want some rogue unit test changing the file that holds your coworkers' lunch preferences or—god forbid—deleting it entirely. That's where mocking comes in. With mocking, we can just _pretend_ we're reading and writing files. Vitest and modern tools like `fs/promises` make this super straightforward. So, let’s dig in.
+Alright, let’s talk about something every JavaScript developer has to deal with eventually—reading and writing files. Usually, when you're testing something like file operations, you don’t actually want your tests messing around with your file system. We don't want some rogue unit test changing the file that holds your coworkers' lunch preferences or—god forbid—deleting it entirely. That's where mocking comes in. With mocking, we can just *pretend* we're reading and writing files. Vitest and modern tools like `fs/promises` make this super straightforward. So, let’s dig in.
 
 ### Setting the Scene
 
-Let’s assume you’ve got this super fancy little module that reads from a file, modifies the data, and writes it back. Something really _real-world_ like this:
+Let’s assume you’ve got this super fancy little module that reads from a file, modifies the data, and writes it back. Something really *real-world* like this:
 
 ```javascript
 // fileOperations.js
@@ -28,7 +28,7 @@ The dream here is that you'll pass a file path and some new content, and it'll a
 
 ### Mocking the File System with Vitest
 
-We can mock `fs/promises` using Vitest’s `vi.mock()` function. This lets us _intercept_ those calls to `readFile` and `writeFile` and return specific values we want.
+We can mock `fs/promises` using Vitest’s `vi.mock()` function. This lets us *intercept* those calls to `readFile` and `writeFile` and return specific values we want.
 
 #### Step 1: Write the Test
 
@@ -96,10 +96,9 @@ And if everything is wired up correctly, it'll pass! 🎉
 
 ### Final Thoughts
 
-Mocking file reading and writing can be a bit intimidating at first, but once you get the hang of it, your tests will be cleaner, faster, and less likely to wipe out someone's precious files. Plus, with Vitest, the API is super friendly, it’s like it _wants_ you to win at coding. 😎
+Mocking file reading and writing can be a bit intimidating at first, but once you get the hang of it, your tests will be cleaner, faster, and less likely to wipe out someone's precious files. Plus, with Vitest, the API is super friendly, it’s like it *wants* you to win at coding. 😎
 
 More importantly, now you’re not only testing functionality, but you’re also isolating the state of the world so no random files are harmed in the filling of your testing cup! Go forth and mock responsibly!
 
 ```ts
-
 ```

@@ -238,5 +238,4 @@ All division tests should pass.
 Again. No refactoring needed. I'm just trying to make a point here.
 
 ```ts
-
 ```

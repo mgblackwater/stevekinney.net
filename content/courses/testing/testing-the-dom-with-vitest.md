@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:14-06:00
 
 ## Testing the DOM with Vitest
 
-Ah, the DOM. It’s like the wild west of your JavaScript application. Everything can be going smoothly until _boom_, your carefully crafted divs and spans suddenly refuse to cooperate. But hey, no worries—Vitest has your back here. If you’ve been avoiding testing the DOM because it feels like a labyrinth of event handlers, attributes, and deeply nested elements, today is the day you conquer that fear.
+Ah, the DOM. It’s like the wild west of your JavaScript application. Everything can be going smoothly until *boom*, your carefully crafted divs and spans suddenly refuse to cooperate. But hey, no worries—Vitest has your back here. If you’ve been avoiding testing the DOM because it feels like a labyrinth of event handlers, attributes, and deeply nested elements, today is the day you conquer that fear.
 
 Let’s test some DOM interactions and make sure your UI behaves like a reasonable piece of software should. We’re going to use Vitest and a handy-dandy library called `@testing-library/dom`. Buckle up; it’s time to get our hands dirty.
 
@@ -101,7 +101,7 @@ If you run your test suite and everything passes, congratulations! You’ve just
 
 ### An Event Listener Gone Rogue?
 
-You know how sometimes, you swear you clicked the button but _nothing happens_ in your UI? Yeah, we've all been there. Let’s test for that scenario too—what if the click event doesn’t fire, or the wrong element is clicked? Mocking out event listeners to ensure they trigger is gold.
+You know how sometimes, you swear you clicked the button but *nothing happens* in your UI? Yeah, we've all been there. Let’s test for that scenario too—what if the click event doesn’t fire, or the wrong element is clicked? Mocking out event listeners to ensure they trigger is gold.
 
 Here’s an example where you check if your event listener gets called:
 
@@ -138,5 +138,4 @@ And there you have it—some simple, but powerful, techniques for testing DOM in
 Go forth and write those DOM tests. Your future self—that person trying to debug a UI issue at 2 a.m.—will thank you. 🚀
 
 ```ts
-
 ```

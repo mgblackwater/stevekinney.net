@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:15-06:00
 
 When writing unit tests, the goal is to test a piece of code in isolation. However, the real-world code we write often depends on other pieces of code or external systems like databases, APIs, or third-party services. These dependencies can introduce variability, slowness, or complexity into our tests, making them harder to write, understand, and maintain.
 
-To overcome this, we use things called _test doubles_. A test double is a generic term for any kind of substitute for real objects in tests. They allow us to isolate the system under test and control the environment, ensuring we can predict behavior and verify the interactions.
+To overcome this, we use things called *test doubles*. A test double is a generic term for any kind of substitute for real objects in tests. They allow us to isolate the system under test and control the environment, ensuring we can predict behavior and verify the interactions.
 
 Before diving into implementation, it's essential to understand what test doubles are and how they differ:
 
@@ -40,5 +40,4 @@ To clarify the differences between these three types of test doubles:
 Stubs, spies, and mocks are essential tools for isolating dependencies, improving test reliability, and verifying code behavior. Understanding the differences and knowing when to use each type of test double will help you write more effective and maintainable tests. Whether you need to simulate a simple API response (stub), monitor how a function interacts with a dependency (spy), or simulate complex behaviors and record interactions (mock), these tools will help ensure your unit tests are robust and accurate.
 
 ```ts
-
 ```

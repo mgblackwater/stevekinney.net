@@ -20,11 +20,11 @@ Mocks allow you to replace real implementations of functions or modules with fak
 
 Okay, now that we’ve got that covered, let's move on to the cleanup needed after all our mockery. In Vitest, we have three primary ways to handle mocks post-shenanigans: clearing, resetting, and restoring.
 
----
+***
 
 ### Clearing Mocks
 
-Clearing a mock removes all _invocation history_. Let's say you've got a mock that's been called a few times, and you want to reset the call count back to zero. That’s _clearing_ in action.
+Clearing a mock removes all *invocation history*. Let's say you've got a mock that's been called a few times, and you want to reset the call count back to zero. That’s *clearing* in action.
 
 ```js
 const myFunc = vi.fn();
@@ -43,7 +43,7 @@ Use `mockClear()` when you want to ensure that your tests are checking fresh inv
 
 > **Pro tip:** If your tests rely on the **number of times** a function is called, reset that call count before each test—so you're always getting fresh numbers.
 
----
+***
 
 ### Resetting Mocks
 
@@ -62,11 +62,11 @@ myFunc.mockReset();
 console.log(myFunc()); // undefined
 ```
 
-When should you reset? Think of it as hitting _undo_. If you’ve changed what the mock returns, and you’re like, "Nope, never should've done that,” then this is your ticket to sanity.
+When should you reset? Think of it as hitting *undo*. If you’ve changed what the mock returns, and you’re like, "Nope, never should've done that,” then this is your ticket to sanity.
 
-> **Heads-up:** With reset, you'll still _have_ the mock object, but it behaves like it did out of the box—call count set to `0`, and no return values or side effects.
+> **Heads-up:** With reset, you'll still *have* the mock object, but it behaves like it did out of the box—call count set to `0`, and no return values or side effects.
 
----
+***
 
 ### Restoring Mocks
 
@@ -86,7 +86,7 @@ console.log(Math.random()); // Now we're back to good ol' randomness
 
 When you restore a mock, it brings the original, un-mocked function back. This is super useful, especially when you're messing with native APIs—because, trust me, leaving `Math.random()` mocked throughout your app is guaranteed to produce test nightmares later.
 
----
+***
 
 ### When To Use Each
 
@@ -96,10 +96,10 @@ Alright, quick recap:
 - **Reset**: You made a mess with return values or .mockImplementation—and now you just want to start over without rebuilding the mock.
 - **Restore**: You’re done mocking, you want to reinstate the original functionality, and walk away like nothing ever happened.
 
----
+***
 
 ### Conclusion
 
 Vitest gives you the tools you need to keep your tests clean, your mocks simple, and your frustrations (mostly) in check. The key is knowing when to clean up after yourself. Mocks can be powerful, but if you don’t clear, reset, or restore them properly, you’ll end up wondering why things are on fire and you're dealing with mocking baggage from previous tests.
 
-Happy testing! And may you _always_ remember to restore your mocks before they haunt another test file. 🌕👻
+Happy testing! And may you *always* remember to restore your mocks before they haunt another test file. 🌕👻

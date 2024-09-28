@@ -86,7 +86,7 @@ That’s it! We’re rendering the button, grabbing it by its role (side note: `
 
 ## 4. Testing Non-primary Styles
 
-But we’re not done yet. We should also check what happens when the button _isn’t_ primary:
+But we’re not done yet. We should also check what happens when the button *isn’t* primary:
 
 ```jsx
 test('renders a non-primary button with gray background', () => {
@@ -131,12 +131,11 @@ So don’t go stressing yourself out over mocks unless you really, really need t
 
 ## 7. Conclusion
 
-Testing CSS-in-JS? Not as bad as it sounds. Vitest and `@testing-library/react` make it feel _almost_ fun. Almost.
+Testing CSS-in-JS? Not as bad as it sounds. Vitest and `@testing-library/react` make it feel *almost* fun. Almost.
 
-Just don’t forget to test all your possible style variants (`primary`, `secondary`, whatever else you’ve got) and ensure your components actually _look_ like they're supposed to. Your future self will thank you when some sneaky little PropMonster™ breaks a style rule, and a test catches it early.
+Just don’t forget to test all your possible style variants (`primary`, `secondary`, whatever else you’ve got) and ensure your components actually *look* like they're supposed to. Your future self will thank you when some sneaky little PropMonster™ breaks a style rule, and a test catches it early.
 
 Now, go forth and make the world a better, more well-tested place!
 
 ```ts
-
 ```

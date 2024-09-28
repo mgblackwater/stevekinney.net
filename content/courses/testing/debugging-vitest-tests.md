@@ -6,11 +6,11 @@ modified: 2024-09-28T11:31:16-06:00
 
 ## Debugging Vitest Tests
 
-Alright, you've just written some tests in Vitest, hit `npm run test`, and oof—something's broken. But now the real fun begins: _debugging_. It's the mix of detective work and head-scratching developers sign up for when they add tests to their app. Don’t worry, though. We’re going to walk through the essential tools Vitest offers for debugging, and I promise, it's not as scary as figuring out why your CSS grid isn't lining up.
+Alright, you've just written some tests in Vitest, hit `npm run test`, and oof—something's broken. But now the real fun begins: *debugging*. It's the mix of detective work and head-scratching developers sign up for when they add tests to their app. Don’t worry, though. We’re going to walk through the essential tools Vitest offers for debugging, and I promise, it's not as scary as figuring out why your CSS grid isn't lining up.
 
 ### Error Messages in Vitest: Your First Clue
 
-Before we dive into fancy debugging tools, let’s talk about reading Vitest’s error messages. That might seem basic, but it’s huge. You run the test, and it fails. Vitest is _really_ good at telling you _what_ went wrong, which line, and, often, why. So when you see the red "FAIL," slow down and carefully read through the stack trace.
+Before we dive into fancy debugging tools, let’s talk about reading Vitest’s error messages. That might seem basic, but it’s huge. You run the test, and it fails. Vitest is *really* good at telling you *what* went wrong, which line, and, often, why. So when you see the red "FAIL," slow down and carefully read through the stack trace.
 
 Let’s say you have this failing test:
 
@@ -45,7 +45,7 @@ test.only('adds two numbers', () => {
 });
 ```
 
-Boom—Vitest just runs that single test. Now, _all_ your attention is on the suspect. Narrow it down and debug faster.
+Boom—Vitest just runs that single test. Now, *all* your attention is on the suspect. Narrow it down and debug faster.
 
 ### Enable Watch Mode (A Developer’s Best Friend)
 
@@ -59,7 +59,7 @@ Now you're living in the future. Every time you save your file, Vitest will kick
 
 ### Using `console.log` (Yes, It's Still Okay!)
 
-Okay, if we’re being real here, most debugging is just sprucing up the joint with `console.log`. Sometimes, the fastest way to figure out what’s going wrong is to pepper _a few `console.log`s into your code_. If you're adding a million log statements to your actual test files—hey, no judgment—we all do it:
+Okay, if we’re being real here, most debugging is just sprucing up the joint with `console.log`. Sometimes, the fastest way to figure out what’s going wrong is to pepper *a few `console.log`s into your code*. If you're adding a million log statements to your actual test files—hey, no judgment—we all do it:
 
 ```javascript
 test('adds two numbers', () => {
@@ -91,7 +91,7 @@ Paste that in Chrome, open DevTools (`Cmd+Opt+I` or F12), and now you can set br
 
 ### Bonus Tip: Use `.skip()` to Route Around the Problem
 
-If you’re in the weeds and need to move forward without deleting a test (don’t delete the test!), you can tell Vitest to _skip_ specific tests while you focus on something less painful.
+If you’re in the weeds and need to move forward without deleting a test (don’t delete the test!), you can tell Vitest to *skip* specific tests while you focus on something less painful.
 
 ```javascript
 test.skip('complicated stuff I’ll deal with later', () => {
@@ -108,5 +108,4 @@ Remember, debugging is less about fancy tools and more about whittling down the 
 And, hey, if things still aren’t working? Grab your favorite caffeine source, stretch a bit, and go back to reading those error messages. Tests are your friend, even when it feels like they're out to get you.
 
 ```ts
-
 ```

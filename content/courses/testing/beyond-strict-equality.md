@@ -4,7 +4,7 @@ description: Learn the difference between toBe and toEqual in Vitest testing.
 modified: 2024-09-28T11:31:16-06:00
 ---
 
-Most of us have been living in the "everything should be immutable" world long enough to know that there is a difference between comparing objects by reference and comparing it with object that _looks_ the same in terms of its value, but has a difference reference in memory.
+Most of us have been living in the "everything should be immutable" world long enough to know that there is a difference between comparing objects by reference and comparing it with object that *looks* the same in terms of its value, but has a difference reference in memory.
 
 ## toBe
 
@@ -40,7 +40,7 @@ test('BigInts should be strickly equal', () => {
 });
 ```
 
-But, things get a little trickier when comparing objects (arrays _and_ functions are objects in JavaScript).
+But, things get a little trickier when comparing objects (arrays *and* functions are objects in JavaScript).
 
 ```ts
 describe('toBe', () => {
@@ -92,7 +92,7 @@ describe('toEqual', () => {
 });
 ```
 
-Here are some assertions that you _may_ want to consider:
+Here are some assertions that you *may* want to consider:
 
 - [`toBe`](https://vitest.dev/api/expect.html#tobe)
 - [`toBeCloseTo`](https://vitest.dev/api/expect.html#tobecloseto)

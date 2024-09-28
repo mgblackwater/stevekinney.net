@@ -39,7 +39,7 @@ test('a test with a function', () => {
 
 The selling point here is that when we write tests, we can make a bunch of statements about how we expect our code to work. Our test suite's job is to save us the hassle of having to manually check on all of these things. Instead, the suite will grab our code and make sure that everything still works the way that we expect as we go about our business adding features and refactoring code.
 
-Generally speaking, it's unlikely that our `add` function would live inside of a test. More likely, it's a utility function of some kind that we'd use in our application. A _slightly_ more realistic example would look something like the example below.
+Generally speaking, it's unlikely that our `add` function would live inside of a test. More likely, it's a utility function of some kind that we'd use in our application. A *slightly* more realistic example would look something like the example below.
 
 ```javascript
 // calculator.js
@@ -60,7 +60,7 @@ describe('add', () => {
 });
 ```
 
-> [!TIP] `test` and `it` are aliases of each other.
+> \[!TIP] `test` and `it` are aliases of each other.
 > You can use `test` and `it` interchangeably. They're just stylistic.
 
 ## Adding Tests
@@ -90,5 +90,4 @@ describe('add', () => {
 We'll add a few more in a later section, but this is a pretty good start for now. Especially because we haven't looked at [running your tests](running-tests.md) just yet.
 
 ```ts
-
 ```

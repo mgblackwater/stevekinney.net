@@ -104,5 +104,4 @@ test('logs the correct message', () => {
 - We spy on `console.log` to verify that `logMessage` calls it with the correct argument.
 
 ```ts
-
 ```

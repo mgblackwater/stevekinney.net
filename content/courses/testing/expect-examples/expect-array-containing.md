@@ -16,13 +16,13 @@ You don’t care about the entire contents of the array? You just want to make s
 
 ### When Would You Use It?
 
-Good question! You’d use this when you’re running a test and you want to verify that a subset of an array is present—say you don’t care if the array has additional elements, or even what order the elements are in. What you _do_ care about is that certain key items are hanging out in there somewhere!
+Good question! You’d use this when you’re running a test and you want to verify that a subset of an array is present—say you don’t care if the array has additional elements, or even what order the elements are in. What you *do* care about is that certain key items are hanging out in there somewhere!
 
-Let’s say we’re testing a music library API, and you’re checking if your favorite band **Green Day** has certain albums in their discography. You don’t care if the library has a bunch of other Green Day albums you’re not interested in right now (because let’s be real, they have a ton). You just want to see if _“Dookie”_ and _“American Idiot”_ are in the lineup. **`arrayContaining`** solves that.
+Let’s say we’re testing a music library API, and you’re checking if your favorite band **Green Day** has certain albums in their discography. You don’t care if the library has a bunch of other Green Day albums you’re not interested in right now (because let’s be real, they have a ton). You just want to see if *“Dookie”* and *“American Idiot”* are in the lineup. **`arrayContaining`** solves that.
 
 ### Example
 
-Let’s say we’ve got a simple function that returns a band’s albums from our _completely fictional_ music library API:
+Let’s say we’ve got a simple function that returns a band’s albums from our *completely fictional* music library API:
 
 ```js
 function getAlbumsByArtist(artist) {
@@ -30,7 +30,7 @@ function getAlbumsByArtist(artist) {
 }
 ```
 
-Now, let’s add a Vitest test to make sure that _“Dookie”_ and _“American Idiot”_ are coming through the list. We don’t care about every album being returned because today we're feeling nostalgic for '90s Green Day.
+Now, let’s add a Vitest test to make sure that *“Dookie”* and *“American Idiot”* are coming through the list. We don’t care about every album being returned because today we're feeling nostalgic for '90s Green Day.
 
 ```js
 import { expect, test } from 'vitest';
@@ -54,5 +54,4 @@ You’ll reach for **`arrayContaining`** whenever you’ve got an array of thing
 There you go! Now when life gives you giant arrays of data, just remember: you don’t always have to test the whole array if you don’t want to.
 
 ```ts
-
 ```

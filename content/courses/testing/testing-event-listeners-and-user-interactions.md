@@ -126,5 +126,4 @@ In the real world, testing event listeners is essential for your app’s health.
 Grab yourself a victory cookie—you’ve successfully tested a button click with Vitest! 🎉
 
 ```ts
-
 ```

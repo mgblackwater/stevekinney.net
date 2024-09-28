@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## 1. Mocking Fetch and Network Requests with Vitest
 
-Alright, let’s talk about something near and dear to every developer’s heart — dealing with and testing **network requests**. If you're working on an app that even _sniffs_ at the internet, you're going to have to call APIs, and eventually, you're going to need to test that code. When that time comes, there’s no reason to actually hit the API every time you run your test suite — after all, let’s _maybe_ not DDoS the API server, or worse: make your tests super slow. That's where **mocking network requests** comes in, and thankfully, mocking `fetch` with Vitest is a breeze.
+Alright, let’s talk about something near and dear to every developer’s heart — dealing with and testing **network requests**. If you're working on an app that even *sniffs* at the internet, you're going to have to call APIs, and eventually, you're going to need to test that code. When that time comes, there’s no reason to actually hit the API every time you run your test suite — after all, let’s *maybe* not DDoS the API server, or worse: make your tests super slow. That's where **mocking network requests** comes in, and thankfully, mocking `fetch` with Vitest is a breeze.
 
 Let’s roll up our sleeves and dig in. Are you ready? I hope so because we’re diving straight into the deep end.
 
@@ -40,7 +40,7 @@ async function getData() {
 export { getData };
 ```
 
-Looks good. Now if you want to test this function, you really shouldn't hit the actual API in your tests, because I promise you… unreliable network calls in your CI tests at 3 a.m.? _Not a vibe._ What we want is to mock it, baby!
+Looks good. Now if you want to test this function, you really shouldn't hit the actual API in your tests, because I promise you… unreliable network calls in your CI tests at 3 a.m.? *Not a vibe.* What we want is to mock it, baby!
 
 ## 4. Step 3: Mocking Fetch with Vitest
 
@@ -124,5 +124,4 @@ That’s it! Now you’re mocking fetch requests like a pro. No more flaky test 
 Just remember, the goal isn’t to test **whether fetch works** (spoiler alert: it does). You're focusing on ensuring that your code behaves properly in a variety of fetch-related scenarios.
 
 ```ts
-
 ```

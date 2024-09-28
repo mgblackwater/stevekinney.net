@@ -56,8 +56,7 @@ Here, we added a custom equality tester that ignores the `id` field of `Song`. N
 
 ### Quick Note for Sanity's Sake:
 
-You should only really bust out **custom equality testers** when you _need_ them. Usually, if you’re feeling like you need to write a ton of custom comparison logic, it **could** be a sign that something funky’s going on in your data or design that you’ll want to straighten out instead.
+You should only really bust out **custom equality testers** when you *need* them. Usually, if you’re feeling like you need to write a ton of custom comparison logic, it **could** be a sign that something funky’s going on in your data or design that you’ll want to straighten out instead.
 
 ```ts
-
 ```

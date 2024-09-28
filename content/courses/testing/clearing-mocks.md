@@ -18,10 +18,9 @@ For a moment, let's assume `const fn = vi.fn()`.
 
 You'd typically put these in an `afterEach` block within your test suite.
 
-- `vi.clearAllMocks`: Clears out the history of calls and return values on the spies, but does _not_ reset them to their default implementation. This is effectively the same as calling `.mockClear()` on each and every spy.
+- `vi.clearAllMocks`: Clears out the history of calls and return values on the spies, but does *not* reset them to their default implementation. This is effectively the same as calling `.mockClear()` on each and every spy.
 - `vi.resetAllMocks`: Calls `.mockReset()` on all the spies. It will replace any mock implementations with an empty function.
 - `vi.restoreAllMocks`: Calls `.mockRestore()` on each and every mock. This one returns the world to it's original state.
 
 ```ts
-
 ```

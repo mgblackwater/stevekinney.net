@@ -16,7 +16,7 @@ Sound familiar? Awesome. This is exactly when you’d bust out `toBeGreaterThan`
 
 ### Example
 
-Let's say we’re tracking the number of plays for Green Day’s _Basket Case_ (because, why not?). You might have a function called `playSong` that increments the play count. We'll set up a test to check if the play count after calling `playSong()` is greater than the original play count.
+Let's say we’re tracking the number of plays for Green Day’s *Basket Case* (because, why not?). You might have a function called `playSong` that increments the play count. We'll set up a test to check if the play count after calling `playSong()` is greater than the original play count.
 
 ```javascript
 // playCount.js
@@ -41,12 +41,11 @@ test('should increase the play count of the song', () => {
 
 ### Breakdown
 
-- **Before** calling `playSong()`, _Basket Case’s_ play count is 3.
+- **Before** calling `playSong()`, *Basket Case’s* play count is 3.
 - After calling the function, we expect that `song.playCount` is now **greater than 3**.
 - So we slap `expect(song.playCount).toBeGreaterThan(3)` at the end to make sure things are working as they should!
 
 And that’s it! Simple but powerful. You’re making sure the numbers go in the right direction after your function does its thing.
 
 ```ts
-
 ```

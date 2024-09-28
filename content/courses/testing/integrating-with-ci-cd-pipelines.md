@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## 1. Integrating Vitest with Your CI/CD Pipeline
 
-Ah, Continuous Integration and Continuous Deployment (CI/CD)! You know, it’s like having that one responsible roommate who always remembers to lock the door, do the dishes, and make sure your code isn’t breaking everything on the way out to production. Let’s talk about how to hit that sweet deploy button _knowing your tests_ are keeping things smooth (or at least flagging the landmines before they go boom).
+Ah, Continuous Integration and Continuous Deployment (CI/CD)! You know, it’s like having that one responsible roommate who always remembers to lock the door, do the dishes, and make sure your code isn’t breaking everything on the way out to production. Let’s talk about how to hit that sweet deploy button *knowing your tests* are keeping things smooth (or at least flagging the landmines before they go boom).
 
 Today, we’ll get Vitest running in a CI/CD pipeline using GitHub Actions, but you can take these concepts and adapt them to whatever tool your team is using. CI/CD tools all do pretty much the same thing behind the scenes: run your tests, and tell you if things are broken (hopefully before your users do).
 
@@ -18,7 +18,7 @@ Alright, you probably already have Vitest hooked up locally. If you don’t, no 
 npm install vitest --save-dev
 ```
 
-Now, before you rush into adding tests to the CI, there’s one thing you need to know: **the default Vitest config might run in watch mode** when executed on your local machine, which is _awesome_ when you're dev'ing, but it’s pretty pointless in a CI environment. CI systems don’t want to watch for file changes—they want to run through everything once and get you results.
+Now, before you rush into adding tests to the CI, there’s one thing you need to know: **the default Vitest config might run in watch mode** when executed on your local machine, which is *awesome* when you're dev'ing, but it’s pretty pointless in a CI environment. CI systems don’t want to watch for file changes—they want to run through everything once and get you results.
 
 So, let’s make sure Vitest ain’t hanging around looking for changes when we fire it up in CI. We’ll need to add a `test:ci` script to your `package.json`:
 

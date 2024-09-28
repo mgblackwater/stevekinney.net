@@ -167,5 +167,4 @@ In this example, the `try/catch` block is used to manually catch the error and a
 Testing whether a function throws an error in Vitest is an essential part of validating error handling in your code. With matchers like `toThrow`, `rejects.toThrow`, and `not.toThrow`, Vitest provides powerful tools for both synchronous and asynchronous error testing. These tools allow you to ensure that your code handles errors properly, preventing silent failures and ensuring that invalid inputs or edge cases are properly managed.
 
 ```ts
-
 ```

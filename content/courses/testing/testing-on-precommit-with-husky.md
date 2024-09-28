@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:14-06:00
 
 ## Testing on Precommit with Husky
 
-Alright, friend, let's talk about something that we all wish we could wave a magic wand for: keeping bad code out of `main`. You know what I'm talking about. Code that _works on my machine_ but crashes the staging server faster than you can say "merge conflict."
+Alright, friend, let's talk about something that we all wish we could wave a magic wand for: keeping bad code out of `main`. You know what I'm talking about. Code that *works on my machine* but crashes the staging server faster than you can say "merge conflict."
 
 The answer? **Precommit Hooks**. Specifically, using **Husky** to run your tests right before you even commit that code. This is like an invisible shield that checks if your code is legit before taking its first step into the Git ecosystem.
 
@@ -38,7 +38,7 @@ npx husky install
 
 This command will create a `.husky/` directory where Husky keeps all its files. It’s important. Don’t delete it. Don’t ignore it. This is where the magic lives.
 
-Next, let's tell Husky to actually work its magic _every time_ we run `git commit`. How? Let’s add a pre-commit hook!
+Next, let's tell Husky to actually work its magic *every time* we run `git commit`. How? Let’s add a pre-commit hook!
 
 ```bash
 npx husky add .husky/pre-commit "npm test"
@@ -90,7 +90,7 @@ describe('add', () => {
 });
 ```
 
-We're testing a basic `add` function. So simple! But let's be honest—_everyone_ writes bugs in even the simplest code. So let's make sure this runs every time!
+We're testing a basic `add` function. So simple! But let's be honest—*everyone* writes bugs in even the simplest code. So let's make sure this runs every time!
 
 ### Step 5: Test the Precommit Hook
 
@@ -110,7 +110,7 @@ It’s time for the moment of truth. Let’s make some changes and try to commit
 
 If everything works out, tests will run, pass, and your commit will sail into the Git history without a scratch. 🎉
 
-But if something fails—and, let’s face it, that _always happens_ when we want to show off in front of a coworker—your commit will be blocked. Don’t worry, though; Husky has your back. Fix your tests first, and then try committing again. You’ll thank future you.
+But if something fails—and, let’s face it, that *always happens* when we want to show off in front of a coworker—your commit will be blocked. Don’t worry, though; Husky has your back. Fix your tests first, and then try committing again. You’ll thank future you.
 
 ### Bonus: Linting and Prettifying
 
@@ -120,7 +120,7 @@ Why stop at testing? You can also throw in some linting and prettier checks befo
 npx husky add .husky/pre-commit "npm run lint && npm run format && npm test"
 ```
 
-A perfect world: linted, prettified, and tested code _before it even leaves your machine_.
+A perfect world: linted, prettified, and tested code *before it even leaves your machine*.
 
 ### Conclusion
 
@@ -129,5 +129,4 @@ There you have it! With **Husky** by your side, and your tests running every tim
 The beauty of Husky is that it’s fast, it protects your team (and you, let’s be honest), and it makes sure no bad code gets committed. Now go forth and ship with confidence… or at least not with broken tests.
 
 ```ts
-
 ```

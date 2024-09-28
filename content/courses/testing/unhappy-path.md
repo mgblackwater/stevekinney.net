@@ -222,5 +222,4 @@ In this example:
 Testing the unhappy path™ is critical for ensuring that your application can handle real-world scenarios, including invalid inputs, failed operations, and external service failures. By using Vitest's powerful tools like `toThrow()`, `rejects.toThrow()`, and mocking, you can simulate these edge cases and verify that your code responds appropriately. Testing the unhappy path leads to more robust applications and better user experiences by gracefully handling errors and preventing crashes or unexpected behavior.
 
 ```ts
-
 ```

@@ -11,7 +11,7 @@ Alright, so the `rejects` method is your go-to tool when you're dealing with pro
 
 Think about it: sometimes you write functions that return promises, and the thing you explicitly want to test is the behavior when things go wrong. Like, maybe a file doesn't exist, or an API throws a 404, or you requested **The Battle of Los Angeles**, but the system finds some derivative fake album or something. Whatever the case, stuff happens, and you want to make sure your code handles it properly.
 
-`expect.rejects` allows you to say: "Yo, this promise _better_ throw an error, or else something isn't quite right."
+`expect.rejects` allows you to say: "Yo, this promise *better* throw an error, or else something isn't quite right."
 
 ### When You'd Use It:
 
@@ -52,12 +52,11 @@ test('findAlbumById rejects when the album is not found', async () => {
 ### Breakdown:
 
 - We call `findAlbumById` with `'999'`, which isn't in the list of albums (sorry, folks, no secret Green Day album #999 here).
-- We use `expect.rejects.toThrow()` to check that the promise rejects with the exact error message _“Album not found”_.
+- We use `expect.rejects.toThrow()` to check that the promise rejects with the exact error message *“Album not found”*.
 
-Boom. Now you're confident that your function will break properly when the search fails—and this time, it's _supposed_ to fail.
+Boom. Now you're confident that your function will break properly when the search fails—and this time, it's *supposed* to fail.
 
-Fun fact: Vitest handles promises _so_ smoothly here that you can use `await` on the `expect` statement itself, which is kind of magical if you've been testing JavaScript for a few years…
+Fun fact: Vitest handles promises *so* smoothly here that you can use `await` on the `expect` statement itself, which is kind of magical if you've been testing JavaScript for a few years…
 
 ```ts
-
 ```

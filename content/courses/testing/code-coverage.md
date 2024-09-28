@@ -4,12 +4,12 @@ description: A guide to setting up and managing code coverage in Vitest.
 modified: 2024-09-28T11:31:16-06:00
 ---
 
-Code coverage is useful for identifying how much your code is (or _isn't_) covered by tests. This can be useful for identifying blind spots and potential edge cases that are not covered by your test suite.
+Code coverage is useful for identifying how much your code is (or *isn't*) covered by tests. This can be useful for identifying blind spots and potential edge cases that are not covered by your test suite.
 
-**A word of caution**: Aiming for 100% coverage—or, worse _mandating_ it—isn't the best use of your time and attention:
+**A word of caution**: Aiming for 100% coverage—or, worse *mandating* it—isn't the best use of your time and attention:
 
 1. Consider the 80/20 principle, that last little bit of coverage is usually a lot more work than the majority of it. And frankly, you can hit the point of diminishing returns pretty quickly. Maybe you're better off with an integration test?
-2. Speaking of integration tests: It's rare that any code coverage tool takes a holistic few of your application and its code. Usually, it's able to tell you about the coverage that one kind of test—typically your unit tests—provide. This means, that your code _could_ very well be covered by some other kind of test—or even your type system.
+2. Speaking of integration tests: It's rare that any code coverage tool takes a holistic few of your application and its code. Usually, it's able to tell you about the coverage that one kind of test—typically your unit tests—provide. This means, that your code *could* very well be covered by some other kind of test—or even your type system.
 
 I hesitate to mandating a given number. If you do, keep it low. Sure, I'd say like less that 60% means you should probably pay some attention to your tests. Alternatively, you could choose to just monitor that a given change doesn't drastically reduce the amount of code coverage.
 
@@ -17,7 +17,7 @@ For me, the biggest advantage is to help as I'm working on a new function or fea
 
 ## Installing a Code Coverage Tool
 
-If you _don't_ have a coverage reporter installed, Vitest will prompt you to install the dependency.
+If you *don't* have a coverage reporter installed, Vitest will prompt you to install the dependency.
 
 ```ts
 > vitest exercise.test.ts --coverage
@@ -42,7 +42,7 @@ You'll likely get a new `./coverage` directory. Go take a look. You can spin up 
 vite preview  --outDir coverage
 ```
 
-This will allow you see where you code is _not_ being tested. (Source: [The documenation for c8](https://github.com/bcoe/c8#ignoring-uncovered-lines-functions-and-blocks).)
+This will allow you see where you code is *not* being tested. (Source: [The documenation for c8](https://github.com/bcoe/c8#ignoring-uncovered-lines-functions-and-blocks).)
 
 ## Ignoring Lines
 
@@ -108,7 +108,7 @@ export default defineConfig({
 });
 ```
 
-You can see all of the options [here]([GitHub - bcoe/c8: output coverage reports using Node.js' built in coverage](https://github.com/bcoe/c8#cli-options--configuration)).
+You can see all of the options \[here]\([GitHub - bcoe/c8: output coverage reports using Node.js' built in coverage](https://github.com/bcoe/c8#cli-options--configuration)).
 
 The cool one here is the ability to set thresholds at which your build will fail if you dip below a certain amount.
 
@@ -502,5 +502,4 @@ By following these practices, you can effectively utilize code coverage in Vites
 - **Understanding Code Coverage Metrics**: [Istanbul.js Documentation](https://istanbul.js.org/docs/advanced/coverage-object/)
 
 ```ts
-
 ```

@@ -95,7 +95,7 @@ Using stubs, you can simulate various responses (e.g., API errors, timeouts, or 
 
 ## Stubs
 
-A _stub_ is a test double that provides pre-determined responses to function calls, typically to replace a real dependency with controlled behavior. Stubs do not track how the function is called; they just serve as replacements that return fixed values.
+A *stub* is a test double that provides pre-determined responses to function calls, typically to replace a real dependency with controlled behavior. Stubs do not track how the function is called; they just serve as replacements that return fixed values.
 
 ### Key Features of Stubs
 
@@ -159,5 +159,4 @@ test('sends a notification', () => {
 - The focus is on ensuring that `notify` is called with the correct arguments.
 
 ```ts
-
 ```

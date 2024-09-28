@@ -10,7 +10,7 @@ Alright, so **`toMatchInlineSnapshot`** — this is one of those sneaky little h
 
 ### What Does it Do?
 
-At a high level, **`toMatchInlineSnapshot`** compares the received value (whatever value your test produces) against a snapshot that’s stored _right in your test file_. That’s the "inline" part. It's like you take a picture of the current output and say, "This is what I expect this value to be in the future." You store that picture, or the _snapshot_, directly in the test. Later, when you run the test again, it compares the current value to that snapshot you saved and makes sure they match, so it catches unintentional changes to your output.
+At a high level, **`toMatchInlineSnapshot`** compares the received value (whatever value your test produces) against a snapshot that’s stored *right in your test file*. That’s the "inline" part. It's like you take a picture of the current output and say, "This is what I expect this value to be in the future." You store that picture, or the *snapshot*, directly in the test. Later, when you run the test again, it compares the current value to that snapshot you saved and makes sure they match, so it catches unintentional changes to your output.
 
 ### When Would You Use It?
 
@@ -18,7 +18,7 @@ This comes in handy when you have somewhat complex output that you don’t want 
 
 So imagine in our little music library—you're working on a function that formats an artist object, including their album list, song titles, etc. That returned object might get a little bloated, and testing every key manually can get out of hand.
 
-Also, if something _does_ change in the snapshot, you can quickly see if it's a desired change or if you've broken something without even touching the test.
+Also, if something *does* change in the snapshot, you can quickly see if it's a desired change or if you've broken something without even touching the test.
 
 ### Example Time 🎸
 
@@ -93,5 +93,4 @@ describe('getArtistInfo', () => {
 There you have it. Simple, powerful, and it saves you from writing 300 `expect` statements for every little property. Now, wouldn't that be a Green Day miracle? 🎶
 
 ```ts
-
 ```

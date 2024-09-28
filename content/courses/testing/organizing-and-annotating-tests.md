@@ -10,7 +10,7 @@ You can group a set of tests into a suite using `describe`. If you don't use `de
 
 The is primarily used for organizing your tests. It's helpful because it allows you to skip or isolate a particular group of tests.
 
-> If you provide a `string` after `npm test` or `npx vitest`, then Vitest will only run the rests with that `string` in the filename. Let's say we have two test files: `math.test.ts` and `words.test.ts`. Running `npm test math` will _only_ run `math.test.ts` and _not_ `words.test.ts`.
+> If you provide a `string` after `npm test` or `npx vitest`, then Vitest will only run the rests with that `string` in the filename. Let's say we have two test files: `math.test.ts` and `words.test.ts`. Running `npm test math` will *only* run `math.test.ts` and *not* `words.test.ts`.
 
 For example, if we ran our suite against `examples/02-test-suites/math.test.ts` (using `npm test math --reporter="verbose" --run`, just to make a point), we would see something like this:
 
@@ -47,7 +47,7 @@ These are fairly similar to what we saw with our individual tests.
 
 - `describe.skip`: Skip this suite.
 - `describe.skipIf`: Skip this suite if the provided value is truthy.
-- `describe.only`: Only run this suite (and any others that use `.only` as well, of course). You probably _don't_ want to accidentally commit this. Trust me. It's embarassing.
+- `describe.only`: Only run this suite (and any others that use `.only` as well, of course). You probably *don't* want to accidentally commit this. Trust me. It's embarassing.
 - `describe.todo`: Marks a suite as something you're going to implement later. This is helpful when you know the kinds of tests that you'll need and and want to keep track of how many you have less.
 - `describe.each`: Used for generating a multiple suites on based on a collection of data. We'll talk about this more in [Parameterizing Tests](parameterizing-tests.md).
 - `describe.concurrent`: Run all of the tests in this suite concurrently. We'll talk about this more in [parallelizing-tests](parallelizing-tests.md).
@@ -362,5 +362,4 @@ describe('API Functions', () => {
 - **Documentation**: Comment complex tests or setups for future reference.
 
 ```ts
-
 ```

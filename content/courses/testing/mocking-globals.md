@@ -23,5 +23,4 @@ vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 ```
 
 ```ts
-
 ```

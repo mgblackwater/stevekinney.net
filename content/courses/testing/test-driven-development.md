@@ -21,5 +21,4 @@ This cycle is often referred to as **Red-Green-Refactor**:
 - **Refactor**: Improve the code.
 
 ```ts
-
 ```

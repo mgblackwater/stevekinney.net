@@ -116,7 +116,7 @@ describe('Calculator', () => {
 
 **Explanation:**
 
-- We set up the DOM in `beforeEach` using `renderCalculator.
+- We set up the DOM in `beforeEach` using \`renderCalculator.
 - We simulate button clicks using `fireEvent.click`.
 - We check that the display shows the correct values.
 
@@ -377,5 +377,4 @@ For further practice and experimentation, you could consider implementing the fo
    - Implement the functionality and write corresponding tests.
 
 ```ts
-
 ```

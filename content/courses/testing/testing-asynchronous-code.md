@@ -28,7 +28,7 @@ test('Asynchronous code has zero expectations', () => {
 });
 ```
 
-Put another way, we can assert that our assertion never—umm—_asserts_.
+Put another way, we can assert that our assertion never—umm—*asserts*.
 
 ```ts
 test.fails('Code inside of callback never runs', () => {
@@ -56,7 +56,7 @@ test('Code inside of callback never runs', (done) => {
 });
 ```
 
-As the comment says, this will _not_ work in Vitest. I only mention it because this course isn't supposed to be Vitest-specific—that's the just the tool we chose to use. Regardless, what follows is _probably_ what you want anyway.
+As the comment says, this will *not* work in Vitest. I only mention it because this course isn't supposed to be Vitest-specific—that's the just the tool we chose to use. Regardless, what follows is *probably* what you want anyway.
 
 ## Using `async`/`await`
 
@@ -88,9 +88,8 @@ The first test fails with the following error:
 + Received "Promise {}"
 ```
 
-> [!TIP] Working with Promises
+> \[!TIP] Working with Promises
 > If you're working with Promises, [Vitest also has some special functionality](testing-promises.md) that you could optionally use.
 
 ```ts
-
 ```

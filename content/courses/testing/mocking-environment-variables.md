@@ -39,5 +39,4 @@ it('the value is restored before running an other test', () => {
 ```
 
 ```ts
-
 ```

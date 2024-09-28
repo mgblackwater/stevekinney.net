@@ -421,5 +421,4 @@ By integrating MSW into your testing workflow with Vitest, you can enhance the r
 - **Setup Overhead**: Initial setup may be more involved compared to simple mocking, but pays off in the long run.
 
 ```ts
-
 ```

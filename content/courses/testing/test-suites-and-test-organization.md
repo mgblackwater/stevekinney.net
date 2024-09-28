@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## 1. The Magic of Test Suites
 
-So, you're hip-deep in writing tests, and suddenly you realize: “Hey, I’m just throwing tests everywhere! This is chaos!" Fear not! _Test suites_ are here to save us from descending into an abyss of spaghetti code hell.
+So, you're hip-deep in writing tests, and suddenly you realize: “Hey, I’m just throwing tests everywhere! This is chaos!" Fear not! *Test suites* are here to save us from descending into an abyss of spaghetti code hell.
 
 In Vitest, a **test suite** is a nice little wrapper where we can group related tests together. Think of them as a box where you can organize your tests by functionality, helping to keep things tidy. A well-organized test suite means future-you (and your teammates) won’t hate current-you for writing a mess.
 
@@ -54,7 +54,7 @@ Ah, beautiful. Like a carefully constructed filing cabinet for your sanity. With
 
 ## 3. Writing Test Files Like a Pro
 
-Great! Now we’re organizing _within_ a file, but what about the files themselves? Here’s a standard structure I like to recommend:
+Great! Now we’re organizing *within* a file, but what about the files themselves? Here’s a standard structure I like to recommend:
 
 ```ts
 src/
@@ -111,6 +111,6 @@ More often than not, you’ll regret overengineering test organization because y
 
 ## 6. Conclusion
 
-Test suites and organized test files aren’t just for your peace of mind—they're also going to help when you need to scale and refactor your project down the line. Imagine hopping back into these files six months later and being able to _easily_ find the tests! Glorious.
+Test suites and organized test files aren’t just for your peace of mind—they're also going to help when you need to scale and refactor your project down the line. Imagine hopping back into these files six months later and being able to *easily* find the tests! Glorious.
 
 So go forth and `describe` yourself some sanity.

@@ -46,5 +46,4 @@ test('number is within range', () => {
 - The matcher is then used in a test to assert that `10` is between `5` and `15`.
 
 ```ts
-
 ```

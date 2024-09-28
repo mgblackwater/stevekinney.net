@@ -10,7 +10,7 @@ Alright, let's dive into **expect(…).toBeUndefined**.
 
 ### What It Does
 
-_expect(…).toBeUndefined_ is pretty straightforward. Surprise, surprise… it checks if the value you’re passing is, in fact, `undefined`. If your value is `undefined`, the test is going to pass. If it’s anything else—like `null`, `0`, or an empty string (even though those sorta feel like "nothing" too)—the test is going to throw some red text at you, because nope, that's _not_ `undefined`.
+*expect(…).toBeUndefined* is pretty straightforward. Surprise, surprise… it checks if the value you’re passing is, in fact, `undefined`. If your value is `undefined`, the test is going to pass. If it’s anything else—like `null`, `0`, or an empty string (even though those sorta feel like "nothing" too)—the test is going to throw some red text at you, because nope, that's *not* `undefined`.
 
 ### When You’d Use It
 
@@ -51,5 +51,4 @@ describe('createAlbum', () => {
 Here, we’re making sure our function is smart enough to leave `description` out when it’s not provided. No description? Cool, it’s `undefined`. ✅
 
 ```ts
-
 ```

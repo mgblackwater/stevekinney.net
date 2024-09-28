@@ -84,12 +84,11 @@ Vitest will search for any tests associated with the given files and run those s
 
 This is perfect for those “oopsie” moments where you’re unsure if you just broke something, but you don’t wanna slog through all the tests. A nice addition to your pre-commit process or even wired into CI/CD stages, if you're that fancy (I envy your coolness).
 
----
+***
 
 To wrap it all up, **`vitest related`** is your ticket to quick, efficient test runs based on what you're currently touching in the code. It’s painless, saves a ton of time, and keeps you in the flow without smashing the brakes of the full test suite. Even better? It feels good. Like sipping a fresh coffee after realizing your tests DO, in fact, pass.
 
-Alright, time to put this knowledge to work! Keep those tests focused and fast, and remember: Just because you _can_ run the entire suite doesn't always mean you _should_.
+Alright, time to put this knowledge to work! Keep those tests focused and fast, and remember: Just because you *can* run the entire suite doesn't always mean you *should*.
 
 ```ts
-
 ```

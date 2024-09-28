@@ -134,5 +134,4 @@ With **Vitest** + **Testing Library**, you’re not just slapping a test togethe
 Now go ahead and click intentionally broken buttons with a smug grin. Your tests have you covered.
 
 ```ts
-
 ```

@@ -60,5 +60,4 @@ If you're finding tons of unnecessary errors because you're strictly matching ex
 And just like that, you'll be writing more flexible tests that'll cause you fewer headaches when things like spaces or punctuation decide to mess with you.
 
 ```ts
-
 ```

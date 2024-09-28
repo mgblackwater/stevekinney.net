@@ -6,11 +6,11 @@ modified: 2024-09-28T11:31:16-06:00
 
 ## toHaveBeenCalledWith: What It Does and Why You’ll Want It
 
-Alright, so _toHaveBeenCalledWith_ is like when you catch your roommate “borrowing” your stuff, and you need the _receipts_. You’re not just interested in whether something got called—you’re like, “I want to know exactly HOW it was called!” Vitest’s _toHaveBeenCalledWith_ is perfect for asserting that a function (especially a mock function—trust me, you’ll mock a lot of things in testing) was called with a specific set of arguments.
+Alright, so *toHaveBeenCalledWith* is like when you catch your roommate “borrowing” your stuff, and you need the *receipts*. You’re not just interested in whether something got called—you’re like, “I want to know exactly HOW it was called!” Vitest’s *toHaveBeenCalledWith* is perfect for asserting that a function (especially a mock function—trust me, you’ll mock a lot of things in testing) was called with a specific set of arguments.
 
-### When Should I Use _toHaveBeenCalledWith_?
+### When Should I Use *toHaveBeenCalledWith*?
 
-You’d use _toHaveBeenCalledWith_ when you want to check that a particular function was called _correctly_—meaning it was called with exactly the right arguments. Imagine you’re testing a function that manages an API call to record a song’s details, and you need to ensure it sends the right payload to the server. You don’t care (right now) about what the API returns. You just care if that interaction happened the way you expect.
+You’d use *toHaveBeenCalledWith* when you want to check that a particular function was called *correctly*—meaning it was called with exactly the right arguments. Imagine you’re testing a function that manages an API call to record a song’s details, and you need to ensure it sends the right payload to the server. You don’t care (right now) about what the API returns. You just care if that interaction happened the way you expect.
 
 ### Real-World Example
 
@@ -76,5 +76,4 @@ Mocking is your best friend here, otherwise you'd be hitting some external API e
 In short, toHaveBeenCalledWith: good for keeping your functions on track and making sure they’re told exactly what to do!
 
 ```ts
-
 ```

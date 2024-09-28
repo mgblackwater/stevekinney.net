@@ -17,7 +17,7 @@ It’s helpful for those situations where you don’t need to validate the entir
 
 **Example:**
 
-Let’s say you’re building a little music library app (we all love Green Day, right?). You have an array of song titles for the album _Dookie_, and you want to check if the fan-favorite "Basket Case" is in that collection.
+Let’s say you’re building a little music library app (we all love Green Day, right?). You have an array of song titles for the album *Dookie*, and you want to check if the fan-favorite "Basket Case" is in that collection.
 
 ```js
 import { describe, it, expect } from 'vitest';
@@ -41,8 +41,8 @@ describe('Green Day Album Tests', () => {
 
 In the array-based test, we’re using `toContain` to verify that `'Basket Case'` is one of the songs in the `dookieSongs` array. Simple!
 
-In the second test, we use it to confirm that the string `album` includes the substring `"Green Day"`. It’s not about the entire string, just whether it _contains_ that snippet.
+In the second test, we use it to confirm that the string `album` includes the substring `"Green Day"`. It’s not about the entire string, just whether it *contains* that snippet.
 
----
+***
 
 And there you have it! Perfect for those "Is this thing in here?" kind of moments.

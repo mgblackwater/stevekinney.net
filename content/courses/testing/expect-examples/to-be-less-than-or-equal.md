@@ -8,11 +8,11 @@ modified: 2024-09-28T11:31:16-06:00
 
 Alright, let’s talk about **`toBeLessThanOrEqual`**.
 
-Picture this: you’re building a feature to check the maximum duration of songs you’ll allow in your music library (nobody wants a 10-minute guitar solo… well, _most_ people don’t). You need to write a test to ensure that all new songs added must be at or below a certain time limit. This is where **`toBeLessThanOrEqual`** comes into play!
+Picture this: you’re building a feature to check the maximum duration of songs you’ll allow in your music library (nobody wants a 10-minute guitar solo… well, *most* people don’t). You need to write a test to ensure that all new songs added must be at or below a certain time limit. This is where **`toBeLessThanOrEqual`** comes into play!
 
 ### What Does `toBeLessThanOrEqual` Do?
 
-In simple terms, **`toBeLessThanOrEqual`** compares two values and ensures the value you're testing is either _less than_ **or** _equal to_ a specific number. So yeah, it’s useful when you want your logic to enforce some upper boundary on a piece of data.
+In simple terms, **`toBeLessThanOrEqual`** compares two values and ensures the value you're testing is either *less than* **or** *equal to* a specific number. So yeah, it’s useful when you want your logic to enforce some upper boundary on a piece of data.
 
 ### When Would You Use It?
 
@@ -49,12 +49,11 @@ describe('Song duration tests', () => {
 });
 ```
 
-In the first test, we’ve got a song that’s **under** the max required limit, so the test passes. In the second test, we’ve snuck in a song that goes over the limit, so it fails if it’s _less-than-or-equal_. Hence, we expect it `not` to pass that test.
+In the first test, we’ve got a song that’s **under** the max required limit, so the test passes. In the second test, we’ve snuck in a song that goes over the limit, so it fails if it’s *less-than-or-equal*. Hence, we expect it `not` to pass that test.
 
 All clear? Bottom line: **use `toBeLessThanOrEqual` whenever you need to check that something falls within or under a cap**. It’s perfect for catching those overly ambitious song lengths (or other data that pushes the envelope!).
 
 Now get out there and cut down on your over-extended songs!
 
 ```ts
-
 ```

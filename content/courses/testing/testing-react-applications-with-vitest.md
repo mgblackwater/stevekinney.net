@@ -186,5 +186,4 @@ The key? Keep your tests small, focused, and fast. And always remember: green me
 Now, go forth and write some awesome tests.
 
 ```ts
-
 ```

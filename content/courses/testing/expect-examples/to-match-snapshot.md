@@ -41,10 +41,9 @@ So what's going on here? First time this runs, it’ll take the structure of the
 
 Let’s keep this realistic though—you're probably not shipping just because your tests passed, right? But knowing when something significant changed without needing to eyeball the entire output is the sneak peek into sanity you didn’t know you needed.
 
----
+***
 
 So when Green Day comes out with extra B-sides or someone messes with the track order, you'll be the first to know! 👀
 
 ```ts
-
 ```

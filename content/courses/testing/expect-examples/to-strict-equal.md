@@ -6,11 +6,11 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## expect.toStrictEqual
 
-Alright, so let's talk about `toStrictEqual`. It’s like that extra-picky friend everyone has. You know the type—the one that notices _everything_ and won't let anything slide. In the realm of testing, `toStrictEqual` is your tool to ensure that what you're comparing checks out down to the tiniest little details.
+Alright, so let's talk about `toStrictEqual`. It’s like that extra-picky friend everyone has. You know the type—the one that notices *everything* and won't let anything slide. In the realm of testing, `toStrictEqual` is your tool to ensure that what you're comparing checks out down to the tiniest little details.
 
 ### What Does it Do?
 
-It’s here to ensure that _every detail_ between two values matches, including object types and properties—nested or otherwise. It’s way more strict than its more laid-back cousin, `toEqual`.
+It’s here to ensure that *every detail* between two values matches, including object types and properties—nested or otherwise. It’s way more strict than its more laid-back cousin, `toEqual`.
 
 #### Object Comparison Rules
 
@@ -18,7 +18,7 @@ It’s here to ensure that _every detail_ between two values matches, including 
 2. Nested objects or arrays? Yep, `toStrictEqual` goes all the way down the rabbit hole to check everything.
 3. It even makes sure that objects are of the exact same instance of a class or prototype.
 
-You'd reach for `toStrictEqual` when you want to make sure two objects (or arrays) are _exactly_ the same in every nuance—no shortcuts allowed. Want to make sure that your object doesn’t have any extra keys or fuzzy type mismatches? Boom, `toStrictEqual`!
+You'd reach for `toStrictEqual` when you want to make sure two objects (or arrays) are *exactly* the same in every nuance—no shortcuts allowed. Want to make sure that your object doesn’t have any extra keys or fuzzy type mismatches? Boom, `toStrictEqual`!
 
 ### Example Time!
 
@@ -60,10 +60,9 @@ In this example, we’ve got two nice and neat album objects with the same struc
 
 Whenever you have complex data structures (think objects with nested data, arrays of objects, etc.) and need your test to verify that there’s no extra junk floating around or weird type behavior happening. If order or type matters, `toStrictEqual` has you covered.
 
-For instance, if `actualAlbum` accidentally had an extra property like `{ coverImage: "Dookie.jpg" }` thrown into it, or if one of those song names was somehow typed as `undefined`, `toStrictEqual` would _absolutely_ catch that mismatch. It's saying, "No extra keys, period. Types must match. Nested properties too."
+For instance, if `actualAlbum` accidentally had an extra property like `{ coverImage: "Dookie.jpg" }` thrown into it, or if one of those song names was somehow typed as `undefined`, `toStrictEqual` would *absolutely* catch that mismatch. It's saying, "No extra keys, period. Types must match. Nested properties too."
 
-It’s strict but fair—just like your very particular friend who knows all the lyrics to _every_ Green Day song.
+It’s strict but fair—just like your very particular friend who knows all the lyrics to *every* Green Day song.
 
 ```ts
-
 ```

@@ -49,5 +49,4 @@ This is great for **regression** testing when you want to lock down the structur
 So next time you’re testing randomly generated files, big ol’ JSON objects, templates, or… anything where exactness matters, give `toMatchFileSnapshot` a go!
 
 ```ts
-
 ```

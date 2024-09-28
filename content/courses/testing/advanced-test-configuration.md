@@ -4,9 +4,9 @@ description: Dive into advanced Vitest configurations for better efficiency.
 modified: 2024-09-28T11:31:42-06:00
 ---
 
-Okay, so you’ve been writing tests, everything runs smoothly, you feel like a testing ninja… and then BAM! You hit this point where **running one test at a time** just isn't cutting it. Or maybe, you’ve got some tests that behave a little… _flaky_. Or even worse, some parts of your app pull in external services that aren’t behaving. Ugh. Don’t worry, we’ve been there too.
+Okay, so you’ve been writing tests, everything runs smoothly, you feel like a testing ninja… and then BAM! You hit this point where **running one test at a time** just isn't cutting it. Or maybe, you’ve got some tests that behave a little… *flaky*. Or even worse, some parts of your app pull in external services that aren’t behaving. Ugh. Don’t worry, we’ve been there too.
 
-In this tutorial, we're going to dive into some more advanced Vitest configurations that’ll make you feel like you're back _in control_. Maybe you've got a large codebase or complex dependencies—don’t freak out! Let’s power up and go deeper.
+In this tutorial, we're going to dive into some more advanced Vitest configurations that’ll make you feel like you're back *in control*. Maybe you've got a large codebase or complex dependencies—don’t freak out! Let’s power up and go deeper.
 
 ## Customizing the `vitest.config.ts`
 
@@ -37,7 +37,7 @@ Let’s knock out something simple but powerful: **path aliases**. If you're dee
 import MyComponent from '../../../../../component/MyComponent';
 ```
 
-_Yikes_, right? Time to leverage Vitest's configurability. You can set up path aliases to tidy things up.
+*Yikes*, right? Time to leverage Vitest's configurability. You can set up path aliases to tidy things up.
 
 ```ts
 // vitest.config.ts
@@ -64,7 +64,7 @@ Neat and readable. Plus, we’re already one step closer to a maintainable codeb
 
 ### 2.2 Handling ESM and CommonJS Together
 
-Ah yes, the modern mess of JavaScript modules. You're probably encountering both in your project, and it can get nasty when you try to test them. Sometimes, you need to treat CommonJS and ESM _differently_. No problem—Vitest’s got you covered.
+Ah yes, the modern mess of JavaScript modules. You're probably encountering both in your project, and it can get nasty when you try to test them. Sometimes, you need to treat CommonJS and ESM *differently*. No problem—Vitest’s got you covered.
 
 ```ts
 export default defineConfig({
@@ -95,7 +95,7 @@ This turns each test file into its own bubble. That means if you're changing `gl
 
 ## 3. Test Timeouts and Reruns
 
-So, what happens when one of your tests drags on, like… for-ev-er. Maybe it depends on network latency or takes a second to spin up resources. You don’t want your test suite hanging just because one test feels a little lazy, right? Vitest lets you set **global timeouts**, but you can configure them on a _test-by-test_ basis too. Get ready to save precious minutes of your life:
+So, what happens when one of your tests drags on, like… for-ev-er. Maybe it depends on network latency or takes a second to spin up resources. You don’t want your test suite hanging just because one test feels a little lazy, right? Vitest lets you set **global timeouts**, but you can configure them on a *test-by-test* basis too. Get ready to save precious minutes of your life:
 
 ### 3.1 Global Timeouts
 
@@ -144,12 +144,11 @@ This way, you're far more selective during your test runs—letting you focus on
 
 ## 5. Conclusion
 
-Well, if you’ve hung with me til now, you’re _fully equipped_. We’ve touched on extending Vitest’s test configuration, smoothing out rough edges, and speeding up your development experience with more intelligent settings.
+Well, if you’ve hung with me til now, you’re *fully equipped*. We’ve touched on extending Vitest’s test configuration, smoothing out rough edges, and speeding up your development experience with more intelligent settings.
 
 The goal here isn’t just about writing squeaky-clean tests—**it’s about staying sane** while doing it. Take these tips as your advanced toolbox to wield Vitest the next time complexity strikes. Headaches be gone.
 
 Happy testing, my friend. Test smart, and test often! 🎉
 
 ```ts
-
 ```

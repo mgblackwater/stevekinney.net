@@ -14,7 +14,7 @@ Maybe you like clean, slick outputs. Maybe you’re an over-the-top text junkie 
 
 ### Default Reporter
 
-By default, Vitest goes with a pretty simple format in your terminal. It's essentially the _classic newsroom feel_: you get a list of all test suites, along with which tests passed or failed.
+By default, Vitest goes with a pretty simple format in your terminal. It's essentially the *classic newsroom feel*: you get a list of all test suites, along with which tests passed or failed.
 
 Let’s simplify this with a quick setup and run:
 
@@ -83,7 +83,7 @@ Translation: Two tests passed (.), and one failed (F). Short, sweet, and ready f
 
 #### Verbose Reporter
 
-Maybe you're more of a _give-me-everything_ kinda person. If you want your test output to feel like a full log of basically every tiny thing going on, the **verbose** reporter is your jam.
+Maybe you're more of a *give-me-everything* kinda person. If you want your test output to feel like a full log of basically every tiny thing going on, the **verbose** reporter is your jam.
 
 ```bash
 npx vitest --reporter verbose
@@ -153,7 +153,7 @@ Boom. Now you’ve got dots in your terminal and JSON data flying wherever you w
 
 Listen, maybe you’re someone who's never satisfied with the built-ins that come with a tool. I get that. You like **control**, you like **tweaks**. Can’t leave anything factory-made. Well, Vitest gives you the power to **write your own reporter**.
 
-You can create a custom reporter by tapping into Vitest’s API, aiming it to collect exactly the test data you’re hungry for and presenting it _just the way you like_.
+You can create a custom reporter by tapping into Vitest’s API, aiming it to collect exactly the test data you’re hungry for and presenting it *just the way you like*.
 
 Here’s a simple example of a custom reporter:
 
@@ -190,5 +190,4 @@ So that’s the deal with Vitest reporters. They’re simple but **powerful** to
 And next time you’re stuck hunting a bug at 2 AM and questioning all your life choices, at least your test suite will be spitting out exactly the results you need—**in the format of your choosing.** Stick around for that satisfaction.
 
 ```ts
-
 ```

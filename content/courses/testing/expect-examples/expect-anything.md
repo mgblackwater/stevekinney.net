@@ -6,7 +6,7 @@ modified: 2024-09-28T11:28:27-06:00
 
 ## expect.anything
 
-Alright, `expect.anything()` is like the “I don’t actually care, just give me something” of testing. It’s super handy when you want to assert that a certain value exists—it can be anything _except_ for `null` or `undefined`. So in those cases where you just want to confirm “something happened,” but the exact value doesn’t matter, this is your go-to.
+Alright, `expect.anything()` is like the “I don’t actually care, just give me something” of testing. It’s super handy when you want to assert that a certain value exists—it can be anything *except* for `null` or `undefined`. So in those cases where you just want to confirm “something happened,” but the exact value doesn’t matter, this is your go-to.
 
 ### When Would I Use It?
 
@@ -28,7 +28,7 @@ export function createSong(title, artist, album) {
 }
 ```
 
-Now, when you test it, you’re absolutely _sure_ that `title`, `artist`, and `album` should be correctly set, but `addedAt`? That’s a dynamic timestamp and you’re, frankly, just trying to get some work done today.
+Now, when you test it, you’re absolutely *sure* that `title`, `artist`, and `album` should be correctly set, but `addedAt`? That’s a dynamic timestamp and you’re, frankly, just trying to get some work done today.
 
 So here’s what the test would look like:
 
@@ -54,7 +54,7 @@ describe('createSong', () => {
 });
 ```
 
-Here, we care a lot about the three main properties (`title`, `artist`, and `album`). But for `addedAt`, we’re like, “just give me _something_,” so that’s where `expect.anything()` swoops in to save you from over-specifying stuff you don’t really need to test here.
+Here, we care a lot about the three main properties (`title`, `artist`, and `album`). But for `addedAt`, we’re like, “just give me *something*,” so that’s where `expect.anything()` swoops in to save you from over-specifying stuff you don’t really need to test here.
 
 ### Gotcha
 

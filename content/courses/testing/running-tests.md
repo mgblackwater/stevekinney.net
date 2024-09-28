@@ -35,5 +35,4 @@ As you've might have noticed, I've already done this for you.
 This means that you can do run `npm test` to run our tests. If you wanted to run it with the UI, you could run `npm test -- --ui` to forward the flag to the `npm` script.
 
 ```ts
-
 ```

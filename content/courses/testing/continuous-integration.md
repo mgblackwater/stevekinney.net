@@ -171,7 +171,9 @@ To ensure everything is working:
   ```
 
 - Create a Pull Request targeting the `main` branch.
+
 - The CI workflow should automatically trigger.
+
 - Check the PR page to see the status of the checks.
 
 ### 8. Handling Test Failures
@@ -250,7 +252,9 @@ To prevent merging code with failing tests:
   ```
 
 - **Parallelize Jobs**: If you have multiple test suites, run them in parallel to reduce total build time.
+
 - **Secure Your Secrets**: Avoid hardcoding sensitive information in workflows. Use GitHub's encrypted secrets.
+
 - **Keep Workflows Updated**: Regularly update action versions to benefit from improvements and security patches.
 
 ## Troubleshooting Tips
@@ -266,13 +270,12 @@ Setting up GitHub Actions to run your Vitest unit tests on each Pull Request enh
 
 ## Additional Resources
 
-- **Vitest Documentation**: [https://vitest.dev/](https://vitest.dev/)
-- **GitHub Actions Documentation**: [https://docs.github.com/en/actions](https://docs.github.com/en/actions)
+- **Vitest Documentation**: <https://vitest.dev/>
+- **GitHub Actions Documentation**: <https://docs.github.com/en/actions>
 - **Caching Dependencies**: [Caching dependencies to speed up workflows](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
 - **GitHub Actions for JavaScript and Node.js**: [Official GitHub guide](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs)
 
 By integrating Vitest with GitHub Actions, you ensure that every piece of code is vetted through your test suite, leading to a more stable and reliable application.
 
 ```ts
-
 ```

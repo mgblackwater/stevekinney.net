@@ -383,5 +383,4 @@ By adopting these practices, you can create a robust test suite that enhances th
 By understanding these aspects, you can use Testing Library effectively in your testing strategy, ensuring that your components meet the needs of your users and function correctly within your application.
 
 ```ts
-
 ```

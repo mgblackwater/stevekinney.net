@@ -75,9 +75,7 @@ afterEach(() => {
 - Use mocks and spies to verify interactions, not internal logic.
 
 ```ts
-
 ```
 
 ```ts
-
 ```

@@ -305,5 +305,4 @@ Snapshot testing with Vitest is a valuable tool for verifying complex outputs wi
   - Limit snapshot size and scope.
 
 ```ts
-
 ```

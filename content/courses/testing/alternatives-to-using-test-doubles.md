@@ -6,7 +6,7 @@ modified: 2024-09-28T11:31:16-06:00
 
 ## Alternatives to Using Test Doubles
 
-Alright, we've all been there. You’re writing a test, and you _could_ mock something out, but it just feels… wrong. You’re sitting there thinking, _“Am I just mocking this thing to keep my test afloat, or is there a better way out of this mess?”_
+Alright, we've all been there. You’re writing a test, and you *could* mock something out, but it just feels… wrong. You’re sitting there thinking, *“Am I just mocking this thing to keep my test afloat, or is there a better way out of this mess?”*
 
 Fear not! Test doubles—those helpful stubs, mocks, and spies—can be super useful, but they’re not always the best option. In fact, overusing them can lead to fragile tests. Let’s take a look at some solid alternatives to using test doubles and learn when we might not need the shiny bells and whistles of a mock library.
 
@@ -35,7 +35,7 @@ Here, there’s no need to stub out anything, no mock need apply, just test the 
 
 ### Use Real Dependencies in Integration Tests
 
-Let’s say your function calls out to _another_ part of your code. The temptation here is to mock that other function and avoid external side effects—but sometimes, letting those dependencies do their thing can give you a better test outcome.
+Let’s say your function calls out to *another* part of your code. The temptation here is to mock that other function and avoid external side effects—but sometimes, letting those dependencies do their thing can give you a better test outcome.
 
 For example, suppose you’ve got a `getUserCart` function that hits some local data store and calls `calculateTotal` under the hood. Instead of mocking `calculateTotal`, make use of it! It’s your code after all, and if your functions work well together, you’ve learned a lot more about your system than with partial mocks.
 
@@ -92,7 +92,7 @@ No need to mock that `CartItem`; it’s simple enough and faster to just use it 
 
 ### Self-Contained Tests
 
-Sometimes, mocks exist to patch a leaky test… but let’s be real—maybe the test isn’t as contained as it _should_ be. If your tests are self-reliant and focused, you don't need all the mock scaffolding to hold them together. Before reaching for a mock, ask yourself: _Should this test need to know about every other part of the system?_ Often the answer is no, and a smaller test means no mocking is needed.
+Sometimes, mocks exist to patch a leaky test… but let’s be real—maybe the test isn’t as contained as it *should* be. If your tests are self-reliant and focused, you don't need all the mock scaffolding to hold them together. Before reaching for a mock, ask yourself: *Should this test need to know about every other part of the system?* Often the answer is no, and a smaller test means no mocking is needed.
 
 ```javascript
 test('correctly sums prices in cart', () => {
@@ -123,8 +123,7 @@ I mean, this is so basic it hurts—but sometimes, we complicate things unnecess
 
 ## Final Thoughts
 
-Don’t get me wrong: mocking _has_ its place (and Vitest does make it super easy to mock things with `vi.fn()`), but it’s a scalpel, not a sledgehammer. Always ask yourself if you can test the real implementation first. _Real code means real results._ If you go this route, your tests will be more reliable, you’ll spend less time worrying about mocking intricacies, and you can laser-focus on breaking your code in ways only _real_ users would. Objectives aligned, mind at ease, testing purified. ✨
+Don’t get me wrong: mocking *has* its place (and Vitest does make it super easy to mock things with `vi.fn()`), but it’s a scalpel, not a sledgehammer. Always ask yourself if you can test the real implementation first. *Real code means real results.* If you go this route, your tests will be more reliable, you’ll spend less time worrying about mocking intricacies, and you can laser-focus on breaking your code in ways only *real* users would. Objectives aligned, mind at ease, testing purified. ✨
 
 ```ts
-
 ```

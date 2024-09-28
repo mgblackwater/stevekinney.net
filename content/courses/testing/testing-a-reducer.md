@@ -50,5 +50,4 @@ Can you make the tests in `items.slice.ts` pass?
 You can see a possible solution [here](testing-a-reducer-solution.md).
 
 ```ts
-
 ```

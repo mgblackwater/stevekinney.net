@@ -51,5 +51,4 @@ test('fetchArtistAlbums resolves correctly on the last call', async () => {
 If you're dealing with a function that resolves multiple promises, and you need to ensure **the last one** resolved with the correct data, `toHaveLastResolvedWith` is your pal!
 
 ```ts
-
 ```

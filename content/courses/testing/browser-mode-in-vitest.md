@@ -8,7 +8,7 @@ modified: 2024-09-28T11:31:16-06:00
 
 Alright folks, we know Vitest does an incredible job making testing in Node environments a breeze. You write tests, Vitest runs 'em, you look brilliant at your next code review—simple, right? Well, things were going great until the day came where I had a **browser-specific bug** blow up my week. Testing the logic wasn’t enough anymore; I had to test it in actual browser conditions. "Cool, easy," I said (lying). Spoiler: Testing in browsers used to be annoying, and I'm probably being gentle there.
 
-But here’s where **Vitest Browser Mode** rides in like a hero. You can now run your Vitest tests _in an actual browser_ but without the headache of setting up a complete Selenium nightmare or manually copying code into devtools. Let’s talk about how to get set up, how it works, and most importantly—how to save yourself several hours of hair-pulling.
+But here’s where **Vitest Browser Mode** rides in like a hero. You can now run your Vitest tests *in an actual browser* but without the headache of setting up a complete Selenium nightmare or manually copying code into devtools. Let’s talk about how to get set up, how it works, and most importantly—how to save yourself several hours of hair-pulling.
 
 ### Why Browser Mode?
 
@@ -38,7 +38,7 @@ This sets you up to run your regular ol’ tests. But hey, what if you want to f
 
 #### Step 2: Configure Vitest for Browser Mode
 
-To make Vitest aware that you want to run in _browser mode_, you just need to tweak the config a bit. If you haven't set up a `vitest.config.js` file—it’s time:
+To make Vitest aware that you want to run in *browser mode*, you just need to tweak the config a bit. If you haven't set up a `vitest.config.js` file—it’s time:
 
 ```javascript
 // vitest.config.js
@@ -100,16 +100,15 @@ Alright, real talk—nothing’s perfect. There are a few things to keep in mind
 
 1. **It’s still not a real browser.** You're not getting every subtlety of a specific Chrome or Firefox version. Remember, this is JSDOM-ified, meaning it's designed to act like a browser rather than being one.
 2. **Performance.** Running tests with `jsdom` can be a bit slower than straight-up Node tests. It’s the cost of emulating browser stuff.
-3. **Browser-specific issues.** Just because something works in Vitest browser mode doesn’t mean it’ll work in _all_ browsers. (I’m looking at you, Internet Explorer.)
+3. **Browser-specific issues.** Just because something works in Vitest browser mode doesn’t mean it’ll work in *all* browsers. (I’m looking at you, Internet Explorer.)
 
 ### Conclusion
 
-Boom! You’ve now got yourself the ability to test in an actual browser environment. You’re no longer stuck hoping that your code for DOM manipulation works correctly—_you'll know it does_. Tell the Node environment to sit down while you flex your browser-testing muscles.
+Boom! You’ve now got yourself the ability to test in an actual browser environment. You’re no longer stuck hoping that your code for DOM manipulation works correctly—*you'll know it does*. Tell the Node environment to sit down while you flex your browser-testing muscles.
 
-The best part about this? Once you’ve set it up, you’re golden for most front-end testing scenarios without having to complicate your testing setup with third-party tools or weird CI integrations. Let Vitest handle the fuss so you can write code that, you know, _works_ in the browser too.
+The best part about this? Once you’ve set it up, you’re golden for most front-end testing scenarios without having to complicate your testing setup with third-party tools or weird CI integrations. Let Vitest handle the fuss so you can write code that, you know, *works* in the browser too.
 
 Happy testing!
 
 ```ts
-
 ```

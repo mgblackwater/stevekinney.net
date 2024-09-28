@@ -64,7 +64,7 @@ jobs:
 Let's break it down:
 
 1. **name**: The name of your workflow. Think of it like a title, so you know what’s going on when looking at GitHub Actions logs. We’re boring here—just calling it "CI".
-2. **on**: This is where you specify when you want the workflow to run. We’re saying, "Run my tests when someone pushes to `main` OR when a pull request is made against _any_ branch."
+2. **on**: This is where you specify when you want the workflow to run. We’re saying, "Run my tests when someone pushes to `main` OR when a pull request is made against *any* branch."
 3. **jobs**: This is where the magic happens—this job runs your test suite.
    - **runs-on**: This specifies the virtual machine that will run the job—in our case, an Ubuntu VM.
 4. **steps**: These are the actions performed during the job:
@@ -105,5 +105,4 @@ Who knew that writing tests could feel so…good?
 Now go forth, and keep shipping that bug-free code. Or at least fewer-bug code. 😉
 
 ```ts
-
 ```

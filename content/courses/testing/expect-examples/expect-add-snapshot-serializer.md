@@ -10,7 +10,7 @@ Okay, so here’s the deal: **expect.addSnapshotSerializer** is one of those nif
 
 ### What Does it Do?
 
-**expect.addSnapshotSerializer** lets you **define** _how_ your data appears in the snapshot file. Sometimes you have objects with tons of properties, but maybe you’re only concerned about a few of them when you capture a snapshot. Or maybe you want to make that object a little easier to read. Instead of dealing with massive, unreadable blobs, this method allows you to implement a serializer that transforms the output to match your preferences.
+**expect.addSnapshotSerializer** lets you **define** *how* your data appears in the snapshot file. Sometimes you have objects with tons of properties, but maybe you’re only concerned about a few of them when you capture a snapshot. Or maybe you want to make that object a little easier to read. Instead of dealing with massive, unreadable blobs, this method allows you to implement a serializer that transforms the output to match your preferences.
 
 ### When Would I Use It?
 

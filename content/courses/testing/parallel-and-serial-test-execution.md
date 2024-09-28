@@ -20,7 +20,7 @@ In Vitest, here's what it looks like in practice (which is actually nothing spec
 vitest
 ```
 
-Boom. That's it. Your tests are parallel unless _you_ tell them otherwise.
+Boom. That's it. Your tests are parallel unless *you* tell them otherwise.
 
 #### When to Use Parallel Execution
 
@@ -33,7 +33,7 @@ Parallel is great—until it’s not. If your tests are making assumptions about
 
 ### 3. Serial Test Execution
 
-But wait, what if you want to run things _in order_? Maybe you're testing something like the progression of a workflow or interacting with a global variable that needs to stay consistent across tests. You don’t want Vitest going all "Wild Wild West" on your workflow by running them at the same time. In those cases, you can switch to running tests serially!
+But wait, what if you want to run things *in order*? Maybe you're testing something like the progression of a workflow or interacting with a global variable that needs to stay consistent across tests. You don’t want Vitest going all "Wild Wild West" on your workflow by running them at the same time. In those cases, you can switch to running tests serially!
 
 Imagine this: You're washing dishes one plate at a time. Not glamorous or fast, but it gets the job done predictably, right? That’s serial execution.
 
@@ -73,7 +73,7 @@ Let's solve the world’s problems (or at least a few testing-related ones):
 
 1. **Prefer parallel testing**: It’ll save you time, frustration, and maybe even some coffee refills. Most tests should be able to run independently.
 2. **Use serial sparingly**: Once you start having tons of serial tests, what you’re really doing is introducing potential bottlenecks. Look twice at those tests and see if there's a design flaw you can fix before you resort to serial.
-3. **Decouple state**: If your tests _need_ to be run in a specific order, ask yourself if there's a better way to write those tests. Could you stub that global state? Could you mock that database? Often, the answer is yes.
+3. **Decouple state**: If your tests *need* to be run in a specific order, ask yourself if there's a better way to write those tests. Could you stub that global state? Could you mock that database? Often, the answer is yes.
 
 ### 5. Wrapping Up
 

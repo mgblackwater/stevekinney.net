@@ -14,7 +14,7 @@ Here’s where **asymmetric matchers** swoop in like our superhero, giving us fl
 
 Think of asymmetric matchers as that friend who’s cool with “close enough.” Unlike regular matchers (which expect an **exact** match), asymmetric matchers let you define the parts you **care about** and ignore the rest. They’re less strict, more forgiving—and sometimes, that’s exactly what you need.
 
-Here’s the big thing: _asymmetric matchers only care about one side of the comparison_. They don’t compare the actual value to a specific expected result; instead, they’ll say, "Meh, I’ll just validate whether this meets my conditions, it doesn’t need to match the whole thing perfectly."
+Here’s the big thing: *asymmetric matchers only care about one side of the comparison*. They don’t compare the actual value to a specific expected result; instead, they’ll say, "Meh, I’ll just validate whether this meets my conditions, it doesn’t need to match the whole thing perfectly."
 
 Let’s meet a couple of these matchers and see how they roll.
 
@@ -54,7 +54,7 @@ Notice that we’re not matching the exact sequence or every single Avenger in t
 
 ### `expect.stringMatching` - Searching for That Needle in a Log Stack
 
-Ever had a string like an error message or some user input where you don’t know the exact wording, but you’re pretty sure it belongs? Welcome to `stringMatching`. Using regex (_yes, the wizardry beloved by developers and feared by future mainteiners_), you can check if your log message or output string passes the vibe check.
+Ever had a string like an error message or some user input where you don’t know the exact wording, but you’re pretty sure it belongs? Welcome to `stringMatching`. Using regex (*yes, the wizardry beloved by developers and feared by future mainteiners*), you can check if your log message or output string passes the vibe check.
 
 ```js
 const logMessage = 'User admin123 successfully logged in at 12:30 AM';
@@ -74,12 +74,12 @@ So when should you use these? Here’s the pro tip: when **exact matches don't m
 
 Let’s be honest, as developers, we live in a world where APIs change, object structures pick up random fields, and arrays never seem to behave long-term. Keeping your tests passing without sacrificing thoroughness is key.
 
-### When _Not_ to Use Them
+### When *Not* to Use Them
 
 Use asymmetric matchers sparingly, though. They can be a slippery slope. You don’t want to end up with every test being so flexible that they’re practically meaningless. Save these matchers for when being exact won’t provide much value and will just clutter your tests.
 
 If you care about every property and value, go ahead and use `toEqual` or `toBe` like a normal matcher. But when the kitchen sink smells and you only care that the faucet’s working, **asymmetric matchers** are the way to go.
 
----
+***
 
 And that’s the magic of asymmetric matchers. Now, go forth and write tests that breathe! Keep ‘em specific to what matters, but not so specific that you get a test failure for wearing the wrong color hoodie. 😎💻

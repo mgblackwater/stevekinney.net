@@ -240,5 +240,4 @@ async function fetchUser() {
 - **Not Cleaning Up**: Failing to reset or clean up resources can cause tests to interfere with each other.
 
 ```ts
-
 ```

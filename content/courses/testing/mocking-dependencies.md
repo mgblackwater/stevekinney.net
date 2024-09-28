@@ -189,5 +189,4 @@ In this example, we mock the entire API module, ensuring the test doesn’t make
 Mocking dependencies is a critical aspect of writing isolated and reliable unit tests. Vitest’s `vi.fn()` and `vi.mock()` methods allow you to mock individual functions or entire modules, giving you full control over external dependencies. Whether you’re mocking APIs, databases, or file systems, mocking ensures that your tests remain predictable, fast, and focused on the logic under test. Always remember to reset or restore mocks after tests to maintain a clean and consistent test environment.
 
 ```ts
-
 ```

@@ -9,5 +9,4 @@ We want to create a new `Post` object. The arguments that it should take are a `
 We want to make sure that we're getting back a similar item to what we're passing in, but it should have an `id` field.
 
 ```ts
-
 ```

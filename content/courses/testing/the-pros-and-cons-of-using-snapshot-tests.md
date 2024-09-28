@@ -18,7 +18,7 @@ It’s the “low-hanging fruit” of testing. The effort is minimal while the i
 
 #### Great for **UI** Components
 
-When you're testing _how_ a UI component looks, snapshots can be a lifesaver. Instead of writing tons of specific tests that inspect each individual property of the component (👀 looking at you, `toEqual` madness), snapshots let you capture the full output and future-proof it. If someone changes the component's rendering, the snapshot will quickly let you know.
+When you're testing *how* a UI component looks, snapshots can be a lifesaver. Instead of writing tons of specific tests that inspect each individual property of the component (👀 looking at you, `toEqual` madness), snapshots let you capture the full output and future-proof it. If someone changes the component's rendering, the snapshot will quickly let you know.
 
 For a developer who just rage-quit tweaking some `div` styling for the hundredth time 🤯, a snapshot test can feel like a warm blanket of peace.
 
@@ -32,13 +32,13 @@ Sometimes you, or someone on your team, makes a "small" change that somehow impa
 
 Okay, so the test fails. What do you do? Look at the diff! No, don’t get lazy on me.
 
-Over time, you may start to just glance at changes and, in a moment of haste, hit `u` (in Vitest/Jest, that's the key to _"update the snapshot please and thank you"_) without checking whether the change is valid. After all, updating the snapshot is easy, right? And who has time to analyze a 200-line snapshot of some absurd UI tree? Well… **sometimes you should**.
+Over time, you may start to just glance at changes and, in a moment of haste, hit `u` (in Vitest/Jest, that's the key to *"update the snapshot please and thank you"*) without checking whether the change is valid. After all, updating the snapshot is easy, right? And who has time to analyze a 200-line snapshot of some absurd UI tree? Well… **sometimes you should**.
 
 If you're snapshotting massive components, you may find yourself ignoring the exact kind of unexpected changes this test should be catching. This leads nicely into the next point…
 
 #### Large Snapshots Are Overwhelming
 
-If you’ve ever seen a snapshot with hundreds of lines of JSX or DOM structure, you know what I’m talking about. You’re stuck scrolling through an endless diff of props and deeply nested elements trying to figure out why the snapshot even _exists_ at this point. **Don’t do that to yourself**.
+If you’ve ever seen a snapshot with hundreds of lines of JSX or DOM structure, you know what I’m talking about. You’re stuck scrolling through an endless diff of props and deeply nested elements trying to figure out why the snapshot even *exists* at this point. **Don’t do that to yourself**.
 
 Snapshots really start to lose their value when they become unwieldy. They morph into noise, obscuring the signal. And if you start snapshotting **everything**—just because you can—you’ll spend more time managing the snapshots than writing the code.
 
@@ -59,5 +59,4 @@ In the end, snapshot testing is like that one office chair that’s super comfy�
 Just be thoughtful in how you use snapshots, and they'll serve you well.
 
 ```ts
-
 ```

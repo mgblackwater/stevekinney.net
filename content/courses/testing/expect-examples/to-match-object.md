@@ -6,13 +6,13 @@ modified: 2024-09-28T11:31:15-06:00
 
 ## `expect.toMatchObject`: The Lowdown
 
-Alright, so let's talk about **`toMatchObject`**. This little guy is super handy when you want to compare objects in your tests, but you don't necessarily care about _every single key_ and _every single value_ being a perfect match. Maybe some values in your object are irrelevant in this context, or you just want to test a few important properties—either way, `toMatchObject` has your back.
+Alright, so let's talk about **`toMatchObject`**. This little guy is super handy when you want to compare objects in your tests, but you don't necessarily care about *every single key* and *every single value* being a perfect match. Maybe some values in your object are irrelevant in this context, or you just want to test a few important properties—either way, `toMatchObject` has your back.
 
 ### When Do You Use It?
 
 You'd use `toMatchObject` when you’re dealing with objects and you're like, “I don’t need to check if all the properties are there; I just want to ensure the ones I care about are correct.” For instance, say you’ve got a monster object with 20 properties, but in this specific test, you only care about, like, 3 of them matching. This is the guy you want.
 
-It’s like saying, _"Hey, JavaScript, match this partial structure and we're good."_
+It’s like saying, *"Hey, JavaScript, match this partial structure and we're good."*
 
 ### Gotchas?
 
@@ -49,7 +49,7 @@ describe('Green Day albums', () => {
 });
 ```
 
-Here, we’re saying, "Look, `toMatchObject`, I don’t care about all the properties in that `album` object. Just check if `artist` and `title` are right. Cool?" And, yeah, if anything's off with _those specific properties_, Vitest is going to give you the ol' red X.
+Here, we’re saying, "Look, `toMatchObject`, I don’t care about all the properties in that `album` object. Just check if `artist` and `title` are right. Cool?" And, yeah, if anything's off with *those specific properties*, Vitest is going to give you the ol' red X.
 
 ### Wrapping It All Up
 

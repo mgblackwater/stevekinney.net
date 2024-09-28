@@ -34,12 +34,11 @@ describe('getBandInfo function', () => {
 
 In this case, we're calling `mockGetBandInfo()` three times and using `toHaveReturnedTimes(3)` to check whether it successfully returned something three times. If it didn’t? Well, the test would let you know about your shenanigans.
 
----
+***
 
 ### Real-World Use
 
 You’d use this in situations where there's logic in your app that depends on functions completing and returning values a specific number of times—a pagination function, or maybe, like in our little example, something working through a list of albums or artists. If your app relies on repeated calls and responses, **toHaveReturnedTimes** is a great way to tame that chaos and ensure things work as expected.
 
 ```ts
-
 ```
