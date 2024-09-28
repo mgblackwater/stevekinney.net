@@ -24,7 +24,7 @@ modified: 2024-09-28T18:32:10.824Z
 9. [Conclusion](#conclusion)
 10. [Additional Exercises](#additional-exercises)
 
-***
+---
 
 ### Introduction
 
@@ -52,8 +52,6 @@ In this guide, we'll build a simple **"Guess the Number"** game using **Test-Dri
    mkdir guess-the-number-tdd
    cd guess-the-number-tdd
    ```
-
-````
 
 2. **Initialize npm**
 
@@ -517,10 +515,3 @@ To further enhance your "Guess the Number" game and testing skills, consider imp
 ---
 
 By extending the game and writing tests for new features, you'll deepen your understanding of TDD and improve your testing proficiency.
-
-Happy coding and testing!
-
-```
-
-```
-````

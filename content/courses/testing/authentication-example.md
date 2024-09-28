@@ -2,7 +2,7 @@
 title: Building An Authentication System Using Test-Driven Development With
   Express And Vitest
 description: Learn how to create an authentication system with TDD using Express and Vitest.
-modified: 2024-09-28T18:32:10.867Z
+modified: 2024-09-28T17:47:03-06:00
 ---
 
 ## Building an Authentication System Using Test-Driven Development with Express and Vitest
@@ -26,8 +26,6 @@ modified: 2024-09-28T18:32:10.867Z
 9. [Running the Tests](#running-the-tests)
 10. [Conclusion](#conclusion)
 11. [Additional Exercises](#additional-exercises)
-
-***
 
 ### Introduction
 
@@ -55,8 +53,6 @@ Building a secure authentication system is a critical aspect of many web applica
    mkdir auth-system-tdd
    cd auth-system-tdd
    ```
-
-````
 
 2. **Initialize npm**
 
@@ -118,37 +114,6 @@ Building a secure authentication system is a critical aspect of many web applica
 5. **Repeat**: Continue with the next functionality.
 
 This cycle is often referred to as **Red-Green-Refactor**.
-
-### Setting Up Express with Vitest
-
-1. **Configure Vitest**
-
-   Create a `vitest.config.js` file in the root directory:
-
-   ```javascript
-   // vitest.config.js
-   import { defineConfig } from 'vitest/config';
-
-   export default defineConfig({
-   	test: {
-   		globals: true,
-   		environment: 'node',
-   	},
-   });
-   ```
-
-2. **Update `package.json` Scripts**
-
-   ```json
-   {
-   	"scripts": {
-   		"start": "node src/app.js",
-   		"test": "vitest",
-   		"test:watch": "vitest --watch",
-   		"coverage": "vitest run --coverage"
-   	}
-   }
-   ```
 
 ### Designing the Authentication System
 
@@ -717,14 +682,3 @@ To further enhance your authentication system and testing skills, consider imple
 
    - Use tools to audit your code for security vulnerabilities.
    - Address any issues found and write tests to prevent regressions.
-
----
-
-By extending the authentication system and writing tests for new features, you'll deepen your understanding of TDD and improve your testing proficiency in a Node.js environment.
-
-Happy coding and testing!
-
-```
-
-```
-````

@@ -24,7 +24,7 @@ modified: 2024-09-28T18:32:11.126Z
 10. [Conclusion](#conclusion)
 11. [Additional Exercises](#additional-exercises)
 
-***
+---
 
 ### Introduction
 
@@ -52,8 +52,6 @@ In this guide, we'll build the classic game of **Tic Tac Toe** using **Test-Driv
    mkdir tic-tac-toe-tdd
    cd tic-tac-toe-tdd
    ```
-
-````
 
 2. **Initialize npm**
 
@@ -807,8 +805,3 @@ To further enhance your Tic Tac Toe game and testing skills, consider implementi
 
    - Integrate code coverage reporting with Vitest.
    - Analyze the coverage report to identify untested code paths.
-
-```
-
-```
-````

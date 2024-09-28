@@ -20,14 +20,14 @@ Testing increases your confidence that your applications will function as expect
 
 In this course, we're going try to have a bias towards being hands-on and only delve into the philosophical bits when absolutely necessary. I'd prefer we spend our time writing tests rather than talking about writing tests. That said, I do have a bunch of materials on the thinking around best practices in terms of testing and you're more than welcome to go through them at your leisure.
 
-- [The Structure of a Unit Test](structure-of-/courses/testing/a-unit-test)
+- [The Structure of a Unit Test](/courses/testing/structure-of-a-unit-test)
 - [The Types of Tests: Unit, Integration, End-to-End](/courses/testing/types-of-tests)
-- [Components of a Test: Test Runners and Assertion Libraries](test-runners-/courses/testing/and-assertion-libraries)
+- [Components of a Test: Test Runners and Assertion Libraries](/courses/testing/test-runners-and-assertion-libraries)
 - [Assert Versus Expect](/courses/testing/assert-versus-expect)
 - [Mocking: Best Practices and Common Pitfalls](/courses/testing/mocking-best-practices)
 - [What is Test Driven Development?](/courses/testing/test-driven-development)
-- [Organizing and Annotating Your Tests](organizing-/courses/testing/and-annotating-tests)
-- [Strategies for Testing Conditional Logic](strategies-for-/courses/testing/testing-conditional-logic)
+- [Organizing and Annotating Your Tests](/courses/testing/organizing-and-annotating-tests)
+- [Strategies for Testing Conditional Logic](/courses/testing/strategies-for-testing-conditional-logic)
 
 ## Libraries and Tools Used
 
