@@ -1,10 +1,8 @@
 ---
 title: toBeTruthy in Vitest
 description: Learn how to use the.toBeTruthy() matcher in Vitest testing.
-modified: 2024-09-28T18:44:44.310Z
+modified: 2024-09-28T12:52:57-06:00
 ---
-
-## Understanding `toBeTruthy` in Vitest
 
 Alright, let’s talk about `toBeTruthy`. The `.toBeTruthy()` matcher is a pretty straightforward tool in your testing toolbox. You’ll want to bust this one out when you need to confirm that *something* evaluates to `true` in a "truthy" way. Now, let's pause for a sec and define "truthy" here.
 
@@ -12,11 +10,11 @@ In JavaScript, "truthy" values are things that aren't `false`, `0`, `null`, `und
 
 You’d use `.toBeTruthy()` when the actual value doesn’t need to exactly be `true`, but it needs to be something that can stand in for `true`.
 
-### When to Use it
+## When to Use it
 
 Use `.toBeTruthy()` when you want to check if a value's existence or result is meaningful enough for JavaScript to consider it as "truthy." Maybe you’re testing some user input or a variable that shouldn't be empty but doesn’t need to be the literal boolean `true`.
 
-### Example
+## Example
 
 Let’s say in our glorious and completely over-engineered music library, we’re checking if an artist has a name (because unnamed artists are bad UI, right?). We’re not here to validate the exact name, we’re just verifying that something truthy exists. That’s where `.toBeTruthy()` shines.
 
@@ -39,7 +37,7 @@ it('fails to find an artist name', () => {
 });
 ```
 
-### What Happens here
+## What Happens here
 
 In the first test, `getArtistName(artist)` returns `"Green Day"`, which is a truthy value ('cause it’s a non-empty string), so the test passes.
 

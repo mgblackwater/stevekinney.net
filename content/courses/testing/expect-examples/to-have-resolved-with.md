@@ -1,16 +1,14 @@
 ---
 title: toHaveResolvedWith in Vitest
 description: Check if a Promise resolves with the expected value using Vitest.
-modified: 2024-09-28T18:44:44.324Z
+modified: 2024-09-28T12:53:58-06:00
 ---
-
-## ToHaveResolvedWith
 
 Alright, so let's talk about **`toHaveResolvedWith`**. Picture this: you’ve got yourself a **Promise**, maybe it's an API call, maybe it's some async function doing the heavy lifting in your app. You expect it to resolve with a certain value.
 
 Now, if it resolves successfully and gives you that expected output, **`toHaveResolvedWith`** is your testing buddy that checks whether the resolution matches the value you expect. This comes in handy when you're testing asynchronous code, and you want to make sure those Promises resolve with the right stuff. Testing async logic used to feel like wrestling a greased pig, but **Vitest** makes it way less slippery with this matcher.
 
-### When to Use It
+## When to Use It
 
 You’ll want to reach for **`toHaveResolvedWith`** when you:
 
@@ -19,7 +17,7 @@ You’ll want to reach for **`toHaveResolvedWith`** when you:
 
 Think of **`toHaveResolvedWith`** as a cousin to **`toEqual`** but specialized for **Promises** instead of regular values.
 
-### Example in Action
+## Example in Action
 
 Alright, let's assume you're working on that *naïve music library* and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
 
@@ -52,7 +50,7 @@ test('getArtistInfo resolves with correct artist data', async () => {
 });
 ```
 
-### What's Going On Here?
+## What's Going On Here?
 
 - **`getArtistInfo`** is an async function, and we expect it to eventually resolve with the Green Day details (obviously!).
 - **`expect(getArtistInfo())`** grabs the returned Promise.

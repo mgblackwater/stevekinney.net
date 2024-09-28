@@ -1,17 +1,15 @@
 ---
 title: toHaveLength in Vitest
-modified: 2024-09-28T18:44:44.326Z
+modified: 2024-09-28T12:53:41-06:00
 ---
-
-## Vitest's `toHaveLength`
 
 So you're knee-deep in your test file, and you're dealing with arrays, strings—basically anything that has a `length` property. You just need to assert, “Yo, this thing has exactly 'x' items or characters in it.” That's where `toHaveLength` comes in.
 
-### What Does it Do?
+## What Does it Do?
 
 The `toHaveLength` matcher is used to check that an object, array, or string has a specific length. It’s great when you’re dealing with lists, collections, or any sequence-like thing, and you need to ensure it contains the expected number of elements, characters, or whatever.
 
-### When Would I Use It?
+## When Would I Use It?
 
 - You’ve got an array of albums, and it better have *exactly* the number of albums you expect.
 - You’re testing a string input, like the name of an artist, and you need to check it’s not too short (seriously, no artist name should have just one letter).
@@ -19,7 +17,7 @@ The `toHaveLength` matcher is used to check that an object, array, or string has
 
 Basically, if you want to assert the count of *anything*, `toHaveLength` is your jam.
 
-### Example
+## Example
 
 Let’s say we’ve got a simple music library structure like this.
 

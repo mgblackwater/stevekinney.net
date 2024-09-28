@@ -1,18 +1,16 @@
 ---
 title: expect.anything in Vitest
 description: Learn how to use expect.anything() for flexible value checks.
-modified: 2024-09-28T18:44:44.358Z
+modified: 2024-09-28T12:51:01-06:00
 ---
-
-## expect.anything
 
 Alright, `expect.anything()` is like the “I don’t actually care, just give me something” of testing. It’s super handy when you want to assert that a certain value exists—it can be anything *except* for `null` or `undefined`. So in those cases where you just want to confirm “something happened,” but the exact value doesn’t matter, this is your go-to.
 
-### When Would I Use It?
+## When Would I Use It?
 
 Imagine you’ve got a function that returns an object. Some properties of that object you want to check for specific values—but others? Meh, maybe they change based on some other voodoo you don’t need to validate in this particular test. That’s where `expect.anything()` comes in. You can tell Vitest, "I expect this key to exist, but don’t sweat the details."
 
-### Example
+## Example
 
 Let’s say we have a lovely function called `createSong` for our humble music library. It takes some info about a song and returns an object representing it.
 
@@ -56,6 +54,6 @@ describe('createSong', () => {
 
 Here, we care a lot about the three main properties (`title`, `artist`, and `album`). But for `addedAt`, we’re like, “just give me *something*,” so that’s where `expect.anything()` swoops in to save you from over-specifying stuff you don’t really need to test here.
 
-### Gotcha
+## Gotcha
 
 Remember, `expect.anything()` won’t match `null` or `undefined`. If that’s what you’re after, you’ll need something else or maybe question if that test is bringing joy. Otherwise, you’re good to go! 🎸

@@ -1,16 +1,14 @@
 ---
 title: toThrowErrorMatchingInlineSnapshot in Vitest
 description: Learn how to assert errors with inline snapshots in Vitest.
-modified: 2024-09-28T18:44:44.347Z
+modified: 2024-09-28T12:55:10-06:00
 ---
-
-## expect().toThrowErrorMatchingInlineSnapshot
 
 Alright, so here’s the deal: `expect().toThrowErrorMatchingInlineSnapshot()` is used to assert that a function throws an error **matching a predefined inline snapshot**. This might sound a little abstract, but it’s incredibly useful when you need to make sure that a function is not just throwing *any* ol' error, but that it's throwing THE EXACT error message you expect. And to make things better (and less annoying), it allows you to **“snapshot” the error message** within your tests, often auto-generating it the first time it runs. Vitest will take a mental picture of the error and then compare future test runs against that snapshot to ensure the error doesn’t mysteriously change.
 
 So why would you use this? Well, it's great if you’ve got a function that should throw a specific type of error, and you don’t want to hard-code and maintain that error message inside every test. Instead, Vitest remembers it for you. One less thing for us developers to have to keep in our brains. Woohoo.
 
-### Example
+## Example
 
 Let’s say we’ve got a music library system, and you want to prevent anyone from adding songs to an album that are **over 10 minutes long**, because we’re not running the infinite jam band playlist here, folks.
 
@@ -44,14 +42,14 @@ describe('addSongToAlbum', () => {
 });
 ```
 
-### What Happens Here?
+## What Happens Here?
 
 - The `expect(() => addSongToAlbum(…))` part is us saying "Hey, I expect this function call to explode with an error."
 - `.toThrowErrorMatchingInlineSnapshot()` says, "Compare that exploding error against the snapshot string I provide you, please."
 
 The cool bit is that if the snapshot doesn’t exist (like running this test for the first time), Vitest can **auto-generate** this snapshot for you. Next time you run that test, it’s like, “Yeah, looks the same, all good,” unless the error message changes unexpectedly—then it’ll yell at you.
 
-### When to Use It?
+## When to Use It?
 
 You want this when:
 

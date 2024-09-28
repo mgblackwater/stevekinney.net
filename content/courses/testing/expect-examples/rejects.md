@@ -1,12 +1,9 @@
 ---
 title: rejects in Vitest
 description: Testing promises that are expected to fail using expect.rejects.
-modified: 2024-09-28T18:44:44.350Z
-tags:
-  - 999
+modified: 2024-09-28T12:51:40-06:00
+tags: [999]
 ---
-
-## `expect.rejects`
 
 Alright, so the `rejects` method is your go-to tool when you're dealing with promises that are expected to fail—you know, your classic async "everything's fine… just kidding" situation.
 
@@ -14,11 +11,11 @@ Think about it: sometimes you write functions that return promises, and the thin
 
 `expect.rejects` allows you to say: "Yo, this promise *better* throw an error, or else something isn't quite right."
 
-### When You'd Use It:
+## When You'd Use It:
 
 Use `expect.rejects` when you want to confirm that a promise will reject—basically when failure is part of the plan (looking at you, unreliable third-party APIs—we see you). It's perfect for making sure your error handling works, or that invalid inputs properly tank the operation instead of returning some awkward undefined result.
 
-### Example:
+## Example:
 
 Let’s say we’ve got a function `findAlbumById` that searches for albums in our music library (where, for the sake of our example, if the album doesn’t exist, it rejects the promise).
 
@@ -50,7 +47,7 @@ test('findAlbumById rejects when the album is not found', async () => {
 });
 ```
 
-### Breakdown:
+## Breakdown:
 
 - We call `findAlbumById` with `'999'`, which isn't in the list of albums (sorry, folks, no secret Green Day album #999 here).
 - We use `expect.rejects.toThrow()` to check that the promise rejects with the exact error message *“Album not found”*.

@@ -1,10 +1,8 @@
 ---
 title: toContain in Vitest
-description: Learn how to check if values exist in data using Vitest's toContain.
-modified: 2024-09-28T18:44:44.415Z
+description: "Learn how to check if values exist in data using Vitest's toContain."
+modified: 2024-09-28T12:53:05-06:00
 ---
-
-## Vitest’s `toContain`
 
 Alright, so you’ve got this data, and you want to check if something is in it. You know, like a song in an album or an album in a collection. That's where `toContain` comes in! It's a matcher used to check if a certain value exists inside strings or arrays. Nice, right?
 

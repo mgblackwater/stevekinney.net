@@ -1,20 +1,18 @@
 ---
 title: toHaveResolved in Vitest
 description: Understanding how to use the toHaveResolved matcher in Vitest.
-modified: 2024-09-28T18:44:44.305Z
+modified: 2024-09-28T12:53:52-06:00
 ---
-
-## `toHaveResolved` In Vitest
 
 Great question! Alright, let’s dive in. The `toHaveResolved` matcher in Vitest is all about promises. Specifically, you'd use it when you want to test that a promise **resolves** successfully, meaning the promise doesn't throw an error and "fulfilled" without blowing things up.
 
 If you're working with anything asynchronous in JavaScript—especially promises—you’ll find yourself needing to check whether a specific promise got resolved (versus being rejected). In real life, you'd likely use it when you're writing some async code: fetching data, interacting with APIs, that sort of thing.
 
-### When Would I Use It?
+## When Would I Use It?
 
 Let's say you're writing a function that fetches albums for a particular artist from your music library app, and you need to make sure the promise resolves correctly. You don’t really care at this point what the returned data looks like (that’s for another test maybe), you just wanna make sure the promise is doing its job and not throwing a fit.
 
-### Example
+## Example
 
 Suppose we have an `fetchAlbumsForArtist` function that returns a list of albums for Green Day (duh). Here's how that might look when you want to test if it resolves successfully:
 
@@ -36,7 +34,7 @@ it('should resolve the promise for fetching albums', async () => {
 });
 ```
 
-### Break it Down:
+## Break it Down:
 
 1. **The Function**: `fetchAlbumsForArtist('Green Day')` simulates an async function fetching Green Day's albums.
 2. **The Test**: We use `await` to handle the promise. Because, you know, async.

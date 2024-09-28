@@ -1,10 +1,8 @@
 ---
 title: toHaveProperty in Vitest
 description: Learn how to use the toHaveProperty matcher in Vitest.
-modified: 2024-09-28T18:44:44.377Z
+modified: 2024-09-28T12:53:50-06:00
 ---
-
-## toHaveProperty in Vitest
 
 Ah, **`toHaveProperty`**—this little gem is one of those matchers that once you get the hang of it, you'll find yourself using it *all the time*. Here's what it does in a nutshell:
 
@@ -14,7 +12,7 @@ Ah, **`toHaveProperty`**—this little gem is one of those matchers that once yo
 
 Alright, let’s hit this with some code. You know we love a good Green Day example over here, so let’s assume we’ve got an album object.
 
-### Example
+## Example
 
 ```javascript
 import { describe, it, expect } from 'vitest';
@@ -45,7 +43,7 @@ Then, we’re going a step further to ensure that the `artist` property is speci
 
 This keeps your tests clean, concise, and readable, and it prevents that tough debugging headache when something *almost* works… but not quite.
 
-### Closing Thoughts
+## Closing Thoughts
 
 In the end, **`toHaveProperty`** is a down-to-business kind of matcher. You call it when you *probably* have an object, but you need to make sure it's the right kind of object. Maybe it's missing the `artist`, or maybe the `title` is wrong—who knows? But `toHaveProperty` ensures things are *where they're supposed to be*. And honestly, isn’t that what we all want in life and code?
 

@@ -1,10 +1,8 @@
 ---
 title: toContainEqual in Vitest
 description: Use toContainEqual to check deep equality in arrays of objects.
-modified: 2024-09-28T18:44:44.277Z
+modified: 2024-09-28T12:53:09-06:00
 ---
-
-## toContainEqual in Vitest
 
 Alright, picture this: You've got an array, and that array is filled with objects. Now, you want to make sure that it contains an object that matches another object you're testing against. This is where `toContainEqual` comes in clutch.
 

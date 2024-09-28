@@ -1,10 +1,8 @@
 ---
 title: toHaveBeenLastCalledWith in Vitest
 description: Learn how to use the toHaveBeenLastCalledWith matcher in Vitest.
-modified: 2024-09-28T18:44:44.357Z
+modified: 2024-09-28T12:53:27-06:00
 ---
-
-## ToHaveBeenLastCalledWith In Vitest
 
 Okay, so picture this: You've got a function, right? Let's say it's `createAlbum`. You’re calling it left and right in your app with different arguments, but you only *really* care about the very last call it got. Like, who cares about the first one from some random place in the app, right?
 
@@ -16,7 +14,7 @@ You'll want to use this when you:
 2. Don’t care about how or when it was called before (because every time before the last one was a warm-up lap).
 3. Need to assert that the very last call went through as intended.
 
-### Example
+## Example
 
 You’re working on our little music management app. We’ve got an `addSongToAlbum` function that’s supposed to add a song to the latest album. So, you mock `addSongToAlbum` to make sure it was last called with the right song and album.
 

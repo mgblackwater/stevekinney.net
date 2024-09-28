@@ -1,18 +1,16 @@
 ---
 title: toStrictEqual in Vitest
 description: Understanding toStrictEqual for detailed object comparisons in tests.
-modified: 2024-09-28T18:44:44.405Z
+modified: 2024-09-28T12:55:01-06:00
 ---
-
-## expect.toStrictEqual
 
 Alright, so let's talk about `toStrictEqual`. It’s like that extra-picky friend everyone has. You know the type—the one that notices *everything* and won't let anything slide. In the realm of testing, `toStrictEqual` is your tool to ensure that what you're comparing checks out down to the tiniest little details.
 
-### What Does it Do?
+## What Does it Do?
 
 It’s here to ensure that *every detail* between two values matches, including object types and properties—nested or otherwise. It’s way more strict than its more laid-back cousin, `toEqual`.
 
-#### Object Comparison Rules
+### Object Comparison Rules
 
 1. All keys and values need to match, and types matter.
 2. Nested objects or arrays? Yep, `toStrictEqual` goes all the way down the rabbit hole to check everything.
@@ -20,7 +18,7 @@ It’s here to ensure that *every detail* between two values matches, including 
 
 You'd reach for `toStrictEqual` when you want to make sure two objects (or arrays) are *exactly* the same in every nuance—no shortcuts allowed. Want to make sure that your object doesn’t have any extra keys or fuzzy type mismatches? Boom, `toStrictEqual`!
 
-### Example Time!
+## Example Time!
 
 Imagine we're working on that music library app. Let’s write a test that checks if an album object is exactly as we expect it to be—no extra properties sneaking in, no type gotchas.
 
@@ -56,7 +54,7 @@ describe('Album Comparison', () => {
 
 In this example, we’ve got two nice and neat album objects with the same structure. The `toStrictEqual` assertion will verify that `actualAlbum` matches `expectedAlbum` in every way—nested objects, arrays, the whole shebang.
 
-#### When Would You Use This?
+### When Would You Use This?
 
 Whenever you have complex data structures (think objects with nested data, arrays of objects, etc.) and need your test to verify that there’s no extra junk floating around or weird type behavior happening. If order or type matters, `toStrictEqual` has you covered.
 
