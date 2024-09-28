@@ -1,12 +1,15 @@
 ---
-modified: 2024-09-07T15:13:46-06:00
+modified: 2024-09-16T13:32:36-06:00
 ---
+
 Yes. Node runs JavaScript just like the browser. It's also missing a bunch of stuff that you'll normally find in your browser of choice—namely, the DOM.
 
-## Using JSDOM with Vitest
+## Using a DOM Library with Vitest
+
+To use [JSDOM](https://www.npmjs.com/package/jsdom), you can set it as the environment for your tests.
 
 ```js
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	test: {
@@ -14,3 +17,104 @@ export default defineConfig({
 	},
 });
 ```
+
+Alternatively, you could choose to use [Happy DOM](https://www.npmjs.com/package/happy-dom).
+
+```js
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+	test: {
+		environment: 'happy-dom',
+	},
+});
+```
+
+## What's the Difference?
+
+### TL;DR
+
+- Choose **JSDOM** if you need **accuracy** and a more realistic browser environment for testing.
+- Choose **Happy DOM** if you need **speed** and don't require full browser standards for your tests.
+
+### Comparison Between **JSDOM** and **Happy DOM**
+
+Both **JSDOM** and **Happy DOM** are JavaScript libraries used to simulate the browser environment in a Node.js runtime, enabling server-side testing of web components and DOM interactions without a real browser. However, they have some key differences in terms of performance, feature set, and use cases.
+
+### Purpose & Usage
+
+#### JSDOM
+
+- A widely used tool that provides a complete, standards-compliant implementation of the DOM and web APIs in Node.js.
+- Focused on mimicking the browser environment as closely as possible.
+- Popular for testing libraries like **Jest** and **Vitest** when working with frameworks such as React, Vue, and Angular.
+- Best for tests that need a realistic browser-like environment.
+
+#### Happy DOM
+
+- A faster, lightweight alternative to JSDOM, designed for **speed**.
+- Primarily focused on performance, making it ideal for use in environments like **Vitest** where quick DOM manipulation and fast feedback loops are critical.
+- Good for simpler tests where speed is more important than strict adherence to web standards.
+- Optimized for minimal memory usage and rapid execution.
+
+### Performance
+
+#### JSDOM
+
+- Known to be slower than Happy DOM due to its emphasis on accurately replicating the full browser environment.
+- Higher memory usage because of its detailed implementation of web APIs and the DOM.
+- May be slower for large test suites or performance-critical applications.
+
+#### Happy DOM
+
+- Much **faster** than JSDOM due to its lightweight design and reduced complexity.
+- Optimized for **speed**, making it a better choice for large test suites or cases where performance is a priority.
+- Faster DOM manipulation and rendering, making it ideal for quick testing in a CI environment.
+
+### Browser API Support
+
+#### JSDOM
+
+- Provides a more **comprehensive** implementation of web standards and browser APIs (e.g., DOM, CSSOM, Fetch API, etc.).
+- More accurate in emulating a browser-like experience, which is necessary when testing complex browser behaviors.
+
+#### Happy DOM
+
+- Focuses on a **subset** of essential browser APIs that are most commonly used in testing.
+- Less complete than JSDOM in terms of implementing the full browser API, but covers most common use cases.
+- For simpler web apps, Happy DOM may provide all the necessary features without the overhead of full standards compliance.
+
+### Use Cases
+
+#### JSDOM
+
+- **Best for projects** where you need a close approximation of the actual browser environment, especially when testing web applications or libraries that heavily rely on advanced browser features.
+- Ideal for comprehensive **end-to-end testing** that simulates real-world browser behavior.
+
+#### Happy DOM
+
+- **Best for fast testing** environments where performance is crucial (e.g., unit tests, simple DOM manipulations).
+- Often used in libraries like **Vitest** for **lightweight, speedy testing** in web projects.
+
+### Community & Ecosystem
+
+#### JSDOM
+
+- A well-established tool with a large user base and strong integration into popular testing frameworks like **Jest** and **Mocha**.
+- Regularly updated to stay compatible with the latest web standards.
+
+#### Happy DOM
+
+- Gaining popularity due to its integration with **Vitest** and its speed benefits.
+- Still developing its ecosystem but is growing in adoption, especially for performance-sensitive projects.
+
+### Quick Summary
+
+| Feature          | **JSDOM**                                     | **Happy DOM**                             |
+| ---------------- | --------------------------------------------- | ----------------------------------------- |
+| **Focus**        | Browser-like accuracy                         | Performance and speed                     |
+| **Performance**  | Slower, more memory usage                     | Faster, low memory usage                  |
+| **API Coverage** | More comprehensive                            | Focuses on essential web APIs             |
+| **Use Case**     | Full browser simulation in tests              | Lightweight testing with speed            |
+| **Integration**  | Popular in Jest, Mocha                        | Popular in Vitest, fast test environments |
+| **Best for**     | Complex web apps, real-world browser behavior | Fast unit/integration tests, simple DOM   |

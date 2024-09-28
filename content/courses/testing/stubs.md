@@ -1,10 +1,6 @@
 ---
-modified: 2024-09-14T10:31:06-06:00
+modified: 2024-09-17T11:20:07-06:00
 ---
-
-**Objective**: Learn how to use stubs to isolate code dependencies.
-
-## What Are Stubs
 
 A stub is a type of test double used to replace a real function with a simplified, controlled version for testing purposes. The primary purpose of a stub is to simulate the behavior of real code by providing predefined responses. Stubs do not track how often a function is called or with what arguments—it only replaces the real implementation to ensure that tests run in a predictable, isolated environment.
 
@@ -30,7 +26,7 @@ Here’s how you create a simple stub:
 const fetchStub = vi.fn(() => Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' }));
 ```
 
-In this example, `fetchStub` will always return a resolved promise with predefined data, simulating an API response. This can be used to replace an actual network request in a test.
+`fetchStub` will always return a resolved promise with predefined data, simulating an API response. This can be used to replace an actual network request in a test.
 
 ## Example: Stubbing External Dependencies (e.g., API Calls, File System interactions)
 
@@ -102,7 +98,7 @@ A _stub_ is a test double that provides pre-determined responses to function cal
 - **Isolation**: Stubs help isolate the function under test from the actual implementation of its dependencies.
 - **Simplicity**: Stubs are simple replacements and do not track or record how many times they were called or with which arguments.
 
-### Example
+### An Example
 
 Imagine a function that fetches concert data from an API. You can create a stub to simulate the API returning data without making a real network call.
 

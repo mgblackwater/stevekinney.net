@@ -1,14 +1,8 @@
 ---
-modified: 2024-09-14T10:35:11-06:00
+modified: 2024-09-16T14:41:09-06:00
 ---
 
-Testing Library is a family of libraries that help you test UI components in a way that resembles how users interact with your application. When used with Vitest, a fast and modern testing framework, it provides a powerful and efficient way to write reliable tests for your React applications.
-
-This post explores how to use Testing Library with Vitest to test React components effectively. We'll discuss best practices, benefits, potential pitfalls, and help you understand when Testing Library is the right choice for your testing needs.
-
-## What is Testing Library?
-
-Testing Library is designed to encourage writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would. The React Testing Library (`@testing-library/react`) is specifically tailored for testing React components.
+[Testing Library](https://testing-library.com/) is designed to encourage writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would.
 
 ## Why Use Testing Library?
 
@@ -32,7 +26,7 @@ npm install --save-dev vitest @testing-library/react @testing-library/jest-dom j
 
 **Configure Vitest to Use JSDOM:**
 
-In your `vitest.config.js` file, set the `test` environment to `'jsdom'`:
+In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `happy-dom`). Just like we did in [Testing the DOM](testing-the-dom.md).
 
 ```javascript
 // vitest.config.js

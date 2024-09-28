@@ -1,20 +1,23 @@
 ---
-modified: 2024-09-14T10:30:36-06:00
+modified: 2024-09-17T11:22:35-06:00
 ---
 
-A spy is a type of test double used to monitor and record information about function calls without modifying the function's actual behavior by default. Spies are used to observe how functions are called during execution, allowing you to verify details like the number of times a function was invoked, the arguments passed to it, and its return values. Unlike stubs or mocks, spies do not replace the function with predefined behavior unless explicitly configured to do so.
+A spy is a type of [test double](test-doubles.md) used to monitor and record information about function calls without modifying the function's actual behavior by default. Spies are used to observe how functions are called during execution, allowing you to verify details like the number of times a function was invoked, the arguments passed to it, and its return values. Unlike stubs or mocks, spies do not replace the function with predefined behavior unless explicitly configured to do so.
 
 Spies are particularly useful when you want to check interactions within the system under test while allowing the real function to execute as usual.
 
+## Key Features of Spies
+
+- **Tracking Behavior**: Spies can track whether a function was called, how many times it was called, and with what arguments.
+- **Verification**: You can use spies to verify that certain functions were triggered under the right conditions.
+- **Non-intrusive**: Spies do not modify the function’s original behavior unless explicitly configured to do so.
+
 ## When to Use Spies
 
-Use spies when:
 - You want to verify how many times a function is called and with what arguments.
 - The function you are testing interacts with external or internal functions, and you need to monitor those interactions.
 - You want to confirm whether a callback or handler was invoked during a specific operation.
 - You are testing functions that are not easily isolatable or modifiable, but you still need to observe their usage.
-
-Spies are ideal when you need to track function calls without altering the real behavior of the system being tested.
 
 ## Creating a Spy in Vitest
 
@@ -28,7 +31,7 @@ const spy = vi.spyOn(console, 'log');
 
 This spy will watch the `console.log` function and record how many times it was called, the arguments passed to it, and other call details.
 
-## Example: Spying on Function Calls, Parameters, and return Values
+## Spying on Function Calls, Parameters, and Return Values
 
 Let’s go through an example where we spy on a function and verify its behavior. Consider a function that logs an error message when a ticket sale fails:
 
@@ -116,60 +119,7 @@ Spies give you powerful control over testing interactions, allowing you to valid
 - `toHaveLastReturnedWith(value)`: Passes if the function most recently returned with value you specify.
 - `toHaveNthReturnedWith(time, value)`: Passes if the function returned whichever time you specified with the value you specified.
 
-## Spies
-
-A _spy_ is a test double that allows us to monitor and record the interactions with a function. A spy keeps track of details like how many times the function was called, what arguments were passed to it, and what the function returned. However, unlike stubs, spies usually do not alter the behavior of the function by default.
-
-### Key Features of Spies
-
-- **Tracking Behavior**: Spies can track whether a function was called, how many times it was called, and with what arguments.
-- **Verification**: You can use spies to verify that certain functions were triggered under the right conditions.
-- **Non-intrusive**: Spies do not modify the function’s original behavior unless explicitly configured to do so.
-
-### Example
-
-You might use a spy to ensure a logging function is called when a ticket sale fails:
-
-```js
-// Spy on the console.error function
-const errorSpy = vi.spyOn(console, 'error');
-
-// Simulate a function that logs an error
-function handleTicketSaleError() {
-	console.error('Error: Sale failed');
-}
-
-// Call the function and check if the spy was triggered
-handleTicketSaleError();
-expect(errorSpy).toHaveBeenCalledWith('Error: Sale failed');
-```
-
-In this case, the spy ensures that the `console.error` function was called with the correct error message.
-
-### Setting Up Vitest for Test Doubles
-
-Vitest comes with built-in support for creating mocks, spies, and stubs using the `vi` global object.
-
-Install Vitest (if not already installed):
-
-```bash
-npm install --save-dev vitest
-```
-
-### Using Spies in Vitest
-
-A **spy** wraps a function and allows you to monitor its calls.
-
-**Example: Spying on a Function**
-
-```javascript
-// math.js
-export function add(a, b) {
-  return a + b;
-}
-```
-
-**Test:**
+## Another Example: Basic Math
 
 ```javascript
 // math.test.js

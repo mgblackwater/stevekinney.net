@@ -1,3 +1,12 @@
+---
+modified: 2024-09-16T11:08:46-06:00
+---
+
+From inside of [companion repository](https://github.com/stevekinney/introduction-to-testing), we're going to navigate to `examples/basic-math`. You'll see that we have two files in `src`:
+
+- `calculator.js`
+- `calculator.test.js`
+
 You can use `vitest` to run your tests.
 
 ```sh
@@ -18,5 +27,7 @@ For our use cases, we have it defined in our `package.json`. For example, you mi
 	// more stuff…
 }
 ```
+
+As you've might have noticed, I've already done this for you.
 
 This means that you can do run `npm test` to run our tests. If you wanted to run it with the UI, you could run `npm test -- --ui` to forward the flag to the `npm` script.

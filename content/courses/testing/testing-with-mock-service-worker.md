@@ -1,7 +1,8 @@
 ---
-modified: 2024-09-14T10:25:14-06:00
+modified: 2024-09-17T11:34:05-06:00
 ---
 
+## Longer Version
 
 Mocking external network requests is a crucial part of testing applications that rely on APIs. **Mock Service Worker (MSW)** is a powerful tool that allows you to intercept and mock network requests at the network level. When combined with **Vitest**, a fast and modern JavaScript testing framework, you can create robust and reliable tests for your applications.
 

@@ -1,5 +1,5 @@
 ---
-modified: 2024-09-14T09:44:25-06:00
+modified: 2024-09-16T13:26:32-06:00
 ---
 
 As with almost everything in JavaScript, asynchronous code makes everything harder.
@@ -38,7 +38,7 @@ test.fails('Code inside of callback never runs', () => {
 });
 ```
 
-In some frameworks, you'd be able to do something like this:
+In some frameworks, you'd be able to do something like this.
 
 ```ts
 // 🚨 This will not work in Vitest.
@@ -54,22 +54,23 @@ test('Code inside of callback never runs', (done) => {
 });
 ```
 
+As the comment says, this will *not* work in Vitest. I only mention it because this course isn't supposed to be Vitest-specific—that's the just the tool we chose to use. Regardless, what follows is *probably* what you want anyway.
 ## Using `async`/`await`
 
-That said, we no longer live in a world riddled with callbacks. These days, most of our asynchronous code either uses `async`/`await` or—at least—uses promises.
+We no longer live in a world riddled with callbacks. These days, most of our asynchronous code either uses `async`/`await` or—at least—uses promises.
 
 Consider the following two tests:
 
 ```ts
 const addAsync = (a: number, b: number) => Promise.resolve(a + b);
 
-test.fails("does fails if you don't use an async function", () => {
+it.fails("fails if you don't use an async function", () => {
 	const result = addAsync(2, 3);
 
 	expect(result).toBe(5);
 });
 
-test('passes if use an `async/await`', async () => {
+it('passes if use an `async/await`', async () => {
 	const result = await addAsync(2, 3);
 
 	expect(result).toBe(5);
@@ -84,38 +85,5 @@ The first test fails with the following error:
 + Received "Promise {}"
 ```
 
-## Testing Promises
-
-Alternatively, if you want to work with a promise. You can make expectations of what it resolves to:
-
-```ts
-test('passes if we expect it to resolve', () => {
-	const result = addAsync(2, 3);
-
-	expect(result).resolves.toBe(5);
-});
-```
-
-We can also expect rejection:
-
-```ts
-test('passes if we expect it to reject to particular value', () => {
-	const result = onlyEvenNumbers(5);
-
-	expect(result).rejects.toBe(5);
-});
-```
-
-`await` works just fine for the happy path, but it can be a little gross when we're expecting something to reject.
-
-```ts
-it('allows us to catch the error in an async/await', async () => {
-	expect.assertions(1);
-
-	try {
-		await onlyEvenNumbers(5);
-	} catch (error) {
-		expect(error).toBe(5);
-	}
-});
-```
+> [!TIP] Working with Promises
+> If you're working with Promises, [Vitest also has some special functionality](testing-promises.md) that you could optionally use.

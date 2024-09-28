@@ -1,49 +1,38 @@
 ---
-modified: 2024-09-14T10:32:04-06:00
+modified: 2024-09-17T12:16:47-06:00
 ---
 
-## **Best Practices and Patterns**
-
-**Objective**: Understand best practices for using mocks, stubs, and spies effectively.
-
-- When to use mocks, stubs, and spies (and when not to).
-- Keeping tests simple and focused.
-- Avoiding over-mocking and fragile tests.
-- Structuring tests for readability and maintainability.
-
-### Best Practices
-
-#### 1. Mock Only What You Need
+## 1. Mock Only What You Need
 
 - **Avoid Over-Mocking**: Mocking too much can make tests less valuable.
 - **Mock External Dependencies**: Focus on mocking APIs, databases, or modules outside your control.
 
-#### 2. Reset Mocks Between Tests
+## 2. Reset Mocks Between Tests
 
 - **Ensure Isolation**: Use `vi.clearAllMocks()` or `vi.resetAllMocks()` in `afterEach` to reset mocks.
 
   ```javascript
   afterEach(() => {
-    vi.clearAllMocks();
+  	vi.clearAllMocks();
   });
   ```
 
-#### 3. Use Spies to Verify Interactions
+## 3. Use Spies to Verify Interactions
 
 - **When Not to Mock**: If you want to test the actual implementation but still verify interactions, use spies.
 
-#### 4. Keep Tests Readable
+## 4. Keep Tests Readable
 
 - **Descriptive Names**: Name your mocks and spies clearly to enhance readability.
 - **Arrange-Act-Assert Pattern**: Organize tests into setup, execution, and verification phases.
 
-#### 5. Be Cautious with Global Mocks
+## 5. Be Cautious with Global Mocks
 
 - **Restore Globals**: When mocking global objects (like `fetch` or `console`), ensure they are restored after the test.
 
-### Common Pitfalls and How to Avoid Them
+## Common Pitfalls and How to Avoid Them
 
-#### Overusing Mocks
+### Overusing Mocks
 
 **Issue**: Over-mocking can lead to tests that pass even when the code is broken.
 
@@ -52,7 +41,7 @@ modified: 2024-09-14T10:32:04-06:00
 - Mock only the external dependencies.
 - Allow the code under test to execute as much real logic as possible.
 
-#### Mock Leakage Between Tests
+### Mock Leakage Between Tests
 
 **Issue**: Mocks retain state between tests, causing unexpected behavior.
 
@@ -60,7 +49,7 @@ modified: 2024-09-14T10:32:04-06:00
 
 - Use `vi.resetAllMocks()` or `vi.clearAllMocks()` in a `beforeEach` or `afterEach` hook.
 
-#### Forgetting to Restore Mocked Modules
+### Forgetting to Restore Mocked Modules
 
 **Issue**: Mocked modules persist across tests.
 
@@ -70,11 +59,11 @@ modified: 2024-09-14T10:32:04-06:00
 
   ```javascript
   beforeEach(() => {
-    vi.resetModules();
+  	vi.resetModules();
   });
   ```
 
-#### Testing Implementation Details
+### Testing Implementation Details
 
 **Issue**: Tests break when internal implementation changes, even if the external behavior is the same.
 

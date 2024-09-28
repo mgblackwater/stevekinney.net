@@ -1,5 +1,5 @@
 ---
-modified: 2024-09-07T14:25:45-06:00
+modified: 2024-09-16T11:36:35-06:00
 ---
 
 If we take what we learned in the previous section, then we might assume that these tests should pass.
@@ -18,7 +18,7 @@ test.fails('a test with an object', () => {
 
 But, they don't. Why?
 
-In JavaScript, the `toBe()` assertion checks for referential equality, meaning that it compares the memory references of the objects being compared. In the tests above, the arrays and objects are not considered equal because they are different instances in memory, even though their contents are the same.
+In JavaScript, the `toBe()` assertion checks for **referential equality**, meaning that it compares the memory references of the objects being compared. In the tests above, the arrays and objects are not considered equal because they are different instances in memory, even though their contents are the same.
 
 To fix this, you can use the `toEqual()` assertion instead, which performs a deep comparison of the objects' properties. This will ensure that the values within the arrays and objects are compared, rather than their memory references.
 

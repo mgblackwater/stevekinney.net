@@ -1,8 +1,8 @@
 ---
-modified: 2024-09-09T17:54:02-06:00
+modified: 2024-09-16T13:19:45-06:00
 ---
 
-Promises are a fundamental part of modern JavaScript, especially when dealing with asynchronous code such as API calls, file I/O, or database queries. When writing tests, it's crucial to ensure that your code behaves correctly when working with promises. Vitest provides several methods to handle promises in a straightforward way, whether they resolve successfully or reject with errors.
+You _could_ use the strategies from [Testing Asynchronous Code](testing-asynchronous-code.md), but let's dig in just a little bit more on promises, in particular.
 
 ## Why Test Promises?
 
@@ -61,7 +61,7 @@ In this test, the promise is expected to reject with an error, and `expect(…).
 
 Vitest provides convenient matchers `.resolves` and `.rejects` to test promises directly without needing `async/await`. These matchers allow you to write more concise and readable tests for both successful and failed promise scenarios.
 
-### Testing Resolved Promises:
+### Testing Resolved Promises
 
 ```js
 describe('fetchBandData', () => {
@@ -74,7 +74,7 @@ describe('fetchBandData', () => {
 
 In this example, the test checks if the promise resolves with the expected data using `.resolves.toEqual()`.
 
-### Testing Rejected Promises:
+### Testing Rejected Promises
 
 ```js
 describe('fetchBandDataWithError', () => {
@@ -121,7 +121,7 @@ describe('getConcertDetails', () => {
 
 In this test, the `api.fetchConcerts` function is mocked to return a resolved promise. You can similarly mock it to return a rejected promise and test the error handling flow.
 
-## Testing Multiple Promises (Promise.all)
+## Testing Multiple Promises with `Promise.all`
 
 When working with multiple promises in your code, you might need to test them collectively using `Promise.all()`. In Vitest, you can ensure that all promises resolve correctly by awaiting `Promise.all` in your tests.
 
@@ -186,6 +186,6 @@ describe('delayedBandData', () => {
 
 In this example, `vi.useFakeTimers()` allows us to simulate the 3-second delay in the promise without waiting for real time to pass.
 
-## Conclusion
+## A Quick Summary
 
 Testing promises in Vitest is essential for ensuring that your asynchronous code behaves as expected. Whether you're testing resolved promises, rejected promises, or handling multiple async operations, Vitest provides clear and effective tools like `async/await`, `.resolves`, `.rejects`, and mock functions. Additionally, using fake timers for timeouts ensures that tests remain fast and reliable. By fully testing promises, you can catch edge cases, handle errors properly, and build more robust applications.

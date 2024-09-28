@@ -1,10 +1,19 @@
 ---
-modified: 2024-09-14T10:29:58-06:00
+modified: 2024-09-17T11:32:12-06:00
 ---
 
-## The Short Version
-
 The TL;DR of mocking is that sometimes we need to swap out things we don't control with things that we _do_. For example, it might be outside of the scope of our test to make sure that a third-party API goes down. Or, if that API isn't free, you don't necessarily want to run up a bill every time you run your test suite, right?
+
+A _mock_ is a more powerful and flexible type of [test doubles](test-doubles.md) that can both define behavior (like a [stub](stubs.md)) and record information (like a [spy](spies.md)). Mocks allow you to specify exactly how a function should behave, including return values, thrown errors, or complex interactions, while also tracking the number of calls and arguments passed.
+
+> [!NOTE] Best Practices and Common Pitfalls
+> We'll cover this in the slides, but you can review the [best practices and common pitfalls with mocking here](mocking-best-practices.md)
+
+## Key Features of Mocks
+
+- **Configurable Behavior**: Mocks can replace the actual implementation and allow you to configure how they behave in different test cases.
+- **Recording Calls**: Like spies, mocks keep track of how many times a function was called and with what arguments.
+- **Versatile**: Mocks combine the benefits of both stubs and spies, making them useful in more complex testing scenarios.
 
 You can create a mock function using `vi.fn()` (or, `jest.fn()`), which takes a callback function. If you you don't provide one, it'll just use an empty function as the implementation (e.g. `() => undefined`).
 
@@ -30,18 +39,6 @@ expect(number).toHaveReturnedWith(5000);
 - `mockRejectedValue`: Rejects a promise with the error provided.
 - `mockRejectedValueOnce`: Rejects a promise with the error provided _next time_.
 - `mockReturnThis`: Sets the value of `this`.
-
-### The Longer Version
-
-Mocks are a type of test double that not only replace the real implementation of a function but also allow you to define how the function behaves. Mocks simulate real objects and systems with behavior that can be controlled during tests, making them particularly useful when testing complex interactions. Additionally, mocks track how often a function is called, what arguments it was called with, and can return specific values or throw errors, making them more powerful and flexible than spies or stubs.
-
-A _mock_ is a more powerful and flexible type of test double that can both define behavior (like a stub) and record information (like a spy). Mocks allow you to specify exactly how a function should behave, including return values, thrown errors, or complex interactions, while also tracking the number of calls and arguments passed.
-
-### Key Features of Mocks:
-
-- **Configurable Behavior**: Mocks can replace the actual implementation and allow you to configure how they behave in different test cases.
-- **Recording Calls**: Like spies, mocks keep track of how many times a function was called and with what arguments.
-- **Versatile**: Mocks combine the benefits of both stubs and spies, making them useful in more complex testing scenarios.
 
 ### Example
 

@@ -1,78 +1,83 @@
 ---
-modified: 2024-09-14T10:17:11-06:00
-base: /courses/storybook
+modified: 2024-09-17T12:28:37-06:00
+base: /courses/testing
 layout: contents
 exclude: true
 ---
 
-## Practical Applications
+## The Basics
 
-- [Writing tests: The very basics](the-basics.md)
-- [Running your tests](running-tests.md)
-- Exercise: [Basic Mathematics](basic-math.md)
-	- Exercise: [Testing For Errors](testing-for-errors-exercise.md)
-- [toBe or not toBe](to-be-or-not-to-be.md)
+- [Writing Your First Tests](the-basics.md)
+- [Running Tests](running-tests.md)
+- [Filtering Tests](filtering-tests.md)
+- [Organizing and Annotating Tests](organizing-and-annotating-tests.md)
+- [Basic Mathematics](basic-math.md)
+- [Testing for Errors](testing-for-errors-exercise.md)
+- [Referential Equality](expect-to-equal.md)
 - [Understanding Assertions](vitest-assertions.md)
-- [Asymmetric matchers](asymmetric-matchers.md)
-- [Hooks: Setting Up and Tearing Down](setting-up-and-tearing-down-with-hooks.md)
-	- Exercise: [Testing a reducer](testing-a-reducer.md)
-- Great Expectations: Common matchers and assertions
-	- Exercise: [Check the prefix](exercise-string-matching.md)
-	- Exercise: [Ignore the ID](exercise-ignore-the-id.md)
-	- Exercise: [Add the current date](exercise-add-timestamp.md)
-- [Running a subset of your tests](filtering-tests.md)
+- [Asymmetric Matchers](asymmetric-matchers.md) ([Exercise](asymmetric-matchers-exercise.md), [Solution](asymmetric-matchers-solution.md))
+- [Hooks: Setting Up and Tearing Down](setting-up-and-tearing-down-with-hooks.md) ([Exercise](vitests-hooks-exercise.md), [Solution](vitest-hooks-solution.md))
+- [Testing a Reducer](testing-a-reducer.md)
 - [Testing Asynchronous Code](testing-asynchronous-code.md)
-	- [Testing promises](testing-promises.md)
-- [Organizing and annotating your tests](organizing-and-annotating-tests.md)
-- [Testing the DOM](testing-the-dom.md)
-	- [Testing Library](testing-library.md)
-	- [User Event](user-event.md)
-	- Example: [Testing a Calculator with Testing Library](testing-a-calculator-dom.md)
+- [Testing Promises](testing-promises.md)
 - [Testing the Unhappy Path™](unhappy-path.md)
-- [Throwing and catching](testing-errors.md)
-- [Test Doubles](test-doubles.md)
-	- Introduction to [Stubs](stubs.md)
-	- Using [Spies](spies.md) in Vitest
-		- [Spies Exercise](spies-exercise.md)
-	- Creating [Mocks](mocks.md) with Vitest
-		- [Clearing, Restoring, and Resetting Mocks](clearing-mocks.md)
-		- [Mocking Modules and Imports](mocking-modules.md)
-		- [Mocking Globals](mocking-globals.md)
-		- [Mocking environment variables](mocking-environment-variables.md)
-		- [Mocking APIs with Mock Service Worker](mocking-apis.md)
-		- [Mocks Exercise](exercise-mocks.md)
-		- [Best Practices and Common Pitfalls with Mocking](mocking-best-practices.md)
-		- [Mocking Examples](mocking-examples.md)
-	- Advanced: [Testing Time](mocking-time.md)
-		- Exercise: [Time Since](exercise-time-since.md)
-	- [Mock Service Worker](testing-with-mock-service-worker.md)
-	- [Handling Asynchronous Code with Mocks, Stubs, and Spies](async-mocking.md)
-	- [Best Practices and Patterns](mocking-best-practices.md)
-	- [Mini-Project](mocking-project.md)
-	- [Overriding Object Properties](overriding-object-properties.md)
-	- [Checking Arguments](checking-arguments.md)
-	- [Mocking Dependencies](mocking-dependencies)
-	- Example: [AST Walker](exercise-ast-walker.md)
-	- Exercise: [`filterMap`](exercise-filter-map.md)
-- [Expecting the expected](expect-assertions.md)
+
+## Testing the DOM
+
+- [Testing the DOM](testing-the-dom.md)
+- [Testing Library](testing-library.md)
+- [Testing a Calculator with Testing Library](testing-a-calculator-dom.md)
+- [Testing Library with React](testing-library-with-react.md)
+- [Refactoring with User Event](accident-counter-with-user-event.md)
+
+## Faking It
+
+- [What Are Test Doubles?](test-doubles.md)
+- [Stubs](stubs.md)
+- [Spies](spies.md) ([Exercise](spies-exercise.md))
+- [Mocks](mocks.md)
+- [Clearing, Restoring, and Resetting Mocks](clearing-mocks.md)
+- [Overriding Object Properties](overriding-object-properties.md)
+- [Mocking Modules and Imports](mocking-modules.md)
+- [Mocking Dependencies](mocking-dependencies.md)
+- [Mocking Globals](mocking-globals.md)
+- [Mocking Environment Variables](mocking-environment-variables.md)
+- [Testing Time](mocking-time.md) ([Exercise](exercise-time-since.md))
+- [Mock Service Worker](testing-with-mock-service-worker.md)
+- Exercise: [Mocking Mini-Project](mocking-project.md)
+- Example: [Checking Arguments](checking-arguments.md)
+- Example: [AST Walker](exercise-ast-walker.md)
+- Exercise: [`FilterMap`](exercise-filter-map.md)
 
 ## Next Steps
 
-- [Snapshot testing](snapshot-testing.md)
+- [Snapshot Testing](snapshot-testing.md)
 - Reporters
-- Strategies for testing conditional logic
-- [Setting up continuous integration](continuous-integration.md)
-- [Code coverage](code-coverage.md)
-- [Testing types](testing-types.md)
-- Browser mode
-- [Test context](test-context.md)
-- [Testing workspaces in mono-repositories](workspaces.md)
+- Strategies for Testing Conditional Logic
+- [Setting Up Continuous Integration](continuous-integration.md)
+- [Code Coverage](code-coverage.md)
+- [Testing Types](testing-types.md)
+- Browser Mode
+- [Test Context](test-context.md)
+- [Testing Workspaces in Mono-Repositories](workspaces.md)
+- [Custom Matchers in Vitest](custom-matchers-in-vitest.md)
 
 ## Ivory Tower
 
-- [The structure of a unit test](structure-of-a-unit-test.md)
-- The importance of testing
-- [The types of tests: Unit, integration, end-to-end](types-of-tests.md)
-- [Components of a test: Test runners and assertion libraries](test-runners-and-assertion-libraries.md)
-- [How tests work](how-tests-work.md)
-- Assert versus expect
+- [How Tests Work](how-tests-work.md)
+- [The Structure of a Unit Test](structure-of-a-unit-test.md)
+- [The Types of Tests: Unit, Integration, End-to-End](types-of-tests.md)
+- [Components of a Test: Test Runners and Assertion Libraries](test-runners-and-assertion-libraries.md)
+- [Assert Versus Expect](assert-versus-expect.md)
+
+## Example Applications
+
+- [Tic-Tac-Toe Example](tic-tac-toe-example.md)
+- [Task List Example](task-list-example.md)
+- [Authentication Example](authentication-example.md)
+- [Guess the Number Example](guess-the-number-example.md)
+
+## Appendix
+
+- [Mocking Examples](mocking-examples.md)
+- [Best Practices and Common Pitfalls with Mocking](mocking-best-practices.md)
