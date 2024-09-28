@@ -1,7 +1,7 @@
 ---
 title: "Setting The Stage: Testing React Hooks"
 description: Learn how to test React hooks using Vitest and Testing Library.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.984Z
 ---
 
 ## Setting the Stage: Testing React Hooks

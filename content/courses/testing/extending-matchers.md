@@ -1,7 +1,7 @@
 ---
-title: Extending Matchers In Vitest
+title: Extending Matchers
 description: Learn how to extend custom matchers in Vitest with examples.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.895Z
 ---
 
 ## Extending Matchers in Vitest

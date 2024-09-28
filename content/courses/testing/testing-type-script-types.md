@@ -1,7 +1,7 @@
 ---
 title: Testing Typescript Types With Vitest
 description: Learn how to test TypeScript types effectively using Vitest and TSD.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.852Z
 ---
 
 ## Testing TypeScript Types with Vitest

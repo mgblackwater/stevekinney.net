@@ -1,7 +1,7 @@
 ---
 title: Mocking Fetch And Network Requests With Vitest
 description: Learn how to mock fetch and network requests using Vitest.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.174Z
 ---
 
 ## Mocking Fetch and Network Requests with Vitest

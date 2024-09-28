@@ -1,7 +1,7 @@
 ---
 title: Testing The DOM With Vitest
 description: Learn how to test DOM interactions using Vitest and DOM Testing Library.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.871Z
 ---
 
 ## Testing the DOM with Vitest

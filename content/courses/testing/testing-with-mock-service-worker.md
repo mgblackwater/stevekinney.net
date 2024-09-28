@@ -1,7 +1,7 @@
 ---
 title: Using Mock Service Worker With Vitest For API Testing
 description: Learn how to use Mock Service Worker with Vitest for API testing.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.858Z
 ---
 
 ## Longer Version

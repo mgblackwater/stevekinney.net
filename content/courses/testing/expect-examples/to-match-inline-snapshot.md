@@ -1,7 +1,7 @@
 ---
 title: toMatchSnapshot
-description: Learn how to use`toMatchInlineSnapshot` in Vitest for testing.
-modified: 2024-09-28T11:31:15-06:00
+description: Learn how to usetoMatchInlineSnapshot in Vitest for testing.
+modified: 2024-09-28T18:32:11.357Z
 ---
 
 ## Vitest’s `toMatchInlineSnapshot`

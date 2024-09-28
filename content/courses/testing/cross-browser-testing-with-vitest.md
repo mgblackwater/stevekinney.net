@@ -1,7 +1,7 @@
 ---
 title: Cross-Browser Testing with Vitest
 description: Learn how to perform cross-browser testing with Vitest and Playwright.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:10.944Z
 ---
 
 ## Cross-Browser Testing with Vitest

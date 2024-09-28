@@ -1,7 +1,7 @@
 ---
 title: Building A Tic Tac Toe Game Using Test-Driven Development With Vitest
 description: Learn to build a Tic Tac Toe game using TDD and Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.126Z
 ---
 
 ## Building a Tic Tac Toe Game Using Test-Driven Development with Vitest

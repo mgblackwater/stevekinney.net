@@ -1,7 +1,7 @@
 ---
 title: expect.hasAssertions
 description: Ensures at least one expectation is made in a test block.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.260Z
 ---
 
 ## expect.hasAssertions

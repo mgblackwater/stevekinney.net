@@ -1,7 +1,7 @@
 ---
 title: Advanced Test Configuration With Vitest
 description: Dive into advanced Vitest configurations for better efficiency.
-modified: 2024-09-28T11:31:42-06:00
+modified: 2024-09-28T18:32:10.915Z
 ---
 
 Okay, so you’ve been writing tests, everything runs smoothly, you feel like a testing ninja… and then BAM! You hit this point where **running one test at a time** just isn't cutting it. Or maybe, you’ve got some tests that behave a little… *flaky*. Or even worse, some parts of your app pull in external services that aren’t behaving. Ugh. Don’t worry, we’ve been there too.

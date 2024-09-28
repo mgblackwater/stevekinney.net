@@ -1,7 +1,7 @@
 ---
 title: Running Tests with Vitest
 description: Learn how to run tests using Vitest and Vitest UI in your project.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.877Z
 ---
 
 From inside of [companion repository](https://github.com/stevekinney/introduction-to-testing), we're going to navigate to `examples/basic-math`. You'll see that we have two files in `src`:

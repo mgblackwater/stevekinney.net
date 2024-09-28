@@ -1,7 +1,7 @@
 ---
 title: Type Testing With Vitest
 description: Example configurations for type testing using Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.058Z
 ---
 
 ```js

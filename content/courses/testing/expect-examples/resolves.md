@@ -1,7 +1,7 @@
 ---
-title: "Vitest's `expect(...).resolves`"
-description: Learn how to test promises using `resolves` in Vitest.
-modified: 2024-09-28T11:31:16-06:00
+title: Vitest's expect(...).resolves
+description: Learn how to test promises using resolves in Vitest.
+modified: 2024-09-28T18:32:11.289Z
 ---
 
 ## Vitest's `expect(…).resolves`

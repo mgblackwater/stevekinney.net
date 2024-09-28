@@ -1,7 +1,7 @@
 ---
 title: expect.closeTo
 description: Learn how expect.closeTo handles floating-point comparisons in Vitest.
-modified: 2024-09-28T11:29:00-06:00
+modified: 2024-09-28T18:32:11.361Z
 ---
 
 ## expect.closeTo In Vitest

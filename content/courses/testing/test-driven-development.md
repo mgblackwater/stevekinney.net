@@ -1,7 +1,7 @@
 ---
 title: Understanding Test-Driven Development
 description: A simple explanation of the steps in Test-Driven Development.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.977Z
 ---
 
 ## Understanding Test-Driven Development

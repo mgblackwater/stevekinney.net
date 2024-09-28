@@ -1,7 +1,7 @@
 ---
-title: "Browser Mode In Vitest: Testing Like It's 2023"
+title: "Browser Mode : Testing Like It's 2023"
 description: Learn how to set up Vitest for testing in a browser environment.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:10.907Z
 ---
 
 ## Browser Mode in Vitest: Testing Like It's 2023

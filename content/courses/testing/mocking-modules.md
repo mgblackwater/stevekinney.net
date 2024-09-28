@@ -1,7 +1,7 @@
 ---
 title: Understanding Vitest Module Mocking
 description: Learn how to mock modules in Vitest using vi.mock and vi.doMock.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.071Z
 ---
 
 > \[!warning] A Word on Module Systems

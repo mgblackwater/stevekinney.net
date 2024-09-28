@@ -1,7 +1,7 @@
 ---
 title: Describe
-description: Learn how to use `describe` for organizing tests in suites.
-modified: 2024-09-28T11:31:15-06:00
+description: Learn how to use describe for organizing tests in suites.
+modified: 2024-09-28T18:32:11.017Z
 ---
 
 ## `describe`

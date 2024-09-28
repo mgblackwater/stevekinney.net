@@ -1,7 +1,7 @@
 ---
-title: Install `userEvent`
-description: Refactor your tests to use `userEvent` instead of `fireEvent`.
-modified: 2024-09-28T11:31:16-06:00
+title: Install userEvent
+description: Refactor your tests to use userEvent instead of fireEvent.
+modified: 2024-09-28T18:32:11.006Z
 ---
 
 ## Install `userEvent`

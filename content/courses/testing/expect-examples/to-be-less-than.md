@@ -1,7 +1,7 @@
 ---
-title: ToBeLessThan In Vitest
-description: Learn about the `toBeLessThan` matcher and its practical uses.
-modified: 2024-09-28T11:31:16-06:00
+title: ToBeLessThan
+description: Learn about the toBeLessThan matcher and its practical uses.
+modified: 2024-09-28T18:32:11.310Z
 ---
 
 ## toBeLessThan in Vitest

@@ -1,7 +1,7 @@
 ---
 title: Using BeforeEach Hook for Character Tests
 description: Refactor Character tests using the beforeEach hook in Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.232Z
 ---
 
 Can you take the `Character` tests from the [previous solution](asymmetric-matchers-solution.md) and use a `beforeEach` hook to create a new character each time?

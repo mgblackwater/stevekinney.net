@@ -1,7 +1,7 @@
 ---
 title: Mocks Vs Stubs Vs Spies In Testing
 description: Learn the differences between mocks, stubs, and spies in testing.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.198Z
 ---
 
 ## Mocks Vs Stubs Vs Spies in Testing

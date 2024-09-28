@@ -1,7 +1,7 @@
 ---
 title: Asymmetric Matchers And When To Use Them
 description: Learn how asymmetric matchers provide flexibility in tests.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.230Z
 ---
 
 ## Asymmetric Matchers and When to Use Them

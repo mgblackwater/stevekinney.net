@@ -1,7 +1,7 @@
 ---
 title: Expect().ToBeInstanceOf
 description: Using toBeInstanceOf to verify object instances in tests.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.344Z
 ---
 
 ## expect().toBeInstanceOf

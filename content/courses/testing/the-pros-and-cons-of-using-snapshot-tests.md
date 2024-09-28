@@ -1,7 +1,7 @@
 ---
 title: The Pros And Cons Of Using Snapshot Tests
 description: Insights into when to use and avoid snapshot testing in development.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.918Z
 ---
 
 ## The Pros and Cons of Using Snapshot Tests

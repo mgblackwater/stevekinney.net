@@ -1,7 +1,7 @@
 ---
 title: expect.unreachable
 description: Learn how to use expect.unreachable for unreachable code paths.
-modified: 2024-09-28T11:30:17-06:00
+modified: 2024-09-28T18:32:11.256Z
 ---
 
 ## expect.unreachable

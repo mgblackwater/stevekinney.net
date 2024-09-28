@@ -1,7 +1,7 @@
 ---
-title: The `Poll`Method In Vitest
-description: "Learn how Vitest's`poll` method handles asynchronous conditions."
-modified: 2024-09-28T11:30:54-06:00
+title: The PollMethod
+description: Learn how Vitest'spoll method handles asynchronous conditions.
+modified: 2024-09-28T18:32:11.315Z
 ---
 
 ## The `poll` Method in Vitest

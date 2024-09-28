@@ -1,7 +1,7 @@
 ---
-title: Expect.soft In Vitest
+title: Expect.soft
 description: Learn how to use expect.soft for non-blocking assertions in Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.389Z
 ---
 
 ## **`expect.soft`** In Vitest

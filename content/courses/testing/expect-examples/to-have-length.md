@@ -1,6 +1,7 @@
 ---
-title: "Vitest's `toHaveLength`description: Learn how to use Vitest's`toHaveLength` matcher effectively."
-modified: 2024-09-28T11:31:15-06:00
+title: "Vitest's toHaveLengthdescription: Learn how to use Vitest'stoHaveLength
+  matcher effectively."
+modified: 2024-09-28T18:32:11.296Z
 ---
 
 ## Vitest's `toHaveLength`

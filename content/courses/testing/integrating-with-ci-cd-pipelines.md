@@ -1,7 +1,7 @@
 ---
 title: Integrating Vitest With Your CI/CD Pipeline
 description: Learn how to integrate Vitest into a CI/CD pipeline using GitHub Actions.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.106Z
 ---
 
 ## Integrating Vitest with Your CI/CD Pipeline

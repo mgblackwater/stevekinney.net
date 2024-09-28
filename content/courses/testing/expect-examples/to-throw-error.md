@@ -1,7 +1,7 @@
 ---
-title: The `ToThrowError`In Vitest
-description: Learn how to use the`toThrowError` assertion in Vitest.
-modified: 2024-09-28T11:31:15-06:00
+title: The ToThrowError
+description: Learn how to use thetoThrowError assertion in Vitest.
+modified: 2024-09-28T18:32:11.291Z
 ---
 
 ## The `toThrowError` in Vitest

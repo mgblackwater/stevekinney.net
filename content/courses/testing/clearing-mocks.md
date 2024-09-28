@@ -1,7 +1,7 @@
 ---
 title: Mock Functions And Lifecycle Methods
 description: Understanding object methods and mock lifecycle methods in tests.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:10.896Z
 ---
 
 Generally speaking, you want to put stuff back the way you found it in order to make sure that you have good test isolation things don't get weird when tests have long-lasting side effects that cause other tests to fail for no particularly good reason.

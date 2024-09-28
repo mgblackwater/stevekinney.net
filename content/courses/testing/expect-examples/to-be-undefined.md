@@ -1,7 +1,7 @@
 ---
 title: Expect(...).ToBeUndefined
 description: Learn how expect(...).toBeUndefined checks if a value is undefined.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.314Z
 ---
 
 ## expect(…).toBeUndefined

@@ -1,7 +1,7 @@
 ---
-title: Understanding Hooks in Vitest
+title: Understanding Hooks
 description: Learn how to use hooks for setup, teardown, and test isolation in Vitest.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.024Z
 ---
 
 Hooks are functions that run at specific stages of your test execution lifecycle. They allow you to perform setup and teardown operations, ensuring that each test runs in a consistent environment. Vitest provides several hooks that mirror those found in other testing frameworks:

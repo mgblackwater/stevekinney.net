@@ -1,7 +1,7 @@
 ---
 title: expect.objectContaining
 description: Learn how to use expect.objectContaining in Vitest testing.
-modified: 2024-09-28T11:29:44-06:00
+modified: 2024-09-28T18:32:11.297Z
 ---
 
 ## expect.objectContaining

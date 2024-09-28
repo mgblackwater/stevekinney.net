@@ -1,7 +1,7 @@
 ---
 title: Setting Up GitHub Actions to Run Vitest Unit Tests
 description: Learn how to automate testing with GitHub Actions and Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.159Z
 ---
 
 Continuous Integration (CI) is a crucial practice in modern software development, enabling teams to detect issues early by automatically running tests on code changes. **GitHub Actions** provides a powerful platform for automating workflows directly within your GitHub repository. This guide will walk you through setting up GitHub Actions to run your **Vitest** unit tests on each Pull Request (PR), ensuring that only passing code gets merged.

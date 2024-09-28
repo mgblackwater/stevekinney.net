@@ -1,7 +1,7 @@
 ---
 title: Installing a Code Coverage Tool
 description: A guide to setting up and managing code coverage in Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.141Z
 ---
 
 Code coverage is useful for identifying how much your code is (or *isn't*) covered by tests. This can be useful for identifying blind spots and potential edge cases that are not covered by your test suite.

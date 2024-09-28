@@ -1,7 +1,7 @@
 ---
 title: Testing CSS-In-JS With Vitest
 description: Learn how to test components using CSS-in-JS with Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.195Z
 ---
 
 ## Testing CSS-in-JS with Vitest

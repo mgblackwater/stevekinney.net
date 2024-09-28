@@ -1,7 +1,7 @@
 ---
 title: Setting Up and Writing Tests with Testing Library and Vitest
 description: Learn to write user-focused tests using Testing Library with Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.211Z
 ---
 
 [Testing Library](https://testing-library.com/) is designed to encourage writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would.

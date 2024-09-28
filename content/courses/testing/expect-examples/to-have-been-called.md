@@ -1,7 +1,7 @@
 ---
-title: Understanding `ToHaveBeenCalled` In Vitest
-description: "Learn how Vitest's `toHaveBeenCalled` can test function calls."
-modified: 2024-09-28T11:31:15-06:00
+title: Understanding ToHaveBeenCalled
+description: Learn how Vitest's toHaveBeenCalled can test function calls.
+modified: 2024-09-28T18:32:11.383Z
 ---
 
 ## Understanding `toHaveBeenCalled` in Vitest

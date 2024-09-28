@@ -1,7 +1,7 @@
 ---
 title: A Comprehensive Guide to Mocks in Testing
 description: Learn how mocks simplify tests by controlling behavior.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.900Z
 ---
 
 The TL;DR of mocking is that sometimes we need to swap out things we don't control with things that we *do*. For example, it might be outside of the scope of our test to make sure that a third-party API goes down. Or, if that API isn't free, you don't necessarily want to run up a bill every time you run your test suite, right?

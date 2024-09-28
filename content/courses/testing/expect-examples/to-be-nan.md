@@ -1,7 +1,7 @@
 ---
-title: Understanding `ToBeNaN`In Vitest
-description: Learn about the`toBeNaN` matcher to handle NaN values in Vitest.
-modified: 2024-09-28T11:31:16-06:00
+title: Understanding ToBeNaN
+description: Learn about thetoBeNaN matcher to handle NaN values in Vitest.
+modified: 2024-09-28T18:32:11.288Z
 ---
 
 ## Understanding `toBeNaN` in Vitest

@@ -1,7 +1,7 @@
 ---
-title: "Let's Build A Packing List"
+title: Let's Build A Packing List
 description: Build a packing list using TypeScript and reducers.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.818Z
 ---
 
 Let's say we're building a packing list and it keeps track of items in the following manner:

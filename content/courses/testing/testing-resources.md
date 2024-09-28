@@ -1,7 +1,7 @@
 ---
 title: Vitest Plugin for Visual Studio Code
 description: A link to the Vitest plugin for Visual Studio Code.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.115Z
 ---
 
 ```ts

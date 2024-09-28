@@ -1,7 +1,7 @@
 ---
-title: Understanding Test Context In Vitest
+title: Understanding Test Context
 description: Learn how to use the test context feature in Vitest effectively.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.002Z
 ---
 
 ## Understanding Test Context in Vitest

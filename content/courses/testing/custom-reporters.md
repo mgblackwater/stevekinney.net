@@ -1,7 +1,7 @@
 ---
 title: Vitest Custom Reporters
 description: Learn how to create and implement custom reporters in Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.111Z
 ---
 
 ## Vitest Custom Reporters

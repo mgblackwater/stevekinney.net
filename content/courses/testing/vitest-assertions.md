@@ -1,7 +1,7 @@
 ---
-title: Common Assertions In Vitest
+title: Common Assertions
 description: Learn about using assertions and matchers in Vitest testing.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.941Z
 ---
 
 In Vitest, assertions are made using the `expect` function, which is similar to other testing libraries like Jest. The general syntax is:

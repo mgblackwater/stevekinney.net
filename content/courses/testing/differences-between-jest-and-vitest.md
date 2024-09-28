@@ -1,7 +1,7 @@
 ---
 title: Differences Between Jest and Vitest
-description: "Comparing Jest and Vitest's ecosystems, speed, and features."
-modified: 2024-09-28T11:31:16-06:00
+description: Comparing Jest and Vitest's ecosystems, speed, and features.
+modified: 2024-09-28T18:32:11.203Z
 ---
 
 ## Differences Between Jest and Vitest

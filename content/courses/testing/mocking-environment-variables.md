@@ -1,7 +1,7 @@
 ---
 title: Resetting VITE_ENV With Vitest
 description: Learn how to reset VITE_ENV in Vitest using beforeEach and vi.stubEnv.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.149Z
 ---
 
 ```ts

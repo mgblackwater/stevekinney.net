@@ -1,7 +1,7 @@
 ---
 title: Implementing Calculator Functions With TDD
 description: Learn to implement and test simple arithmetic functions with TDD.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.047Z
 ---
 
 It turns out that there is a lot more to math than just adding numbers. Our product manager also wants us to be able to subtract, multiple, and divide numbers too, apparently. Talk about feature creep.

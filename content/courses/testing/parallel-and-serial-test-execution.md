@@ -1,7 +1,7 @@
 ---
-title: Parallel And Serial Test Execution In Vitest
+title: Parallel And Serial Test Execution
 description: Learn the difference between parallel and serial test execution.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.886Z
 ---
 
 ## Parallel and Serial Test Execution in Vitest

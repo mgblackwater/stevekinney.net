@@ -1,7 +1,7 @@
 ---
 title: Insist That a Test Fails
 description: Explore techniques to ensure tests fail when expected.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.879Z
 ---
 
 Because it didn't fail.

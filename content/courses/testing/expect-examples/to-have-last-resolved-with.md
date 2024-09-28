@@ -1,7 +1,7 @@
 ---
 title: ToHaveLastResolvedWith
 description: Ensure the last resolved value of a mock matches the expected result.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.322Z
 ---
 
 ## toHaveLastResolvedWith

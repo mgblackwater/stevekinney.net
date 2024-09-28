@@ -1,7 +1,7 @@
 ---
 title: Next Steps
 description: Tests I write during development compared to maintenance.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.117Z
 ---
 
 Here is a really simple—and also secretly flawed—solution:

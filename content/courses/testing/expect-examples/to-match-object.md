@@ -1,7 +1,7 @@
 ---
 title: toMatchObject
 description: Learn how to use toMatchObject for partial object matching in tests.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.353Z
 ---
 
 ## `expect.toMatchObject`: The Lowdown

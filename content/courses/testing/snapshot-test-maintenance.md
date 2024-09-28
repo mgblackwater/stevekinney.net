@@ -1,7 +1,7 @@
 ---
 title: Understanding Snapshot Testing
 description: A quick and easy guide to understanding snapshot testing with Vitest.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.234Z
 ---
 
 ## Understanding Snapshot Testing

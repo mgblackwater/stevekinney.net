@@ -1,7 +1,7 @@
 ---
 title: Strategies For Testing Conditional Logic
 description: Learn how to effectively test conditional logic in your code.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.993Z
 ---
 
 ## Strategies for Testing Conditional Logic

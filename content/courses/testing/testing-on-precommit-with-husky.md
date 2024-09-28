@@ -1,7 +1,7 @@
 ---
 title: Testing On Precommit With Husky
 description: Set up Husky to run tests before committing code to Git.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.935Z
 ---
 
 ## Testing on Precommit with Husky

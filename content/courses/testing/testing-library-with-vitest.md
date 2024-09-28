@@ -1,7 +1,7 @@
 ---
 title: "Testing Library + Vitest: A Dream Team For Testing UIs"
 description: Supercharge your UI testing with Testing Library and Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.044Z
 ---
 
 ## Testing Library + Vitest: A Dream Team for Testing UIs

@@ -1,7 +1,7 @@
 ---
-title: ToHaveReturnedTimes In Vitest
+title: ToHaveReturnedTimes
 description: Learn how to use toHaveReturnedTimes in your Vitest tests.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.386Z
 ---
 
 ## toHaveReturnedTimes in Vitest

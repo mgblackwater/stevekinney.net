@@ -1,7 +1,7 @@
 ---
 title: "Example 7: Testing With Custom Matchers"
 description: Create custom matchers in Vitest for specialized assertions.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.154Z
 ---
 
 ## Example 7: Testing with Custom Matchers

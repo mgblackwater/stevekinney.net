@@ -1,7 +1,7 @@
 ---
-title: "Reporters In Vitest: Getting The Dirt On Your Tests"
+title: "Reporters : Getting The Dirt On Your Tests"
 description: Learn how to use Vitest reporters for tailored test output.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.839Z
 ---
 
 ## Reporters in Vitest: Getting the Dirt on Your Tests

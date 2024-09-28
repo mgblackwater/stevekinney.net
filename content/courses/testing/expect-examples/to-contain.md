@@ -1,7 +1,7 @@
 ---
-title: Vitest’s `toContain`
-description: "Learn how to check if values exist in data using Vitest's `toContain`."
-modified: 2024-09-28T11:31:16-06:00
+title: toContain
+description: Learn how to check if values exist in data using Vitest's toContain.
+modified: 2024-09-28T18:32:11.398Z
 ---
 
 ## Vitest’s `toContain`

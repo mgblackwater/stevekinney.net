@@ -1,7 +1,7 @@
 ---
 title: expect.any
-description: Learn how to use`expect.any` to assert types in Vitest tests.
-modified: 2024-09-28T11:31:16-06:00
+description: Learn how to useexpect.any to assert types in Vitest tests.
+modified: 2024-09-28T18:32:11.238Z
 ---
 
 ## Understanding `expect.any` in Vitest

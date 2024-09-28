@@ -1,7 +1,7 @@
 ---
 title: expect.stringMatching
-description: Learn how to use`expect.stringMatching` for pattern matching in tests.
-modified: 2024-09-28T11:30:06-06:00
+description: Learn how to useexpect.stringMatching for pattern matching in tests.
+modified: 2024-09-28T18:32:11.307Z
 ---
 
 ## `expect.stringMatching`

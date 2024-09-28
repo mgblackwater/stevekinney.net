@@ -1,7 +1,7 @@
 ---
-title: "Vitest's `toHaveNthReturnedWith`"
-description: "Learn how to use Vitest's`toHaveNthReturnedWith` matcher."
-modified: 2024-09-28T11:31:15-06:00
+title: Vitest's toHaveNthReturnedWith
+description: Learn how to use Vitest'stoHaveNthReturnedWith matcher.
+modified: 2024-09-28T18:32:11.285Z
 ---
 
 ## Vitest's `toHaveNthReturnedWith`

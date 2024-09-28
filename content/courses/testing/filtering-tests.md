@@ -1,7 +1,7 @@
 ---
 title: Filtering By File Name
 description: Learn how to filter tests in Vitest by name, directory, and more.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.801Z
 ---
 
 ## Filtering by File Name

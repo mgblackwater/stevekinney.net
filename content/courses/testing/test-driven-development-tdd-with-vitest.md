@@ -1,7 +1,7 @@
 ---
 title: What Is Test-Driven Development
 description: Exploring TDD with Vitest through the Red-Green-Refactor cycle.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.075Z
 ---
 
 ## What is Test-Driven Development

@@ -1,7 +1,7 @@
 ---
-title: ToHaveBeenCalledTimes In Vitest
+title: ToHaveBeenCalledTimes
 description: Learn how to use the toHaveBeenCalledTimes matcher in Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.278Z
 ---
 
 ## toHaveBeenCalledTimes in Vitest

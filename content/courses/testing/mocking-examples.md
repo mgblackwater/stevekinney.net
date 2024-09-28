@@ -1,7 +1,7 @@
 ---
 title: Examples In Practice
 description: Testing API calls with error handling and spying on console logs.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.961Z
 ---
 
 ## Examples in Practice

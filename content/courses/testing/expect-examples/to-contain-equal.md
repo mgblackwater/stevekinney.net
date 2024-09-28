@@ -1,7 +1,7 @@
 ---
-title: ToContainEqual In Vitest
+title: ToContainEqual
 description: Use toContainEqual to check deep equality in arrays of objects.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.237Z
 ---
 
 ## toContainEqual in Vitest

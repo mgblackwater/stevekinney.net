@@ -1,7 +1,7 @@
 ---
 title: "Vitest: ToBe"
-description: Learn how to use the `toBe` matcher in Vitest for strict equality.
-modified: 2024-09-28T11:31:16-06:00
+description: Learn how to use the toBe matcher in Vitest for strict equality.
+modified: 2024-09-28T18:32:11.303Z
 ---
 
 ## Vitest: `toBe`

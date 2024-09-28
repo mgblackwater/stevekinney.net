@@ -1,7 +1,7 @@
 ---
-title: "Vitest: `ToHaveNthResolvedWith`"
-description: Learn how to use `toHaveNthResolvedWith` for testing async calls.
-modified: 2024-09-28T11:31:15-06:00
+title: "Vitest: ToHaveNthResolvedWith"
+description: Learn how to use toHaveNthResolvedWith for testing async calls.
+modified: 2024-09-28T18:32:11.252Z
 ---
 
 ## Vitest: `toHaveNthResolvedWith`

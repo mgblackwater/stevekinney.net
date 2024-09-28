@@ -1,7 +1,7 @@
 ---
 title: Testing Typescript Type Guards With Vitest
 description: Learn how to test TypeScript type guards using Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.892Z
 ---
 
 ## Testing TypeScript Type Guards with Vitest

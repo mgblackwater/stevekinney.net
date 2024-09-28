@@ -1,7 +1,7 @@
 ---
-title: Using vi.stubGlobal In Vitest
+title: Using vi.stubGlobal
 description: Learn how to use vi.stubGlobal for mocking global objects.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.810Z
 ---
 
 [`vi.stubGlobal`](https://vitest.dev/api/vi.html#vi-stubglobal) basically does what it says on the packaging. It takes two arguments:

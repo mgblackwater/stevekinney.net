@@ -1,7 +1,7 @@
 ---
 title: Why You Don’t Need 100% Code Coverage
 description: Code coverage is a tool, not a goal. Let’s discuss why.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:11.178Z
 ---
 
 ## Why You Don’t Need 100% Code Coverage

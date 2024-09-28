@@ -1,7 +1,7 @@
 ---
-title: Mocking Reading And Writing Files In Vitest
+title: Mocking Reading And Writing Files
 description: Learn how to mock file operations using Vitest and fs/promises.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.010Z
 ---
 
 ## Mocking Reading and Writing Files in Vitest

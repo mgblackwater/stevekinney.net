@@ -1,7 +1,7 @@
 ---
-title: ToBeGreaterThan In Vitest
+title: ToBeGreaterThan
 description: Learn how to use toBeGreaterThan matcher in Vitest for number comparisons.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.397Z
 ---
 
 ## toBeGreaterThan in Vitest

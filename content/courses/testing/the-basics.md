@@ -1,7 +1,7 @@
 ---
-title: Starting With Simple Tests In Vitest
+title: Starting With Simple Tests
 description: Learn how to test basic expressions and functions using Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.905Z
 ---
 
 Let's start with the world's simplest test.

@@ -1,7 +1,7 @@
 ---
 title: Alternatives To Using Test Doubles
 description: Explore alternatives to using test doubles in your testing strategy.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:10.970Z
 ---
 
 ## Alternatives to Using Test Doubles

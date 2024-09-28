@@ -1,7 +1,7 @@
 ---
 title: Testing Event Listeners And User Interactions With Vitest
 description: Learn how to test event listeners and user interactions using Vitest.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.881Z
 ---
 
 ## Testing Event Listeners and User Interactions with Vitest

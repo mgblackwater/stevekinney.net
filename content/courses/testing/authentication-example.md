@@ -1,7 +1,8 @@
 ---
-title: Building An Authentication System Using Test-Driven Development With Express And Vitest
+title: Building An Authentication System Using Test-Driven Development With
+  Express And Vitest
 description: Learn how to create an authentication system with TDD using Express and Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:10.867Z
 ---
 
 ## Building an Authentication System Using Test-Driven Development with Express and Vitest

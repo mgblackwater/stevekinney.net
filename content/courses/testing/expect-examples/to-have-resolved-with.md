@@ -1,7 +1,7 @@
 ---
 title: ToHaveResolvedWith
 description: Check if a Promise resolves with the expected value using Vitest.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.294Z
 ---
 
 ## ToHaveResolvedWith

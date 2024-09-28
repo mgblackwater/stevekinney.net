@@ -1,7 +1,7 @@
 ---
-title: Using Stubs in Vitest
+title: Using Stubs
 description: Learn how to use stubs to simulate behavior in testing.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.884Z
 ---
 
 A stub is a type of test double used to replace a real function with a simplified, controlled version for testing purposes. The primary purpose of a stub is to simulate the behavior of real code by providing predefined responses. Stubs do not track how often a function is called or with what arguments—it only replaces the real implementation to ensure that tests run in a predictable, isolated environment.

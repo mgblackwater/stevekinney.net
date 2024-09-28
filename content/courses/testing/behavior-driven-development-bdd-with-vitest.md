@@ -1,7 +1,7 @@
 ---
-title: Getting Started With BDD In Vitest
+title: Getting Started With BDD
 description: A guide to behavior-driven development (BDD) using Vitest.
-modified: 2024-09-28T11:31:16-06:00
+modified: 2024-09-28T18:32:11.031Z
 ---
 
 ## Getting Started with BDD in Vitest

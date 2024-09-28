@@ -1,7 +1,7 @@
 ---
-title: In-Source Testing In Vitest
+title: In-Source Testing
 description: Explore in-source testing with Vitest for quick experimentation.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.147Z
 ---
 
 ## In-Source Testing in Vitest

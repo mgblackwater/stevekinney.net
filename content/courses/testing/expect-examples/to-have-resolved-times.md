@@ -1,7 +1,7 @@
 ---
 title: ToHaveResolvedTimes Explained
 description: Learn how to use the toHaveResolvedTimes matcher for promises.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.298Z
 ---
 
 ## toHaveResolvedTimes Explained

@@ -1,8 +1,9 @@
 ---
 title: Expect.Rejects
 description: Testing promises that are expected to fail using expect.rejects.
-modified: 2024-09-28T11:31:16-06:00
-tags: [999]
+modified: 2024-09-28T18:32:11.319Z
+tags:
+  - 999
 ---
 
 ## `expect.rejects`

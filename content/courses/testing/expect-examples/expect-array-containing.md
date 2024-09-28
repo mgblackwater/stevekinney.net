@@ -1,7 +1,7 @@
 ---
 title: expect.ArrayContaining
 description: Learn how to use expect.arrayContaining to test array subsets.
-modified: 2024-09-28T11:28:40-06:00
+modified: 2024-09-28T18:32:11.365Z
 ---
 
 ## Expect: `arrayContaining`

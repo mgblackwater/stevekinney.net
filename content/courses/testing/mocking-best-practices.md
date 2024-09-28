@@ -1,7 +1,7 @@
 ---
 title: Mocking Best Practices
 description: Learn best practices and avoid common pitfalls when mocking.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:10.949Z
 ---
 
 ## Mock Only What You Need

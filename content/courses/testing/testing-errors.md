@@ -1,7 +1,8 @@
 ---
-title: Testing if a Function Throws an Error in Vitest
-description: Learn how to test error handling in Vitest for synchronous and asynchronous functions.
-modified: 2024-09-28T11:31:14-06:00
+title: Testing if a Function Throws an Error
+description: Learn how to test error handling in Vitest for synchronous and
+  asynchronous functions.
+modified: 2024-09-28T18:32:10.928Z
 ---
 
 When testing JavaScript functions, it’s important to verify how your code handles errors, particularly in cases where errors are expected to be thrown under certain conditions. Vitest provides a robust set of tools for testing both synchronous and asynchronous error handling, allowing you to check if a function throws an error and whether the correct error message or type is produced.

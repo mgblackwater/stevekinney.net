@@ -1,7 +1,7 @@
 ---
 title: Testing React Applications With Vitest
 description: Learn how to test React apps using Vitest, from setup to mocks.
-modified: 2024-09-28T11:31:14-06:00
+modified: 2024-09-28T18:32:10.861Z
 ---
 
 ## Testing React Applications with Vitest

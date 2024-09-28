@@ -1,7 +1,7 @@
 ---
 title: Expect().ToThrowErrorMatchingInlineSnapshot
 description: Learn how to assert errors with inline snapshots in Vitest.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.316Z
 ---
 
 ## expect().toThrowErrorMatchingInlineSnapshot

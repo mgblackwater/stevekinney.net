@@ -1,7 +1,7 @@
 ---
-title: Overriding Object Properties In Vitest
+title: Overriding Object Properties
 description: Learn how to override object properties in Vitest with various methods.
-modified: 2024-09-28T11:31:15-06:00
+modified: 2024-09-28T18:32:11.027Z
 ---
 
 ## Overriding Object Properties in Vitest
