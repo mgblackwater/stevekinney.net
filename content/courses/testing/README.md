@@ -1,7 +1,7 @@
 ---
 title: The Basics
 description: A basic guide on writing and running tests along with mock setups.
-modified: 2024-09-28T16:30:29-06:00
+modified: 2024-09-28T17:41:54-06:00
 base: /courses/testing
 layout: contents
 exclude: true
@@ -13,7 +13,6 @@ exclude: true
 - [How Tests Work](how-tests-work.md)
 - [Running Tests](running-tests.md)
 - [Filtering Tests](filtering-tests.md)
-- [Running Tests for Related Files](running-tests-for-related-files.md)
 - [Organizing and Annotating Tests](organizing-and-annotating-tests.md)
 - [Basic Mathematics](basic-math.md)
 - [Error Handling and Edge Cases](error-handling-and-edge-case-testing.md) ([Exercise](testing-for-errors-exercise.md))
@@ -42,9 +41,7 @@ exclude: true
 ## Faking It
 
 - [What Are Test Doubles?](test-doubles.md)
-- [Stubs](stubs.md)
-- [Spies](spies.md)
-- [Mocks](mocks.md)
+- [Stubs](stubs.md), [Spies](spies.md), and [Mocks](mocks.md)
 - [Auto-Mocking](auto-mocking.md)
 - [Clearing, Restoring, and Resetting Mocks](clearing-restoring-and-resetting-mocks.md)
 - [Testing Function Arguments](testing-function-arguments.md)
@@ -66,40 +63,10 @@ exclude: true
 - [Snapshot Testing](snapshot-testing.md)
 - [Snapshot Test Alternatives](snapshot-test-alternatives.md)
 - [Snapshot Test Maintenance](snapshot-test-maintenance.md)
-- [Code Coverage](code-coverage.md)
-- [Test Context](test-context.md)
-- [Custom Matchers](custom-matchers.md)
+- [In-Source Testing](in-source-testing.md)
 - [Cross-Browser Tests with Playwright](cross-browser-testing-with-playwright.md)
-- [In-Source Reading](in-source-testing.md)
-- [Parallel and Serial Test Execution](parallel-and-serial-test-execution.md)
 
 ## Infrastructure Week
 
-- Testing on Before Committing
+- [Code Coverage](code-coverage.md)
 - [Setting Up Continuous Integration](continuous-integration.md)
-
-## Ivory Tower
-
-- [The Structure of a Unit Test](structure-of-a-unit-test.md)
-- [The Types of Tests: Unit, Integration, End-to-End](types-of-tests.md)
-- [Components of a Test: Test Runners and Assertion Libraries](test-runners-and-assertion-libraries.md)
-- [Assert Versus Expect](assert-versus-expect.md)
-- [Mocking: Best Practices](mocking-best-practices.md)
-- [Test Driven Development](test-driven-development.md)
-- [Strategies for Testing Conditional Logic](strategies-for-testing-conditional-logic.md)
-- [Organizing and Annotating Your Tests](organizing-and-annotating-tests.md)
-
-## Example Applications
-
-- [Tic-Tac-Toe Example](tic-tac-toe-example.md)
-- [Task List Example](task-list-example.md)
-- [Authentication Example](authentication-example.md)
-- [Guess the Number Example](guess-the-number-example.md)
-
-## Appendix
-
-- [Advanced Vitest Configuration](advanced-test-configuration.md)
-- [Advanced Debugging in Vitest](debugging-vitest-tests.md)
-- [Best Practices and Common Pitfalls with Mocking](mocking-best-practices.md)
-- [Custom Reporters](vitest-reporters.md)
-- [The Differences Between Jest and Vitest](differences-between-jest-and-vitest.md)
