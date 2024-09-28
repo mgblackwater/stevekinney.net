@@ -1,6 +1,9 @@
 ---
-modified: 2024-09-14T10:12:12-06:00
+title: Resetting VITE_ENV With Vitest
+description: Learn how to reset VITE_ENV in Vitest using beforeEach and vi.stubEnv.
+modified: 2024-09-28T11:31:15-06:00
 ---
+
 ```ts
 import { beforeEach, expect, it } from 'vitest';
 
@@ -8,12 +11,12 @@ import { beforeEach, expect, it } from 'vitest';
 const originalViteEnv = import.meta.env.VITE_ENV;
 
 beforeEach(() => {
-  import.meta.env.VITE_ENV = originalViteEnv;
+	import.meta.env.VITE_ENV = originalViteEnv;
 });
 
 it('changes value', () => {
-  import.meta.env.VITE_ENV = 'staging';
-  expect(import.meta.env.VITE_ENV).toBe('staging');
+	import.meta.env.VITE_ENV = 'staging';
+	expect(import.meta.env.VITE_ENV).toBe('staging');
 });
 ```
 
@@ -26,11 +29,15 @@ import { expect, it, vi } from 'vitest';
 import.meta.env.VITE_ENV === 'test';
 
 it('changes value', () => {
-  vi.stubEnv('VITE_ENV', 'staging');
-  expect(import.meta.env.VITE_ENV).toBe('staging');
+	vi.stubEnv('VITE_ENV', 'staging');
+	expect(import.meta.env.VITE_ENV).toBe('staging');
 });
 
 it('the value is restored before running an other test', () => {
-  expect(import.meta.env.VITE_ENV).toBe('test');
+	expect(import.meta.env.VITE_ENV).toBe('test');
 });
+```
+
+```ts
+
 ```

@@ -1,6 +1,9 @@
 ---
-modified: 2024-09-14T09:38:20-06:00
+title: Unit, Integration, and End-To-End Tests Explained
+description: Understanding the spectrum of unit, integration, and E2E tests.
+modified: 2024-09-28T11:31:14-06:00
 ---
+
 These terms tend to be overloaded and have a lot of wiggle room, but let's at least draw some lines in the sand.
 
 - **Unit tests**: An isolated test that tests one thing. Typically, this is a set of tests that might pass particular arguments to a function and then make sure that the value that is return is what we were expecting.
@@ -12,3 +15,7 @@ The moral of the story here is that all of your tests live on a spectrum: unit t
 The trick here is finding the right balance. It's all about confidence. We're not looking to test for testing's sake. What we _want_ is to be able to change or refactor our code with confidence that we're not accidentally breaking something important. Whatever kinds of tests get you there the fastest are the ones that you should write.
 
 Sure, integration tests are slower and somewhat harder to write, but sometimes a single integration test can provide a level of confidence that rivals 60 unit tests.
+
+```ts
+
+```

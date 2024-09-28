@@ -1,10 +1,14 @@
-# 1. Advanced Test Configuration with Vitest
+---
+title: Advanced Test Configuration With Vitest
+description: Dive into advanced Vitest configurations for better efficiency.
+modified: 2024-09-28T11:31:42-06:00
+---
 
 Okay, so you’ve been writing tests, everything runs smoothly, you feel like a testing ninja… and then BAM! You hit this point where **running one test at a time** just isn't cutting it. Or maybe, you’ve got some tests that behave a little… _flaky_. Or even worse, some parts of your app pull in external services that aren’t behaving. Ugh. Don’t worry, we’ve been there too.
 
 In this tutorial, we're going to dive into some more advanced Vitest configurations that’ll make you feel like you're back _in control_. Maybe you've got a large codebase or complex dependencies—don’t freak out! Let’s power up and go deeper.
 
-## 2. Customizing the `vitest.config.ts`
+## Customizing the `vitest.config.ts`
 
 Look, Vitest is awesome right out of the box, but sometimes you need to customize things to fit your project. This brings us to the `vitest.config.ts` file. Here’s a basic one as a refresher:
 
@@ -13,13 +17,13 @@ Look, Vitest is awesome right out of the box, but sometimes you need to customiz
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    coverage: {
-      reporter: ['text', 'json', 'html'],
-    },
-  },
+	test: {
+		globals: true,
+		environment: 'jsdom',
+		coverage: {
+			reporter: ['text', 'json', 'html'],
+		},
+	},
 });
 ```
 
@@ -41,12 +45,12 @@ import { defineConfig } from 'vitest/config';
 import path from 'path';
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@utils': path.resolve(__dirname, 'src/utils'),
-    },
-  },
+	resolve: {
+		alias: {
+			'@components': path.resolve(__dirname, 'src/components'),
+			'@utils': path.resolve(__dirname, 'src/utils'),
+		},
+	},
 });
 ```
 
@@ -64,11 +68,11 @@ Ah yes, the modern mess of JavaScript modules. You're probably encountering both
 
 ```ts
 export default defineConfig({
-  test: {
-    deps: {
-      fallbackCJS: true, // Handle CommonJS dependencies that break ESM resolution
-    },
-  },
+	test: {
+		deps: {
+			fallbackCJS: true, // Handle CommonJS dependencies that break ESM resolution
+		},
+	},
 });
 ```
 
@@ -81,9 +85,9 @@ Here's a quick scenario. Let’s say you're testing a **Node.js app**. You’re 
 ```ts
 // vitest.config.ts
 export default defineConfig({
-  test: {
-    isolate: true, // Ensure each test file runs in its own VM context
-  },
+	test: {
+		isolate: true, // Ensure each test file runs in its own VM context
+	},
 });
 ```
 
@@ -97,9 +101,9 @@ So, what happens when one of your tests drags on, like… for-ev-er. Maybe it de
 
 ```ts
 export default defineConfig({
-  test: {
-    testTimeout: 5000, // 5 seconds, if it takes longer, something is wrong.
-  },
+	test: {
+		testTimeout: 5000, // 5 seconds, if it takes longer, something is wrong.
+	},
 });
 ```
 
@@ -111,9 +115,9 @@ Speaking of flaky! That occasional test that just decides it wants some attentio
 
 ```ts
 export default defineConfig({
-  test: {
-    retry: 2, // Will rerun a failing test 2 times before marking it as failed
-  },
+	test: {
+		retry: 2, // Will rerun a failing test 2 times before marking it as failed
+	},
 });
 ```
 
@@ -127,12 +131,12 @@ Here's what usually happens after you start integrating **watch mode** into your
 
 ```ts
 export default defineConfig({
-  test: {
-    watch: {
-      include: ['src/**'],
-      exclude: ['node_modules/**', '*.spec.js'], // avoid triggering for these
-    },
-  },
+	test: {
+		watch: {
+			include: ['src/**'],
+			exclude: ['node_modules/**', '*.spec.js'], // avoid triggering for these
+		},
+	},
 });
 ```
 
@@ -145,3 +149,7 @@ Well, if you’ve hung with me til now, you’re _fully equipped_. We’ve touch
 The goal here isn’t just about writing squeaky-clean tests—**it’s about staying sane** while doing it. Take these tips as your advanced toolbox to wield Vitest the next time complexity strikes. Headaches be gone.
 
 Happy testing, my friend. Test smart, and test often! 🎉
+
+```ts
+
+```

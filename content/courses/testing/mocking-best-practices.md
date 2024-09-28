@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-17T12:16:47-06:00
+title: Mocking Best Practices
+description: Learn best practices and avoid common pitfalls when mocking.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 ## 1. Mock Only What You Need
@@ -11,11 +13,11 @@ modified: 2024-09-17T12:16:47-06:00
 
 - **Ensure Isolation**: Use `vi.clearAllMocks()` or `vi.resetAllMocks()` in `afterEach` to reset mocks.
 
-  ```javascript
-  afterEach(() => {
-  	vi.clearAllMocks();
-  });
-  ```
+```javascript
+afterEach(() => {
+	vi.clearAllMocks();
+});
+```
 
 ## 3. Use Spies to Verify Interactions
 
@@ -71,3 +73,11 @@ modified: 2024-09-17T12:16:47-06:00
 
 - Focus on testing the outputs and side effects.
 - Use mocks and spies to verify interactions, not internal logic.
+
+```ts
+
+```
+
+```ts
+
+```

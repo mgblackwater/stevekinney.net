@@ -1,18 +1,24 @@
-# expect(...).toBeUndefined
+---
+title: Expect(...).ToBeUndefined
+description: Learn how expect(...).toBeUndefined checks if a value is undefined.
+modified: 2024-09-28T11:31:16-06:00
+---
 
-Alright, let's dive into **expect(...).toBeUndefined**.
+## expect(…).toBeUndefined
 
-## What It Does
+Alright, let's dive into **expect(…).toBeUndefined**.
 
-_expect(...).toBeUndefined_ is pretty straightforward. Surprise, surprise… it checks if the value you’re passing is, in fact, `undefined`. If your value is `undefined`, the test is going to pass. If it’s anything else—like `null`, `0`, or an empty string (even though those sorta feel like "nothing" too)—the test is going to throw some red text at you, because nope, that's _not_ `undefined`.
+### What It Does
 
-## When You’d Use It
+_expect(…).toBeUndefined_ is pretty straightforward. Surprise, surprise… it checks if the value you’re passing is, in fact, `undefined`. If your value is `undefined`, the test is going to pass. If it’s anything else—like `null`, `0`, or an empty string (even though those sorta feel like "nothing" too)—the test is going to throw some red text at you, because nope, that's _not_ `undefined`.
+
+### When You’d Use It
 
 You’ll use this when you’re trying to confirm that something has not been set or initialized. For example, let’s say you're working with some function that's supposed to "optionally" set a value. If the value isn’t provided, you really want to make sure things stay nice and undefined, right?
 
 Maybe you're dealing with inputs in an app or optional properties in an object. You’ll write tests with `toBeUndefined` to make sure you're catching those cases where variables are deliberately unassigned.
 
-## Example
+### Example
 
 Let’s say we’re adding albums to our music library and we want to check if an album’s `description` is `undefined` when someone skips adding it. Here’s how you could write a test for that:
 
@@ -43,3 +49,7 @@ describe('createAlbum', () => {
 ```
 
 Here, we’re making sure our function is smart enough to leave `description` out when it’s not provided. No description? Cool, it’s `undefined`. ✅
+
+```ts
+
+```

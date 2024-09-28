@@ -1,3 +1,9 @@
+---
+title: Creating The Character Using A Hook
+description: Learn how to create the Character class using a hook.
+modified: 2024-09-28T11:31:14-06:00
+---
+
 We could create the `Character` using a hook as follows seen below.
 
 ```javascript

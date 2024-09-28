@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T14:41:09-06:00
+title: Setting Up and Writing Tests with Testing Library and Vitest
+description: Learn to write user-focused tests using Testing Library with Vitest.
+modified: 2024-09-28T11:31:14-06:00
 ---
 
 [Testing Library](https://testing-library.com/) is designed to encourage writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would.
@@ -31,9 +33,9 @@ In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `ha
 ```javascript
 // vitest.config.js
 export default {
-  test: {
-    environment: 'jsdom',
-  },
+	test: {
+		environment: 'jsdom',
+	},
 };
 ```
 
@@ -46,7 +48,7 @@ export default {
 import React from 'react';
 
 export function Greeting({ name }) {
-  return <h1>Hello, {name}!</h1>;
+	return <h1>Hello, {name}!</h1>;
 }
 ```
 
@@ -59,14 +61,14 @@ import { expect, test } from 'vitest';
 import { Greeting } from './Greeting';
 
 test('renders greeting message', () => {
-  // Arrange
-  const name = 'Alice';
+	// Arrange
+	const name = 'Alice';
 
-  // Act
-  render(<Greeting name={name} />);
+	// Act
+	render(<Greeting name={name} />);
 
-  // Assert
-  expect(screen.getByText(`Hello, ${name}!`)).toBeInTheDocument();
+	// Assert
+	expect(screen.getByText(`Hello, ${name}!`)).toBeInTheDocument();
 });
 ```
 
@@ -90,7 +92,7 @@ Testing Library provides various queries:
 ```jsx
 // Button.js
 export function Button({ onClick, children }) {
-  return <button onClick={onClick}>{children}</button>;
+	return <button onClick={onClick}>{children}</button>;
 }
 ```
 
@@ -98,13 +100,13 @@ export function Button({ onClick, children }) {
 
 ```jsx
 test('calls onClick when clicked', () => {
-  const handleClick = vi.fn();
-  render(<Button onClick={handleClick}>Click Me</Button>);
+	const handleClick = vi.fn();
+	render(<Button onClick={handleClick}>Click Me</Button>);
 
-  const button = screen.getByRole('button', { name: /click me/i });
-  button.click();
+	const button = screen.getByRole('button', { name: /click me/i });
+	button.click();
 
-  expect(handleClick).toHaveBeenCalledTimes(1);
+	expect(handleClick).toHaveBeenCalledTimes(1);
 });
 ```
 
@@ -139,11 +141,11 @@ const element = screen.getByText(/some text/i);
 import userEvent from '@testing-library/user-event';
 
 test('checkbox toggles correctly', async () => {
-  render(<CheckboxComponent />);
-  const checkbox = screen.getByRole('checkbox');
+	render(<CheckboxComponent />);
+	const checkbox = screen.getByRole('checkbox');
 
-  await userEvent.click(checkbox);
-  expect(checkbox).toBeChecked();
+	await userEvent.click(checkbox);
+	expect(checkbox).toBeChecked();
 });
 ```
 
@@ -155,11 +157,11 @@ When testing components that update asynchronously, use `findBy` queries and `wa
 
 ```jsx
 test('loads and displays data', async () => {
-  render(<AsyncComponent />);
-  expect(screen.getByText(/loading/i)).toBeInTheDocument();
+	render(<AsyncComponent />);
+	expect(screen.getByText(/loading/i)).toBeInTheDocument();
 
-  const dataElement = await screen.findByText(/loaded data/i);
-  expect(dataElement).toBeInTheDocument();
+	const dataElement = await screen.findByText(/loaded data/i);
+	expect(dataElement).toBeInTheDocument();
 });
 ```
 
@@ -251,28 +253,28 @@ expect(element).toBeVisible();
 ```jsx
 // LoginForm.js
 export function LoginForm({ onSubmit }) {
-  return (
-    <form
-      onSubmit={e => {
-        e.preventDefault();
-        const { username, password } = e.target.elements;
-        onSubmit({
-          username: username.value,
-          password: password.value,
-        });
-      }}
-    >
-      <label>
-        Username:
-        <input name="username" />
-      </label>
-      <label>
-        Password:
-        <input name="password" type="password" />
-      </label>
-      <button type="submit">Login</button>
-    </form>
-  );
+	return (
+		<form
+			onSubmit={(e) => {
+				e.preventDefault();
+				const { username, password } = e.target.elements;
+				onSubmit({
+					username: username.value,
+					password: password.value,
+				});
+			}}
+		>
+			<label>
+				Username:
+				<input name="username" />
+			</label>
+			<label>
+				Password:
+				<input name="password" type="password" />
+			</label>
+			<button type="submit">Login</button>
+		</form>
+	);
 }
 ```
 
@@ -285,17 +287,17 @@ import { expect, test, vi } from 'vitest';
 import { LoginForm } from './LoginForm';
 
 test('submits the form with username and password', async () => {
-  const handleSubmit = vi.fn();
-  render(<LoginForm onSubmit={handleSubmit} />);
+	const handleSubmit = vi.fn();
+	render(<LoginForm onSubmit={handleSubmit} />);
 
-  await userEvent.type(screen.getByLabelText(/username/i), 'myUser');
-  await userEvent.type(screen.getByLabelText(/password/i), 'myPass');
-  await userEvent.click(screen.getByRole('button', { name: /login/i }));
+	await userEvent.type(screen.getByLabelText(/username/i), 'myUser');
+	await userEvent.type(screen.getByLabelText(/password/i), 'myPass');
+	await userEvent.click(screen.getByRole('button', { name: /login/i }));
 
-  expect(handleSubmit).toHaveBeenCalledWith({
-    username: 'myUser',
-    password: 'myPass',
-  });
+	expect(handleSubmit).toHaveBeenCalledWith({
+		username: 'myUser',
+		password: 'myPass',
+	});
 });
 ```
 
@@ -311,16 +313,16 @@ test('submits the form with username and password', async () => {
 import React, { useEffect, useState } from 'react';
 
 export function DataLoader() {
-  const [data, setData] = useState(null);
+	const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetch('/api/data')
-      .then(res => res.json())
-      .then(setData);
-  }, []);
+	useEffect(() => {
+		fetch('/api/data')
+			.then((res) => res.json())
+			.then(setData);
+	}, []);
 
-  if (!data) return <div>Loading…</div>;
-  return <div>Data: {data.value}</div>;
+	if (!data) return <div>Loading…</div>;
+	return <div>Data: {data.value}</div>;
 }
 ```
 
@@ -332,19 +334,19 @@ import { expect, test, vi } from 'vitest';
 import { DataLoader } from './DataLoader';
 
 test('loads and displays data', async () => {
-  global.fetch = vi.fn(() =>
-    Promise.resolve({
-      json: () => Promise.resolve({ value: 'Test Data' }),
-    })
-  );
+	global.fetch = vi.fn(() =>
+		Promise.resolve({
+			json: () => Promise.resolve({ value: 'Test Data' }),
+		}),
+	);
 
-  render(<DataLoader />);
-  expect(screen.getByText(/loading/i)).toBeInTheDocument();
+	render(<DataLoader />);
+	expect(screen.getByText(/loading/i)).toBeInTheDocument();
 
-  const dataElement = await screen.findByText(/data: test data/i);
-  expect(dataElement).toBeInTheDocument();
+	const dataElement = await screen.findByText(/data: test data/i);
+	expect(dataElement).toBeInTheDocument();
 
-  global.fetch.mockRestore();
+	global.fetch.mockRestore();
 });
 ```
 
@@ -379,3 +381,7 @@ By adopting these practices, you can create a robust test suite that enhances th
 - **Over-Mocking Can Reduce Test Effectiveness**: Be cautious not to mock too much, which can lead to tests that don't reflect actual behavior.
 
 By understanding these aspects, you can use Testing Library effectively in your testing strategy, ensuring that your components meet the needs of your users and function correctly within your application.
+
+```ts
+
+```

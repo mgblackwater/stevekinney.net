@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-14T10:08:20-06:00
+title: Mocking Timers, Dates, And System Utilities In Vitest
+description: Learn how to mock timers, dates, and utilities in Vitest.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 A lot of UIs tend to show stuff like time and dates. As we've discussed previously, we want our tests to be consistent. As [Steve Miller once wrote](https://www.youtube.com/watch?v=HlItAutxJzk&list=OLAK5uy_lRxgtVPfsBuzpgFdYdFi0Ej0J2mNwzz2A), (but let's be honest, you 're thinking of [Seal's version from the Space Jam soundtrack](https://www.youtube.com/watch?v=gxbBp9SH81U)):
@@ -13,13 +15,13 @@ Typically, if you need to control time in your tests, you'd opt in to using Sino
 
 ```ts
 beforeEach(() => {
-  // Take control of time.
-  vi.useFakeTimers();
+	// Take control of time.
+	vi.useFakeTimers();
 });
 
 afterEach(() => {
-  // Put things back the way you found it.
-  vi.useRealTimers();
+	// Put things back the way you found it.
+	vi.useRealTimers();
 });
 ```
 
@@ -60,16 +62,19 @@ These are helpful when setting timers like `setInterval` and `setTimeout`.
 - `vi.getTimerCount`: Returns a count of the number of remaining timers.
 - `vi.runAllTimers`, `vi.runAllTimersAsync`: Run all of the timers. (This one will throw an an error at 10,000 tries if you have a `setInterval` that is never cleared.)
 - `vi.runAllTicks`: Call every microtask created by `process.nextTick`.
+
 ## Cleaning Up
 
 - `vi.clearAllTimers`: Removes any timers that are scheduled to run.
 - `vi.restoreCurrentDate`: Put the original `Date` object back where it belongs.
 - `vi.useRealTimers`: When all of your timers have run out, this method will return all of your mocked timers back to their original implementations.
+
 ### Mocking Timers, Dates, and other System Utilities
 
 In some cases, your code may rely on system utilities like timers or dates, which can introduce unpredictability into your tests. Vitest provides built-in functionality to mock and control system utilities like `setTimeout`, `setInterval`, and `Date` to ensure your tests behave consistently.
 
 #### Mocking Timers
+
 When dealing with timers, such as `setTimeout` or `setInterval`, you can mock them to control their behavior in tests using `vi.useFakeTimers()`.
 
 ```js
@@ -78,30 +83,31 @@ vi.useFakeTimers();
 
 // Example function that uses setTimeout
 function delay(callback) {
-  setTimeout(() => {
-    callback('Delayed');
-  }, 1000);
+	setTimeout(() => {
+		callback('Delayed');
+	}, 1000);
 }
 
 describe('delay function', () => {
-  it('should call callback after delay', () => {
-    const callback = vi.fn();
+	it('should call callback after delay', () => {
+		const callback = vi.fn();
 
-    // Call the function under test
-    delay(callback);
+		// Call the function under test
+		delay(callback);
 
-    // Fast-forward time
-    vi.advanceTimersByTime(1000);
+		// Fast-forward time
+		vi.advanceTimersByTime(1000);
 
-    // Assert that the callback was called
-    expect(callback).toHaveBeenCalledWith('Delayed');
-  });
+		// Assert that the callback was called
+		expect(callback).toHaveBeenCalledWith('Delayed');
+	});
 });
 ```
 
 In this example, `vi.useFakeTimers()` allows us to take control of the timers and fast-forward time with `vi.advanceTimersByTime(1000)` to simulate the passing of time without waiting for real-world delays.
 
 #### Mocking Dates
+
 Similarly, you can mock the `Date` constructor to return specific dates or times.
 
 ```js
@@ -110,10 +116,10 @@ const mockDate = new Date(2024, 1, 1);
 vi.setSystemTime(mockDate);
 
 describe('mocked Date', () => {
-  it('should return the mocked date', () => {
-    const currentDate = new Date();
-    expect(currentDate).toEqual(mockDate);
-  });
+	it('should return the mocked date', () => {
+		const currentDate = new Date();
+		expect(currentDate).toEqual(mockDate);
+	});
 });
 ```
 
@@ -126,19 +132,22 @@ In more complex systems, you may want to mock entire modules to isolate the code
 ```js
 // Mock the api module
 vi.mock('./api', () => ({
-  getConcertDetails: vi.fn().mockResolvedValue({ band: 'Green Day', venue: 'Madison Square Garden' })
+	getConcertDetails: vi
+		.fn()
+		.mockResolvedValue({ band: 'Green Day', venue: 'Madison Square Garden' }),
 }));
 ```
 
 This allows you to mock all the functions inside the `api` module at once. When testing, this mocked version will replace the real module, ensuring you can simulate various scenarios.
 
 #### Resetting Mocks
+
 After running a test, it’s important to reset or restore the mocks to their original state to avoid cross-test interference. You can reset mocks using `vi.resetAllMocks()` or restore original implementations with `mockRestore()`.
 
 ```js
 // Reset all mocks after each test
 afterEach(() => {
-  vi.resetAllMocks();
+	vi.resetAllMocks();
 });
 ```
 
@@ -151,7 +160,7 @@ You can combine the functionality of mocks, spies, and stubs for more advanced t
 ```js
 // Create a mock and spy on one of its methods
 const mockObject = {
-  method: vi.fn().mockReturnValue('Mocked result')
+	method: vi.fn().mockReturnValue('Mocked result'),
 };
 
 // Spy on the method
@@ -174,30 +183,34 @@ Here’s an example where we mock `setTimeout` and use `vi.useFakeTimers()` to c
 
 ```js
 function delayedFunction(callback) {
-  setTimeout(() => {
-    callback('Done');
-  }, 3000);
+	setTimeout(() => {
+		callback('Done');
+	}, 3000);
 }
 
 describe('delayedFunction', () => {
-  it('should call callback after timeout', () => {
-    // Mock the timer
-    vi.useFakeTimers();
+	it('should call callback after timeout', () => {
+		// Mock the timer
+		vi.useFakeTimers();
 
-    const callback = vi.fn();
+		const callback = vi.fn();
 
-    // Call the function under test
-    delayedFunction(callback);
+		// Call the function under test
+		delayedFunction(callback);
 
-    // Fast-forward the timer
-    vi.advanceTimersByTime(3000);
+		// Fast-forward the timer
+		vi.advanceTimersByTime(3000);
 
-    // Assert that the callback was called
-    expect(callback).toHaveBeenCalledWith('Done');
-  });
+		// Assert that the callback was called
+		expect(callback).toHaveBeenCalledWith('Done');
+	});
 });
 ```
 
 In this test, the timer is controlled using `vi.useFakeTimers()` and `vi.advanceTimersByTime()`, which simulates the `setTimeout` without waiting for the actual delay. This allows you to test asynchronous code in a controlled and predictable way.
 
 Advanced mocking techniques such as controlling timers, mocking dates, and combining spies with mocks allow for greater flexibility when testing complex interactions in your code. These techniques give you full control over the environment in which your tests run, ensuring that you can reliably test any behavior or scenario without relying on external systems or real-world timing.
+
+```ts
+
+```

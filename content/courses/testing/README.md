@@ -1,9 +1,13 @@
 ---
-modified: 2024-09-17T12:28:37-06:00
+title: The Basics
+description: A basic guide on writing and running tests along with mock setups.
+modified: 2024-09-28T11:31:16-06:00
 base: /courses/testing
 layout: contents
 exclude: true
 ---
+
+```ts
 
 ## The Basics
 
@@ -81,3 +85,4 @@ exclude: true
 
 - [Mocking Examples](mocking-examples.md)
 - [Best Practices and Common Pitfalls with Mocking](mocking-best-practices.md)
+```

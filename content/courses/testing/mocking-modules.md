@@ -1,23 +1,25 @@
 ---
-modified: 2024-09-17T11:28:26-06:00
+title: Understanding Vitest Module Mocking
+description: Learn how to mock modules in Vitest using vi.mock and vi.doMock.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 > [!warning] A Word on Module Systems
 > `vi.mock` works only for modules that were imported with the `import` keyword. It doesn't work with `require`.
 
-Vitest provides `vi.mock`, which allows you to mock any import that you provide a path for. It's go the following signature:
+Vitest provides `vi.mock`, which allows you to mock any import that you provide a path for. It's got the following signature:
 
 ```ts
 (path: string, factory?: () => unknown) => void
 ```
 
-The `factory` is a function that you provide as a substitute for whatever _really_ resides at the file path. You'll that it's optional. Here is how it goes down:
+The `factory` is a function that you provide as a substitute for whatever _really_ resides at the file path. You'll see that it's optional. Here is how it goes down:
 
 1. If you provided a `factory` function, it will use the return value of that function as the replacement for whatever module lives at `path`.
-2. If you don't provide a factory, but you do have a `__mocks__ ` directory at the same location and an alternative file in that `__mocks__ ` directory, then it will substiture that in.
-3. Vitest will use it's automocking algorithm.
+2. If you don't provide a factory, but you do have a `__mocks__ ` directory at the same location and an alternative file in that `__mocks__ ` directory, then it will substitute that in.
+3. Vitest will use its automocking algorithm.
 
-## Auto-mocking Algorithm
+## Auto-Mocking Algorithm
 
 If you don't provide a factory, Vitest will employ its [automocking algorithm](https://vitest.dev/guide/mocking.html#automocking-algorithm):
 

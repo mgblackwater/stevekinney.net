@@ -1,20 +1,27 @@
 ---
-modified: 2024-09-14T10:11:37-06:00
+title: Using vi.stubGlobal In Vitest
+description: Learn how to use vi.stubGlobal for mocking global objects.
+modified: 2024-09-28T11:31:15-06:00
 ---
+
 [`vi.stubGlobal`](https://vitest.dev/api/vi.html#vi-stubglobal) basically does what it says on the packaging. It takes two arguments:
 
 1. The key on the global object that you want to stub.
-2. An mock implementation to use.
+2. A mock implementation to use.
 
 ```ts
 import { vi } from 'vitest';
 
 const IntersectionObserverMock = vi.fn(() => ({
-  disconnect: vi.fn(),
-  observe: vi.fn(),
-  takeRecords: vi.fn(),
-  unobserve: vi.fn(),
+	disconnect: vi.fn(),
+	observe: vi.fn(),
+	takeRecords: vi.fn(),
+	unobserve: vi.fn(),
 }));
 
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
+```
+
+```ts
+
 ```

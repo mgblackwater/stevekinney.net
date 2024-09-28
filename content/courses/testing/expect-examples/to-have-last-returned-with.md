@@ -1,4 +1,10 @@
-# `toHaveLastReturnedWith` in Vitest
+---
+title: ToHaveLastReturnedWith In Vitest
+description: Learn how to use toHaveLastReturnedWith for mock functions in Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## `toHaveLastReturnedWith` In Vitest
 
 Alright, my friend. Let’s talk about _one of those matcher methods_ you bust out when you're dealing with mock functions, aka the unsung heroes of your tests. Specifically, we're looking at `toHaveLastReturnedWith`, which is kinda like saying, _"Hey, I need to make sure that the **last** time this mock function was called, it returned exactly this value."_
 
@@ -18,24 +24,26 @@ Let’s go with our trusty invented music library. We’re mocking a function th
 import { describe, it, expect, vi } from 'vitest';
 
 describe('Music Library: getAlbumsByArtist', () => {
-  it('should return the last album fetched', () => {
-    const getAlbumsByArtist = vi
-      .fn()
-      .mockReturnValueOnce(['Dookie', 'American Idiot']) // First time: 2 albums
-      .mockReturnValueOnce(['21st Century Breakdown']); // Second time: Just 1 album
+	it('should return the last album fetched', () => {
+		const getAlbumsByArtist = vi
+			.fn()
+			.mockReturnValueOnce(['Dookie', 'American Idiot']) // First time: 2 albums
+			.mockReturnValueOnce(['21st Century Breakdown']); // Second time: Just 1 album
 
-    // Call the mock function a couple of times
-    getAlbumsByArtist('Green Day');
-    getAlbumsByArtist('Green Day');
+		// Call the mock function a couple of times
+		getAlbumsByArtist('Green Day');
+		getAlbumsByArtist('Green Day');
 
-    // Now let's verify that the last call returned '21st Century Breakdown'
-    expect(getAlbumsByArtist).toHaveLastReturnedWith([
-      '21st Century Breakdown',
-    ]);
-  });
+		// Now let's verify that the last call returned '21st Century Breakdown'
+		expect(getAlbumsByArtist).toHaveLastReturnedWith(['21st Century Breakdown']);
+	});
 });
 ```
 
 In this somewhat contrived but useful example, we mock a function that simulates fetching albums for an artist (in this case, the mighty Green Day). On the first call, we say the mock function should return two albums (`Dookie`, `American Idiot`). On the second call, it returns just `21st Century Breakdown`. Our test checks that the last value returned from the final call to `getAlbumsByArtist` was exactly `21st Century Breakdown`.
 
 In short, `toHaveLastReturnedWith` gives you peace of mind that your function closed out with the result you were expecting. It's great when you're working with sequences of calls and need to zero in on that final output.
+
+```ts
+
+```

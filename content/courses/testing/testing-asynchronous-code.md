@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T13:26:32-06:00
+title: Using Async/Await in Vitest
+description: Handling asynchronous code with async/await in Vitest.
+modified: 2024-09-28T11:31:14-06:00
 ---
 
 As with almost everything in JavaScript, asynchronous code makes everything harder.
@@ -54,7 +56,8 @@ test('Code inside of callback never runs', (done) => {
 });
 ```
 
-As the comment says, this will *not* work in Vitest. I only mention it because this course isn't supposed to be Vitest-specific—that's the just the tool we chose to use. Regardless, what follows is *probably* what you want anyway.
+As the comment says, this will _not_ work in Vitest. I only mention it because this course isn't supposed to be Vitest-specific—that's the just the tool we chose to use. Regardless, what follows is _probably_ what you want anyway.
+
 ## Using `async`/`await`
 
 We no longer live in a world riddled with callbacks. These days, most of our asynchronous code either uses `async`/`await` or—at least—uses promises.
@@ -87,3 +90,7 @@ The first test fails with the following error:
 
 > [!TIP] Working with Promises
 > If you're working with Promises, [Vitest also has some special functionality](testing-promises.md) that you could optionally use.
+
+```ts
+
+```

@@ -1,8 +1,10 @@
 ---
-modified: 2024-09-16T12:33:08-06:00
+title: Filtering By File Name
+description: Learn how to filter tests in Vitest by name, directory, and more.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
-## Filtering by File name
+## Filtering by File Name
 
 If you provide an argument to Vitest, then it'll filter your tests and only try to match the ones with that name.
 
@@ -12,7 +14,7 @@ vitest close-enough
 
 This will run `src/close-enough.test.js`, but none of the other ones.
 
-## Filtering by Test name
+## Filtering by Test Name
 
 You can also use the `--testNamePattern <pattern>` (or, `-t`, for short) option to filter tests by their name. This can be helpful when you want to filter by the name that you gave the test using either `it` or `test` within a file rather than the name of the file containing the test.
 
@@ -73,7 +75,7 @@ it('should work', () => {
 });
 
 test.todo('works with "test" as well', () => {
-	expect(true).not.toBe(false);
+	expect(true).not to be false);
 });
 ```
 
@@ -81,7 +83,7 @@ test.todo('works with "test" as well', () => {
 
 You saw some of these (well, the first two) before, but I'll call them out just in case you missed them:
 
-- `test.skipIf`: Only skip this one if I had you a truthy value.
+- `test.skipIf`: Only skip this one if I give you a truthy value.
 - `test.runIf`: Only run this test if I give you a truthy value.
 - `test.concurrent`: Run this test in parallel with any other test using `.concurrent`. We'll cover this in [parallelizing-tests](parallelizing-tests.md).
 - `test.each`: I want to generate a bunch of tests. We'll cover this in [Parameterizing Tests](Parameterizing%20Tests.md).
@@ -145,3 +147,7 @@ Inside of `examples/getting-started`:
 4. Run `npx vitest related ./exponent.ts --run` and look at which test files run.
 5. Assuming you don't have any un-staged or uncommitted changes, run `npx vitest --changed HEAD --run` and look at which test files—umm—_didn't_ run.
 6. Make a change to `words.ts` (or any other file, really) and then run `npx vitest --changed HEAD --run` and see what tests run.
+
+```ts
+
+```

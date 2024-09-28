@@ -1,4 +1,10 @@
-# expect().toBeFalsy()
+---
+title: Expect().ToBeFalsy()
+description: Understand the behavior of toBeFalsy() in JavaScript testing.
+modified: 2024-09-28T11:31:16-06:00
+---
+
+## expect().toBeFalsy()
 
 Alright, let’s talk **toBeFalsy()**. This one’s like that friend who’s skeptical of everything—they’re not easily convinced. When you use `toBeFalsy()`, you're basically saying, “I want this thing to be one of the JavaScript values that’s considered falsey.”
 
@@ -25,18 +31,18 @@ Let’s imagine we’re building a music library (shoutout to Green Day fans). I
 import { describe, it, expect } from 'vitest';
 
 function findArtist(artists, name) {
-  return artists.find((artist) => artist.name === name) || undefined;
+	return artists.find((artist) => artist.name === name) || undefined;
 }
 
 describe('findArtist', () => {
-  const artists = [{ name: 'Green Day' }, { name: 'Nirvana' }];
+	const artists = [{ name: 'Green Day' }, { name: 'Nirvana' }];
 
-  it('should return undefined if the artist is not found', () => {
-    const result = findArtist(artists, 'The Beatles');
+	it('should return undefined if the artist is not found', () => {
+		const result = findArtist(artists, 'The Beatles');
 
-    // We expect `result` to be undefined, which is falsy in JavaScript
-    expect(result).toBeFalsy();
-  });
+		// We expect `result` to be undefined, which is falsy in JavaScript
+		expect(result).toBeFalsy();
+	});
 });
 ```
 
@@ -45,3 +51,7 @@ Here, `findArtist` returns `undefined` if an artist isn't in our list. We're tes
 ### Why Use It
 
 Sometimes you don’t care _which_ falsy thing it is, you just care that it **ain’t true**. That’s when `toBeFalsy()` shines—it’s kinda like taking the test with a pencil that has a huge eraser. You’re ready for just about anything the JavaScript universe can throw at you that evaluates to false.
+
+```ts
+
+```

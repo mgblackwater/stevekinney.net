@@ -1,6 +1,9 @@
 ---
-modified: 2024-09-14T10:00:04-06:00
+title: Handling Large Data Structures In Testing
+description: Examples of complex data structures and using asymmetric matchers.
+modified: 2024-09-28T11:31:16-06:00
 ---
+
 The little examples that we have are easy to grok, but they don't always properly demonstrate what you might see in the wild. (This is mostly because it can take days or weeks to fully grok a large code base, so I'm choosing to simplify things a bit.)
 
 I'm not going to bore you with the details of the application that I work on, but we have these things called **Workflows**, which have an **Event History**, that is made up from **Events**. I grabbed one of those raw events. For your viewing pleasure, here it is:

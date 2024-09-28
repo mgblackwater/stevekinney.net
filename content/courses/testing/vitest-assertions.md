@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T11:48:21-06:00
+title: Common Assertions In Vitest
+description: Learn about using assertions and matchers in Vitest testing.
+modified: 2024-09-28T11:31:14-06:00
 ---
 
 In Vitest, assertions are made using the `expect` function, which is similar to other testing libraries like Jest. The general syntax is:
@@ -46,7 +48,7 @@ import { test, expect } from 'vitest';
 import { fruits } from './fruits';
 
 test('contains banana in the fruits array', () => {
-  expect(fruits).toContain('banana');
+	expect(fruits).toContain('banana');
 });
 ```
 
@@ -61,7 +63,7 @@ Testing if a string matches a pattern:
 ```javascript
 // greet.js
 export function greet(name) {
-  return `Hello, ${name}!`;
+	return `Hello, ${name}!`;
 }
 ```
 
@@ -73,8 +75,8 @@ import { test, expect } from 'vitest';
 import { greet } from './greet';
 
 test('greets the user with their name', () => {
-  const message = greet('Bob');
-  expect(message).toMatch(/Hello, Bob!/);
+	const message = greet('Bob');
+	expect(message).toMatch(/Hello, Bob!/);
 });
 ```
 
@@ -88,9 +90,9 @@ Testing that a value does not meet a condition:
 
 ```javascript
 test('value is not null or undefined', () => {
-  const value = 'Hello';
-  expect(value).not.toBeNull();
-  expect(value).not.toBeUndefined();
+	const value = 'Hello';
+	expect(value).not.toBeNull();
+	expect(value).not.toBeUndefined();
 });
 ```
 
@@ -105,3 +107,7 @@ test('value is not null or undefined', () => {
 - **Provide Clear Error Messages:** Custom matchers or assertions should return messages that help identify why a test failed.
 - **Avoid Implementation Details:** Focus on the output and side effects rather than the internal workings of the code.
 - **Clean Up After Tests:** Restore any mocked functions or state to prevent tests from affecting each other.
+
+```ts
+
+```

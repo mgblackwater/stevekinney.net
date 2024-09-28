@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-14T09:39:51-06:00
+title: Which Testing Framework Should I Use?
+description: An overview of testing frameworks like Jest, Vitest, and Jasmine.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 You _could_ separate testing libraries into two classes:
@@ -28,3 +30,7 @@ If you use Vitest and Visual Studio Code, there is [a helpful plugin for Visual 
 ## Further Investigation
 
 - [testing-resources](testing-resources.md)
+
+```ts
+
+```

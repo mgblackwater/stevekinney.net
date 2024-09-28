@@ -1,4 +1,7 @@
 ---
-modified: 2024-09-09T17:45:29-06:00
+title: Writing Tests With Spies For Callbacks
+description: Use spies to verify a callback was invoked with correct arguments.
+modified: 2024-09-28T11:31:15-06:00
 ---
+
 **Exercise**: Write tests that use spies to verify a callback function was invoked with the correct arguments in a Green Day concert booking application.

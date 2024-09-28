@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-17T11:20:07-06:00
+title: Using Stubs in Vitest
+description: Learn how to use stubs to simulate behavior in testing.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 A stub is a type of test double used to replace a real function with a simplified, controlled version for testing purposes. The primary purpose of a stub is to simulate the behavior of real code by providing predefined responses. Stubs do not track how often a function is called or with what arguments—it only replaces the real implementation to ensure that tests run in a predictable, isolated environment.
@@ -9,6 +11,7 @@ Stubs are useful when you need to isolate a unit of code and control the behavio
 ## When to Use Stubs
 
 Use stubs when:
+
 - You want to replace a dependency to isolate the function under test.
 - The real dependency involves side effects, such as I/O operations, network calls, or database queries, which you do not want to run during testing.
 - You need to simulate different behaviors from the external systems (e.g., returning specific data or triggering an error) to cover various test cases.
@@ -23,7 +26,9 @@ In Vitest, you can easily create stubs using the `vi.fn()` method. This function
 Here’s how you create a simple stub:
 
 ```js
-const fetchStub = vi.fn(() => Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' }));
+const fetchStub = vi.fn(() =>
+	Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' }),
+);
 ```
 
 `fetchStub` will always return a resolved promise with predefined data, simulating an API response. This can be used to replace an actual network request in a test.
@@ -36,9 +41,9 @@ Here’s the function to be tested:
 
 ```js
 async function getConcertDetails(band) {
-  const response = await fetch(`/api/concerts?band=${band}`);
-  const data = await response.json();
-  return data;
+	const response = await fetch(`/api/concerts?band=${band}`);
+	const data = await response.json();
+	return data;
 }
 ```
 
@@ -49,26 +54,26 @@ import { describe, it, expect, vi } from 'vitest';
 import { getConcertDetails } from './concerts';
 
 describe('getConcertDetails', () => {
-  it('returns concert details from the API', async () => {
-    // Stub the fetch function to simulate an API response
-    const fetchStub = vi.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' })
-      })
-    );
-    
-    // Replace the global fetch function with our stub
-    global.fetch = fetchStub;
+	it('returns concert details from the API', async () => {
+		// Stub the fetch function to simulate an API response
+		const fetchStub = vi.fn(() =>
+			Promise.resolve({
+				json: () => Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' }),
+			}),
+		);
 
-    // Call the function under test
-    const result = await getConcertDetails('Green Day');
+		// Replace the global fetch function with our stub
+		global.fetch = fetchStub;
 
-    // Assert that the stubbed API returned the correct data
-    expect(result).toEqual({ band: 'Green Day', venue: 'Madison Square Garden' });
+		// Call the function under test
+		const result = await getConcertDetails('Green Day');
 
-    // Clean up: Restore the original fetch function
-    fetchStub.mockRestore();
-  });
+		// Assert that the stubbed API returned the correct data
+		expect(result).toEqual({ band: 'Green Day', venue: 'Madison Square Garden' });
+
+		// Clean up: Restore the original fetch function
+		fetchStub.mockRestore();
+	});
 });
 ```
 
@@ -122,7 +127,7 @@ A **stub** is similar to a mock but focuses on providing predefined responses ra
 ```javascript
 // notifier.js
 export function notify(message) {
-  // Sends a notification (e.g., email, SMS)
+	// Sends a notification (e.g., email, SMS)
 }
 ```
 
@@ -134,17 +139,17 @@ import { test, expect, vi } from 'vitest';
 import { notify } from './notifier';
 
 test('sends a notification', () => {
-  // Arrange
-  const notifyStub = vi.fn();
+	// Arrange
+	const notifyStub = vi.fn();
 
-  // Replace the real notify function with the stub
-  notifyStub('Test message');
+	// Replace the real notify function with the stub
+	notifyStub('Test message');
 
-  // Act
-  // (No action needed since we're stubbing the function)
+	// Act
+	// (No action needed since we're stubbing the function)
 
-  // Assert
-  expect(notifyStub).toHaveBeenCalledWith('Test message');
+	// Assert
+	expect(notifyStub).toHaveBeenCalledWith('Test message');
 });
 ```
 
@@ -152,3 +157,7 @@ test('sends a notification', () => {
 
 - The stub `notifyStub` replaces the real `notify` function.
 - The focus is on ensuring that `notify` is called with the correct arguments.
+
+```ts
+
+```

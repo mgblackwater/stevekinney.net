@@ -1,4 +1,10 @@
-# toHaveBeenLastCalledWith in Vitest
+---
+title: ToHaveBeenLastCalledWith In Vitest
+description: Learn how to use the toHaveBeenLastCalledWith matcher in Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## ToHaveBeenLastCalledWith In Vitest
 
 Okay, so picture this: You've got a function, right? Let's say it's `createAlbum`. You’re calling it left and right in your app with different arguments, but you only _really_ care about the very last call it got. Like, who cares about the first one from some random place in the app, right?
 
@@ -10,7 +16,7 @@ You'll want to use this when you:
 2. Don’t care about how or when it was called before (because every time before the last one was a warm-up lap).
 3. Need to assert that the very last call went through as intended.
 
-## Example
+### Example
 
 You’re working on our little music management app. We’ve got an `addSongToAlbum` function that’s supposed to add a song to the latest album. So, you mock `addSongToAlbum` to make sure it was last called with the right song and album.
 
@@ -19,25 +25,25 @@ import { vi, describe, it, expect } from 'vitest';
 
 // Here's that function we want to mock
 function addSongToAlbum(album, song) {
-  // pretend there's logic here to add the song to the album
+	// pretend there's logic here to add the song to the album
 }
 
 // Mock it because we know this will get called multiple times
 const addSongToAlbumMock = vi.fn(addSongToAlbum);
 
 describe('adding songs to albums', () => {
-  it('should add the latest song to the correct album', () => {
-    const album = { title: 'Dookie', artist: 'Green Day' };
-    const song1 = { title: 'Basket Case', durationSeconds: 183 };
-    const song2 = { title: 'When I Come Around', durationSeconds: 177 };
+	it('should add the latest song to the correct album', () => {
+		const album = { title: 'Dookie', artist: 'Green Day' };
+		const song1 = { title: 'Basket Case', durationSeconds: 183 };
+		const song2 = { title: 'When I Come Around', durationSeconds: 177 };
 
-    // Call the mock a couple of times, like you'd expect in real life
-    addSongToAlbumMock(album, song1);
-    addSongToAlbumMock(album, song2); // This is the money call
+		// Call the mock a couple of times, like you'd expect in real life
+		addSongToAlbumMock(album, song1);
+		addSongToAlbumMock(album, song2); // This is the money call
 
-    // Now let's check the last call
-    expect(addSongToAlbumMock).toHaveBeenLastCalledWith(album, song2);
-  });
+		// Now let's check the last call
+		expect(addSongToAlbumMock).toHaveBeenLastCalledWith(album, song2);
+	});
 });
 ```
 

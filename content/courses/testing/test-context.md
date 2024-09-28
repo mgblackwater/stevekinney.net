@@ -1,4 +1,10 @@
-# Test Context
+---
+title: Test Context
+description: Understanding and using test contexts in Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## Test Context
 
 Vitest's [test contexts](https://vitest.dev/guide/test-context.html) are inspired by [Playwright's fixtures](https://playwright.dev/docs/test-fixtures).
 
@@ -29,7 +35,7 @@ it('should have version of `expect` bound to the current test', (ctx) => {
 });
 ```
 
-# Extending the Context
+## Extending the Context
 
 ```ts
 interface LocalTestContext {

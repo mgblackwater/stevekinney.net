@@ -1,4 +1,10 @@
-# `expect.toMatchObject`: The Lowdown
+---
+title: toMatchObject
+description: Learn how to use toMatchObject for partial object matching in tests.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## `expect.toMatchObject`: The Lowdown
 
 Alright, so let's talk about **`toMatchObject`**. This little guy is super handy when you want to compare objects in your tests, but you don't necessarily care about _every single key_ and _every single value_ being a perfect match. Maybe some values in your object are irrelevant in this context, or you just want to test a few important properties—either way, `toMatchObject` has your back.
 
@@ -18,11 +24,11 @@ Let’s pull this into a simpler example. Like, say you’ve got a music library
 
 ```js
 const getAlbum = () => ({
-  artist: 'Green Day',
-  title: 'Dookie',
-  year: 1994,
-  genre: 'Punk Rock',
-  label: 'Reprise',
+	artist: 'Green Day',
+	title: 'Dookie',
+	year: 1994,
+	genre: 'Punk Rock',
+	label: 'Reprise',
 });
 ```
 
@@ -32,14 +38,14 @@ Now, let’s say in your test, you don't care about all that extra noise like th
 import { describe, it, expect } from 'vitest';
 
 describe('Green Day albums', () => {
-  it('should return the correct album with expected artist and title', () => {
-    const album = getAlbum();
+	it('should return the correct album with expected artist and title', () => {
+		const album = getAlbum();
 
-    expect(album).toMatchObject({
-      artist: 'Green Day',
-      title: 'Dookie',
-    });
-  });
+		expect(album).toMatchObject({
+			artist: 'Green Day',
+			title: 'Dookie',
+		});
+	});
 });
 ```
 

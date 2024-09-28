@@ -1,4 +1,10 @@
-# 1. Error Handling and Edge Case Testing with Vitest
+---
+title: Error Handling And Edge Case Testing With Vitest
+description: Learn to test error handling and edge cases using Vitest.
+modified: 2024-09-28T11:31:16-06:00
+---
+
+## 1. Error Handling and Edge Case Testing with Vitest
 
 Okay, folks, let's talk about those error-prone, sneaky little troublemakers we like to call _edge cases_. You know—the weird stuff users do that you didn’t see coming. They're a lot like traffic: You planned for a smooth drive, but, oh hey, most of the road is under construction. Nice. But instead of pulling out your hair, we can deal with edge cases through some **good error handling** and **thorough testing**.
 
@@ -110,3 +116,7 @@ Boom. Now your error can say exactly what went wrong. Custom error messages: sav
 - Throw wild edge cases at your code during testing. If your tests pass, you’re cruising toward a production environment with a little more peace of mind.
 
 And that’s it! You’re now better equipped to handle errors _and_ those fringe cases like a pro. May fewer bugs and unexpected inputs come your way—but if they do, you’ve got Vitest and your trusty tests at the ready.
+
+```ts
+
+```

@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T12:29:52-06:00
+title: Testing the Character Class
+description: Writing tests for the Character class and its key attributes.
+modified: 2024-09-28T11:31:16-06:00
 ---
 
 Consider this `Character`, which is a subset of the `Person` class we were just looking at.

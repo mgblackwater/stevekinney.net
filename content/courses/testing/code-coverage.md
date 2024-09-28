@@ -1,6 +1,7 @@
 ---
-modified: 2024-09-14T10:20:30-06:00
-tags: [s**:]
+title: Installing a Code Coverage Tool
+description: A guide to setting up and managing code coverage in Vitest.
+modified: 2024-09-28T11:31:16-06:00
 ---
 
 Code coverage is useful for identifying how much your code is (or _isn't_) covered by tests. This can be useful for identifying blind spots and potential edge cases that are not covered by your test suite.
@@ -54,12 +55,12 @@ if (process.platform === 'win32') console.info('hello world');
 
 /* c8 ignore next 3 */
 if (process.platform === 'darwin') {
-  console.info('hello world');
+	console.info('hello world');
 }
 
 /* c8 ignore start */
 function dontMindMe() {
-  // ...
+	// ...
 }
 /* c8 ignore stop */
 ```
@@ -74,36 +75,36 @@ import { defineConfig, defaultExclude } from 'vitest/config';
 import configuration from './vite.config';
 
 export default defineConfig({
-  ...configuration,
-  resolve: {
-    alias: {
-      ...configuration?.resolve?.alias,
-      test: path.resolve(__dirname, './test'),
-    },
-  },
-  test: {
-    globals: true,
-    setupFiles: path.resolve(__dirname, 'test/setup.ts'),
-    exclude: [...defaultExclude, '**/*.svelte**'],
-    environmentMatchGlobs: [
-      ['**/*.test.tsx', 'jsdom'],
-      ['**/*.component.test.ts', 'jsdom'],
-    ],
-    coverage: {
-      include: ['src/**/*'],
-      exclude: [
-        'test/**',
-        'vite.*.ts',
-        '**/*.d.ts',
-        '**/*.test.{ts,tsx,js,jsx}',
-        '**/*.config.*',
-        '**/snapshot-tests/**',
-        '**/*.solution.tsx',
-        '**/coverage/**',
-      ],
-      all: true,
-    },
-  },
+	...configuration,
+	resolve: {
+		alias: {
+			...configuration?.resolve?.alias,
+			test: path.resolve(__dirname, './test'),
+		},
+	},
+	test: {
+		globals: true,
+		setupFiles: path.resolve(__dirname, 'test/setup.ts'),
+		exclude: [...defaultExclude, '**/*.svelte**'],
+		environmentMatchGlobs: [
+			['**/*.test.tsx', 'jsdom'],
+			['**/*.component.test.ts', 'jsdom'],
+		],
+		coverage: {
+			include: ['src/**/*'],
+			exclude: [
+				'test/**',
+				'vite.*.ts',
+				'**/*.d.ts',
+				'**/*.test.{ts,tsx,js,jsx}',
+				'**/*.config.*',
+				'**/snapshot-tests/**',
+				'**/*.solution.tsx',
+				'**/coverage/**',
+			],
+			all: true,
+		},
+	},
 });
 ```
 
@@ -163,9 +164,9 @@ Create a `vitest.config.js` file in your project's root directory if you haven't
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  test: {
-    // Configuration options go here
-  },
+	test: {
+		// Configuration options go here
+	},
 });
 ```
 
@@ -182,14 +183,14 @@ Alternatively, update your `vitest.config.js` to include coverage options:
 ```javascript
 // vitest.config.js
 export default defineConfig({
-  test: {
-    coverage: {
-      provider: 'c8', // or 'istanbul'
-      reporter: ['text', 'html'],
-      // include: ['src/**/*.{js,jsx}'], // Specify files to include
-      // exclude: ['node_modules'], // Specify files to exclude
-    },
-  },
+	test: {
+		coverage: {
+			provider: 'c8', // or 'istanbul'
+			reporter: ['text', 'html'],
+			// include: ['src/**/*.{js,jsx}'], // Specify files to include
+			// exclude: ['node_modules'], // Specify files to exclude
+		},
+	},
 });
 ```
 
@@ -219,7 +220,7 @@ Vitest generates coverage reports in the specified formats. Commonly used report
 
 ##### Console Output Example
 
-```bash
+````bash
 ---------------|---------|----------|---------|---------|-------------------
 File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ---------------|---------|----------|---------|---------|-------------------
@@ -229,7 +230,7 @@ All files      |    85.7 |    66.66 |      80 |    85.7 |
  src/utils     |   66.66 |       50 |      50 |   66.66 |
   helper.js    |   66.66 |       50 |      50 |   66.66 | 12-14
 ---------------|---------|----------|---------|---------|-------------------
-```
+
 
 **Explanation:**
 
@@ -271,13 +272,13 @@ The HTML report is generated in the `coverage` directory by default. Open `cover
 ```javascript
 // vitest.config.js
 export default defineConfig({
-  test: {
-    coverage: {
-      exclude: ['node_modules', 'src/setupTests.js'],
-    },
-  },
+	test: {
+		coverage: {
+			exclude: ['node_modules', 'src/setupTests.js'],
+		},
+	},
 });
-```
+````
 
 ##### 4. Regularly Review Coverage Reports
 
@@ -294,14 +295,14 @@ export default defineConfig({
 ```javascript
 // vitest.config.js
 export default defineConfig({
-  test: {
-    coverage: {
-      statements: 80,
-      branches: 75,
-      functions: 80,
-      lines: 80,
-    },
-  },
+	test: {
+		coverage: {
+			statements: 80,
+			branches: 75,
+			functions: 80,
+			lines: 80,
+		},
+	},
 });
 ```
 
@@ -365,11 +366,11 @@ export default defineConfig({
 ```javascript
 // src/math.js
 export function add(a, b) {
-  return a + b;
+	return a + b;
 }
 
 export function subtract(a, b) {
-  return a - b;
+	return a - b;
 }
 ```
 
@@ -381,11 +382,11 @@ import { expect, test } from 'vitest';
 import { add, subtract } from '../src/math';
 
 test('adds numbers correctly', () => {
-  expect(add(2, 3)).toBe(5);
+	expect(add(2, 3)).toBe(5);
 });
 
 test('subtracts numbers correctly', () => {
-  expect(subtract(5, 3)).toBe(2);
+	expect(subtract(5, 3)).toBe(2);
 });
 ```
 
@@ -407,10 +408,10 @@ npx vitest --coverage
 ```javascript
 // src/utils/helper.js
 export function greet(name) {
-  if (!name) {
-    return 'Hello, Stranger!';
-  }
-  return `Hello, ${name}!`;
+	if (!name) {
+		return 'Hello, Stranger!';
+	}
+	return `Hello, ${name}!`;
 }
 ```
 
@@ -422,7 +423,7 @@ import { expect, test } from 'vitest';
 import { greet } from '../src/utils/helper';
 
 test('greets a named person', () => {
-  expect(greet('Alice')).toBe('Hello, Alice!');
+	expect(greet('Alice')).toBe('Hello, Alice!');
 });
 ```
 
@@ -437,7 +438,7 @@ Add a test for the missing branch:
 
 ```javascript
 test('greets a stranger when no name is provided', () => {
-  expect(greet()).toBe('Hello, Stranger!');
+	expect(greet()).toBe('Hello, Stranger!');
 });
 ```
 
@@ -499,3 +500,7 @@ By following these practices, you can effectively utilize code coverage in Vites
 - **Vitest Documentation**: [Vitest Coverage Guide](https://vitest.dev/guide/coverage.html)
 - **C8 Coverage Tool**: [c8 on npm](https://www.npmjs.com/package/c8)
 - **Understanding Code Coverage Metrics**: [Istanbul.js Documentation](https://istanbul.js.org/docs/advanced/coverage-object/)
+
+```ts
+
+```

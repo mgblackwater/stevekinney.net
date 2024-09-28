@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-17T11:22:35-06:00
+title: Using Spies in Vitest
+description: Learn how to use spies in Vitest to monitor function calls.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 A spy is a type of [test double](test-doubles.md) used to monitor and record information about function calls without modifying the function's actual behavior by default. Spies are used to observe how functions are called during execution, allowing you to verify details like the number of times a function was invoked, the arguments passed to it, and its return values. Unlike stubs or mocks, spies do not replace the function with predefined behavior unless explicitly configured to do so.
@@ -37,7 +39,7 @@ Let’s go through an example where we spy on a function and verify its behavior
 
 ```js
 function handleTicketSaleError(errorMessage) {
-  console.error(`Error: ${errorMessage}`);
+	console.error(`Error: ${errorMessage}`);
 }
 ```
 
@@ -47,19 +49,19 @@ In our test, we can spy on `console.error` to ensure it was called with the corr
 import { describe, it, expect, vi } from 'vitest';
 
 describe('handleTicketSaleError', () => {
-  it('logs an error message when ticket sale fails', () => {
-    // Spy on console.error
-    const errorSpy = vi.spyOn(console, 'error');
+	it('logs an error message when ticket sale fails', () => {
+		// Spy on console.error
+		const errorSpy = vi.spyOn(console, 'error');
 
-    // Call the function under test
-    handleTicketSaleError('Payment declined');
+		// Call the function under test
+		handleTicketSaleError('Payment declined');
 
-    // Assert that the spy tracked the correct call
-    expect(errorSpy).toHaveBeenCalledWith('Error: Payment declined');
+		// Assert that the spy tracked the correct call
+		expect(errorSpy).toHaveBeenCalledWith('Error: Payment declined');
 
-    // Clean up: Restore the original function
-    errorSpy.mockRestore();
-  });
+		// Clean up: Restore the original function
+		errorSpy.mockRestore();
+	});
 });
 ```
 
@@ -68,6 +70,7 @@ In this example, `errorSpy` watches `console.error` and verifies that the correc
 ## Verifying the Number of Calls, Arguments Passed, and Context of Calls Using Spies
 
 One of the main advantages of spies is their ability to provide detailed information about how functions are called. You can verify:
+
 - **The number of times a function was called**.
 - **The arguments passed to the function**.
 - **The return value of the function**.
@@ -77,30 +80,31 @@ Here’s an example that demonstrates how to check these properties:
 
 ```js
 function processOrder(orderId) {
-  console.log(`Processing order: ${orderId}`);
+	console.log(`Processing order: ${orderId}`);
 }
 
 describe('processOrder', () => {
-  it('should log the correct order ID', () => {
-    // Spy on console.log
-    const logSpy = vi.spyOn(console, 'log');
+	it('should log the correct order ID', () => {
+		// Spy on console.log
+		const logSpy = vi.spyOn(console, 'log');
 
-    // Call the function under test
-    processOrder('12345');
+		// Call the function under test
+		processOrder('12345');
 
-    // Verify the spy was called exactly once
-    expect(logSpy).toHaveBeenCalledTimes(1);
+		// Verify the spy was called exactly once
+		expect(logSpy).toHaveBeenCalledTimes(1);
 
-    // Verify the spy was called with the correct argument
-    expect(logSpy).toHaveBeenCalledWith('Processing order: 12345');
+		// Verify the spy was called with the correct argument
+		expect(logSpy).toHaveBeenCalledWith('Processing order: 12345');
 
-    // Clean up: Restore the original function
-    logSpy.mockRestore();
-  });
+		// Clean up: Restore the original function
+		logSpy.mockRestore();
+	});
 });
 ```
 
 In this test, we use `logSpy` to verify:
+
 1. The function was called once (`toHaveBeenCalledTimes`).
 2. The function was called with the argument `'Processing order: 12345'` (`toHaveBeenCalledWith`).
 
@@ -110,13 +114,13 @@ Spies give you powerful control over testing interactions, allowing you to valid
 
 - `toHaveBeenCalled()`: Passes if the spy was ever called.
 - `toHaveBeenCalledTimes(times)`: Passes if the spy was called the correct number of times.
-- `toHaveBeenCalledWith(…args)`: Passes if the function has _every_ been called with the arguments that you specify.
+- `toHaveBeenCalledWith(…args)`: Passes if the function has _ever_ been called with the arguments that you specify.
 - `toHaveBeenLastCalledWith`: Passes if the function was most recently called with the arguments that you specify.
 - `toHaveBeenNthCalledWith(time, …args)`: Passes if the function was called whichever time you specified with the arguments you specified.
 - `toHaveReturned()`: Passes if the function returned (e.g., it didn't throw an error).
-- `toHaveReturnedTimes(times)`: Passes if the function return however many times you specify.
+- `toHaveReturnedTimes(times)`: Passes if the function returned however many times you specify.
 - `toHaveReturnedWith(value)`: Passes if the function has ever successfully returned with the value you specify.
-- `toHaveLastReturnedWith(value)`: Passes if the function most recently returned with value you specify.
+- `toHaveLastReturnedWith(value)`: Passes if the function most recently returned with the value you specify.
 - `toHaveNthReturnedWith(time, value)`: Passes if the function returned whichever time you specified with the value you specified.
 
 ## Another Example: Basic Math
@@ -127,18 +131,18 @@ import { test, expect, vi } from 'vitest';
 import * as math from './math';
 
 test('calls add with correct arguments', () => {
-  // Arrange
-  const addSpy = vi.spyOn(math, 'add');
+	// Arrange
+	const addSpy = vi.spyOn(math, 'add');
 
-  // Act
-  const result = math.add(2, 3);
+	// Act
+	const result = math.add(2, 3);
 
-  // Assert
-  expect(addSpy).toHaveBeenCalledWith(2, 3);
-  expect(result).toBe(5);
+	// Assert
+	expect(addSpy).toHaveBeenCalledWith(2, 3);
+	expect(result).toBe(5);
 
-  // Cleanup
-  addSpy.mockRestore();
+	// Cleanup
+	addSpy.mockRestore();
 });
 ```
 
@@ -147,3 +151,7 @@ test('calls add with correct arguments', () => {
 - **`vi.spyOn(object, methodName)`**: Creates a spy on the specified method.
 - The spy allows us to verify that `add` was called with the correct arguments.
 - **Cleanup**: Restore the original method to avoid side effects.
+
+```ts
+
+```

@@ -1,8 +1,14 @@
-# Clearing, Restoring, and Resetting Mocks in Vitest
+---
+title: Clearing, Restoring, and Resetting Mocks in Vitest
+description: Learn how to manage mocks effectively using Vitest.
+modified: 2024-09-28T11:31:16-06:00
+---
+
+## Clearing, Restoring, and Resetting Mocks in Vitest
 
 Ah, mock functions. They’re the unsung heroes when it comes to testing. But, here's the deal: once you’ve mocked something, you want to make sure that those mocks don’t stick around like a bad code smell. That's why **clearing**, **restoring**, and **resetting** mocks are vital parts of your testing toolkit. So, let’s break it down like refactoring a confusing callback hell into promise chains.
 
-## Mocking in Vitest (Quick Refresher)
+### Mocking in Vitest (Quick Refresher)
 
 First, let’s revisit what mocking is all about—because nobody wants to be confused by lingo while debugging at 2 a.m.
 
@@ -16,7 +22,7 @@ Okay, now that we’ve got that covered, let's move on to the cleanup needed aft
 
 ---
 
-## Clearing Mocks
+### Clearing Mocks
 
 Clearing a mock removes all _invocation history_. Let's say you've got a mock that's been called a few times, and you want to reset the call count back to zero. That’s _clearing_ in action.
 
@@ -39,7 +45,7 @@ Use `mockClear()` when you want to ensure that your tests are checking fresh inv
 
 ---
 
-## Resetting Mocks
+### Resetting Mocks
 
 While **clearing** wipes out call history, **resetting** is like hitting the factory reset button on your microwave—it clears not only the previous calls but also any custom mock implementations.
 
@@ -62,7 +68,7 @@ When should you reset? Think of it as hitting _undo_. If you’ve changed what t
 
 ---
 
-## Restoring Mocks
+### Restoring Mocks
 
 Now, here's the nuclear option: **restoring** mocks. This completely removes the mock's implementation and puts things back the way they were before you even touched it. If you’re mocking a native function or something from a shared library, this is how you avoid accidentally breaking things later.
 
@@ -82,7 +88,7 @@ When you restore a mock, it brings the original, un-mocked function back. This i
 
 ---
 
-## When To Use Each
+### When To Use Each
 
 Alright, quick recap:
 
@@ -92,7 +98,7 @@ Alright, quick recap:
 
 ---
 
-## Conclusion
+### Conclusion
 
 Vitest gives you the tools you need to keep your tests clean, your mocks simple, and your frustrations (mostly) in check. The key is knowing when to clean up after yourself. Mocks can be powerful, but if you don’t clear, reset, or restore them properly, you’ll end up wondering why things are on fire and you're dealing with mocking baggage from previous tests.
 

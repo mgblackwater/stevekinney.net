@@ -1,4 +1,10 @@
-# toHaveResolvedWith
+---
+title: ToHaveResolvedWith
+description: Check if a Promise resolves with the expected value using Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## ToHaveResolvedWith
 
 Alright, so let's talk about **`toHaveResolvedWith`**. Picture this: you’ve got yourself a **Promise**, maybe it's an API call, maybe it's some async function doing the heavy lifting in your app. You expect it to resolve with a certain value.
 
@@ -20,14 +26,14 @@ Alright, let's assume you're working on that _naïve music library_ and you have
 ```javascript
 // musicLibrary.js
 export function getArtistInfo() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        name: 'Green Day',
-        genre: 'Punk Rock',
-      });
-    }, 100);
-  });
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve({
+				name: 'Green Day',
+				genre: 'Punk Rock',
+			});
+		}, 100);
+	});
 }
 ```
 
@@ -37,12 +43,12 @@ Alright, we've got our async function working in some distant land called **the 
 import { getArtistInfo } from './musicLibrary';
 
 test('getArtistInfo resolves with correct artist data', async () => {
-  const artistData = {
-    name: 'Green Day',
-    genre: 'Punk Rock',
-  };
+	const artistData = {
+		name: 'Green Day',
+		genre: 'Punk Rock',
+	};
 
-  await expect(getArtistInfo()).toHaveResolvedWith(artistData);
+	await expect(getArtistInfo()).toHaveResolvedWith(artistData);
 });
 ```
 
@@ -53,3 +59,7 @@ test('getArtistInfo resolves with correct artist data', async () => {
 - **`toHaveResolvedWith`** checks whether the Promise resolves with the expected artist data.
 
 Boom. Green Day data comes back, the test passes, and you get to lean back and sip your beverage of choice knowing your code isn’t gonna let you down.
+
+```ts
+
+```

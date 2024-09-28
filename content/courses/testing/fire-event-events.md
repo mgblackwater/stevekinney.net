@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-14T09:29:11-06:00
+title: List of Events You Can Fire
+description: A complete list of DOM events that can be fired.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 In case you wanted to see a full list of the events that you can fire, I looked it up [in the source code for you](https://raw.githubusercontent.com/testing-library/dom-testing-library/main/src/event-map.js).
@@ -92,3 +94,7 @@ In case you wanted to see a full list of the events that you can fire, I looked 
 - `popState`
 - `offline`
 - `online`
+
+```ts
+
+```

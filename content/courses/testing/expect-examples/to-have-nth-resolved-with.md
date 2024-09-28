@@ -1,10 +1,16 @@
-# Vitest: `toHaveNthResolvedWith`
+---
+title: "Vitest: `ToHaveNthResolvedWith`"
+description: Learn how to use `toHaveNthResolvedWith` for testing async calls.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## Vitest: `toHaveNthResolvedWith`
 
 Alright, let's dive into the nitty-gritty of `toHaveNthResolvedWith`. First off, let’s address **what it does**:
 
 `toHaveNthResolvedWith` is a matcher in Vitest that allows you to check the result of **Promise resolution** in a **specific position** for a mock function that’s been **called multiple times**. Think of it like this: You're testing a function that's dealing with async operations (like fetching data), and you want to know if the second, third, or nth call to the function resolved with some specific value.
 
-### When you’d use it
+### When you’d Use it
 
 Use `toHaveNthResolvedWith` when:
 
@@ -22,27 +28,27 @@ Let’s say you’re building a naive little music library interface, and you ha
 const fetchArtistDetails = vi.fn();
 
 fetchArtistDetails
-  .mockResolvedValueOnce({ artist: 'Green Day', genre: 'Punk Rock' })
-  .mockResolvedValueOnce({ artist: 'Some Random Band', genre: 'Unknown' })
-  .mockResolvedValueOnce({ artist: 'Weezer', genre: 'Alternative' });
+	.mockResolvedValueOnce({ artist: 'Green Day', genre: 'Punk Rock' })
+	.mockResolvedValueOnce({ artist: 'Some Random Band', genre: 'Unknown' })
+	.mockResolvedValueOnce({ artist: 'Weezer', genre: 'Alternative' });
 
 describe('fetchArtistDetails', () => {
-  it('checks the result of the second resolved call', async () => {
-    // Call it multiple times
-    await fetchArtistDetails();
-    await fetchArtistDetails();
-    await fetchArtistDetails();
+	it('checks the result of the second resolved call', async () => {
+		// Call it multiple times
+		await fetchArtistDetails();
+		await fetchArtistDetails();
+		await fetchArtistDetails();
 
-    // Now let’s test that the second call returned "Some Random Band"
-    expect(fetchArtistDetails).toHaveNthResolvedWith(2, {
-      artist: 'Some Random Band',
-      genre: 'Unknown',
-    });
-  });
+		// Now let’s test that the second call returned "Some Random Band"
+		expect(fetchArtistDetails).toHaveNthResolvedWith(2, {
+			artist: 'Some Random Band',
+			genre: 'Unknown',
+		});
+	});
 });
 ```
 
-### What’s happening?
+### What’s Happening?
 
 - `mockResolvedValueOnce` is the star here. It lets us define what each call to the mock function should resolve to.
 - We call `fetchArtistDetails` three times (each pretend artist lookup).
@@ -53,3 +59,7 @@ This makes it super easy to locate and test specific async responses in a list o
 ### TL;DR
 
 Use `toHaveNthResolvedWith` to assert what value a **specific call** to a mock async function resolves with. It’s awesome for testing multiple async requests and making sure responses happen in the sequence you expect. Now go fetch those artists! 🎶
+
+```ts
+
+```

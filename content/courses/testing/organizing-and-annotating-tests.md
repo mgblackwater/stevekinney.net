@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-14T10:33:41-06:00
+title: Describe
+description: Learn how to use `describe` for organizing tests in suites.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 ## `describe`
@@ -62,7 +64,7 @@ The basic syntax looks something like this.
 
 ```javascript
 describe('Test Suite Name', () => {
-  // Nested tests or describe blocks
+	// Nested tests or describe blocks
 });
 ```
 
@@ -81,13 +83,13 @@ Organize tests around specific functionalities or features.
 
 ```javascript
 describe('Math Utilities', () => {
-  test('adds numbers correctly', () => {
-    // Test code
-  });
+	test('adds numbers correctly', () => {
+		// Test code
+	});
 
-  test('multiplies numbers correctly', () => {
-    // Test code
-  });
+	test('multiplies numbers correctly', () => {
+		// Test code
+	});
 });
 ```
 
@@ -97,21 +99,21 @@ For complex modules, nesting can mirror the application's structure.
 
 ```javascript
 describe('User Module', () => {
-  describe('Authentication', () => {
-    test('successfully logs in with valid credentials', () => {
-      // Test code
-    });
+	describe('Authentication', () => {
+		test('successfully logs in with valid credentials', () => {
+			// Test code
+		});
 
-    test('fails to log in with invalid credentials', () => {
-      // Test code
-    });
-  });
+		test('fails to log in with invalid credentials', () => {
+			// Test code
+		});
+	});
 
-  describe('Profile Management', () => {
-    test('updates user profile', () => {
-      // Test code
-    });
-  });
+	describe('Profile Management', () => {
+		test('updates user profile', () => {
+			// Test code
+		});
+	});
 });
 ```
 
@@ -121,11 +123,11 @@ Names should clearly state what is being tested.
 
 ```javascript
 describe('Array Methods', () => {
-  describe('push', () => {
-    test('adds an element to the end of the array', () => {
-      // Test code
-    });
-  });
+	describe('push', () => {
+		test('adds an element to the end of the array', () => {
+			// Test code
+		});
+	});
 });
 ```
 
@@ -135,21 +137,21 @@ Use `beforeEach`, `afterEach`, `beforeAll`, and `afterAll` to manage setup and t
 
 ```javascript
 describe('Database Tests', () => {
-  beforeAll(() => {
-    // Connect to database
-  });
+	beforeAll(() => {
+		// Connect to database
+	});
 
-  afterAll(() => {
-    // Disconnect from database
-  });
+	afterAll(() => {
+		// Disconnect from database
+	});
 
-  beforeEach(() => {
-    // Seed database
-  });
+	beforeEach(() => {
+		// Seed database
+	});
 
-  test('fetches a record successfully', () => {
-    // Test code
-  });
+	test('fetches a record successfully', () => {
+		// Test code
+	});
 });
 ```
 
@@ -159,13 +161,13 @@ Each test should focus on a single aspect, and tests within a `describe` block s
 
 ```javascript
 describe('String Manipulation', () => {
-  test('converts string to uppercase', () => {
-    // Test code
-  });
+	test('converts string to uppercase', () => {
+		// Test code
+	});
 
-  test('trims whitespace from string', () => {
-    // Test code
-  });
+	test('trims whitespace from string', () => {
+		// Test code
+	});
 });
 ```
 
@@ -176,20 +178,20 @@ Too much nesting can make tests hard to read. Keep the structure as flat as poss
 ```javascript
 // Instead of deeply nested describes
 describe('Module A', () => {
-  describe('Component B', () => {
-    describe('Function C', () => {
-      test('performs action X', () => {
-        // Test code
-      });
-    });
-  });
+	describe('Component B', () => {
+		describe('Function C', () => {
+			test('performs action X', () => {
+				// Test code
+			});
+		});
+	});
 });
 
 // Prefer a flatter structure
 describe('Component B - Function C', () => {
-  test('performs action X', () => {
-    // Test code
-  });
+	test('performs action X', () => {
+		// Test code
+	});
 });
 ```
 
@@ -199,17 +201,17 @@ Group tests that share the same setup or context.
 
 ```javascript
 describe('When user is authenticated', () => {
-  beforeEach(() => {
-    // Mock authentication
-  });
+	beforeEach(() => {
+		// Mock authentication
+	});
 
-  test('accesses protected route', () => {
-    // Test code
-  });
+	test('accesses protected route', () => {
+		// Test code
+	});
 
-  test('sees personalized content', () => {
-    // Test code
-  });
+	test('sees personalized content', () => {
+		// Test code
+	});
 });
 ```
 
@@ -222,11 +224,11 @@ Focus on specific test suites without running the entire test suite.
 
 ```javascript
 describe.only('Critical Functionality Tests', () => {
-  // Tests to focus on
+	// Tests to focus on
 });
 
 describe.skip('Deprecated Functionality Tests', () => {
-  // Tests to skip
+	// Tests to skip
 });
 ```
 
@@ -237,14 +239,10 @@ Remember to remove `.only` and `.skip` before finalizing your code to ensure all
 Organize test files to reflect the structure of your source code, enhancing navigation and maintainability.
 
 ```ts
-src/
-  utils/
-    calculate.js
-    format.js
-tests/
-  utils/
-    calculate.test.js
-    format.test.js
+src / utils / calculate.js;
+format.js;
+tests / utils / calculate.test.js;
+format.test.js;
 ```
 
 #### 10. Document Complex Test Cases
@@ -253,10 +251,10 @@ Add comments to explain non-obvious tests or setups within `describe` blocks.
 
 ```javascript
 describe('Edge Cases for Date Parsing', () => {
-  // Tests for leap years and time zones
-  test('correctly parses leap day', () => {
-    // Test code
-  });
+	// Tests for leap years and time zones
+	test('correctly parses leap day', () => {
+		// Test code
+	});
 });
 ```
 
@@ -267,11 +265,11 @@ describe('Edge Cases for Date Parsing', () => {
 ```javascript
 // utils.js
 export function isEven(number) {
-  return number % 2 === 0;
+	return number % 2 === 0;
 }
 
 export function isOdd(number) {
-  return !isEven(number);
+	return !isEven(number);
 }
 ```
 
@@ -283,25 +281,25 @@ import { describe, test, expect } from 'vitest';
 import { isEven, isOdd } from './utils';
 
 describe('Utility Functions', () => {
-  describe('isEven', () => {
-    test('returns true for even numbers', () => {
-      expect(isEven(4)).toBe(true);
-    });
+	describe('isEven', () => {
+		test('returns true for even numbers', () => {
+			expect(isEven(4)).toBe(true);
+		});
 
-    test('returns false for odd numbers', () => {
-      expect(isEven(5)).toBe(false);
-    });
-  });
+		test('returns false for odd numbers', () => {
+			expect(isEven(5)).toBe(false);
+		});
+	});
 
-  describe('isOdd', () => {
-    test('returns true for odd numbers', () => {
-      expect(isOdd(5)).toBe(true);
-    });
+	describe('isOdd', () => {
+		test('returns true for odd numbers', () => {
+			expect(isOdd(5)).toBe(true);
+		});
 
-    test('returns false for even numbers', () => {
-      expect(isOdd(4)).toBe(false);
-    });
-  });
+		test('returns false for even numbers', () => {
+			expect(isOdd(4)).toBe(false);
+		});
+	});
 });
 ```
 
@@ -310,8 +308,8 @@ describe('Utility Functions', () => {
 ```javascript
 // api.js
 export async function fetchData(id) {
-  const response = await fetch(`/api/data/${id}`);
-  return response.json();
+	const response = await fetch(`/api/data/${id}`);
+	return response.json();
 }
 ```
 
@@ -325,9 +323,9 @@ import { setupServer } from 'msw/node';
 import { rest } from 'msw';
 
 const server = setupServer(
-  rest.get('/api/data/:id', (req, res, ctx) => {
-    return res(ctx.json({ id: req.params.id, value: 'test data' }));
-  })
+	rest.get('/api/data/:id', (req, res, ctx) => {
+		return res(ctx.json({ id: req.params.id, value: 'test data' }));
+	}),
 );
 
 beforeAll(() => server.listen());
@@ -335,20 +333,20 @@ afterAll(() => server.close());
 afterEach(() => server.resetHandlers());
 
 describe('API Functions', () => {
-  test('fetches data successfully', async () => {
-    const data = await fetchData(1);
-    expect(data).toEqual({ id: '1', value: 'test data' });
-  });
+	test('fetches data successfully', async () => {
+		const data = await fetchData(1);
+		expect(data).toEqual({ id: '1', value: 'test data' });
+	});
 
-  test('handles server errors gracefully', async () => {
-    server.use(
-      rest.get('/api/data/:id', (req, res, ctx) => {
-        return res(ctx.status(500));
-      })
-    );
+	test('handles server errors gracefully', async () => {
+		server.use(
+			rest.get('/api/data/:id', (req, res, ctx) => {
+				return res(ctx.status(500));
+			}),
+		);
 
-    await expect(fetchData(1)).rejects.toThrow();
-  });
+		await expect(fetchData(1)).rejects.toThrow();
+	});
 });
 ```
 
@@ -362,3 +360,7 @@ describe('API Functions', () => {
 - **Reflect Project Structure**: Organize test files to mirror the source code layout.
 - **Focus During Development**: Use `.only` and `.skip` to streamline the testing process.
 - **Documentation**: Comment complex tests or setups for future reference.
+
+```ts
+
+```

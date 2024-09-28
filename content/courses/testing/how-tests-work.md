@@ -1,12 +1,14 @@
 ---
-modified: 2024-09-14T09:41:22-06:00
+title: Insist That a Test Fails
+description: Explore techniques to ensure tests fail when expected.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 Because it didn't fail.
 
 These seems banal, but it'll be important later, so I'm going to say it again and again: There is _no such thing_ as a passing test. There are only tests that didn't fail.
 
-If we think about how a test suite works, it's something that runs your code and keeps track of the times where an error was thrown. An `expect` that didn't get what it expects throws an error, which fails your test. If you test passes, it's not because there is something inherently correct about your code. There just isn't anything inherently _wrong_.
+If we think about how a test suite works, it's something that runs your code and keeps track of the times where an error was thrown. An `expect` that didn't get what it expects throws an error, which fails your test. If your test passes, it's not because there is something inherently correct about your code. There just isn't anything inherently _wrong_.
 
 ## Insist that a Test Fails
 
@@ -23,11 +25,11 @@ If you want me to provide a rationale for why and when you'd use this, here's th
 There is a catch of course; did your test pass because:
 
 - all of your assertions passed,
-- or because _none_ of them failed.
+- or because _none_ of them failed?
 
 All a test runner really does is run your code and keep track of every time an error is thrown. A failing test throws an error. So, the logic stands that if no error was thrown, then the test passed.
 
-For example, this tests passes:
+For example, this test passes:
 
 ```ts
 test('works with "test" as well', () => {
@@ -71,7 +73,7 @@ test.fails('works with "test" as well', () => {
 });
 ```
 
-We'll talk more about this in the section on [testing asynchronous code](testing-asynchronous-code.md), but your code returns a promise, then Vitest will wait for that promise to resolve.
+We'll talk more about this in the section on [testing asynchronous code](testing-asynchronous-code.md), but if your code returns a promise, then Vitest will wait for that promise to resolve.
 
 ```ts
 test('works with "test" as well', () => {
@@ -87,7 +89,7 @@ test('works with "test" as well', () => {
 
 ## Expect Expectation
 
-If you _really_ want to make sure that you're tests aren't just passing because they're not failing, you can expect that there should be one or more assertions in your test.
+If you _really_ want to make sure that your tests aren't just passing because they're not failing, you can expect that there should be one or more assertions in your test.
 
 ```ts
 expect.hasAssertions();

@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-17T11:32:12-06:00
+title: A Comprehensive Guide to Mocks in Testing
+description: Learn how mocks simplify tests by controlling behavior.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 The TL;DR of mocking is that sometimes we need to swap out things we don't control with things that we _do_. For example, it might be outside of the scope of our test to make sure that a third-party API goes down. Or, if that API isn't free, you don't necessarily want to run up a bill every time you run your test suite, right?
@@ -58,9 +60,9 @@ expect(paymentMock()).toBe('Payment Failed');
 expect(paymentMock).toHaveBeenCalledTimes(2);
 ```
 
-In this example, the mock simulates different outcomes for the payment process and tracks the number of calls to ensure everything happens as expected..
+In this example, the mock simulates different outcomes for the payment process and tracks the number of calls to ensure everything happens as expected.
 
-### Difference between Mocks and Stubs
+### Difference Between Mocks and Stubs
 
 While both mocks and stubs replace the real implementation of functions, there are important differences between them:
 
@@ -69,7 +71,7 @@ While both mocks and stubs replace the real implementation of functions, there a
 
 Mocks are more powerful than stubs because they provide both behavior definition and interaction tracking, making them suitable for testing more complex scenarios.
 
-### Creating Mocks with Vitest
+### Creating Mocks With Vitest
 
 In Vitest, you can create mocks using the `vi.fn()` method, which allows you to define how a function should behave and track calls made to it.
 
@@ -97,9 +99,9 @@ Here’s the function we want to test:
 
 ```js
 async function getConcertDetails(band) {
-  const response = await fetch(`/api/concerts?band=${band}`);
-  const data = await response.json();
-  return data;
+	const response = await fetch(`/api/concerts?band=${band}`);
+	const data = await response.json();
+	return data;
 }
 ```
 
@@ -110,35 +112,35 @@ import { describe, it, expect, vi } from 'vitest';
 import { getConcertDetails } from './concerts';
 
 describe('getConcertDetails', () => {
-  it('returns concert details from the API', async () => {
-    // Mock the fetch function to simulate an API response
-    const fetchMock = vi.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' })
-      })
-    );
-    
-    // Replace the global fetch function with our mock
-    global.fetch = fetchMock;
+	it('returns concert details from the API', async () => {
+		// Mock the fetch function to simulate an API response
+		const fetchMock = vi.fn(() =>
+			Promise.resolve({
+				json: () => Promise.resolve({ band: 'Green Day', venue: 'Madison Square Garden' }),
+			}),
+		);
 
-    // Call the function under test
-    const result = await getConcertDetails('Green Day');
+		// Replace the global fetch function with our mock
+		global.fetch = fetchMock;
 
-    // Assert that the mock API returned the correct data
-    expect(result).toEqual({ band: 'Green Day', venue: 'Madison Square Garden' });
+		// Call the function under test
+		const result = await getConcertDetails('Green Day');
 
-    // Verify that the mock was called
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+		// Assert that the mock API returned the correct data
+		expect(result).toEqual({ band: 'Green Day', venue: 'Madison Square Garden' });
 
-    // Clean up: Restore the original fetch function
-    fetchMock.mockRestore();
-  });
+		// Verify that the mock was called
+		expect(fetchMock).toHaveBeenCalledTimes(1);
+
+		// Clean up: Restore the original fetch function
+		fetchMock.mockRestore();
+	});
 });
 ```
 
 In this example, `fetchMock` simulates the behavior of the real `fetch` function, allowing us to test the `getConcertDetails` function without making a real network request. We also verify that the mock was called exactly once.
 
-### Auto-mocking Modules and Functions
+### Auto-Mocking Modules and Functions
 
 Vitest allows you to automatically mock entire modules or specific functions, making it easier to isolate and test code without manually creating mocks for every function. Auto-mocking is particularly useful when you are testing complex systems with many dependencies.
 
@@ -146,7 +148,9 @@ You can automatically mock a module using `vi.mock()`:
 
 ```js
 vi.mock('./api', () => ({
-  getConcertDetails: vi.fn().mockResolvedValue({ band: 'Green Day', venue: 'Madison Square Garden' })
+	getConcertDetails: vi
+		.fn()
+		.mockResolvedValue({ band: 'Green Day', venue: 'Madison Square Garden' }),
 }));
 ```
 
@@ -181,3 +185,7 @@ expect(fetchMock()).toBe('Concert Data');
 In this example, we verify that `fetchMock` was called exactly once, passed the correct argument, and returned the expected value.
 
 Mocks offer full control over both behavior and interactions, making them an essential tool for testing complex systems where you need detailed insights into how functions are being used and what they return.
+
+```ts
+
+```

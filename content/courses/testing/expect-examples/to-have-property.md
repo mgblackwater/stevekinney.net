@@ -1,4 +1,10 @@
-# toHaveProperty in Vitest
+---
+title: ToHaveProperty In Vitest
+description: Learn how to use the toHaveProperty matcher in Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## toHaveProperty in Vitest
 
 Ah, **`toHaveProperty`**—this little gem is one of those matchers that once you get the hang of it, you'll find yourself using it _all the time_. Here's what it does in a nutshell:
 
@@ -8,28 +14,28 @@ Ah, **`toHaveProperty`**—this little gem is one of those matchers that once yo
 
 Alright, let’s hit this with some code. You know we love a good Green Day example over here, so let’s assume we’ve got an album object.
 
-## Example
+### Example
 
 ```javascript
 import { describe, it, expect } from 'vitest';
 
 describe('Green Day Album', () => {
-  it('should have the expected properties', () => {
-    const album = {
-      title: 'Dookie',
-      artist: 'Green Day',
-      songs: ['Basket Case', 'When I Come Around', 'She'],
-    };
+	it('should have the expected properties', () => {
+		const album = {
+			title: 'Dookie',
+			artist: 'Green Day',
+			songs: ['Basket Case', 'When I Come Around', 'She'],
+		};
 
-    // Does the album have an 'artist' property?
-    expect(album).toHaveProperty('artist');
+		// Does the album have an 'artist' property?
+		expect(album).toHaveProperty('artist');
 
-    // Does it have a 'songs' property that's an array?
-    expect(album).toHaveProperty('songs');
+		// Does it have a 'songs' property that's an array?
+		expect(album).toHaveProperty('songs');
 
-    // Check if the artist is specifically 'Green Day'
-    expect(album).toHaveProperty('artist', 'Green Day');
-  });
+		// Check if the artist is specifically 'Green Day'
+		expect(album).toHaveProperty('artist', 'Green Day');
+	});
 });
 ```
 
@@ -39,6 +45,10 @@ Then, we’re going a step further to ensure that the `artist` property is speci
 
 This keeps your tests clean, concise, and readable, and it prevents that tough debugging headache when something _almost_ works… but not quite.
 
-## Closing Thoughts
+### Closing Thoughts
 
 In the end, **`toHaveProperty`** is a down-to-business kind of matcher. You call it when you _probably_ have an object, but you need to make sure it's the right kind of object. Maybe it's missing the `artist`, or maybe the `title` is wrong—who knows? But `toHaveProperty` ensures things are _where they're supposed to be_. And honestly, isn’t that what we all want in life and code?
+
+```ts
+
+```

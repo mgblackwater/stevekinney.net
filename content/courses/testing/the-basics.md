@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T11:18:44-06:00
+title: Starting With Simple Tests In Vitest
+description: Learn how to test basic expressions and functions using Vitest.
+modified: 2024-09-28T11:31:14-06:00
 ---
 
 Let's start with the world's simplest test.
@@ -86,3 +88,7 @@ describe('add', () => {
 ```
 
 We'll add a few more in a later section, but this is a pretty good start for now. Especially because we haven't looked at [running your tests](running-tests.md) just yet.
+
+```ts
+
+```

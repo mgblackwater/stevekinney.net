@@ -1,7 +1,8 @@
 ---
-modified: 2024-09-14T10:21:51-06:00
+title: Setting Up GitHub Actions to Run Vitest Unit Tests
+description: Learn how to automate testing with GitHub Actions and Vitest.
+modified: 2024-09-28T11:31:16-06:00
 ---
-
 
 Continuous Integration (CI) is a crucial practice in modern software development, enabling teams to detect issues early by automatically running tests on code changes. **GitHub Actions** provides a powerful platform for automating workflows directly within your GitHub repository. This guide will walk you through setting up GitHub Actions to run your **Vitest** unit tests on each Pull Request (PR), ensuring that only passing code gets merged.
 
@@ -27,9 +28,9 @@ Ensure that your `package.json` has a script to run your tests. Typically, you'd
 
 ```json
 {
-  "scripts": {
-    "test": "vitest"
-  }
+	"scripts": {
+		"test": "vitest"
+	}
 }
 ```
 
@@ -191,9 +192,9 @@ If you want to include coverage reporting:
 
   ```json
   {
-    "scripts": {
-      "test": "vitest --coverage"
-    }
+  	"scripts": {
+  		"test": "vitest --coverage"
+  	}
   }
   ```
 
@@ -271,3 +272,7 @@ Setting up GitHub Actions to run your Vitest unit tests on each Pull Request enh
 - **GitHub Actions for JavaScript and Node.js**: [Official GitHub guide](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs)
 
 By integrating Vitest with GitHub Actions, you ensure that every piece of code is vetted through your test suite, leading to a more stable and reliable application.
+
+```ts
+
+```

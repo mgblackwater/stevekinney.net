@@ -1,4 +1,10 @@
-# Vitest’s `toContain`
+---
+title: Vitest’s `toContain`
+description: "Learn how to check if values exist in data using Vitest's `toContain`."
+modified: 2024-09-28T11:31:16-06:00
+---
+
+## Vitest’s `toContain`
 
 Alright, so you’ve got this data, and you want to check if something is in it. You know, like a song in an album or an album in a collection. That's where `toContain` comes in! It's a matcher used to check if a certain value exists inside strings or arrays. Nice, right?
 
@@ -17,24 +23,17 @@ Let’s say you’re building a little music library app (we all love Green Day,
 import { describe, it, expect } from 'vitest';
 
 describe('Green Day Album Tests', () => {
-  it('should contain "Basket Case" in the songs array', () => {
-    const dookieSongs = [
-      'Burnout',
-      'Having a Blast',
-      'Chump',
-      'Longview',
-      'Basket Case',
-      'She',
-    ];
+	it('should contain "Basket Case" in the songs array', () => {
+		const dookieSongs = ['Burnout', 'Having a Blast', 'Chump', 'Longview', 'Basket Case', 'She'];
 
-    expect(dookieSongs).toContain('Basket Case');
-  });
+		expect(dookieSongs).toContain('Basket Case');
+	});
 
-  it('should contain a string in the album title', () => {
-    const album = 'Dookie by Green Day';
+	it('should contain a string in the album title', () => {
+		const album = 'Dookie by Green Day';
 
-    expect(album).toContain('Green Day');
-  });
+		expect(album).toContain('Green Day');
+	});
 });
 ```
 

@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-17T11:35:27-06:00
+title: Overriding Object Properties In Vitest
+description: Learn how to override object properties in Vitest with various methods.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 ## Overriding Object Properties in Vitest
@@ -22,14 +24,14 @@ Here’s an example of overriding a getter:
 ```js
 // Spy on the global object property (e.g., window.location.href)
 vi.spyOn(window, 'location', 'get').mockReturnValue({
-  href: 'https://mocked-url.com'
+	href: 'https://mocked-url.com',
 });
 
 describe('URL Test', () => {
-  it('should use the mocked location', () => {
-    // Test that the code uses the mocked URL
-    expect(window.location.href).toBe('https://mocked-url.com');
-  });
+	it('should use the mocked location', () => {
+		// Test that the code uses the mocked URL
+		expect(window.location.href).toBe('https://mocked-url.com');
+	});
 });
 ```
 
@@ -44,10 +46,10 @@ You can also directly override object properties for more straightforward scenar
 process.env.API_KEY = 'mocked-api-key';
 
 describe('API Key Test', () => {
-  it('should use the mocked API key', () => {
-    // Test that the code reads the mocked API key
-    expect(process.env.API_KEY).toBe('mocked-api-key');
-  });
+	it('should use the mocked API key', () => {
+		// Test that the code reads the mocked API key
+		expect(process.env.API_KEY).toBe('mocked-api-key');
+	});
 });
 ```
 
@@ -62,14 +64,14 @@ Here’s how to override a property with a custom getter:
 ```js
 // Override a property with a custom getter
 Object.defineProperty(window, 'innerWidth', {
-  get: vi.fn(() => 1024)
+	get: vi.fn(() => 1024),
 });
 
 describe('Window Width Test', () => {
-  it('should return the mocked window width', () => {
-    // Test that the code returns the mocked width
-    expect(window.innerWidth).toBe(1024);
-  });
+	it('should return the mocked window width', () => {
+		// Test that the code returns the mocked width
+		expect(window.innerWidth).toBe(1024);
+	});
 });
 ```
 
@@ -83,18 +85,18 @@ After overriding object properties, it’s important to restore them to their or
 const originalHref = window.location.href;
 
 vi.spyOn(window, 'location', 'get').mockReturnValue({
-  href: 'https://mocked-url.com'
+	href: 'https://mocked-url.com',
 });
 
 describe('URL Test', () => {
-  afterEach(() => {
-    // Restore the original property after each test
-    window.location.href = originalHref;
-  });
+	afterEach(() => {
+		// Restore the original property after each test
+		window.location.href = originalHref;
+	});
 
-  it('should use the mocked location', () => {
-    expect(window.location.href).toBe('https://mocked-url.com');
-  });
+	it('should use the mocked location', () => {
+		expect(window.location.href).toBe('https://mocked-url.com');
+	});
 });
 ```
 

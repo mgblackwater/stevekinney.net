@@ -1,6 +1,9 @@
 ---
-modified: 2024-09-28T10:14:53-06:00
+title: Why You Don’t Need 100% Code Coverage
+description: Code coverage is a tool, not a goal. Let’s discuss why.
+modified: 2024-09-28T11:31:14-06:00
 ---
+
 ## Why You Don’t Need 100% Code Coverage
 
 Ah, code coverage—the metric that tempts us with thoughts of **perfection**. It dangles the promise that, if only we got 100%, our software would be an impenetrable fortress of correctness. But like many things in the beautiful yet chaotic world of development, that’s just not true.
@@ -27,7 +30,7 @@ To hit that sweet 100%, chances are you’ll end up writing tests that don’t d
 
 ```js
 it('loads with no errors', () => {
-  expect(true).toBe(true);
+	expect(true).toBe(true);
 });
 ```
 
@@ -68,3 +71,7 @@ Look, I get it. That feeling of hitting 100% on your coverage report—it’s ta
 Let’s embrace a more reasonable challenge: shooting for **sufficient** code coverage, with tests that are thoughtful, maintainable, and make debugging worth your time. And hey, on a good day, if it reaches 80% and you can sleep soundly, that’s a win.
 
 Trust me—the users don’t care about your coverage stats. They care about whether the app _actually works_.
+
+```ts
+
+```

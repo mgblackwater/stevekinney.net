@@ -1,6 +1,9 @@
 ---
-modified: 2024-09-14T10:36:45-06:00
+title: Building A Tic Tac Toe Game Using Test-Driven Development With Vitest
+description: Learn to build a Tic Tac Toe game using TDD and Vitest.
+modified: 2024-09-28T11:31:14-06:00
 ---
+
 ## Building a Tic Tac Toe Game Using Test-Driven Development with Vitest
 
 **Table of Contents**
@@ -50,6 +53,8 @@ In this guide, we'll build the classic game of **Tic Tac Toe** using **Test-Driv
    cd tic-tac-toe-tdd
    ```
 
+````
+
 2. **Initialize npm**
 
    ```bash
@@ -98,9 +103,9 @@ Add a test script to your `package.json`:
 
 ```json
 {
-  "scripts": {
-    "test": "vitest"
-  }
+	"scripts": {
+		"test": "vitest"
+	}
 }
 ```
 
@@ -111,9 +116,9 @@ Create a `vitest.config.js` file (optional for simple setups):
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  test: {
-    globals: true,
-  },
+	test: {
+		globals: true,
+	},
 });
 ```
 
@@ -141,19 +146,19 @@ import { describe, it, expect } from 'vitest';
 import { createGame } from '../src/game';
 
 describe('Tic Tac Toe Game Logic', () => {
-  it('initializes a 3x3 game board', () => {
-    const game = createGame();
-    expect(game.board).toEqual([
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', ''],
-    ]);
-  });
+	it('initializes a 3x3 game board', () => {
+		const game = createGame();
+		expect(game.board).toEqual([
+			['', '', ''],
+			['', '', ''],
+			['', '', ''],
+		]);
+	});
 
-  it('starts with player X', () => {
-    const game = createGame();
-    expect(game.currentPlayer).toBe('X');
-  });
+	it('starts with player X', () => {
+		const game = createGame();
+		expect(game.currentPlayer).toBe('X');
+	});
 });
 ```
 
@@ -179,14 +184,14 @@ Implement `createGame` in `src/game.js`:
 ```javascript
 // src/game.js
 export function createGame() {
-  return {
-    board: [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', ''],
-    ],
-    currentPlayer: 'X',
-  };
+	return {
+		board: [
+			['', '', ''],
+			['', '', ''],
+			['', '', ''],
+		],
+		currentPlayer: 'X',
+	};
 }
 ```
 
@@ -214,23 +219,23 @@ Add to `tests/game.test.js`:
 
 ```javascript
 describe('placeMove', () => {
-  it('places the current player\'s mark on the board', () => {
-    const game = createGame();
-    game.placeMove(0, 0); // Top-left corner
-    expect(game.board[0][0]).toBe('X');
-  });
+	it("places the current player's mark on the board", () => {
+		const game = createGame();
+		game.placeMove(0, 0); // Top-left corner
+		expect(game.board[0][0]).toBe('X');
+	});
 
-  it('switches to the next player after a move', () => {
-    const game = createGame();
-    game.placeMove(0, 0);
-    expect(game.currentPlayer).toBe('O');
-  });
+	it('switches to the next player after a move', () => {
+		const game = createGame();
+		game.placeMove(0, 0);
+		expect(game.currentPlayer).toBe('O');
+	});
 
-  it('does not allow placing a move on an occupied spot', () => {
-    const game = createGame();
-    game.placeMove(0, 0);
-    expect(() => game.placeMove(0, 0)).toThrow('Spot already taken');
-  });
+	it('does not allow placing a move on an occupied spot', () => {
+		const game = createGame();
+		game.placeMove(0, 0);
+		expect(() => game.placeMove(0, 0)).toThrow('Spot already taken');
+	});
 });
 ```
 
@@ -256,21 +261,21 @@ Update `src/game.js`:
 
 ```javascript
 export function createGame() {
-  return {
-    board: [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', ''],
-    ],
-    currentPlayer: 'X',
-    placeMove(row, col) {
-      if (this.board[row][col] !== '') {
-        throw new Error('Spot already taken');
-      }
-      this.board[row][col] = this.currentPlayer;
-      this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-    },
-  };
+	return {
+		board: [
+			['', '', ''],
+			['', '', ''],
+			['', '', ''],
+		],
+		currentPlayer: 'X',
+		placeMove(row, col) {
+			if (this.board[row][col] !== '') {
+				throw new Error('Spot already taken');
+			}
+			this.board[row][col] = this.currentPlayer;
+			this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+		},
+	};
 }
 ```
 
@@ -298,40 +303,40 @@ Add to `tests/game.test.js`:
 
 ```javascript
 describe('checkWinner', () => {
-  it('detects a winning row', () => {
-    const game = createGame();
-    game.board = [
-      ['X', 'X', 'X'],
-      ['', '', ''],
-      ['', '', ''],
-    ];
-    expect(game.checkWinner()).toBe('X');
-  });
+	it('detects a winning row', () => {
+		const game = createGame();
+		game.board = [
+			['X', 'X', 'X'],
+			['', '', ''],
+			['', '', ''],
+		];
+		expect(game.checkWinner()).toBe('X');
+	});
 
-  it('detects a winning column', () => {
-    const game = createGame();
-    game.board = [
-      ['O', '', ''],
-      ['O', '', ''],
-      ['O', '', ''],
-    ];
-    expect(game.checkWinner()).toBe('O');
-  });
+	it('detects a winning column', () => {
+		const game = createGame();
+		game.board = [
+			['O', '', ''],
+			['O', '', ''],
+			['O', '', ''],
+		];
+		expect(game.checkWinner()).toBe('O');
+	});
 
-  it('detects a winning diagonal', () => {
-    const game = createGame();
-    game.board = [
-      ['X', '', ''],
-      ['', 'X', ''],
-      ['', '', 'X'],
-    ];
-    expect(game.checkWinner()).toBe('X');
-  });
+	it('detects a winning diagonal', () => {
+		const game = createGame();
+		game.board = [
+			['X', '', ''],
+			['', 'X', ''],
+			['', '', 'X'],
+		];
+		expect(game.checkWinner()).toBe('X');
+	});
 
-  it('returns null if there is no winner', () => {
-    const game = createGame();
-    expect(game.checkWinner()).toBeNull();
-  });
+	it('returns null if there is no winner', () => {
+		const game = createGame();
+		expect(game.checkWinner()).toBeNull();
+	});
 });
 ```
 
@@ -351,44 +356,44 @@ Update `src/game.js`:
 
 ```javascript
 export function createGame() {
-  return {
-    board: [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', ''],
-    ],
-    currentPlayer: 'X',
-    placeMove(row, col) {
-      if (this.board[row][col] !== '') {
-        throw new Error('Spot already taken');
-      }
-      this.board[row][col] = this.currentPlayer;
-      this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-    },
-    checkWinner() {
-      const b = this.board;
-      const lines = [
-        // Rows
-        [b[0][0], b[0][1], b[0][2]],
-        [b[1][0], b[1][1], b[1][2]],
-        [b[2][0], b[2][1], b[2][2]],
-        // Columns
-        [b[0][0], b[1][0], b[2][0]],
-        [b[0][1], b[1][1], b[2][1]],
-        [b[0][2], b[1][2], b[2][2]],
-        // Diagonals
-        [b[0][0], b[1][1], b[2][2]],
-        [b[0][2], b[1][1], b[2][0]],
-      ];
+	return {
+		board: [
+			['', '', ''],
+			['', '', ''],
+			['', '', ''],
+		],
+		currentPlayer: 'X',
+		placeMove(row, col) {
+			if (this.board[row][col] !== '') {
+				throw new Error('Spot already taken');
+			}
+			this.board[row][col] = this.currentPlayer;
+			this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+		},
+		checkWinner() {
+			const b = this.board;
+			const lines = [
+				// Rows
+				[b[0][0], b[0][1], b[0][2]],
+				[b[1][0], b[1][1], b[1][2]],
+				[b[2][0], b[2][1], b[2][2]],
+				// Columns
+				[b[0][0], b[1][0], b[2][0]],
+				[b[0][1], b[1][1], b[2][1]],
+				[b[0][2], b[1][2], b[2][2]],
+				// Diagonals
+				[b[0][0], b[1][1], b[2][2]],
+				[b[0][2], b[1][1], b[2][0]],
+			];
 
-      for (let line of lines) {
-        if (line[0] && line[0] === line[1] && line[1] === line[2]) {
-          return line[0];
-        }
-      }
-      return null;
-    },
-  };
+			for (let line of lines) {
+				if (line[0] && line[0] === line[1] && line[1] === line[2]) {
+					return line[0];
+				}
+			}
+			return null;
+		},
+	};
 }
 ```
 
@@ -416,35 +421,35 @@ Add to `tests/game.test.js`:
 
 ```javascript
 describe('isDraw', () => {
-  it('returns true when the board is full and there is no winner', () => {
-    const game = createGame();
-    game.board = [
-      ['X', 'O', 'X'],
-      ['X', 'O', 'O'],
-      ['O', 'X', 'X'],
-    ];
-    expect(game.isDraw()).toBe(true);
-  });
+	it('returns true when the board is full and there is no winner', () => {
+		const game = createGame();
+		game.board = [
+			['X', 'O', 'X'],
+			['X', 'O', 'O'],
+			['O', 'X', 'X'],
+		];
+		expect(game.isDraw()).toBe(true);
+	});
 
-  it('returns false when the board is not full', () => {
-    const game = createGame();
-    game.board = [
-      ['X', 'O', ''],
-      ['X', '', 'O'],
-      ['O', 'X', 'X'],
-    ];
-    expect(game.isDraw()).toBe(false);
-  });
+	it('returns false when the board is not full', () => {
+		const game = createGame();
+		game.board = [
+			['X', 'O', ''],
+			['X', '', 'O'],
+			['O', 'X', 'X'],
+		];
+		expect(game.isDraw()).toBe(false);
+	});
 
-  it('returns false when there is a winner', () => {
-    const game = createGame();
-    game.board = [
-      ['X', 'X', 'X'],
-      ['O', 'O', ''],
-      ['', '', ''],
-    ];
-    expect(game.isDraw()).toBe(false);
-  });
+	it('returns false when there is a winner', () => {
+		const game = createGame();
+		game.board = [
+			['X', 'X', 'X'],
+			['O', 'O', ''],
+			['', '', ''],
+		];
+		expect(game.isDraw()).toBe(false);
+	});
 });
 ```
 
@@ -464,20 +469,20 @@ Update `src/game.js`:
 
 ```javascript
 export function createGame() {
-  return {
-    // … previous code …
-    isDraw() {
-      if (this.checkWinner()) {
-        return false;
-      }
-      for (let row of this.board) {
-        if (row.includes('')) {
-          return false;
-        }
-      }
-      return true;
-    },
-  };
+	return {
+		// … previous code …
+		isDraw() {
+			if (this.checkWinner()) {
+				return false;
+			}
+			for (let row of this.board) {
+				if (row.includes('')) {
+					return false;
+				}
+			}
+			return true;
+		},
+	};
 }
 ```
 
@@ -507,43 +512,43 @@ Now we'll create a simple UI using HTML and JavaScript.
 
 ```html
 <!-- src/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tic Tac Toe</title>
-  <style>
-    .board {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
-      grid-gap: 5px;
-    }
-    .cell {
-      width: 100px;
-      height: 100px;
-      font-size: 2em;
-      text-align: center;
-      line-height: 100px;
-      border: 1px solid #000;
-      cursor: pointer;
-    }
-    .disabled {
-      pointer-events: none;
-      background-color: #f0f0f0;
-    }
-    #message {
-      margin-top: 20px;
-      font-size: 1.2em;
-    }
-  </style>
-</head>
-<body>
-  <h1>Tic Tac Toe</h1>
-  <div class="board" id="board"></div>
-  <div id="message"></div>
-  <button id="reset">Reset Game</button>
-  <script src="ui.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Tic Tac Toe</title>
+		<style>
+			.board {
+				display: grid;
+				grid-template-columns: repeat(3, 100px);
+				grid-gap: 5px;
+			}
+			.cell {
+				width: 100px;
+				height: 100px;
+				font-size: 2em;
+				text-align: center;
+				line-height: 100px;
+				border: 1px solid #000;
+				cursor: pointer;
+			}
+			.disabled {
+				pointer-events: none;
+				background-color: #f0f0f0;
+			}
+			#message {
+				margin-top: 20px;
+				font-size: 1.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Tic Tac Toe</h1>
+		<div class="board" id="board"></div>
+		<div id="message"></div>
+		<button id="reset">Reset Game</button>
+		<script src="ui.js"></script>
+	</body>
 </html>
 ```
 
@@ -570,10 +575,10 @@ Update `vitest.config.js`:
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  test: {
-    environment: 'jsdom',
-    setupFiles: './tests/setupTests.js',
-  },
+	test: {
+		environment: 'jsdom',
+		setupFiles: './tests/setupTests.js',
+	},
 });
 ```
 
@@ -595,63 +600,60 @@ import userEvent from '@testing-library/user-event';
 import fs from 'fs';
 import path from 'path';
 
-const html = fs.readFileSync(
-  path.resolve(__dirname, '../src/index.html'),
-  'utf8'
-);
+const html = fs.readFileSync(path.resolve(__dirname, '../src/index.html'), 'utf8');
 
 describe('Tic Tac Toe UI', () => {
-  beforeEach(() => {
-    document.body.innerHTML = html;
-    require('../src/ui.js');
-  });
+	beforeEach(() => {
+		document.body.innerHTML = html;
+		require('../src/ui.js');
+	});
 
-  it('renders a 3x3 grid', () => {
-    const cells = document.querySelectorAll('.cell');
-    expect(cells.length).toBe(9);
-  });
+	it('renders a 3x3 grid', () => {
+		const cells = document.querySelectorAll('.cell');
+		expect(cells.length).toBe(9);
+	});
 
-  it('allows players to take turns placing marks', async () => {
-    const user = userEvent.setup();
-    const cells = screen.getAllByRole('button');
+	it('allows players to take turns placing marks', async () => {
+		const user = userEvent.setup();
+		const cells = screen.getAllByRole('button');
 
-    await user.click(cells[0]); // Player X
-    expect(cells[0]).toHaveTextContent('X');
+		await user.click(cells[0]); // Player X
+		expect(cells[0]).toHaveTextContent('X');
 
-    await user.click(cells[1]); // Player O
-    expect(cells[1]).toHaveTextContent('O');
+		await user.click(cells[1]); // Player O
+		expect(cells[1]).toHaveTextContent('O');
 
-    await user.click(cells[2]); // Player X
-    expect(cells[2]).toHaveTextContent('X');
-  });
+		await user.click(cells[2]); // Player X
+		expect(cells[2]).toHaveTextContent('X');
+	});
 
-  it('declares a winner when a player wins', async () => {
-    const user = userEvent.setup();
-    const cells = screen.getAllByRole('button');
-    const message = screen.getByText('', { selector: '#message' });
+	it('declares a winner when a player wins', async () => {
+		const user = userEvent.setup();
+		const cells = screen.getAllByRole('button');
+		const message = screen.getByText('', { selector: '#message' });
 
-    await user.click(cells[0]); // X
-    await user.click(cells[3]); // O
-    await user.click(cells[1]); // X
-    await user.click(cells[4]); // O
-    await user.click(cells[2]); // X wins
+		await user.click(cells[0]); // X
+		await user.click(cells[3]); // O
+		await user.click(cells[1]); // X
+		await user.click(cells[4]); // O
+		await user.click(cells[2]); // X wins
 
-    expect(message).toHaveTextContent('Player X wins!');
-  });
+		expect(message).toHaveTextContent('Player X wins!');
+	});
 
-  it('declares a draw when the game ends without a winner', async () => {
-    const user = userEvent.setup();
-    const cells = screen.getAllByRole('button');
-    const message = screen.getByText('', { selector: '#message' });
+	it('declares a draw when the game ends without a winner', async () => {
+		const user = userEvent.setup();
+		const cells = screen.getAllByRole('button');
+		const message = screen.getByText('', { selector: '#message' });
 
-    // Fill the board to a draw
-    const moves = [0, 1, 2, 4, 3, 5, 7, 6, 8];
-    for (let index of moves) {
-      await user.click(cells[index]);
-    }
+		// Fill the board to a draw
+		const moves = [0, 1, 2, 4, 3, 5, 7, 6, 8];
+		for (let index of moves) {
+			await user.click(cells[index]);
+		}
 
-    expect(message).toHaveTextContent('It\'s a draw!');
-  });
+		expect(message).toHaveTextContent("It's a draw!");
+	});
 });
 ```
 
@@ -669,72 +671,72 @@ const resetButton = document.getElementById('reset');
 
 // Create cells
 for (let row = 0; row < 3; row++) {
-  for (let col = 0; col < 3; col++) {
-    const cell = document.createElement('button');
-    cell.classList.add('cell');
-    cell.dataset.row = row;
-    cell.dataset.col = col;
-    cell.setAttribute('aria-label', `Cell ${row},${col}`);
-    boardElement.appendChild(cell);
-  }
+	for (let col = 0; col < 3; col++) {
+		const cell = document.createElement('button');
+		cell.classList.add('cell');
+		cell.dataset.row = row;
+		cell.dataset.col = col;
+		cell.setAttribute('aria-label', `Cell ${row},${col}`);
+		boardElement.appendChild(cell);
+	}
 }
 
 function updateBoard() {
-  const cells = document.querySelectorAll('.cell');
-  cells.forEach((cell) => {
-    const row = cell.dataset.row;
-    const col = cell.dataset.col;
-    cell.textContent = game.board[row][col];
-  });
+	const cells = document.querySelectorAll('.cell');
+	cells.forEach((cell) => {
+		const row = cell.dataset.row;
+		const col = cell.dataset.col;
+		cell.textContent = game.board[row][col];
+	});
 }
 
 function handleClick(event) {
-  const cell = event.target;
-  const row = cell.dataset.row;
-  const col = cell.dataset.col;
-  try {
-    game.placeMove(row, col);
-    updateBoard();
-    const winner = game.checkWinner();
-    if (winner) {
-      messageElement.textContent = `Player ${winner} wins!`;
-      disableBoard();
-    } else if (game.isDraw()) {
-      messageElement.textContent = 'It\'s a draw!';
-      disableBoard();
-    }
-  } catch (error) {
-    // Ignore errors for occupied spots
-  }
+	const cell = event.target;
+	const row = cell.dataset.row;
+	const col = cell.dataset.col;
+	try {
+		game.placeMove(row, col);
+		updateBoard();
+		const winner = game.checkWinner();
+		if (winner) {
+			messageElement.textContent = `Player ${winner} wins!`;
+			disableBoard();
+		} else if (game.isDraw()) {
+			messageElement.textContent = "It's a draw!";
+			disableBoard();
+		}
+	} catch (error) {
+		// Ignore errors for occupied spots
+	}
 }
 
 function disableBoard() {
-  const cells = document.querySelectorAll('.cell');
-  cells.forEach((cell) => {
-    cell.disabled = true;
-    cell.classList.add('disabled');
-  });
+	const cells = document.querySelectorAll('.cell');
+	cells.forEach((cell) => {
+		cell.disabled = true;
+		cell.classList.add('disabled');
+	});
 }
 
 function resetGame() {
-  game.board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
-  ];
-  game.currentPlayer = 'X';
-  messageElement.textContent = '';
-  const cells = document.querySelectorAll('.cell');
-  cells.forEach((cell) => {
-    cell.disabled = false;
-    cell.classList.remove('disabled');
-    cell.textContent = '';
-  });
+	game.board = [
+		['', '', ''],
+		['', '', ''],
+		['', '', ''],
+	];
+	game.currentPlayer = 'X';
+	messageElement.textContent = '';
+	const cells = document.querySelectorAll('.cell');
+	cells.forEach((cell) => {
+		cell.disabled = false;
+		cell.classList.remove('disabled');
+		cell.textContent = '';
+	});
 }
 
 const cells = document.querySelectorAll('.cell');
 cells.forEach((cell) => {
-  cell.addEventListener('click', handleClick);
+	cell.addEventListener('click', handleClick);
 });
 
 resetButton.addEventListener('click', resetGame);
@@ -805,3 +807,8 @@ To further enhance your Tic Tac Toe game and testing skills, consider implementi
 
    - Integrate code coverage reporting with Vitest.
    - Analyze the coverage report to identify untested code paths.
+
+```
+
+```
+````

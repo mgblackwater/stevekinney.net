@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T13:32:36-06:00
+title: Using A DOM Library with Vitest
+description: Learn about JSDOM and Happy DOM for testing in Vitest.
+modified: 2024-09-28T11:31:14-06:00
 ---
 
 Yes. Node runs JavaScript just like the browser. It's also missing a bunch of stuff that you'll normally find in your browser of choice—namely, the DOM.
@@ -118,3 +120,7 @@ Both **JSDOM** and **Happy DOM** are JavaScript libraries used to simulate the b
 | **Use Case**     | Full browser simulation in tests              | Lightweight testing with speed            |
 | **Integration**  | Popular in Jest, Mocha                        | Popular in Vitest, fast test environments |
 | **Best for**     | Complex web apps, real-world browser behavior | Fast unit/integration tests, simple DOM   |
+
+```ts
+
+```

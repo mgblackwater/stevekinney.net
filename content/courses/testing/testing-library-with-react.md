@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T16:01:27-06:00
+title: Creating Test Files For A Counter Component
+description: "Writing tests for the Counter component's rendering and interaction."
+modified: 2024-09-28T11:31:14-06:00
 ---
 
 Let's create a test file for the `Counter` component. We'll start by testing the rendering of the component and interactions.

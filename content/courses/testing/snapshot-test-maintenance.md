@@ -1,4 +1,10 @@
-# 1. Understanding Snapshot Testing
+---
+title: Understanding Snapshot Testing
+description: A quick and easy guide to understanding snapshot testing with Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## 1. Understanding Snapshot Testing
 
 Alright, so here's the deal with **snapshot testing**—it's **quick** and **easy** to write, but like any magic trick, there’s some sleight of hand you should be aware of. A snapshot is basically a serialized version of the output that your component, function, or whatever you’re testing spits out. Vitest (and tools like it) compares this serialized version to the previously saved "snapshot" version on disk during each test.
 
@@ -6,7 +12,7 @@ If the outputs match, Vitest tells you all is good. If they don't, it's basicall
 
 Snapshot testing doesn't just apply to components either. You can use it for **API responses**, logging outputs, whatever—just toss it into a `toMatchSnapshot()` and call it a day.
 
-# 2. The Good, the Bad, and the Snapshot
+## 2. The Good, the Bad, and the Snapshot
 
 ### The Good
 
@@ -20,7 +26,7 @@ But it’s not all pizza and sunshine. Over time, you’re gonna have to **inspe
 
 When a snapshot fails, Vitest will scream: “TEST FAIL.” The next step is either updating it (if the change is intentional) or fixing the bug (if it’s an error).
 
-# 3. How to Maintain Your Snapshots
+## 3. How to Maintain Your Snapshots
 
 ### Step 1: Identify the Difference
 
@@ -44,17 +50,17 @@ Basically gives Vitest the ol’: “I got this, update the snapshot.” Done.
 
 If the snapshot test revealed an issue that you didn’t expect, then don’t bother updating it. **Fix your code first**. The snapshot is just the messenger here, telling you something’s off in your logic.
 
-# 4. Tips for Controlling Snapshot Bloat
+## 4. Tips for Controlling Snapshot Bloat
 
-### 1. Use selective snapshot testing
+### 1. Use Selective Snapshot Testing
 
 You don’t need to snapshot everything in your codebase. Like, really, does every single line of boilerplate or tiny utility function need a golden record? Probably not. So use them **where they have meaningful value**—like specific UI components or bigger functions.
 
-### 2. Keep your snapshots small and focused
+### 2. Keep Your Snapshots Small and Focused
 
 Snapshots should align with **meaningful outputs**, not **large chunks of data**. If your snapshot is several hundred lines long, you're probably trying to cover too much ground with one test. Break it up.
 
-# 5. Wrapping It Up
+## 5. Wrapping It Up
 
 Snapshot testing is a great way to add **quick regression checks** to your codebase—just make sure you're **paying attention**. It's so tempting to update snapshots without thinking twice when you're in a rush. Resist the urge.
 

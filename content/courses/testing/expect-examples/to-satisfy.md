@@ -1,4 +1,10 @@
-# Vitest's `toSatisfy`
+---
+title: "Vitest's ToSatisfy"
+description: "Learn how to use Vitest's toSatisfy matcher with custom logic."
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## Vitest's `toSatisfy`
 
 Alright, so let’s talk about `toSatisfy`. This matcher, my friend, is kind of a wildcard—it lets you write your own custom logic to say whether a value matches what you're expecting. It's like Vitest saying, "Listen, I usually have an opinion on whether something passes, but right now, that's all you."
 
@@ -21,21 +27,21 @@ import { describe, it, expect } from 'vitest';
 
 // Example naive Song object
 const song = {
-  title: 'Basket Case',
-  artist: 'Green Day',
-  album: 'Dookie',
+	title: 'Basket Case',
+	artist: 'Green Day',
+	album: 'Dookie',
 };
 
 describe('Song Title Tests', () => {
-  it('should have a rebellious song title', () => {
-    expect(song.title).toSatisfy((title) => {
-      return title.length > 5 && !title.includes('!');
-    });
-  });
+	it('should have a rebellious song title', () => {
+		expect(song.title).toSatisfy((title) => {
+			return title.length > 5 && !title.includes('!');
+		});
+	});
 });
 ```
 
-### What’s happening here?
+### What’s Happening Here?
 
 - The song title (`'Basket Case'`) gets passed into our custom matcher function.
 - The function checks that the title has more than 5 characters **and** does not contain an exclamation mark.
@@ -47,3 +53,7 @@ If both conditions are true, `toSatisfy` will return `true` and the test passes.
 Because **you** get to decide what "satisfy" means. No need to struggle with convoluted combinations of built-in methods. Just write a quick custom function, and you're off to the races.
 
 Now, don’t go crazy throwing `toSatisfy` on everything—you still want readable tests! But when you need some custom logic, it’s a solid tool to make your tests as punk rock as your code.
+
+```ts
+
+```

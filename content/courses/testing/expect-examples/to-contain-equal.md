@@ -1,4 +1,10 @@
-# toContainEqual in Vitest
+---
+title: ToContainEqual In Vitest
+description: Use toContainEqual to check deep equality in arrays of objects.
+modified: 2024-09-28T11:31:16-06:00
+---
+
+## toContainEqual in Vitest
 
 Alright, picture this: You've got an array, and that array is filled with objects. Now, you want to make sure that it contains an object that matches another object you're testing against. This is where `toContainEqual` comes in clutch.
 
@@ -16,21 +22,21 @@ Let’s say your music library has a list of albums, and one of those albums bel
 import { describe, it, expect } from 'vitest';
 
 describe('Music Library', () => {
-  it('should contain the album "American Idiot" by Green Day', () => {
-    const albums = [
-      { title: 'Warning', artist: 'Green Day', year: 2000 },
-      { title: 'Dookie', artist: 'Green Day', year: 1994 },
-      { title: 'American Idiot', artist: 'Green Day', year: 2004 },
-    ];
+	it('should contain the album "American Idiot" by Green Day', () => {
+		const albums = [
+			{ title: 'Warning', artist: 'Green Day', year: 2000 },
+			{ title: 'Dookie', artist: 'Green Day', year: 1994 },
+			{ title: 'American Idiot', artist: 'Green Day', year: 2004 },
+		];
 
-    const americanIdiot = {
-      title: 'American Idiot',
-      artist: 'Green Day',
-      year: 2004,
-    };
+		const americanIdiot = {
+			title: 'American Idiot',
+			artist: 'Green Day',
+			year: 2004,
+		};
 
-    expect(albums).toContainEqual(americanIdiot);
-  });
+		expect(albums).toContainEqual(americanIdiot);
+	});
 });
 ```
 
@@ -41,3 +47,7 @@ Boom. In this scenario, even though the `americanIdiot` object is a separate ins
 **Key takeaway:** Use `toContainEqual` when you’ve got arrays filled with objects, and you want to verify that an object with the same structure is in that array, without worrying about it being the _exact_ same instance of the object.
 
 Just remember, for simple arrays (like checking for a specific string or number), you can stick with the good ol' `toContain`. For objects? That's `toContainEqual` territory.
+
+```ts
+
+```

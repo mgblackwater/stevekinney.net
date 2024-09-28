@@ -1,10 +1,16 @@
-# Testing Library + Vitest: A Dream Team for Testing UIs
+---
+title: "Testing Library + Vitest: A Dream Team For Testing UIs"
+description: Supercharge your UI testing with Testing Library and Vitest.
+modified: 2024-09-28T11:31:14-06:00
+---
+
+## Testing Library + Vitest: A Dream Team for Testing UIs
 
 Alright, so you’ve moved past the days of manually clicking every button and scrolling every list to make sure your app didn’t spontaneously combust after your last code change. Good choice. Now you’re ready to supercharge your UI testing with a little help from **Testing Library** and **Vitest**. It's like Batman and Robin—both awesome on their own, but together… well, that’s where you build your test-driven UI Gotham.
 
 Let’s break down how to get **Testing Library** set up with **Vitest**, and write some tests for real-world scenarios—things you’ll actually face when you just want to make sure the user experience behaves as expected without curling into the fetal position when faced with a bug.
 
-## Step 1: Setting Things Up
+### Step 1: Setting Things Up
 
 Before we write tests, we need to stage the environment. You probably already have Vitest installed (if not, what kind of renegade are you? Get on that!). We’ll also need **@testing-library/vue** (or React, depending on your framework), which is geared up to help us render components and interact with them in ways the user would.
 
@@ -22,15 +28,15 @@ Once installed, we’ll slip a little **vitest.config.js** refinement under the 
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  test: {
-    environment: 'jsdom',
-  },
+	test: {
+		environment: 'jsdom',
+	},
 });
 ```
 
 This 'jsdom' pseudo-browser environment means Vitest can pretend it's running in a browser, which is where our UI lives. It’s like method acting for test environments.
 
-## Step 2: Let’s Write That First Test
+### Step 2: Let’s Write That First Test
 
 Let’s say we have a **Button** component that shows a counter. When you click the button, the counter goes up. Super simple, right?
 
@@ -38,7 +44,7 @@ Here's what our Vue button looks like. (React folks, feel free to translate—th
 
 ```vue
 <template>
-  <button @click="increment">{{ count }}</button>
+	<button @click="increment">{{ count }}</button>
 </template>
 
 <script setup>
@@ -46,7 +52,7 @@ import { ref } from 'vue';
 
 const count = ref(0);
 const increment = () => {
-  count.value++;
+	count.value++;
 };
 </script>
 ```
@@ -65,21 +71,21 @@ import { describe, it, expect } from 'vitest';
 import Button from './Button.vue';
 
 describe('Button component', () => {
-  it('should render and increment when clicked', async () => {
-    const { getByText } = render(Button);
+	it('should render and increment when clicked', async () => {
+		const { getByText } = render(Button);
 
-    // The button should show "0" at start
-    const button = getByText('0');
-    expect(button).toBeInTheDocument();
+		// The button should show "0" at start
+		const button = getByText('0');
+		expect(button).toBeInTheDocument();
 
-    // Click it and see what happens
-    await fireEvent.click(button);
-    expect(button).toHaveTextContent('1');
+		// Click it and see what happens
+		await fireEvent.click(button);
+		expect(button).toHaveTextContent('1');
 
-    // Click it again, because who doesn't love clicking buttons?
-    await fireEvent.click(button);
-    expect(button).toHaveTextContent('2');
-  });
+		// Click it again, because who doesn't love clicking buttons?
+		await fireEvent.click(button);
+		expect(button).toHaveTextContent('2');
+	});
 });
 ```
 
@@ -90,11 +96,11 @@ Let’s break down what just happened:
 - **fireEvent.click(button)**: You're simulating a user's interaction—they’ve got their mouse primed and ready to click.
 - **expect(button).toHaveTextContent('1')**: After one click, the counter goes up, and the button now says "1". If the test passes, you see green. If it fails, well… time to debug.
 
-## Step 3: Assert Like a Pro with jest-dom
+### Step 3: Assert Like a Pro with Jest-dom
 
 Remember that **@testing-library/jest-dom** package? Here’s where it shines. Normally, with vanilla JavaScript, we’d be writing assertions that look like `expect(button.textContent).toBe('0')`. But with **jest-dom**, we can go even further for more readable assertions like `toBeInTheDocument()` and `toHaveTextContent()`. These are like giving your test assertions a nice, ergonomic office chair—better all-around experience.
 
-## Step 4: Mocking and Stubbing (When the World Gets Messy)
+### Step 4: Mocking and Stubbing (When the World Gets Messy)
 
 Sometimes you end up in a situation where you don’t want to actually make API calls during testing or trigger certain side effects (timers, network requests, etc.). That’s where **Vitest’s mocking** capabilities hit the scene with their best attempt at damage control.
 
@@ -106,23 +112,27 @@ import { render } from '@testing-library/vue';
 import MyComponent from './MyComponent.vue';
 
 describe('MyComponent', () => {
-  it('should call fetchData on mount', () => {
-    const fetchData = vi.fn(); // Mock it.
-    render(MyComponent, {
-      methods: {
-        fetchData,
-      },
-    });
+	it('should call fetchData on mount', () => {
+		const fetchData = vi.fn(); // Mock it.
+		render(MyComponent, {
+			methods: {
+				fetchData,
+			},
+		});
 
-    expect(fetchData).toHaveBeenCalled();
-  });
+		expect(fetchData).toHaveBeenCalled();
+	});
 });
 ```
 
 Here, **vi.fn()** gives us a mock version of the `fetchData()` method. We didn’t need the real one for the test—we just wanted to verify that it was called on mount, and **voilà**, Vitest made that painless.
 
-## Wrapping Up
+### Wrapping Up
 
 With **Vitest** + **Testing Library**, you’re not just slapping a test together. You’re testing like a pro by thinking about things from your user's perspective and ensuring the frontend is bullet-proof. The combination lets you build simple, clear, maintainable tests without drowning in boilerplate.
 
 Now go ahead and click intentionally broken buttons with a smug grin. Your tests have you covered.
+
+```ts
+
+```

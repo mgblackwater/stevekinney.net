@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-16T16:09:36-06:00
+title: Understanding Test Doubles in Unit Testing
+description: Learn the purpose and types of test doubles in unit testing.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 When writing unit tests, the goal is to test a piece of code in isolation. However, the real-world code we write often depends on other pieces of code or external systems like databases, APIs, or third-party services. These dependencies can introduce variability, slowness, or complexity into our tests, making them harder to write, understand, and maintain.
@@ -11,7 +13,7 @@ Before diving into implementation, it's essential to understand what test double
 - **Test Double**: A generic term for any case where you replace a production object with a test-specific version.
 - [**Mock**](mocks.md): An object that registers calls they receive. Mocks can verify that interactions with dependencies occur as expected.
 - [**Spy**](spies.md): A function that records information about its calls, such as arguments and return values, allowing you to assert on how it was used.
-- [**Stubs**](stubs.md)Stub**: An object that provides predefined responses to method calls, usually not concerned with how they are called.
+- [**Stubs**](stubs.md)Stub\*\*: An object that provides predefined responses to method calls, usually not concerned with how they are called.
 
 ## Why Do We Use Test Doubles in Testing?
 
@@ -36,3 +38,7 @@ To clarify the differences between these three types of test doubles:
 | **Usage Scenario**    | Simulate simple behaviors, like network responses | Monitor interactions, like verifying if a callback was triggered | Simulate complex interactions, combining behavior control with call recording |
 
 Stubs, spies, and mocks are essential tools for isolating dependencies, improving test reliability, and verifying code behavior. Understanding the differences and knowing when to use each type of test double will help you write more effective and maintainable tests. Whether you need to simulate a simple API response (stub), monitor how a function interacts with a dependency (spy), or simulate complex behaviors and record interactions (mock), these tools will help ensure your unit tests are robust and accurate.
+
+```ts
+
+```

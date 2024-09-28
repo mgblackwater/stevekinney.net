@@ -1,11 +1,14 @@
 ---
-modified: 2024-09-09T17:36:53-06:00
+title: Building A Ticket Booking System With Vitest Testing
+description: Create a ticket booking system and test it using Vitest.
+modified: 2024-09-28T11:31:15-06:00
 ---
+
 **Objective**: Apply all learned concepts in a real-world scenario.
 
 - Build a small ticket booking system for a Green Day concert using Vitest for testing.
 - Test cases should involve:
-    - Stubbing network requests.
-    - Spying on callback functions.
-    - Mocking external services like payment processors.
-    - Testing asynchronous flows like email notifications and payment confirmation.
+  - Stubbing network requests.
+  - Spying on callback functions.
+  - Mocking external services like payment processors.
+  - Testing asynchronous flows like email notifications and payment confirmation.

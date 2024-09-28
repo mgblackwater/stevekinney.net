@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-14T10:25:49-06:00
+title: Snapshot Testing With Vitest
+description: Learn how to implement snapshot testing using Vitest framework.
+modified: 2024-09-28T11:31:15-06:00
 ---
 
 Snapshot testing is a powerful technique in software testing that captures the output of a piece of code and compares it against a reference snapshot stored alongside the test. If the output changes, the test fails, alerting developers to unexpected changes in the codebase.
@@ -25,7 +27,7 @@ Vitest provides built-in support for snapshot testing. When you run a test that 
 ```javascript
 // formatter.js
 export function formatUser(user) {
-  return `User: ${user.name}, Age: ${user.age}`;
+	return `User: ${user.name}, Age: ${user.age}`;
 }
 ```
 
@@ -37,9 +39,9 @@ import { test, expect } from 'vitest';
 import { formatUser } from './formatter';
 
 test('formats user information correctly', () => {
-  const user = { name: 'Alice', age: 30 };
-  const formattedUser = formatUser(user);
-  expect(formattedUser).toMatchSnapshot();
+	const user = { name: 'Alice', age: 30 };
+	const formattedUser = formatUser(user);
+	expect(formattedUser).toMatchSnapshot();
 });
 ```
 
@@ -77,7 +79,7 @@ Clear test names help identify which snapshot corresponds to which test.
 
 ```javascript
 test('formats user information with full details', () => {
-  // Test code
+	// Test code
 });
 ```
 
@@ -137,8 +139,8 @@ Example:
 ```javascript
 const user = { name: 'Alice', id: 12345, createdAt: new Date() };
 expect(user).toMatchSnapshot({
-  id: expect.any(Number),
-  createdAt: expect.any(Date),
+	id: expect.any(Number),
+	createdAt: expect.any(Date),
 });
 ```
 
@@ -177,9 +179,9 @@ Vitest supports inline snapshots, which store the snapshot within the test file.
 
 ```javascript
 test('formats user information correctly', () => {
-  const user = { name: 'Alice', age: 30 };
-  const formattedUser = formatUser(user);
-  expect(formattedUser).toMatchInlineSnapshot(`"User: Alice, Age: 30"`);
+	const user = { name: 'Alice', age: 30 };
+	const formattedUser = formatUser(user);
+	expect(formattedUser).toMatchInlineSnapshot(`"User: Alice, Age: 30"`);
 });
 ```
 
@@ -196,8 +198,8 @@ Implement custom serializers to control how objects are serialized in snapshots.
 import { expect } from 'vitest';
 
 expect.addSnapshotSerializer({
-  test: val => val instanceof Date,
-  serialize: val => val.toISOString(),
+	test: (val) => val instanceof Date,
+	serialize: (val) => val.toISOString(),
 });
 ```
 
@@ -212,8 +214,8 @@ Use matchers like `expect.any()` to ignore dynamic properties.
 
 ```javascript
 expect(response).toMatchSnapshot({
-  id: expect.any(Number),
-  timestamp: expect.any(String),
+	id: expect.any(Number),
+	timestamp: expect.any(String),
 });
 ```
 
@@ -229,8 +231,8 @@ expect(response).toMatchSnapshot({
 ```javascript
 // apiClient.js
 export async function fetchData() {
-  const response = await fetch('/api/data');
-  return response.json();
+	const response = await fetch('/api/data');
+	return response.json();
 }
 ```
 
@@ -242,11 +244,11 @@ import { test, expect } from 'vitest';
 import { fetchData } from './apiClient';
 
 test('fetches data correctly', async () => {
-  const data = await fetchData();
-  expect(data).toMatchSnapshot({
-    id: expect.any(Number),
-    createdAt: expect.any(String),
-  });
+	const data = await fetchData();
+	expect(data).toMatchSnapshot({
+		id: expect.any(Number),
+		createdAt: expect.any(String),
+	});
 });
 ```
 
@@ -260,7 +262,7 @@ test('fetches data correctly', async () => {
 ```javascript
 // template.js
 export function renderList(items) {
-  return `<ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>`;
+	return `<ul>${items.map((item) => `<li>${item}</li>`).join('')}</ul>`;
 }
 ```
 
@@ -272,9 +274,9 @@ import { test, expect } from 'vitest';
 import { renderList } from './template';
 
 test('renders list correctly', () => {
-  const items = ['Apple', 'Banana', 'Cherry'];
-  const html = renderList(items);
-  expect(html).toMatchSnapshot();
+	const items = ['Apple', 'Banana', 'Cherry'];
+	const html = renderList(items);
+	expect(html).toMatchSnapshot();
 });
 ```
 
@@ -301,3 +303,7 @@ Snapshot testing with Vitest is a valuable tool for verifying complex outputs wi
   - Combine snapshots with explicit assertions.
   - Use descriptive test names.
   - Limit snapshot size and scope.
+
+```ts
+
+```

@@ -1,4 +1,10 @@
-# toHaveReturned
+---
+title: ToHaveReturned
+description: Learn how to use the toHaveReturned matcher in unit testing.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## toHaveReturned
 
 Okay, so _toHaveReturned_ is one of those handy matchers that give you the power to assert if a **mock function** has been called and has successfully returned **any value** at least once. It's like checking if the function did its job and didn't just fail silently or throw an error.
 
@@ -20,14 +26,14 @@ import { describe, expect, it, vi } from 'vitest';
 
 // Mock function to fetch albums of an artist
 const fetchAlbums = vi.fn(() => {
-  return ['Dookie', 'American Idiot', 'Nimrod'];
+	return ['Dookie', 'American Idiot', 'Nimrod'];
 });
 
 describe('Music Library', () => {
-  it('should have fetched albums for the artist', () => {
-    fetchAlbums(); // Call the mocked function
-    expect(fetchAlbums).toHaveReturned();
-  });
+	it('should have fetched albums for the artist', () => {
+		fetchAlbums(); // Call the mocked function
+		expect(fetchAlbums).toHaveReturned();
+	});
 });
 ```
 
@@ -43,3 +49,7 @@ describe('Music Library', () => {
 You’ll grab **`toHaveReturned`** when you’re writing tests and you only care that the function executed successfully enough to return _something_—meaning no exceptions, no weird "undefined" situations. It’s like a pulse check for your function. If you’re getting more picky later (like checking that it returns the _correct_ value), you’ve got other matchers like `toReturnWith` or `toEqual` to get more specific.
 
 Simple test, simple peace of mind.
+
+```ts
+
+```

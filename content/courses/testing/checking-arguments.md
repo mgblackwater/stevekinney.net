@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-09T17:51:12-06:00
+title: Checking Function Arguments in Vitest
+description: Learn how to verify function arguments using spies and mocks in Vitest.
+modified: 2024-09-28T11:31:16-06:00
 ---
 
 In unit testing, one of the key tasks is verifying that functions are called with the correct arguments. This ensures that your code is passing the right data through the system and interacting with dependencies in the expected way. Vitest provides powerful utilities to check the arguments passed to a function, either by using spies or mocks.
@@ -19,23 +21,23 @@ Here’s how you create a spy and check the arguments:
 ```js
 // Function to be tested
 function logMessage(message) {
-  console.log(message);
+	console.log(message);
 }
 
 describe('logMessage', () => {
-  it('should call console.log with the correct message', () => {
-    // Spy on console.log
-    const logSpy = vi.spyOn(console, 'log');
+	it('should call console.log with the correct message', () => {
+		// Spy on console.log
+		const logSpy = vi.spyOn(console, 'log');
 
-    // Call the function under test
-    logMessage('Hello, world!');
+		// Call the function under test
+		logMessage('Hello, world!');
 
-    // Check that console.log was called with the correct argument
-    expect(logSpy).toHaveBeenCalledWith('Hello, world!');
+		// Check that console.log was called with the correct argument
+		expect(logSpy).toHaveBeenCalledWith('Hello, world!');
 
-    // Restore the original console.log
-    logSpy.mockRestore();
-  });
+		// Restore the original console.log
+		logSpy.mockRestore();
+	});
 });
 ```
 
@@ -50,13 +52,13 @@ Mocks can also be used to check what arguments were passed to a function. When y
 const mockFn = vi.fn();
 
 describe('mock function argument checking', () => {
-  it('should be called with the correct arguments', () => {
-    // Call the mock function with some arguments
-    mockFn('Green Day', 'American Idiot');
+	it('should be called with the correct arguments', () => {
+		// Call the mock function with some arguments
+		mockFn('Green Day', 'American Idiot');
 
-    // Check the arguments passed to the mock function
-    expect(mockFn).toHaveBeenCalledWith('Green Day', 'American Idiot');
-  });
+		// Check the arguments passed to the mock function
+		expect(mockFn).toHaveBeenCalledWith('Green Day', 'American Idiot');
+	});
 });
 ```
 
@@ -70,17 +72,17 @@ Vitest allows you to check the arguments passed to a function over multiple call
 const mockFn = vi.fn();
 
 describe('checking multiple calls', () => {
-  it('should track all the arguments for multiple calls', () => {
-    // Call the mock function multiple times with different arguments
-    mockFn('Green Day', 'Dookie');
-    mockFn('Nirvana', 'Nevermind');
-    
-    // Check arguments of the first call
-    expect(mockFn).toHaveBeenNthCalledWith(1, 'Green Day', 'Dookie');
-    
-    // Check arguments of the second call
-    expect(mockFn).toHaveBeenNthCalledWith(2, 'Nirvana', 'Nevermind');
-  });
+	it('should track all the arguments for multiple calls', () => {
+		// Call the mock function multiple times with different arguments
+		mockFn('Green Day', 'Dookie');
+		mockFn('Nirvana', 'Nevermind');
+
+		// Check arguments of the first call
+		expect(mockFn).toHaveBeenNthCalledWith(1, 'Green Day', 'Dookie');
+
+		// Check arguments of the second call
+		expect(mockFn).toHaveBeenNthCalledWith(2, 'Nirvana', 'Nevermind');
+	});
 });
 ```
 
@@ -92,22 +94,22 @@ When working with asynchronous code, it’s important to ensure that the correct
 
 ```js
 async function fetchBandData(bandName, callback) {
-  // Simulate an async operation
-  await new Promise((resolve) => setTimeout(resolve, 100));
-  callback(`${bandName} data`);
+	// Simulate an async operation
+	await new Promise((resolve) => setTimeout(resolve, 100));
+	callback(`${bandName} data`);
 }
 
 describe('fetchBandData', () => {
-  it('should call the callback with the correct data', async () => {
-    // Create a mock callback
-    const callback = vi.fn();
+	it('should call the callback with the correct data', async () => {
+		// Create a mock callback
+		const callback = vi.fn();
 
-    // Call the async function with the mock callback
-    await fetchBandData('Green Day', callback);
+		// Call the async function with the mock callback
+		await fetchBandData('Green Day', callback);
 
-    // Verify that the callback was called with the correct argument
-    expect(callback).toHaveBeenCalledWith('Green Day data');
-  });
+		// Verify that the callback was called with the correct argument
+		expect(callback).toHaveBeenCalledWith('Green Day data');
+	});
 });
 ```
 
@@ -124,15 +126,15 @@ mockFn('Green Day', 'Dookie');
 mockFn('Blink-182', 'Enema of the State');
 
 describe('accessing arguments manually', () => {
-  it('should manually access arguments of each call', () => {
-    // Access the arguments of the first call
-    const firstCallArgs = mockFn.mock.calls[0];
-    expect(firstCallArgs).toEqual(['Green Day', 'Dookie']);
+	it('should manually access arguments of each call', () => {
+		// Access the arguments of the first call
+		const firstCallArgs = mockFn.mock.calls[0];
+		expect(firstCallArgs).toEqual(['Green Day', 'Dookie']);
 
-    // Access the arguments of the second call
-    const secondCallArgs = mockFn.mock.calls[1];
-    expect(secondCallArgs).toEqual(['Blink-182', 'Enema of the State']);
-  });
+		// Access the arguments of the second call
+		const secondCallArgs = mockFn.mock.calls[1];
+		expect(secondCallArgs).toEqual(['Blink-182', 'Enema of the State']);
+	});
 });
 ```
 

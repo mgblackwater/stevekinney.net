@@ -1,4 +1,10 @@
-# Testing on Precommit with Husky
+---
+title: Testing On Precommit With Husky
+description: Set up Husky to run tests before committing code to Git.
+modified: 2024-09-28T11:31:14-06:00
+---
+
+## Testing on Precommit with Husky
 
 Alright, friend, let's talk about something that we all wish we could wave a magic wand for: keeping bad code out of `main`. You know what I'm talking about. Code that _works on my machine_ but crashes the staging server faster than you can say "merge conflict."
 
@@ -6,7 +12,7 @@ The answer? **Precommit Hooks**. Specifically, using **Husky** to run your tests
 
 Let's dive in and break it down. In this guide, we’ll set up **Husky** to run our **Vitest** tests (or any tests, really) in the smoothest way possible.
 
-## Step 1: Install Husky
+### Step 1: Install Husky
 
 So, Husky is like a bouncer at a nightclub—but for your Git commits. Before the code can get in, Husky will make sure it's passing.
 
@@ -22,7 +28,7 @@ Or if you're rollin' with yarn:
 yarn add husky --dev
 ```
 
-## Step 2: Set Up Husky
+### Step 2: Set Up Husky
 
 Now that Husky’s standing at the door, we need to teach it how to bounce the riffraff. First, enable Husky hooks:
 
@@ -45,7 +51,7 @@ This command does two things:
 
 If you're using Yarn, just replace `npm test` with `yarn test`.
 
-## Step 3: Make Sure Vitest Runs
+### Step 3: Make Sure Vitest Runs
 
 Normally, Vitest just works out of the box with `npm test`, but if you haven't set up your test command for Vitest, let’s make sure that's looking good.
 
@@ -53,15 +59,15 @@ In your `package.json` file:
 
 ```json
 {
-  "scripts": {
-    "test": "vitest"
-  }
+	"scripts": {
+		"test": "vitest"
+	}
 }
 ```
 
 Now, when Husky runs `npm test`, it’s really running your Vitest tests.
 
-## Step 4: Create Some Tests
+### Step 4: Create Some Tests
 
 Alright, you’ve got Husky all geared up, but what if your code always passes because you don't have tests (yet)? Gotcha. Let’s make sure we have a simple test in place.
 
@@ -70,7 +76,7 @@ In your test file, something like this should work:
 ```javascript
 // src/math.js
 export function add(a, b) {
-  return a + b;
+	return a + b;
 }
 
 // test/math.test.js
@@ -78,15 +84,15 @@ import { describe, it, expect } from 'vitest';
 import { add } from '../src/math';
 
 describe('add', () => {
-  it('should add two numbers', () => {
-    expect(add(1, 2)).toBe(3);
-  });
+	it('should add two numbers', () => {
+		expect(add(1, 2)).toBe(3);
+	});
 });
 ```
 
 We're testing a basic `add` function. So simple! But let's be honest—_everyone_ writes bugs in even the simplest code. So let's make sure this runs every time!
 
-## Step 5: Test the Precommit Hook
+### Step 5: Test the Precommit Hook
 
 It’s time for the moment of truth. Let’s make some changes and try to commit those bad boys.
 
@@ -106,7 +112,7 @@ If everything works out, tests will run, pass, and your commit will sail into th
 
 But if something fails—and, let’s face it, that _always happens_ when we want to show off in front of a coworker—your commit will be blocked. Don’t worry, though; Husky has your back. Fix your tests first, and then try committing again. You’ll thank future you.
 
-## Bonus: Linting and Prettifying
+### Bonus: Linting and Prettifying
 
 Why stop at testing? You can also throw in some linting and prettier checks before commits, like it’s a party. If you’re using eslint and prettier:
 
@@ -116,8 +122,12 @@ npx husky add .husky/pre-commit "npm run lint && npm run format && npm test"
 
 A perfect world: linted, prettified, and tested code _before it even leaves your machine_.
 
-## Conclusion
+### Conclusion
 
 There you have it! With **Husky** by your side, and your tests running every time you commit code, you won’t accidentally blow up production because you typo’d a variable name. It happens to the best of us—better to catch it before your code gets shipped.
 
 The beauty of Husky is that it’s fast, it protects your team (and you, let’s be honest), and it makes sure no bad code gets committed. Now go forth and ship with confidence… or at least not with broken tests.
+
+```ts
+
+```

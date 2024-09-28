@@ -1,10 +1,16 @@
-# Testing React Applications with Vitest
+---
+title: Testing React Applications With Vitest
+description: Learn how to test React apps using Vitest, from setup to mocks.
+modified: 2024-09-28T11:31:14-06:00
+---
+
+## Testing React Applications with Vitest
 
 Alright, folks, let’s dive into testing React applications using a tool that’s really been gaining steam: **Vitest**. If you’ve suffered through testing libraries before, wondering why your dev life needs to be as painful as it sometimes is—Vitest might just offer an oasis of sanity.
 
 At its core, Vitest is **fast**, **simple**, and **integrated out of the box with Vite**, which means faster startup times, instant TypeScript support, and zero-config goodness. Let’s aim for clarity and focus on testing what matters in React.
 
-## Setting up Vitest for a React Project
+### Setting up Vitest for a React Project
 
 So, we’ve got a React app. Nothing fancy—maybe a simple button component. First things first, installing Vitest. Assuming you’re using Vite for your project, installation is pretty straightforward.
 
@@ -22,11 +28,11 @@ Next, in your `vite.config.js`, add this beautiful block of Vitest goodness:
 /// vite.config.js
 
 export default {
-  test: {
-    environment: 'jsdom', // Required for React DOM testing
-    globals: true, // This lets us use things like expect() without importing
-    setupFiles: './setupTests.js', // Optional: If you've got setup requirements
-  },
+	test: {
+		environment: 'jsdom', // Required for React DOM testing
+		globals: true, // This lets us use things like expect() without importing
+		setupFiles: './setupTests.js', // Optional: If you've got setup requirements
+	},
 };
 ```
 
@@ -41,7 +47,7 @@ import '@testing-library/jest-dom';
 
 Now, **buckle up!** Time to write our first React test.
 
-## Writing a Basic React Test
+### Writing a Basic React Test
 
 Alright, imagine we have a simple React component that renders a button. The button increments a counter when you click it. Here's the component:
 
@@ -51,9 +57,9 @@ Alright, imagine we have a simple React component that renders a button. The but
 import { useState } from 'react';
 
 export default function CounterButton() {
-  const [count, setCount] = useState(0);
+	const [count, setCount] = useState(0);
 
-  return <button onClick={() => setCount(count + 1)}>Count is {count}</button>;
+	return <button onClick={() => setCount(count + 1)}>Count is {count}</button>;
 }
 ```
 
@@ -67,18 +73,18 @@ import userEvent from '@testing-library/user-event';
 import CounterButton from './CounterButton';
 
 describe('CounterButton Component', () => {
-  it('increments counter on click', async () => {
-    render(<CounterButton />);
+	it('increments counter on click', async () => {
+		render(<CounterButton />);
 
-    const button = screen.getByText(/count is/i); // Grab that button by its text
+		const button = screen.getByText(/count is/i); // Grab that button by its text
 
-    expect(button).toHaveTextContent('Count is 0'); // Initial state check
+		expect(button).toHaveTextContent('Count is 0'); // Initial state check
 
-    // Simulate a user click (not an *actual* click, don't hurt your screen)
-    await userEvent.click(button);
+		// Simulate a user click (not an *actual* click, don't hurt your screen)
+		await userEvent.click(button);
 
-    expect(button).toHaveTextContent('Count is 1'); // State has updated, test should pass
-  });
+		expect(button).toHaveTextContent('Count is 1'); // State has updated, test should pass
+	});
 });
 ```
 
@@ -90,7 +96,7 @@ Breakdown of the magic:
 
 Vitest magically takes care of testing in a jsdom environment, and because of that global jest-dom goodness, we don’t even need to import jest-specific methods like `expect`. Those are already **wired up** for you.
 
-## Running Our Tests
+### Running Our Tests
 
 Now that we’ve crafted a pure work of art (the test, obviously), let’s run it. In your `package.json`, add a script:
 
@@ -108,7 +114,7 @@ npm test
 
 Ahhh, the sweet sight of green checkmarks.
 
-## Mocking in a React Test
+### Mocking in a React Test
 
 Sometimes we have components that rely on external modules, or eeevil dependencies that you’d rather not deal with in your tests. Maybe your component grabs data from an API or processes payments (big yikes!). The way to ensure your test is fast and doesn't make unexpected network calls is **mocking**.
 
@@ -118,7 +124,7 @@ Vitest can handle mocks beautifully. Imagine our button had an additional backen
 // api.js
 
 export function logClick() {
-  console.log('Click logged!');
+	console.log('Click logged!');
 }
 ```
 
@@ -130,14 +136,14 @@ Let’s pretend that for some bizarre reason, our `CounterButton` logs every cli
 import { logClick } from './api';
 
 export default function CounterButton() {
-  const [count, setCount] = useState(0);
+	const [count, setCount] = useState(0);
 
-  const handleClick = () => {
-    logClick();
-    setCount(count + 1);
-  };
+	const handleClick = () => {
+		logClick();
+		setCount(count + 1);
+	};
 
-  return <button onClick={handleClick}>Count is {count}</button>;
+	return <button onClick={handleClick}>Count is {count}</button>;
 }
 ```
 
@@ -154,27 +160,31 @@ import * as api from './api'; // Import everything from that module
 vi.mock('./api'); // This tells Vitest to mock the entire api module
 
 describe('CounterButton with API mock', () => {
-  it('increments counter and calls logClick on click', async () => {
-    render(<CounterButton />);
+	it('increments counter and calls logClick on click', async () => {
+		render(<CounterButton />);
 
-    const button = screen.getByText(/count is/i);
+		const button = screen.getByText(/count is/i);
 
-    const logClickSpy = vi.spyOn(api, 'logClick'); // Spy on the logClick function
+		const logClickSpy = vi.spyOn(api, 'logClick'); // Spy on the logClick function
 
-    await userEvent.click(button);
+		await userEvent.click(button);
 
-    expect(button).toHaveTextContent('Count is 1');
-    expect(logClickSpy).toHaveBeenCalledTimes(1); // Make sure our API interaction would have happened once
-  });
+		expect(button).toHaveTextContent('Count is 1');
+		expect(logClickSpy).toHaveBeenCalledTimes(1); // Make sure our API interaction would have happened once
+	});
 });
 ```
 
 Vitest’s mocking is like a voodoo doll for your modules. You **zap** your real function, and the test just uses your mock. You’re in control. I mean, not in life, but in your tests—definitely.
 
-## Conclusion
+### Conclusion
 
 So there you have it—testing React apps with Vitest. We’ve covered installation, basic usage, state testing, mocking external dependencies—basically everything you need to get up and running. Testing doesn't have to suck. In fact, with tools like Vitest and **React Testing Library**, it can become an enjoyable (gasp) part of your workflow.
 
 The key? Keep your tests small, focused, and fast. And always remember: green means go.
 
 Now, go forth and write some awesome tests.
+
+```ts
+
+```

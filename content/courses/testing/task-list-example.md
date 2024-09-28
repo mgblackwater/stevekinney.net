@@ -1,6 +1,9 @@
 ---
-modified: 2024-09-14T10:37:18-06:00
+title: Building a To-Do List Application In React Using Test-Driven Development With Vitest
+description: A guide to building a To-Do List app using TDD with React and Vitest.
+modified: 2024-09-28T11:31:15-06:00
 ---
+
 ## Building a To-Do List Application in React Using Test-Driven Development with Vitest
 
 **Table of Contents**
@@ -114,12 +117,12 @@ This cycle is often referred to as **Red-Green-Refactor**.
    import react from '@vitejs/plugin-react';
 
    export default defineConfig({
-     plugins: [react()],
-     test: {
-       globals: true,
-       environment: 'jsdom',
-       setupFiles: './tests/setupTests.js',
-     },
+   	plugins: [react()],
+   	test: {
+   		globals: true,
+   		environment: 'jsdom',
+   		setupFiles: './tests/setupTests.js',
+   	},
    });
    ```
 
@@ -136,14 +139,14 @@ This cycle is often referred to as **Red-Green-Refactor**.
 
    ```json
    {
-     "scripts": {
-       "dev": "vite",
-       "build": "vite build",
-       "preview": "vite preview",
-       "test": "vitest",
-       "test:watch": "vitest --watch",
-       "coverage": "vitest run --coverage"
-     }
+   	"scripts": {
+   		"dev": "vite",
+   		"build": "vite build",
+   		"preview": "vite preview",
+   		"test": "vitest",
+   		"test:watch": "vitest --watch",
+   		"coverage": "vitest run --coverage"
+   	}
    }
    ```
 
@@ -179,14 +182,14 @@ import { setupServer } from 'msw/node';
 import { ToDoList } from '../components/ToDoList';
 
 const mockTodos = [
-  { id: 1, title: 'Buy groceries', completed: false },
-  { id: 2, title: 'Walk the dog', completed: true },
+	{ id: 1, title: 'Buy groceries', completed: false },
+	{ id: 2, title: 'Walk the dog', completed: true },
 ];
 
 const server = setupServer(
-  rest.get('/api/todos', (req, res, ctx) => {
-    return res(ctx.json(mockTodos));
-  })
+	rest.get('/api/todos', (req, res, ctx) => {
+		return res(ctx.json(mockTodos));
+	}),
 );
 
 beforeAll(() => server.listen());
@@ -194,14 +197,14 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test('renders to-do items fetched from API', async () => {
-  render(<ToDoList />);
+	render(<ToDoList />);
 
-  expect(screen.getByText(/loading/i)).toBeInTheDocument();
+	expect(screen.getByText(/loading/i)).toBeInTheDocument();
 
-  const items = await screen.findAllByRole('listitem');
-  expect(items).toHaveLength(2);
-  expect(screen.getByText('Buy groceries')).toBeInTheDocument();
-  expect(screen.getByText('Walk the dog')).toBeInTheDocument();
+	const items = await screen.findAllByRole('listitem');
+	expect(items).toHaveLength(2);
+	expect(screen.getByText('Buy groceries')).toBeInTheDocument();
+	expect(screen.getByText('Walk the dog')).toBeInTheDocument();
 });
 ```
 
@@ -230,29 +233,29 @@ Create `src/components/ToDoList.jsx`:
 import React, { useEffect, useState } from 'react';
 
 export function ToDoList() {
-  const [todos, setTodos] = useState([]);
-  const [loading, setLoading] = useState(true);
+	const [todos, setTodos] = useState([]);
+	const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch('/api/todos')
-      .then((res) => res.json())
-      .then((data) => {
-        setTodos(data);
-        setLoading(false);
-      });
-  }, []);
+	useEffect(() => {
+		fetch('/api/todos')
+			.then((res) => res.json())
+			.then((data) => {
+				setTodos(data);
+				setLoading(false);
+			});
+	}, []);
 
-  if (loading) return <div>Loading…</div>;
+	if (loading) return <div>Loading…</div>;
 
-  return (
-    <ul>
-      {todos.map((todo) => (
-        <li key={todo.id}>
-          {todo.title} {todo.completed ? '(Completed)' : ''}
-        </li>
-      ))}
-    </ul>
-  );
+	return (
+		<ul>
+			{todos.map((todo) => (
+				<li key={todo.id}>
+					{todo.title} {todo.completed ? '(Completed)' : ''}
+				</li>
+			))}
+		</ul>
+	);
 }
 ```
 
@@ -336,54 +339,54 @@ Update `src/components/ToDoList.jsx`:
 import React, { useEffect, useState } from 'react';
 
 export function ToDoList() {
-  const [todos, setTodos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [newTodo, setNewTodo] = useState('');
+	const [todos, setTodos] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [newTodo, setNewTodo] = useState('');
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
+	useEffect(() => {
+		fetchTodos();
+	}, []);
 
-  function fetchTodos() {
-    fetch('/api/todos')
-      .then((res) => res.json())
-      .then((data) => {
-        setTodos(data);
-        setLoading(false);
-      });
-  }
+	function fetchTodos() {
+		fetch('/api/todos')
+			.then((res) => res.json())
+			.then((data) => {
+				setTodos(data);
+				setLoading(false);
+			});
+	}
 
-  function addTodo() {
-    fetch('/api/todos', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title: newTodo }),
-    }).then(() => {
-      setNewTodo('');
-      fetchTodos();
-    });
-  }
+	function addTodo() {
+		fetch('/api/todos', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ title: newTodo }),
+		}).then(() => {
+			setNewTodo('');
+			fetchTodos();
+		});
+	}
 
-  if (loading) return <div>Loading…</div>;
+	if (loading) return <div>Loading…</div>;
 
-  return (
-    <div>
-      <input
-        placeholder="Add new to-do"
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
-      />
-      <button onClick={addTodo}>Add</button>
+	return (
+		<div>
+			<input
+				placeholder="Add new to-do"
+				value={newTodo}
+				onChange={(e) => setNewTodo(e.target.value)}
+			/>
+			<button onClick={addTodo}>Add</button>
 
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.title} {todo.completed ? '(Completed)' : ''}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+			<ul>
+				{todos.map((todo) => (
+					<li key={todo.id}>
+						{todo.title} {todo.completed ? '(Completed)' : ''}
+					</li>
+				))}
+			</ul>
+		</div>
+	);
 }
 ```
 
@@ -409,21 +412,21 @@ Update `src/tests/ToDoList.test.jsx`:
 
 ```jsx
 test('marks a to-do item as completed', async () => {
-  render(<ToDoList />);
+	render(<ToDoList />);
 
-  const itemCheckbox = await screen.findByRole('checkbox', { name: 'Buy groceries' });
-  expect(itemCheckbox).not.toBeChecked();
+	const itemCheckbox = await screen.findByRole('checkbox', { name: 'Buy groceries' });
+	expect(itemCheckbox).not.toBeChecked();
 
-  // Mock the PUT request
-  server.use(
-    rest.put('/api/todos/1', (req, res, ctx) => {
-      return res(ctx.json({ id: 1, title: 'Buy groceries', completed: true }));
-    })
-  );
+	// Mock the PUT request
+	server.use(
+		rest.put('/api/todos/1', (req, res, ctx) => {
+			return res(ctx.json({ id: 1, title: 'Buy groceries', completed: true }));
+		}),
+	);
 
-  await userEvent.click(itemCheckbox);
+	await userEvent.click(itemCheckbox);
 
-  expect(itemCheckbox).toBeChecked();
+	expect(itemCheckbox).toBeChecked();
 });
 ```
 
@@ -519,222 +522,6 @@ test('deletes a to-do item', async () => {
 
   await userEvent.click(deleteButton);
 
-  expect(screen.queryByText('Buy groceries')).not.toBeInTheDocument();
+  expect(screen.queryByText('Buy groceries')).not toBeInTheDocument();
 });
 ```
-
-**Explanation:**
-
-- We simulate clicking the delete button.
-- We mock the DELETE request and update the GET response.
-- We assert that the to-do item is no longer in the document.
-
-##### Step 2: Run the Test and See It Fail
-
-Run the test:
-
-```bash
-npm run test
-```
-
-The test fails because the delete button doesn't exist.
-
-##### Step 3: Write Minimal Code to Pass the Test (Green)
-
-Update `src/components/ToDoList.jsx`:
-
-```jsx
-function deleteTodo(id) {
-  fetch(`/api/todos/${id}`, {
-    method: 'DELETE',
-  }).then(() => {
-    fetchTodos();
-  });
-}
-
-// … in the return statement …
-
-<ul>
-  {todos.map((todo) => (
-    <li key={todo.id}>
-      <label>
-        <input
-          type="checkbox"
-          checked={todo.completed}
-          onChange={() => toggleComplete(todo)}
-          aria-label={todo.title}
-        />
-        {todo.title}
-      </label>
-      <button onClick={() => deleteTodo(todo.id)} aria-label={`Delete ${todo.title}`}>
-        Delete
-      </button>
-    </li>
-  ))}
-</ul>
-```
-
-##### Step 4: Run the Test Again
-
-Run the test:
-
-```bash
-npm run test
-```
-
-The test should pass.
-
-##### Step 5: Refactor (if necessary)
-
-Consider updating the state locally instead of re-fetching the entire list.
-
-### Mocking the API with MSW
-
-We've used **MSW** to mock API responses in our tests. Here's a brief explanation of how it works.
-
-1. **Set Up MSW Handlers**
-
-   Create `src/mocks/handlers.js`:
-
-   ```javascript
-   // src/mocks/handlers.js
-   import { rest } from 'msw';
-
-   const mockTodos = [
-     { id: 1, title: 'Buy groceries', completed: false },
-     { id: 2, title: 'Walk the dog', completed: true },
-   ];
-
-   export const handlers = [
-     rest.get('/api/todos', (req, res, ctx) => {
-       return res(ctx.json(mockTodos));
-     }),
-
-     rest.post('/api/todos', (req, res, ctx) => {
-       const newTodo = { id: Date.now(), …req.body, completed: false };
-       mockTodos.push(newTodo);
-       return res(ctx.status(201), ctx.json(newTodo));
-     }),
-
-     rest.put('/api/todos/:id', (req, res, ctx) => {
-       const { id } = req.params;
-       const index = mockTodos.findIndex((todo) => todo.id === parseInt(id));
-       mockTodos[index] = { …mockTodos[index], …req.body };
-       return res(ctx.json(mockTodos[index]));
-     }),
-
-     rest.delete('/api/todos/:id', (req, res, ctx) => {
-       const { id } = req.params;
-       const index = mockTodos.findIndex((todo) => todo.id === parseInt(id));
-       mockTodos.splice(index, 1);
-       return res(ctx.status(200));
-     }),
-   ];
-   ```
-
-2. **Set Up the MSW Server**
-
-   Create `src/mocks/server.js`:
-
-   ```javascript
-   // src/mocks/server.js
-   import { setupServer } from 'msw/node';
-   import { handlers } from './handlers';
-
-   export const server = setupServer(…handlers);
-   ```
-
-3. **Update the Test Setup File**
-
-   Update `tests/setupTests.js`:
-
-   ```javascript
-   // tests/setupTests.js
-   import '@testing-library/jest-dom';
-   import { server } from '../src/mocks/server';
-
-   beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
-   afterEach(() => server.resetHandlers());
-   afterAll(() => server.close());
-   ```
-
-4. **Use the Handlers in Tests**
-
-   In your tests, you can now use the handlers or override them as needed.
-
-**Benefits of Using MSW:**
-
-- Mocks API requests at the network level.
-- Works both in tests and during development.
-- Provides realistic API interactions.
-
-### Running the Tests
-
-Run all tests using:
-
-```bash
-npm run test
-```
-
-Vitest will execute all tests in the `tests/` directory and report the results.
-
-### Conclusion
-
-By following Test-Driven Development principles, we've built a functional To-Do List application in React. We've written unit and integration tests using Vitest and React Testing Library, ensuring our components behave as expected. Using MSW, we've effectively mocked API interactions, allowing us to test components that rely on external data without actual network requests.
-
-**Key Takeaways:**
-
-- **TDD Workflow:** Writing tests first helps define expected behavior and leads to better-designed code.
-- **Vitest and React Testing Library:** Provide powerful tools for testing React components.
-- **MSW for API Mocking:** Allows for realistic and maintainable API mocking in tests.
-
-### Additional Exercises
-
-To further enhance your To-Do List application and testing skills, consider implementing the following features:
-
-1. **Edit To-Do Items**
-
-   - Allow users to edit the title of a to-do item.
-   - Write tests to ensure the edit functionality works correctly.
-
-2. **Error Handling**
-
-   - Implement error handling for API failures.
-   - Write tests to simulate API errors and verify that the application responds appropriately.
-
-3. **Optimistic Updates**
-
-   - Update the UI immediately after user actions before the server confirms.
-   - Write tests to ensure the UI remains consistent with the server state.
-
-4. **Pagination**
-
-   - Implement pagination or infinite scrolling for the to-do list.
-   - Write tests to ensure items are loaded correctly as the user navigates.
-
-5. **Filter and Search**
-
-   - Add functionality to filter to-dos by status (completed, active).
-   - Implement a search feature to find to-dos by title.
-   - Write tests to verify filtering and searching.
-
-6. **User Authentication**
-
-   - Implement user authentication to manage to-dos for different users.
-   - Mock authentication in tests and verify access control.
-
-7. **Accessibility Improvements**
-
-   - Ensure the application meets accessibility standards (ARIA roles, keyboard navigation).
-   - Write tests to verify accessibility features.
-
-8. **Deployment**
-
-   - Deploy the application to a hosting service (e.g., Netlify, Vercel).
-   - Ensure the application works in production and consider setting up end-to-end tests.
-
----
-
-By extending the application and writing tests for new features, you'll deepen your understanding of TDD and improve your testing proficiency in a React environment.
-
-Happy coding and testing!

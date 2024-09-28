@@ -1,5 +1,7 @@
 ---
-modified: 2024-09-17T11:27:06-06:00
+title: Mock Functions And Lifecycle Methods
+description: Understanding object methods and mock lifecycle methods in tests.
+modified: 2024-09-28T11:31:16-06:00
 ---
 
 Generally speaking, you want to put stuff back the way you found it in order to make sure that you have good test isolation things don't get weird when tests have long-lasting side effects that cause other tests to fail for no particularly good reason.
@@ -19,3 +21,7 @@ You'd typically put these in an `afterEach` block within your test suite.
 - `vi.clearAllMocks`: Clears out the history of calls and return values on the spies, but does _not_ reset them to their default implementation. This is effectively the same as calling `.mockClear()` on each and every spy.
 - `vi.resetAllMocks`: Calls `.mockReset()` on all the spies. It will replace any mock implementations with an empty function.
 - `vi.restoreAllMocks`: Calls `.mockRestore()` on each and every mock. This one returns the world to it's original state.
+
+```ts
+
+```

@@ -1,4 +1,10 @@
-# toMatchSnapshot in Vitest
+---
+title: toMatchSnapshot
+description: An overview of using toMatchSnapshot for snapshot testing in Vitest.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## ToMatchSnapshot In Vitest
 
 Alright, so **toMatchSnapshot**—kind of sounds fancy, right? But it's actually here to make your life easier, especially in situations where manually checking a ton of output would make you want to quit and open a taco truck instead. Here’s the deal:
 
@@ -16,18 +22,18 @@ Imagine you've got part of your music library app that fetches an album's detail
 import { test, expect } from 'vitest';
 
 function getAlbumDetails(albumId) {
-  return {
-    id: albumId,
-    artist: 'Green Day',
-    album: 'Dookie',
-    year: 1994,
-    tracks: ['Basket Case', 'When I Come Around', 'Welcome to Paradise'],
-  };
+	return {
+		id: albumId,
+		artist: 'Green Day',
+		album: 'Dookie',
+		year: 1994,
+		tracks: ['Basket Case', 'When I Come Around', 'Welcome to Paradise'],
+	};
 }
 
 test('should match the album details snapshot', () => {
-  const album = getAlbumDetails(42);
-  expect(album).toMatchSnapshot();
+	const album = getAlbumDetails(42);
+	expect(album).toMatchSnapshot();
 });
 ```
 
@@ -38,3 +44,7 @@ Let’s keep this realistic though—you're probably not shipping just because y
 ---
 
 So when Green Day comes out with extra B-sides or someone messes with the track order, you'll be the first to know! 👀
+
+```ts
+
+```

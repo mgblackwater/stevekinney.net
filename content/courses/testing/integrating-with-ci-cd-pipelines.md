@@ -1,10 +1,16 @@
-# 1. Integrating Vitest with Your CI/CD Pipeline
+---
+title: Integrating Vitest With Your CI/CD Pipeline
+description: Learn how to integrate Vitest into a CI/CD pipeline using GitHub Actions.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## 1. Integrating Vitest with Your CI/CD Pipeline
 
 Ah, Continuous Integration and Continuous Deployment (CI/CD)! You know, it’s like having that one responsible roommate who always remembers to lock the door, do the dishes, and make sure your code isn’t breaking everything on the way out to production. Let’s talk about how to hit that sweet deploy button _knowing your tests_ are keeping things smooth (or at least flagging the landmines before they go boom).
 
 Today, we’ll get Vitest running in a CI/CD pipeline using GitHub Actions, but you can take these concepts and adapt them to whatever tool your team is using. CI/CD tools all do pretty much the same thing behind the scenes: run your tests, and tell you if things are broken (hopefully before your users do).
 
-## 2. Step 1: Configuring Vitest for CI
+### 2. Step 1: Configuring Vitest for CI
 
 Alright, you probably already have Vitest hooked up locally. If you don’t, no worries—I’ll wait while you get it installed. Just:
 
@@ -27,7 +33,7 @@ So, let’s make sure Vitest ain’t hanging around looking for changes when we 
 
 The key here is the `vitest run` command. This does exactly what you expect: runs the tests once and exits. Perfect for CI.
 
-## 3. Step 2: Writing a GitHub Actions Workflow
+### 3. Step 2: Writing a GitHub Actions Workflow
 
 Time to bring home the bacon with GitHub Actions (though most CI tools behave very similarly, as I mentioned). In the root of your project, create a directory called `.github/workflows`. Inside, create a `ci.yml` file with the following content:
 
@@ -69,7 +75,7 @@ Breakdown, layer-by-layer:
 
 Boom. That’s it. Once you push this file to your repository, GitHub will start running your tests on every push or pull request. If they pass, green lights all the way! Something goes wrong? Well, GitHub will mercilessly scream red at your face, but better here than in production, right?
 
-## 4. Step 3: (Optional) Adding Coverage Data
+### 4. Step 3: (Optional) Adding Coverage Data
 
 Something to consider: **test coverage**. There’s no friendlier reminder than a code coverage report to show how thoroughly (or not) you’re testing your project. If you want to run Vitest with coverage reporting in CI, here’s the game plan.
 
@@ -99,7 +105,7 @@ Finally, update your `ci.yml` file to gather coverage data:
 
 Now your CI will also collect and report coverage information. One step closer to superhero status.
 
-## 5. Conclusion
+### 5. Conclusion
 
 And just like that, you’ve injected a bit more confidence into your deploys. Good tests run automatically and give you feedback before your mistakes hit production. Plus, you'll look super pro in front of your team (or at least you won’t be the one causing the 3 A.M. outage… again).
 

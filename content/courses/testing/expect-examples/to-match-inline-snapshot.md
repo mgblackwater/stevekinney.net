@@ -1,12 +1,18 @@
-# Vitest’s `toMatchInlineSnapshot`
+---
+title: toMatchSnapshot
+description: Learn how to use`toMatchInlineSnapshot` in Vitest for testing.
+modified: 2024-09-28T11:31:15-06:00
+---
+
+## Vitest’s `toMatchInlineSnapshot`
 
 Alright, so **`toMatchInlineSnapshot`** — this is one of those sneaky little helpers that most people don’t even realize they need until they use it, and then BAM, they can’t live without it. But let’s unpack it a little.
 
-### What does it do?
+### What Does it Do?
 
 At a high level, **`toMatchInlineSnapshot`** compares the received value (whatever value your test produces) against a snapshot that’s stored _right in your test file_. That’s the "inline" part. It's like you take a picture of the current output and say, "This is what I expect this value to be in the future." You store that picture, or the _snapshot_, directly in the test. Later, when you run the test again, it compares the current value to that snapshot you saved and makes sure they match, so it catches unintentional changes to your output.
 
-### When would you use it?
+### When Would You Use It?
 
 This comes in handy when you have somewhat complex output that you don’t want to manually assert piece by piece. You just let Vitest handle capturing the expected output automatically, and when things change, it’ll tell you. You can also update the snapshot easily if that change is intentional.
 
@@ -22,30 +28,30 @@ Let’s say we have a function called `getArtistInfo` that returns a Green Day a
 import { describe, expect, it } from 'vitest';
 
 function getArtistInfo(artistId) {
-  // Just a mockup of what the function might do
-  return {
-    id: artistId,
-    name: 'Green Day',
-    albums: [
-      {
-        title: 'Dookie',
-        songs: ['Basket Case', 'When I Come Around'],
-      },
-      {
-        title: 'American Idiot',
-        songs: ['American Idiot', 'Boulevard of Broken Dreams'],
-      },
-    ],
-  };
+	// Just a mockup of what the function might do
+	return {
+		id: artistId,
+		name: 'Green Day',
+		albums: [
+			{
+				title: 'Dookie',
+				songs: ['Basket Case', 'When I Come Around'],
+			},
+			{
+				title: 'American Idiot',
+				songs: ['American Idiot', 'Boulevard of Broken Dreams'],
+			},
+		],
+	};
 }
 
 describe('getArtistInfo', () => {
-  it('returns the correct artist info', () => {
-    const artistId = 1;
-    const info = getArtistInfo(artistId);
+	it('returns the correct artist info', () => {
+		const artistId = 1;
+		const info = getArtistInfo(artistId);
 
-    // Here's where we use toMatchInlineSnapshot
-    expect(info).toMatchInlineSnapshot(`
+		// Here's where we use toMatchInlineSnapshot
+		expect(info).toMatchInlineSnapshot(`
       {
         "id": 1,
         "name": "Green Day",
@@ -67,11 +73,11 @@ describe('getArtistInfo', () => {
         ]
       }
     `);
-  });
+	});
 });
 ```
 
-### What's happening here?
+### What's Happening Here?
 
 - The call to `toMatchInlineSnapshot()` compares the `info` object's structure and values to the snapshot captured in the test (living between the backticks).
 - If `getArtistInfo` returns the right thing (i.e., Green Day's profile matches what we expected), the test passes.
@@ -85,3 +91,7 @@ describe('getArtistInfo', () => {
 - You can update snapshots with a single command if changes are expected so you’re not stuck constantly debugging.
 
 There you have it. Simple, powerful, and it saves you from writing 300 `expect` statements for every little property. Now, wouldn't that be a Green Day miracle? 🎶
+
+```ts
+
+```

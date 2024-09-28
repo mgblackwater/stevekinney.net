@@ -1,4 +1,10 @@
-# toHaveBeenCalledWith: What It Does and Why You’ll Want It
+---
+title: "ToHaveBeenCalledWith: What It Does And Why You’ll Want It"
+description: Learn how to use toHaveBeenCalledWith to verify function calls.
+modified: 2024-09-28T11:31:16-06:00
+---
+
+## toHaveBeenCalledWith: What It Does and Why You’ll Want It
 
 Alright, so _toHaveBeenCalledWith_ is like when you catch your roommate “borrowing” your stuff, and you need the _receipts_. You’re not just interested in whether something got called—you’re like, “I want to know exactly HOW it was called!” Vitest’s _toHaveBeenCalledWith_ is perfect for asserting that a function (especially a mock function—trust me, you’ll mock a lot of things in testing) was called with a specific set of arguments.
 
@@ -13,11 +19,11 @@ Let’s take our musically-inclined app and say we’ve got a function `saveSong
 ```javascript
 // songService.js
 export function saveSong(apiClient, albumId, song) {
-  const payload = {
-    albumId,
-    song,
-  };
-  apiClient.post('/songs', payload);
+	const payload = {
+		albumId,
+		song,
+	};
+	apiClient.post('/songs', payload);
 }
 ```
 
@@ -28,31 +34,31 @@ import { describe, it, expect, vi } from 'vitest';
 import { saveSong } from './songService'; // The function we're testing
 
 describe('saveSong', () => {
-  it('should call apiClient.post with the correct payload', () => {
-    // Create a mock for apiClient with a post method
-    const mockApiClient = {
-      post: vi.fn(),
-    };
+	it('should call apiClient.post with the correct payload', () => {
+		// Create a mock for apiClient with a post method
+		const mockApiClient = {
+			post: vi.fn(),
+		};
 
-    // Arrange our test data
-    const albumId = 42;
-    const song = {
-      title: 'Basket Case',
-      artist: 'Green Day',
-    };
+		// Arrange our test data
+		const albumId = 42;
+		const song = {
+			title: 'Basket Case',
+			artist: 'Green Day',
+		};
 
-    // Act: Call the function we're testing
-    saveSong(mockApiClient, albumId, song);
+		// Act: Call the function we're testing
+		saveSong(mockApiClient, albumId, song);
 
-    // Assert: Was the post method called with the right arguments?
-    expect(mockApiClient.post).toHaveBeenCalledWith('/songs', {
-      albumId: 42,
-      song: {
-        title: 'Basket Case',
-        artist: 'Green Day',
-      },
-    });
-  });
+		// Assert: Was the post method called with the right arguments?
+		expect(mockApiClient.post).toHaveBeenCalledWith('/songs', {
+			albumId: 42,
+			song: {
+				title: 'Basket Case',
+				artist: 'Green Day',
+			},
+		});
+	});
 });
 ```
 
@@ -68,3 +74,7 @@ describe('saveSong', () => {
 Mocking is your best friend here, otherwise you'd be hitting some external API every time you run the test, which no one wants when you're just trying to see if your code's working right. Better to keep those calls in check.
 
 In short, toHaveBeenCalledWith: good for keeping your functions on track and making sure they’re told exactly what to do!
+
+```ts
+
+```
