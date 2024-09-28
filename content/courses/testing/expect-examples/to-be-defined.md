@@ -1,7 +1,7 @@
 ---
-title: Understanding ToBeDefined
+title: toBeDefined in Vitest
 description: A guide on usingtoBeDefined to verify defined values in Vitest.
-modified: 2024-09-28T18:32:11.305Z
+modified: 2024-09-28T18:44:44.333Z
 ---
 
 ## Understanding `toBeDefined` in Vitest

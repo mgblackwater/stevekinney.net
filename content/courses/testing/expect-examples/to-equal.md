@@ -1,7 +1,7 @@
 ---
-title: ToEqual
+title: toEqual in Vitest
 description: A guide to using toEqual for deep equality checks in Vitest.
-modified: 2024-09-28T18:32:11.371Z
+modified: 2024-09-28T18:44:44.371Z
 ---
 
 ## toEqual in Vitest

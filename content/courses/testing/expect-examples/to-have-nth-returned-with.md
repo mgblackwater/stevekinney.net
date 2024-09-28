@@ -1,7 +1,7 @@
 ---
-title: Vitest's toHaveNthReturnedWith
+title: toHaveNthReturnedWith in Vitest
 description: Learn how to use Vitest'stoHaveNthReturnedWith matcher.
-modified: 2024-09-28T18:32:11.285Z
+modified: 2024-09-28T18:44:44.313Z
 ---
 
 ## Vitest's `toHaveNthReturnedWith`

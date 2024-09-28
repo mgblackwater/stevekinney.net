@@ -1,7 +1,7 @@
 ---
-title: addEqualityTesters
+title: expect.addEqualityTesters in Vitest
 description: Understanding expect.addEqualityTesters in Vitest for custom comparisons.
-modified: 2024-09-28T18:32:11.283Z
+modified: 2024-09-28T18:44:44.311Z
 ---
 
 ## expect.addEqualityTesters

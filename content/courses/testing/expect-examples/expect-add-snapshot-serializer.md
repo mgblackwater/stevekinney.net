@@ -1,7 +1,7 @@
 ---
-title: addSnapshotSerializer
+title: expect.addSnapshotSerializer in Vitest
 description: Learn how to use expect.addSnapshotSerializer to simplify snapshots.
-modified: 2024-09-28T18:32:11.290Z
+modified: 2024-09-28T18:44:44.319Z
 ---
 
 ## expect.addSnapshotSerializer

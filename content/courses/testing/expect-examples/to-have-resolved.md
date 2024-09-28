@@ -1,7 +1,7 @@
 ---
-title: ToHaveResolved
+title: toHaveResolved in Vitest
 description: Understanding how to use the toHaveResolved matcher in Vitest.
-modified: 2024-09-28T18:32:11.274Z
+modified: 2024-09-28T18:44:44.305Z
 ---
 
 ## `toHaveResolved` In Vitest

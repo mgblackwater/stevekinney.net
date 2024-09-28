@@ -1,7 +1,7 @@
 ---
-title: Expect.StringContaining
+title: expect.stringContaining in Vitest
 description: Learn how to use expect.stringContaining to test substrings in Vitest.
-modified: 2024-09-28T18:32:11.243Z
+modified: 2024-09-28T18:44:44.288Z
 ---
 
 ## expect.stringContaining

@@ -1,7 +1,7 @@
 ---
-title: expect.assertions()
+title: expect.assertions in Vitest
 description: Learn how to use expect.assertions for async code testing in Vitest.
-modified: 2024-09-28T18:32:11.374Z
+modified: 2024-09-28T18:44:44.375Z
 ---
 
 ## Understanding `expect.assertions` in Vitest

@@ -1,7 +1,7 @@
 ---
-title: Vitest's expect(...).resolves
+title: resolves in Vitest
 description: Learn how to test promises using resolves in Vitest.
-modified: 2024-09-28T18:32:11.289Z
+modified: 2024-09-28T18:44:44.318Z
 ---
 
 ## Vitest's `expect(…).resolves`

@@ -1,7 +1,7 @@
 ---
-title: "ToHaveBeenCalledWith: What It Does And Why You’ll Want It"
+title: toHaveBeenCalledWith in Vitest
 description: Learn how to use toHaveBeenCalledWith to verify function calls.
-modified: 2024-09-28T18:32:11.266Z
+modified: 2024-09-28T18:44:44.300Z
 ---
 
 ## toHaveBeenCalledWith: What It Does and Why You’ll Want It

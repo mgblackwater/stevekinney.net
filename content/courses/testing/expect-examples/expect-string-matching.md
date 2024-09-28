@@ -1,7 +1,7 @@
 ---
-title: expect.stringMatching
+title: expect.stringMatching in Vitest
 description: Learn how to useexpect.stringMatching for pattern matching in tests.
-modified: 2024-09-28T18:32:11.307Z
+modified: 2024-09-28T18:44:44.335Z
 ---
 
 ## `expect.stringMatching`

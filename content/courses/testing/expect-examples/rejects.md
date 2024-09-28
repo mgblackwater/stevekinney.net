@@ -1,7 +1,7 @@
 ---
-title: Expect.Rejects
+title: rejects in Vitest
 description: Testing promises that are expected to fail using expect.rejects.
-modified: 2024-09-28T18:32:11.319Z
+modified: 2024-09-28T18:44:44.350Z
 tags:
   - 999
 ---

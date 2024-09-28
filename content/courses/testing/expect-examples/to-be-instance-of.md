@@ -1,7 +1,7 @@
 ---
-title: Expect().ToBeInstanceOf
+title: toBeInstanceOf in Vitest
 description: Using toBeInstanceOf to verify object instances in tests.
-modified: 2024-09-28T18:32:11.344Z
+modified: 2024-09-28T18:44:44.360Z
 ---
 
 ## expect().toBeInstanceOf

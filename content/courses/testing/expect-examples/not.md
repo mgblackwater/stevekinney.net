@@ -1,7 +1,7 @@
 ---
-title: not
+title: not in Vitest
 description: Learn how to use thenot modifier in Vitest for negative testing.
-modified: 2024-09-28T18:32:11.286Z
+modified: 2024-09-28T18:44:44.315Z
 ---
 
 ## The `not` Modifier in Vitest

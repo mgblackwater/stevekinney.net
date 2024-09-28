@@ -1,7 +1,7 @@
 ---
-title: ToHaveLastReturnedWith
+title: toHaveLastReturnedWith in Vitest
 description: Learn how to use toHaveLastReturnedWith for mock functions in Vitest.
-modified: 2024-09-28T18:32:11.309Z
+modified: 2024-09-28T18:44:44.338Z
 ---
 
 ## `toHaveLastReturnedWith` In Vitest

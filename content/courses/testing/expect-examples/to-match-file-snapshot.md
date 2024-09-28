@@ -1,7 +1,7 @@
 ---
-title: ToMatchFileSnapshot
+title: toMatchFileSnapshot in Vitest
 description: Learn how to match file snapshots in Vitest for regression testing.
-modified: 2024-09-28T18:32:11.335Z
+modified: 2024-09-28T18:44:44.356Z
 ---
 
 ## `toMatchFileSnapshot`

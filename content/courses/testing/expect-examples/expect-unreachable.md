@@ -1,7 +1,7 @@
 ---
-title: expect.unreachable
+title: expect.unreachable in Vitest
 description: Learn how to use expect.unreachable for unreachable code paths.
-modified: 2024-09-28T18:32:11.256Z
+modified: 2024-09-28T18:44:44.296Z
 ---
 
 ## expect.unreachable

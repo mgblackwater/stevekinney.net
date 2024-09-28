@@ -1,7 +1,7 @@
 ---
-title: ToHaveBeenNthCalledWith
+title: toHaveBeenNthCalledWith in Vitest
 description: Learn how to use toHaveBeenNthCalledWith in mocked function tests.
-modified: 2024-09-28T18:32:11.396Z
+modified: 2024-09-28T18:44:44.407Z
 ---
 
 ## ToHaveBeenNthCalledWith

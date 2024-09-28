@@ -1,7 +1,7 @@
 ---
-title: Using ToBeLessThanOrEqual
+title: toBeLessThanOrEqual in Vitest
 description: Learn how to usetoBeLessThanOrEqual in Vitest testing scenarios.
-modified: 2024-09-28T18:32:11.329Z
+modified: 2024-09-28T18:44:44.353Z
 ---
 
 ## Using `toBeLessThanOrEqual` in Vitest

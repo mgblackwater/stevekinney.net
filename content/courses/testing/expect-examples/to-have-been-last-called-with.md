@@ -1,7 +1,7 @@
 ---
-title: ToHaveBeenLastCalledWith
+title: toHaveBeenLastCalledWith in Vitest
 description: Learn how to use the toHaveBeenLastCalledWith matcher in Vitest.
-modified: 2024-09-28T18:32:11.337Z
+modified: 2024-09-28T18:44:44.357Z
 ---
 
 ## ToHaveBeenLastCalledWith In Vitest

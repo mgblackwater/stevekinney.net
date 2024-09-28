@@ -1,7 +1,7 @@
 ---
-title: Expect().ToBeNull()
+title: toBeNull in Vitest
 description: Learn how to use expect().toBeNull() to test for null values.
-modified: 2024-09-28T18:32:11.379Z
+modified: 2024-09-28T18:44:44.381Z
 ---
 
 ## expect().toBeNull()

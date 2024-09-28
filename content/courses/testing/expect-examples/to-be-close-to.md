@@ -1,7 +1,7 @@
 ---
-title: Tobeecloseto
+title: toBeCloseTo in Vitest
 description: How to use the toBeCloseTo matcher when dealing with floating-point math.
-modified: 2024-09-28T18:32:11.248Z
+modified: 2024-09-28T18:44:44.291Z
 ---
 
 ## toBeCloseTo in Vitest

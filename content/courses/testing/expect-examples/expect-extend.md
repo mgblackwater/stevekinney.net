@@ -1,7 +1,7 @@
 ---
-title: expect.extend
+title: expect.extend in Vitest
 description: Learn how to use expect.extend to create custom matchers in Vitest.
-modified: 2024-09-28T18:32:11.350Z
+modified: 2024-09-28T18:44:44.361Z
 ---
 
 ## expect.extend

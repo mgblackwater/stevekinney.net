@@ -1,7 +1,7 @@
 ---
-title: ToHaveResolvedTimes Explained
+title: toHaveResolvedTimes in Vitest
 description: Learn how to use the toHaveResolvedTimes matcher for promises.
-modified: 2024-09-28T18:32:11.298Z
+modified: 2024-09-28T18:44:44.330Z
 ---
 
 ## toHaveResolvedTimes Explained

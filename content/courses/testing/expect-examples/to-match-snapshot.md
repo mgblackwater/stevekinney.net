@@ -1,7 +1,7 @@
 ---
-title: toMatchSnapshot
+title: toMatchSnapshot in Vitest
 description: An overview of using toMatchSnapshot for snapshot testing in Vitest.
-modified: 2024-09-28T18:32:11.311Z
+modified: 2024-09-28T18:44:44.340Z
 ---
 
 ## ToMatchSnapshot In Vitest

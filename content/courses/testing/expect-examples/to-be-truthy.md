@@ -1,7 +1,7 @@
 ---
-title: Understanding ToBeTruthy
+title: toBeTruthy in Vitest
 description: Learn how to use the.toBeTruthy() matcher in Vitest testing.
-modified: 2024-09-28T18:32:11.282Z
+modified: 2024-09-28T18:44:44.310Z
 ---
 
 ## Understanding `toBeTruthy` in Vitest

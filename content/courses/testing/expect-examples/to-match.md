@@ -1,7 +1,7 @@
 ---
-title: ToMatch
+title: toMatch in Vitest
 description: Learn how to use the toMatch method in Vitest for string testing.
-modified: 2024-09-28T18:32:11.270Z
+modified: 2024-09-28T18:44:44.303Z
 ---
 
 ## toMatch in Vitest

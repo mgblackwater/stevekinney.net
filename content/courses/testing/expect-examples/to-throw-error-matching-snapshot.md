@@ -1,7 +1,7 @@
 ---
-title: ToThrowErrorMatchingSnapshot
+title: toThrowErrorMatchingSnapshot in Vitest
 description: Capture error messages in a snapshot for consistent testing.
-modified: 2024-09-28T18:32:11.313Z
+modified: 2024-09-28T18:44:44.342Z
 ---
 
 ## toThrowErrorMatchingSnapshot

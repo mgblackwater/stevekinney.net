@@ -1,7 +1,7 @@
 ---
-title: expect.anything
+title: expect.anything in Vitest
 description: Learn how to use expect.anything() for flexible value checks.
-modified: 2024-09-28T18:32:11.341Z
+modified: 2024-09-28T18:44:44.358Z
 ---
 
 ## expect.anything

@@ -1,7 +1,7 @@
 ---
-title: ToHaveProperty
+title: toHaveProperty in Vitest
 description: Learn how to use the toHaveProperty matcher in Vitest.
-modified: 2024-09-28T18:32:11.378Z
+modified: 2024-09-28T18:44:44.377Z
 ---
 
 ## toHaveProperty in Vitest

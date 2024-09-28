@@ -1,7 +1,7 @@
 ---
-title: Expect.toStrictEqual
+title: toStrictEqual in Vitest
 description: Understanding toStrictEqual for detailed object comparisons in tests.
-modified: 2024-09-28T18:32:11.394Z
+modified: 2024-09-28T18:44:44.405Z
 ---
 
 ## expect.toStrictEqual

@@ -1,7 +1,7 @@
 ---
-title: toMatchObject
+title: toMatchObject in Vitest
 description: Learn how to use toMatchObject for partial object matching in tests.
-modified: 2024-09-28T18:32:11.353Z
+modified: 2024-09-28T18:44:44.364Z
 ---
 
 ## `expect.toMatchObject`: The Lowdown

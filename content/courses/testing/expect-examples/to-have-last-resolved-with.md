@@ -1,7 +1,7 @@
 ---
-title: ToHaveLastResolvedWith
+title: toHaveLastResolvedWith in Vitest
 description: Ensure the last resolved value of a mock matches the expected result.
-modified: 2024-09-28T18:32:11.322Z
+modified: 2024-09-28T18:44:44.352Z
 ---
 
 ## toHaveLastResolvedWith

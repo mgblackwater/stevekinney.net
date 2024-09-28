@@ -1,7 +1,7 @@
 ---
-title: Vitest's ToSatisfy
+title: toSatisfy in Vitest
 description: Learn how to use Vitest's toSatisfy matcher with custom logic.
-modified: 2024-09-28T18:32:11.332Z
+modified: 2024-09-28T18:44:44.355Z
 ---
 
 ## Vitest's `toSatisfy`

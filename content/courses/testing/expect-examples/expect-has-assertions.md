@@ -1,7 +1,7 @@
 ---
-title: expect.hasAssertions
+title: expect.hasAssertions in Vitest
 description: Ensures at least one expectation is made in a test block.
-modified: 2024-09-28T18:32:11.260Z
+modified: 2024-09-28T18:44:44.298Z
 ---
 
 ## expect.hasAssertions

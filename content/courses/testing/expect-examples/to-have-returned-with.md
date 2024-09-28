@@ -1,7 +1,7 @@
 ---
-title: ToHaveReturnedWith
+title: toHaveReturnedWith in Vitest
 description: Learn about the toHaveReturnedWith matcher with a practical example.
-modified: 2024-09-28T18:32:11.318Z
+modified: 2024-09-28T18:44:44.348Z
 ---
 
 ## toHaveReturnedWith

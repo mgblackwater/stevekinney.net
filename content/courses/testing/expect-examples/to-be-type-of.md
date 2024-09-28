@@ -1,7 +1,7 @@
 ---
-title: The ToBeTypeOfMethod
+title: toBeTypeOf in Vitest
 description: Learn about thetoBeTypeOf method and its usage in Vitest.
-modified: 2024-09-28T18:32:11.308Z
+modified: 2024-09-28T18:44:44.337Z
 ---
 
 ## The `toBeTypeOf` Method in Vitest

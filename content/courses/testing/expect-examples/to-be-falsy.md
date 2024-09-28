@@ -1,7 +1,7 @@
 ---
-title: Expect().ToBeFalsy()
+title: toBeFalsy in Vitest
 description: Understand the behavior of toBeFalsy() in JavaScript testing.
-modified: 2024-09-28T18:32:11.293Z
+modified: 2024-09-28T18:44:44.323Z
 ---
 
 ## expect().toBeFalsy()

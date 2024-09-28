@@ -1,7 +1,7 @@
 ---
-title: Expect(...).ToBeUndefined
+title: toBeUndefined in Vitest
 description: Learn how expect(...).toBeUndefined checks if a value is undefined.
-modified: 2024-09-28T18:32:11.314Z
+modified: 2024-09-28T18:44:44.343Z
 ---
 
 ## expect(…).toBeUndefined

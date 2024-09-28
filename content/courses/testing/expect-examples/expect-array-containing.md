@@ -1,7 +1,7 @@
 ---
-title: expect.ArrayContaining
+title: expect.arrayContaining in Vitest
 description: Learn how to use expect.arrayContaining to test array subsets.
-modified: 2024-09-28T18:32:11.365Z
+modified: 2024-09-28T18:44:44.369Z
 ---
 
 ## Expect: `arrayContaining`

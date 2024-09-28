@@ -1,7 +1,7 @@
 ---
-title: ToHaveReturned
+title: toHaveReturned in Vitest
 description: Learn how to use the toHaveReturned matcher in unit testing.
-modified: 2024-09-28T18:32:11.399Z
+modified: 2024-09-28T18:44:44.419Z
 ---
 
 ## toHaveReturned
