@@ -17,7 +17,7 @@ You'd wanna pull this out:
 
 Let’s say you're writing a test for adding albums to your music library and you want to make sure that a fetchAlbums function is only trying to fetch the albums one time (and not, you know, accidentally slamming that poor API multiple times).
 
-## Example Time:
+## Example Time
 
 Imagine we’ve got a function `fetchAlbums` that fetches albums from an API (because duh, it’s a music library). We want to make sure that this function gets called and resolves once, not twice, not twenty.
 

@@ -40,14 +40,14 @@ describe('Album Titles', () => {
 });
 ```
 
-### Breakdown:
+### Breakdown
 
 - `expect(artist.albums)` is saying, "Hey, check out this array of albums."
 - `.not.toContain()` is then ensuring `Dookie` isn’t being added *again*.
 
 So, when you use `.not`, you're essentially like, "I know Green Day made a *ton* of albums, but we can’t have two `Dookie`s, okay?"
 
-### Pro Tip:
+### Pro Tip
 
 Whenever you feel like you want to assert that something *shouldn’t* be true, `.not` is going to be your best friend. Use it to keep things in line when you're writing tests that need a bit of negative enforcement.
 

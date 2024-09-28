@@ -8,7 +8,7 @@ Alright, let's talk about `toMatch`. When you're working with strings in JavaScr
 
 Basically, you use `toMatch` when you’re testing if a string contains a substring or if it matches a regular expression. This is perfect if you don’t care about the entire string, just some part of it. Instead of trying to go full-on pattern detective yourself, you just let Vitest do the heavy lifting.
 
-## When to Use It:
+## When to Use It
 
 You’d use `toMatch` when you’re looking for **specific text** or **patterns in a string**. This is super useful for things like:
 
@@ -16,11 +16,11 @@ You’d use `toMatch` when you’re looking for **specific text** or **patterns 
 - Verifying output that’s more free-form in structure and not an exact match.
 - Testing if your queries or logs include certain keywords.
 
-## Example Use in Action:
+## Example Use in Action
 
 Let’s say we’re building a music library app (hello Green Day fans!) and we have a function that returns details of an album in string format. Maybe we don’t care about the whole software-breaking level of matching exact punctuation, but we **do** care that it mentions the artist's name somewhere in there.
 
-### Imagine We Have a Function like This:
+### Imagine We Have a Function like This
 
 ```js
 function getAlbumSummary(album) {
@@ -51,7 +51,7 @@ You can also get a bit fancier with regular expressions if you need more specifi
 expect(summary).toMatch(/Green\s+Day/); // Matches 'Green Day' with possible space variations.
 ```
 
-### Pro Tip 💡:
+### Pro Tip 💡
 
 If you're finding tons of unnecessary errors because you're strictly matching exact strings all the time—step back and think about `toMatch`. It gives you a nice, flexible way of saying, "Hey, I don’t need **everything** to be perfect, I just need this **part** to match."
 

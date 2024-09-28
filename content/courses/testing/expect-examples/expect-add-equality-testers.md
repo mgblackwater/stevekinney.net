@@ -52,7 +52,7 @@ test('should compare songs correctly', () => {
 
 Here, we added a custom equality tester that ignores the `id` field of `Song`. Now, when we use `expect(song1).toEqual(song2)`, the comparison will pass even though `song1` and `song2` have different IDs. Instead, they’ll be considered equal because their `title` and `artist` fields match.
 
-## Quick Note for Sanity's Sake:
+## Quick Note for Sanity's Sake
 
 You should only really bust out **custom equality testers** when you *need* them. Usually, if you’re feeling like you need to write a ton of custom comparison logic, it **could** be a sign that something funky’s going on in your data or design that you’ll want to straighten out instead.
 

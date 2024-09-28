@@ -41,7 +41,7 @@ describe('Album title generator', () => {
 - The function `generateAlbumTitle` creates a string of the album title dynamically. Again, we don’t care if it’s *exactly* `"Dookie Day Tour 2023"` or something else. We just want to make sure `"Day"` is in there somewhere.
 - The `expect.stringMatching(/Day/)` matcher here is wrapped in `expect.toEqual()`, and all it does is check that `"Day"` is in the returned string thanks to that regular expression `/Day/`.
 
-### TL;DR (because Real Life is hectic):
+### TL;DR (because Real Life is hectic)
 
 - Use it when you need to check for **patterns in strings**.
 - Useful when you don’t care about exact text but just want to make sure things are on the right track.

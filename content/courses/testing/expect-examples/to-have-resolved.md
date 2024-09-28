@@ -34,7 +34,7 @@ it('should resolve the promise for fetching albums', async () => {
 });
 ```
 
-## Break it Down:
+## Break it Down
 
 1. **The Function**: `fetchAlbumsForArtist('Green Day')` simulates an async function fetching Green Day's albums.
 2. **The Test**: We use `await` to handle the promise. Because, you know, async.

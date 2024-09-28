@@ -38,7 +38,7 @@ test('add song to favorites eventually', async () => {
 });
 ```
 
-### Breakdown:
+### Breakdown
 
 - `addToFavorites` does something async in the app—either updates state, calls an API, etc.
 - The `fetchFavoriteSongs` function gets the current list of favorites, but the list might not update immediately after adding the song (maybe it's debounced or the API is slow).

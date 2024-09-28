@@ -20,7 +20,7 @@ Stub is the stand-in. It's like the understudy in your school play, except you�
 
 Think of a stub as, “I don’t care what this would normally return—just give me X so I can focus on testing Y.”
 
-#### Example Time:
+#### Example Time
 
 ```javascript
 import { vi } from 'vitest';
@@ -46,7 +46,7 @@ In this example, you're replacing the real `getData` with your fake, predictable
 
 Mocks are like that friend who says, "Hey, I'll not only stand in for you, but also pretend I did the whole thing.” It goes a step beyond stubs. With mocks, we not only control function return values (*like* a stub), but we can also make sure it was called with specific arguments, a specific number of times, or… *however we want*.
 
-#### Example Time:
+#### Example Time
 
 ```javascript
 import { vi } from 'vitest';
@@ -75,7 +75,7 @@ Notice how we *mocked* the `getData` method, asserting it was called exactly onc
 
 Ahh, spies. Spies are sneaky little things. They poke their heads in and observe while pretending nothing changed. They don’t alter the behavior of functions—they just let you peek behind the curtain and see how many times it was called, with which arguments, etc. They’re perfect for when you care less about *what* it returns and more about *how* it’s used.
 
-#### Example Time:
+#### Example Time
 
 ```javascript
 import { vi } from 'vitest';

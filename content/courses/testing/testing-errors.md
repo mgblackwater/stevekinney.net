@@ -86,7 +86,7 @@ In this example:
 
 When working with asynchronous functions that throw errors, you need to handle promises and rejected errors. In Vitest, you can test asynchronous error handling using `async/await` or the `.rejects` matcher for promises.
 
-### Using `async/await` to Test Rejected Errors:
+### Using `async/await` to Test Rejected Errors
 
 ```js
 // Asynchronous function to be tested

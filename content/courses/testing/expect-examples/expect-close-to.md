@@ -38,7 +38,7 @@ Here, **`expect(trackLength).toBeCloseTo(120, 1)`** is saying, "Hey, as long as 
 
 Without **`closeTo`**, you'd be comparing exact values like a tyrant. No need to rule so harshly; math is fickle with floats, and sometimes you just gotta meet it halfway.
 
-### Use it When:
+### Use it When
 
 1. Floating-point results are a fact of life (many times with division or multiplying decimals).
 2. You're okay with values not being 100% equal but "close enough."

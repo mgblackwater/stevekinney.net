@@ -18,13 +18,13 @@ By default, Vitest goes with a pretty simple format in your terminal. It's essen
 
 Let’s simplify this with a quick setup and run:
 
-#### Install Vitest (if You Haven't already):
+#### Install Vitest (if You Haven't already)
 
 ```bash
 npm install vitest --save-dev
 ```
 
-#### Create a Simple Test File (`example.test.js`):
+#### Create a Simple Test File (`example.test.js`)
 
 ```js
 import { expect, test } from 'vitest';
@@ -38,7 +38,7 @@ test('this one will fail', () => {
 });
 ```
 
-#### Run Your Tests:
+#### Run Your Tests
 
 ```bash
 npx vitest

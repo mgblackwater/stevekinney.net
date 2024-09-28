@@ -48,7 +48,7 @@ Vitest’s got your back when it comes to mocking. Here’s the deal: `fetch` is
 
 Let’s write a simple Vitest test that's gonna mock `fetch`.
 
-### Here’s Where the Magic Happens:
+### Here’s Where the Magic Happens
 
 ```javascript
 import { test, vi, expect } from 'vitest';

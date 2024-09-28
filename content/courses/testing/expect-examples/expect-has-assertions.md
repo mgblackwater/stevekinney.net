@@ -10,7 +10,7 @@ Ok, here we go. So, `expect.hasAssertions()` is like the bouncer at the door, ma
 
 You’d use `expect.hasAssertions()` when you want to make sure any assertions have been made. It's particularly handy in situations where you're dealing with asynchronous work — like when you're mocking API calls — and you’re not totally sure if the code inside your asynchronous block has run correctly. This little guy helps you catch scenarios where something went wrong but no expectations were actually made, so you’re left wondering what happened, staring at a passing test that really *should have failed*.
 
-## A Practical Example:
+## A Practical Example
 
 Let's say we're working with our somewhat imaginary but totally awesome music library that handles artists, albums, and songs. We slap on some Green Day tracks, and something async is happening (maybe fetching album details). We'd use `expect.hasAssertions()` to ensure that the assertions inside actually run, even with async code.
 

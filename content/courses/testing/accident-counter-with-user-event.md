@@ -16,7 +16,7 @@ npm install --save-dev @testing-library/user-event
 
 Update the test cases to use `userEvent` instead of `fireEvent`.
 
-### Refactored Test Code:
+### Refactored Test Code
 
 ```jsx
 // src/counter.test.jsx

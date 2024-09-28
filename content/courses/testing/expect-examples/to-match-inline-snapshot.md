@@ -82,7 +82,7 @@ describe('getArtistInfo', () => {
 - Now, here’s where the magic happens: if you execute this test the first time and you don't have a snapshot yet, Vitest will generate it for you! Don’t worry, pal—it’s got your back.
 - But if someone messes with `getArtistInfo` and suddenly Billie Joe Armstrong is credited with an album he never wrote, the test will fail, letting us know something’s off.
 
-## TL;DR:
+## TL;DR
 
 - Use **`toMatchInlineSnapshot`** when it's too much work to write out every single expectation by hand.
 - It’s great for scenarios where output is pretty complex and lengthy—it's like tracking changes but in an easier-to-maintain format right in your test file.

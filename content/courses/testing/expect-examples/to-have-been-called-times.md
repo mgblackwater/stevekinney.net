@@ -48,12 +48,12 @@ describe('displayAlbums function', () => {
 });
 ```
 
-### Key Takeaways:
+### Key Takeaways
 
 - We expect `fetchAlbums` to be called **exactly once**. If it was called zero times or two times, the test would fail.
 - If you swap `'Green Day'` with another band like (dare we say) *Coldplay*, and the function doesn't call `fetchAlbums()`, we can infer our logic is nice and conditional.
 
-## Real-World Scenarios:
+## Real-World Scenarios
 
 - **Button click**: Ensuring a user's interaction (like clicking a button) fires the handler only once.
 - **API calls**: Making sure we’re not accidentally hitting endpoints multiple times with redundant information. Or worse—missing a call!

@@ -12,7 +12,7 @@ The key difference between `assert` and `expect` lies in their **usage patterns*
 - It is used in **libraries like Node.js' built-in `assert` module** or in test frameworks that use **assertion libraries** such as **Chai** (with `assert` mode).
 - **Less chaining**: The `assert` syntax does not lend itself to method chaining. Instead, it takes the condition as a parameter.
 
-### Example Using `assert`:
+### Example Using `assert`
 
 ```js
 import assert from 'assert';
@@ -36,7 +36,7 @@ assert.deepEqual({ a: 1 }, { a: 1 }); // Deep comparison of objects
 - It’s known for being **more expressive** and **chainable**, allowing developers to write more human-readable tests.
 - **Chaining**: You can chain different matchers (e.g., `.toBe()`, `.toEqual()`, `.toContain()`) with `expect` to create more flexible and powerful assertions.
 
-### Example Using `expect`:
+### Example Using `expect`
 
 ```js
 import { expect } from 'vitest';
@@ -55,7 +55,7 @@ expect({ a: 1 }).toEqual({ a: 1 }); // Deep comparison of objects
   - Slightly larger API compared to `assert` due to the additional matchers.
   - May require a testing library like Jest or Vitest for full functionality.
 
-## Key Differences:
+## Key Differences
 
 | Feature         | `assert`                              | `expect`                                                            |
 | --------------- | ------------------------------------- | ------------------------------------------------------------------- |
@@ -71,7 +71,7 @@ expect({ a: 1 }).toEqual({ a: 1 }); // Deep comparison of objects
 - Use **`assert`** if you want a **minimal, straightforward assertion library** and do not need the expressiveness of BDD-style tests.
 - Use **`expect`** if you prefer a **more readable, BDD-style** test that allows for **chaining and flexible matchers**. It’s commonly found in modern test frameworks like Jest or Vitest and helps create more human-readable tests.
 
-## Example:
+## Example
 
 ```js
 // Using assert
