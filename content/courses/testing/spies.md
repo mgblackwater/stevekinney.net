@@ -1,7 +1,7 @@
 ---
 title: Using Spies
 description: Learn how to use spies in Vitest to monitor function calls.
-modified: 2024-09-28T18:32:11.065Z
+modified: 2024-09-28T15:30:10-06:00
 ---
 
 A spy is a type of [test double](test-doubles.md) used to monitor and record information about function calls without modifying the function's actual behavior by default. Spies are used to observe how functions are called during execution, allowing you to verify details like the number of times a function was invoked, the arguments passed to it, and its return values. Unlike stubs or mocks, spies do not replace the function with predefined behavior unless explicitly configured to do so.
@@ -151,6 +151,3 @@ test('calls add with correct arguments', () => {
 - **`vi.spyOn(object, methodName)`**: Creates a spy on the specified method.
 - The spy allows us to verify that `add` was called with the correct arguments.
 - **Cleanup**: Restore the original method to avoid side effects.
-
-```ts
-```

@@ -1,10 +1,10 @@
 ---
 title: Setting Up and Writing Tests with Testing Library and Vitest
 description: Learn to write user-focused tests using Testing Library with Vitest.
-modified: 2024-09-28T18:32:11.211Z
+modified: 2024-09-28T16:00:32-06:00
 ---
 
-[Testing Library](https://testing-library.com/) is designed to encourage writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would.
+[Testing Library](https://testing-library.com/) is designed to help you out with writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would.
 
 ## Why Use Testing Library?
 
@@ -13,22 +13,7 @@ modified: 2024-09-28T18:32:11.211Z
 - **Improved Test Reliability**: Leads to tests that are more robust and less prone to breakage due to refactoring.
 - **Accessible Queries**: Encourages testing with queries that reflect accessibility best practices.
 
-## Setting Up Testing Library with Vitest
-
-**Install the Necessary Packages:**
-
-```bash
-npm install --save-dev vitest @testing-library/react @testing-library/jest-dom jsdom
-```
-
-- `vitest`: The testing framework.
-- `@testing-library/react`: The React Testing Library.
-- `@testing-library/jest-dom`: Provides custom matchers for DOM nodes.
-- `jsdom`: A JavaScript implementation of the DOM and HTML standards.
-
-**Configure Vitest to Use JSDOM:**
-
-In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `happy-dom`). Just like we did in [Testing the DOM](testing-the-dom.md).
+ In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `happy-dom`). Just like we did in [Testing the DOM](testing-the-dom.md).
 
 ```javascript
 // vitest.config.js
@@ -41,7 +26,7 @@ export default {
 
 ## Writing Tests with Testing Library
 
-**Basic Example:**
+Okay, let's imagine that we have this very, very simple component.
 
 ```jsx
 // Greeting.js
@@ -52,7 +37,7 @@ export function Greeting({ name }) {
 }
 ```
 
-**Test File:**
+The tests might look something like this.
 
 ```jsx
 // Greeting.test.jsx
@@ -61,22 +46,13 @@ import { expect, test } from 'vitest';
 import { Greeting } from './Greeting';
 
 test('renders greeting message', () => {
-	// Arrange
 	const name = 'Alice';
 
-	// Act
 	render(<Greeting name={name} />);
 
-	// Assert
 	expect(screen.getByText(`Hello, ${name}!`)).toBeInTheDocument();
 });
 ```
-
-**Explanation:**
-
-- **Arrange**: Set up the component with the required props.
-- **Act**: Render the component using `render`.
-- **Assert**: Use `screen` to query the DOM and make assertions.
 
 ## Best Practices with Testing Library
 
@@ -87,7 +63,7 @@ Testing Library provides various queries:
 - **Preferred Queries**: `getByRole`, `getByLabelText`, `getByPlaceholderText`, `getByText`, etc.
 - **Less Preferred**: `getByTestId`
 
-**Example:**
+So, for this `<Button />` component:
 
 ```jsx
 // Button.js
@@ -96,7 +72,7 @@ export function Button({ onClick, children }) {
 }
 ```
 
-**Test:**
+You'd maybe have a test that looks something like this:
 
 ```jsx
 test('calls onClick when clicked', () => {
@@ -110,22 +86,18 @@ test('calls onClick when clicked', () => {
 });
 ```
 
-**Explanation:**
-
-- Using `getByRole('button')` is preferred as it reflects how users (including those using assistive technologies) interact with the application.
+Using `getByRole('button')` is preferred as it reflects how users (including those using assistive technologies) interact with the application.
 
 ### Avoid Testing Implementation Details
 
-Focus on what the component renders, not how it renders it.
-
-**Avoid:**
+Focus on what the component renders, not how it renders it. So, you'd want to **avoid** doing something like this:
 
 ```jsx
 const { container } = render(<Component />);
 const div = container.querySelector('.my-class');
 ```
 
-**Prefer:**
+Instead, you'd **prefer** to do something like this:
 
 ```jsx
 const element = screen.getByText(/some text/i);

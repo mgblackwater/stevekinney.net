@@ -1,10 +1,10 @@
 ---
 title: Mocking Dependencies
 description: Learn how to mock dependencies using Vitest for reliable tests.
-modified: 2024-09-28T18:32:10.931Z
+modified: 2024-09-28T15:06:43-06:00
 ---
 
-When writing unit tests, it's essential to isolate the code under test from its external dependencies. Dependencies could include services like databases, external APIs, file systems, or third-party libraries that you don't want to interact with directly in your tests. By mocking these dependencies, you can simulate their behavior, control their output, and ensure that your tests remain fast, reliable, and focused on the logic being tested.
+When writing unit tests, it's *super important* to isolate the code under test from its external dependencies. Dependencies could include services like databases, external APIs, file systems, or third-party libraries that you don't want to interact with directly in your tests. By mocking these dependencies, you can simulate their behavior, control their output, and ensure that your tests remain fast, reliable, and focused on the logic being tested.
 
 ## Why Mock Dependencies?
 
@@ -127,28 +127,6 @@ describe('readConfigFile', () => {
 
 In this test, the `fs.readFileSync` method is mocked to return predefined content, allowing you to test your function without needing an actual file on the file system.
 
-## Resetting and Restoring Mocks
-
-After mocking dependencies in your tests, it's important to reset or restore them to avoid interference between tests. Vitest provides methods to reset and restore mocks to their original implementations.
-
-- **Resetting Mocks**: This resets the mock's usage history (calls, arguments, etc.) but keeps the mocked implementation.
-
-  ```js
-  afterEach(() => {
-  	vi.resetAllMocks();
-  });
-  ```
-
-- **Restoring Mocks**: This completely restores the original implementation of the mocked function or module.
-
-  ```js
-  afterEach(() => {
-  	vi.restoreAllMocks();
-  });
-  ```
-
-These functions help ensure that each test starts with a clean state, preventing unexpected side effects.
-
 ## Example: Mocking an External API
 
 Here’s a complete example of mocking an external API dependency using Vitest:
@@ -184,9 +162,4 @@ describe('fetchConcertData', () => {
 
 In this example, we mock the entire API module, ensuring the test doesn’t make any real API requests. The mock returns predefined data, allowing you to control the test scenario completely.
 
-## Conclusion
-
-Mocking dependencies is a critical aspect of writing isolated and reliable unit tests. Vitest’s `vi.fn()` and `vi.mock()` methods allow you to mock individual functions or entire modules, giving you full control over external dependencies. Whether you’re mocking APIs, databases, or file systems, mocking ensures that your tests remain predictable, fast, and focused on the logic under test. Always remember to reset or restore mocks after tests to maintain a clean and consistent test environment.
-
-```ts
-```
+Whether you’re mocking APIs, databases, or file systems, mocking ensures that your tests remain predictable, fast, and focused on the logic under test. Always, always, always remember to reset or restore mocks after tests to maintain a clean and consistent test environment.

@@ -1,7 +1,7 @@
 ---
 title: Creating Test Files For A Counter Component
-description: Writing tests for the Counter component's rendering and interaction.
-modified: 2024-09-28T18:32:11.167Z
+description: "Writing tests for the Counter component's rendering and interaction."
+modified: 2024-09-28T16:02:28-06:00
 ---
 
 Let's create a test file for the `Counter` component. We'll start by testing the rendering of the component and interactions.

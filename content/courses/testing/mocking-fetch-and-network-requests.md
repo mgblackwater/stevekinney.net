@@ -1,34 +1,14 @@
 ---
 title: Mocking Fetch And Network Requests With Vitest
 description: Learn how to mock fetch and network requests using Vitest.
-modified: 2024-09-28T18:32:11.174Z
+modified: 2024-09-28T15:10:36-06:00
 ---
-
-## Mocking Fetch and Network Requests with Vitest
 
 Alright, let’s talk about something near and dear to every developer’s heart — dealing with and testing **network requests**. If you're working on an app that even *sniffs* at the internet, you're going to have to call APIs, and eventually, you're going to need to test that code. When that time comes, there’s no reason to actually hit the API every time you run your test suite — after all, let’s *maybe* not DDoS the API server, or worse: make your tests super slow. That's where **mocking network requests** comes in, and thankfully, mocking `fetch` with Vitest is a breeze.
 
-Let’s roll up our sleeves and dig in. Are you ready? I hope so because we’re diving straight into the deep end.
+## Write a Function to Fetch Data
 
-## Step 1: Setup Vitest
-
-If you've already got Vitest installed, you can skip this part. Otherwise, let’s get that boilerplate stuff out of the way. First, you're gonna need to install Vitest.
-
-```bash
-npm install vitest --save-dev
-```
-
-And throw this bad boy into your `package.json` scripts section so you can easily run your tests:
-
-```json
-"scripts": {
-  "test": "vitest"
-}
-```
-
-## Step 2: Write a Function to Fetch Data
-
-Simple enough, let's create a basic function that will throw a fetch call out into the wild and return the data. We’re keeping things basic with a JSON placeholder API.
+Let's create a basic function that will throw a fetch call out into the wild and return the data. We’re keeping things basic with a JSON placeholder API.
 
 ```javascript
 async function getData() {
@@ -42,7 +22,7 @@ export { getData };
 
 Looks good. Now if you want to test this function, you really shouldn't hit the actual API in your tests, because I promise you… unreliable network calls in your CI tests at 3 a.m.? *Not a vibe.* What we want is to mock it, baby!
 
-## Step 3: Mocking Fetch with Vitest
+## Mocking Fetch with Vitest
 
 Vitest’s got your back when it comes to mocking. Here’s the deal: `fetch` is available on `window` in most environments. So, when mocking, we tell Vitest to replace `window.fetch` with our own version.
 
@@ -119,9 +99,4 @@ Here, `fetch` rejects with an error, and we test that our function properly reje
 
 ## Wrapping Up
 
-That’s it! Now you’re mocking fetch requests like a pro. No more flaky test suites crashing because of slow or unreliable network calls, no more feeling like you’re helpless at the mercy of third-party APIs. Vitest lets you easily mock out the external world and run those tests in glorious, isolated silence.
-
-Just remember, the goal isn’t to test **whether fetch works** (spoiler alert: it does). You're focusing on ensuring that your code behaves properly in a variety of fetch-related scenarios.
-
-```ts
-```
+Just remember, the goal isn’t to test whether fetch works. (**Spoiler alert**: it does.) You're focusing on ensuring that your code behaves properly in a variety of fetch-related scenarios.

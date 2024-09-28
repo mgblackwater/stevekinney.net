@@ -1,7 +1,7 @@
 ---
 title: Understanding Hooks
 description: Learn how to use hooks for setup, teardown, and test isolation in Vitest.
-modified: 2024-09-28T18:32:11.024Z
+modified: 2024-09-28T15:24:05-06:00
 ---
 
 Hooks are functions that run at specific stages of your test execution lifecycle. They allow you to perform setup and teardown operations, ensuring that each test runs in a consistent environment. Vitest provides several hooks that mirror those found in other testing frameworks:
@@ -118,7 +118,7 @@ export const db = {
 };
 ```
 
-**Test Suite Using Hooks:**
+Here is a fun example of what a test suite might look like using hooks.
 
 ```javascript
 // db.test.js
@@ -238,6 +238,3 @@ async function fetchUser() {
 - **Forgetting to Return or Await Promises**: If you have asynchronous code in your hooks, ensure you're returning the promise or using `async`/`await`.
 - **Overusing Global Hooks**: Placing too much logic in `beforeAll` can lead to tests that are hard to understand or debug.
 - **Not Cleaning Up**: Failing to reset or clean up resources can cause tests to interfere with each other.
-
-```ts
-```

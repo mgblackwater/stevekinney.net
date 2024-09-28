@@ -1,12 +1,10 @@
 ---
-title: Cross-Browser Testing with Vitest
+title: Cross-Browser Testing with Playwright
 description: Learn how to perform cross-browser testing with Vitest and Playwright.
-modified: 2024-09-28T18:32:10.944Z
+modified: 2024-09-28T14:34:59-06:00
 ---
 
-## Cross-Browser Testing with Vitest
-
-Alright, let’s talk about cross-browser testing, because let’s be real, the odds that your app is only ever going to be used on the latest Chrome version are about as good as finishing a Friday without hitting *at least* one merge conflict. You’ve got users out there with different setups—Safari, Firefox, Edge, maybe even IE11 (gasp!). The good news? You can catch a bunch of browser-specific issues before your users find them… with Vitest! And no, it doesn’t have to be painful.
+Let’s talk about cross-browser testing, because let’s be real, the odds that your app is only ever going to be used on the latest Chrome version are about as good as finishing a Friday without hitting *at least* one merge conflict. You’ve got users out there with different setups—Safari, Firefox, Edge, maybe even IE11 (gross).
 
 Let’s explore a quick and practical way to set up cross-browser testing so you can handle browser quirks without rage-clicking into oblivion.
 
@@ -114,6 +112,6 @@ This efficiently loops through the browser tests so you're not cluttering your `
 
 ## Wrapping Up
 
-Boom! Now you're testing across multiple browsers like a pro. The great thing is that Vitest lets Playwright do most of the heavy lifting, running your app inside the simulated browsers with minimal setup. Not only do you get faster feedback, but you've also got some serious coverage across the major browsers without installing half a dozen VMs or keeping an ancient version of IE lying around.
+The great thing is that Vitest lets Playwright do most of the heavy lifting, running your app inside the simulated browsers with minimal setup. Not only do you get faster feedback, but you've also got some serious coverage across the major browsers without installing half a dozen VMs or keeping an ancient version of IE lying around.
 
-Is cross-browser testing still painful? Meh, a little. But hey… at least we’ve got the tools to help make it just painful *enough*.
+Is cross-browser testing still painful? Meh, a little. But, at least we’ve got the tools to help make it just painful *enough*.

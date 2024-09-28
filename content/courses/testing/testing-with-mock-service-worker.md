@@ -1,10 +1,8 @@
 ---
 title: Using Mock Service Worker With Vitest For API Testing
 description: Learn how to use Mock Service Worker with Vitest for API testing.
-modified: 2024-09-28T18:32:10.858Z
+modified: 2024-09-28T16:10:57-06:00
 ---
-
-## Longer Version
 
 Mocking external network requests is a crucial part of testing applications that rely on APIs. **Mock Service Worker (MSW)** is a powerful tool that allows you to intercept and mock network requests at the network level. When combined with **Vitest**, a fast and modern JavaScript testing framework, you can create robust and reliable tests for your applications.
 
@@ -391,7 +389,7 @@ test('renders user and notifications', async () => {
 
 Using Mock Service Worker with Vitest provides a powerful and flexible way to mock network requests in your tests. By intercepting requests at the network level, MSW allows you to create realistic and maintainable tests that closely mimic actual application behavior.
 
-## Key Takeaways
+### Key Takeaways
 
 - **MSW Benefits**:
   - Mocks network requests at the network level.
@@ -409,16 +407,13 @@ Using Mock Service Worker with Vitest provides a powerful and flexible way to mo
 
 By integrating MSW into your testing workflow with Vitest, you can enhance the reliability and robustness of your tests, ultimately leading to higher-quality applications.
 
-## When to Use MSW
+### When to Use MSW
 
 - **API-Dependent Components**: When testing components that make HTTP requests to external APIs.
 - **Error Handling Scenarios**: To simulate server errors and test how your application responds.
 - **Complex Response Structures**: When dealing with complex or large API responses that would be cumbersome to mock manually.
 
-## Potential Limitations
+### Potential Limitations
 
 - **Learning Curve**: Requires understanding of how MSW intercepts requests and how to configure handlers.
 - **Setup Overhead**: Initial setup may be more involved compared to simple mocking, but pays off in the long run.
-
-```ts
-```

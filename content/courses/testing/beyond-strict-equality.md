@@ -1,7 +1,7 @@
 ---
-title: Using toBe and toEqual  for Strict Equality
+title: Using toBe and toEqual for Strict Equality
 description: Learn the difference between toBe and toEqual in Vitest testing.
-modified: 2024-09-28T18:32:11.087Z
+modified: 2024-09-28T13:40:48-06:00
 ---
 
 Most of us have been living in the "everything should be immutable" world long enough to know that there is a difference between comparing objects by reference and comparing it with object that *looks* the same in terms of its value, but has a difference reference in memory.
@@ -62,9 +62,10 @@ describe('toBe', () => {
 
 Instead, when we're comparing two objects that are not referentially equal, we can use `toEqual`. I'm just going to [quote the documentation](https://vitest.dev/api/expect.html#toequal) for a hot minute:
 
+> [!NOTE]
 > `toEqual` asserts if actual value is equal to received one or has the same structure, if it is an object (compares them recursively).
 
-Looking further down in `examples/great-expectations/objects.test.ts`, you'll see the following:
+Let's look at another example:
 
 ```ts
 describe('toEqual', () => {

@@ -1,10 +1,10 @@
 ---
-title: Checking Function Arguments
+title: Testing Function Arguments
 description: Learn how to verify function arguments using spies and mocks in Vitest.
-modified: 2024-09-28T18:32:10.829Z
+modified: 2024-09-28T14:06:36-06:00
 ---
 
-In unit testing, one of the key tasks is verifying that functions are called with the correct arguments. This ensures that your code is passing the right data through the system and interacting with dependencies in the expected way. Vitest provides powerful utilities to check the arguments passed to a function, either by using spies or mocks.
+In unit testing, one of the key tasks is verifying that functions are called with the correct arguments. This ensures that your code is passing the right data through the system and interacting with dependencies in the expected way. Vitest provides some powerful utilities to check the arguments passed to a function, either by using spies or mocks.
 
 ## Why Check Function Arguments?
 
@@ -14,12 +14,12 @@ In unit testing, one of the key tasks is verifying that functions are called wit
 
 ## Using Spies to Check Function Arguments
 
-Spies in Vitest can track how a function is called, including the arguments passed to it. The `vi.spyOn()` method allows you to monitor existing functions and check their arguments without modifying their behavior.
+[Spies](spies.md) in Vitest can track how a function is called, including the arguments passed to it. The `vi.spyOn()` method allows you to monitor existing functions and check their arguments without modifying their behavior.
 
 Here’s how you create a spy and check the arguments:
 
 ```js
-// Function to be tested
+// A very important function that needs to be tested
 function logMessage(message) {
 	console.log(message);
 }
@@ -45,7 +45,7 @@ In this example, `logSpy` tracks the calls to `console.log`. The `expect(logSpy)
 
 ## Using Mocks to Check Function Arguments
 
-Mocks can also be used to check what arguments were passed to a function. When you create a mock with `vi.fn()`, Vitest automatically tracks the arguments passed to the mock, allowing you to assert on them later.
+[Mocks](mocks.md) can also be used to check what arguments were passed to a function. When you create a mock with `vi.fn()`, Vitest automatically tracks the arguments passed to the mock, allowing you to assert on them later.
 
 ```js
 // Create a mock function
@@ -142,4 +142,4 @@ This example shows how you can manually inspect the `mock.calls` array to access
 
 ## Conclusion
 
-Checking the arguments passed to a function is an essential part of verifying that your code behaves correctly in unit tests. Whether you’re using spies to monitor real functions or mocks to simulate them, Vitest provides powerful tools like `toHaveBeenCalledWith()`, `toHaveBeenNthCalledWith()`, and `mock.calls` to assert on the arguments passed during execution. These capabilities allow you to confidently test that your code is passing the right data to the right places.
+Checking the arguments passed to a function is super important part of verifying that your code behaves correctly in unit tests. Whether you’re using spies to monitor real functions or mocks to simulate them, Vitest provides powerful tools like `toHaveBeenCalledWith()`, `toHaveBeenNthCalledWith()`, and `mock.calls` to assert on the arguments passed during execution. These capabilities allow you to confidently test that your code is passing the right data to the right places.

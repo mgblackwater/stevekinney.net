@@ -1,9 +1,10 @@
 ---
 title: Filtering By File Name
 description: Learn how to filter tests in Vitest by name, directory, and more.
-modified: 2024-09-28T18:32:10.801Z
+modified: 2024-09-28T16:19:29-06:00
 ---
 
+Vitest gives you a bunch of interesting ways to only run *some* of your tests. Let's walking some of the more popular ones.
 ## Filtering by File Name
 
 If you provide an argument to Vitest, then it'll filter your tests and only try to match the ones with that name.
@@ -86,7 +87,7 @@ You saw some of these (well, the first two) before, but I'll call them out just 
 - `test.skipIf`: Only skip this one if I give you a truthy value.
 - `test.runIf`: Only run this test if I give you a truthy value.
 - `test.concurrent`: Run this test in parallel with any other test using `.concurrent`. We'll cover this in [parallelizing-tests](parallelizing-tests.md).
-- `test.each`: I want to generate a bunch of tests. We'll cover this in [Parameterizing Tests](Parameterizing%20Tests.md).
+- `test.each`: I want to generate a bunch of tests. We'll cover this in [Parameterizing Tests](parameterizing-tests.md).
 
 ## Examples
 
@@ -147,6 +148,3 @@ Inside of `examples/getting-started`:
 4. Run `npx vitest related ./exponent.ts --run` and look at which test files run.
 5. Assuming you don't have any un-staged or uncommitted changes, run `npx vitest --changed HEAD --run` and look at which test files—umm—*didn't* run.
 6. Make a change to `words.ts` (or any other file, really) and then run `npx vitest --changed HEAD --run` and see what tests run.
-
-```ts
-```

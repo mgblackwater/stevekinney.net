@@ -1,7 +1,7 @@
 ---
 title: Understanding Test Doubles in Unit Testing
 description: Learn the purpose and types of test doubles in unit testing.
-modified: 2024-09-28T18:32:11.182Z
+modified: 2024-09-28T15:35:00-06:00
 ---
 
 When writing unit tests, the goal is to test a piece of code in isolation. However, the real-world code we write often depends on other pieces of code or external systems like databases, APIs, or third-party services. These dependencies can introduce variability, slowness, or complexity into our tests, making them harder to write, understand, and maintain.
@@ -38,6 +38,3 @@ To clarify the differences between these three types of test doubles:
 | **Usage Scenario**    | Simulate simple behaviors, like network responses | Monitor interactions, like verifying if a callback was triggered | Simulate complex interactions, combining behavior control with call recording |
 
 Stubs, spies, and mocks are essential tools for isolating dependencies, improving test reliability, and verifying code behavior. Understanding the differences and knowing when to use each type of test double will help you write more effective and maintainable tests. Whether you need to simulate a simple API response (stub), monitor how a function interacts with a dependency (spy), or simulate complex behaviors and record interactions (mock), these tools will help ensure your unit tests are robust and accurate.
-
-```ts
-```

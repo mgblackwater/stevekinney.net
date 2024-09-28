@@ -1,10 +1,10 @@
 ---
-title: Insist That a Test Fails
+title: How Tests Work
 description: Explore techniques to ensure tests fail when expected.
-modified: 2024-09-28T18:32:10.879Z
+modified: 2024-09-28T14:58:58-06:00
 ---
 
-Because it didn't fail.
+A test passes for one reason: Because it didn't fail.
 
 These seems banal, but it'll be important later, so I'm going to say it again and again: There is *no such thing* as a passing test. There are only tests that didn't fail.
 

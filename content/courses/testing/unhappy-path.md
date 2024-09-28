@@ -1,7 +1,7 @@
 ---
 title: Testing The Unhappy Path
 description: Learn how to test edge cases and errors to improve robustness.
-modified: 2024-09-28T18:32:10.843Z
+modified: 2024-09-28T16:12:21-06:00
 ---
 
 In software testing, the "happy path" refers to the scenario where everything works as expected—inputs are valid, conditions are ideal, and no errors occur. However, real-world applications must be resilient enough to handle unexpected situations. This is where testing the **unhappy path™** comes in. The unhappy path tests how your code behaves when things go wrong—invalid inputs, failed operations, or unexpected conditions.

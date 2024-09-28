@@ -1,7 +1,7 @@
 ---
 title: Using vi.stubGlobal
 description: Learn how to use vi.stubGlobal for mocking global objects.
-modified: 2024-09-28T18:32:10.810Z
+modified: 2024-09-28T15:11:28-06:00
 ---
 
 [`vi.stubGlobal`](https://vitest.dev/api/vi.html#vi-stubglobal) basically does what it says on the packaging. It takes two arguments:
@@ -20,7 +20,4 @@ const IntersectionObserverMock = vi.fn(() => ({
 }));
 
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
-```
-
-```ts
 ```

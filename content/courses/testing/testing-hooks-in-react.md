@@ -1,24 +1,10 @@
 ---
 title: "Setting The Stage: Testing React Hooks"
 description: Learn how to test React hooks using Vitest and Testing Library.
-modified: 2024-09-28T18:32:10.984Z
+modified: 2024-09-28T15:45:56-06:00
 ---
 
-## Setting the Stage: Testing React Hooks
-
-Ah, hooks. You love ’em for making your functional components infinitely more powerful, but how do you test them? Let’s be honest, if you’ve ever sat down, cracked a cold one (coffee… probably), and tried to test a hook, you might have found it… frustrating. Good news: Vitest has your back! I’ll walk you through testing hooks in a way that makes your productivity (and sanity) skyrocket.
-
 We’re going to use Vitest along with the `@testing-library/react-hooks` package. This magical package lets you test hooks in isolation, without any of the noise of rendering a full component. So it's like putting your hook inside a little bubble, free from distraction.
-
-## Install Vitest and the React Hooks Testing Library
-
-First things first, we gotta set up the tools:
-
-```bash
-npm install vitest @testing-library/react-hooks
-```
-
-That’s all you need to get going!
 
 ## Writing a Simple Hook
 
@@ -128,10 +114,4 @@ describe('useCoffeeCounter', () => {
 
 And just like that, you’ve covered both cases: one where drinking coffee boosts productivity (as it should!) and one where no coffee keeps you at baseline (a bleak existence, really).
 
-## Wrapping Up Testing Hooks
-
 Testing hooks doesn’t have to be the hair-pulling, coffee-chugging ordeal you thought it was. With `renderHook` and `act`, the `@testing-library/react-hooks` makes it super easy to check the state and behavior of your hook in isolation.
-
-And Vitest? It’s practically whispering in your ear, “Go forth, young padawan, and test all of the hooks with ease.”
-
-You’ve now got the basics down for testing both simple and slightly trickier hooks. So, next time you're writing a hook, don’t leave it to chance—write some tests and make sure your hooks behave exactly how they should. Now go find yourself a cup of coffee—if your productivity level goes up by 10 points, send me a thank-you tweet!

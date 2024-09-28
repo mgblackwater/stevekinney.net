@@ -1,14 +1,16 @@
 ---
 title: A Comprehensive Guide to Mocks in Testing
 description: Learn how mocks simplify tests by controlling behavior.
-modified: 2024-09-28T18:32:10.900Z
+modified: 2024-09-28T15:16:29-06:00
 ---
+
+Generally, speaking it's not helpful to test code that you don't control.
 
 The TL;DR of mocking is that sometimes we need to swap out things we don't control with things that we *do*. For example, it might be outside of the scope of our test to make sure that a third-party API goes down. Or, if that API isn't free, you don't necessarily want to run up a bill every time you run your test suite, right?
 
 A *mock* is a more powerful and flexible type of [test doubles](test-doubles.md) that can both define behavior (like a [stub](stubs.md)) and record information (like a [spy](spies.md)). Mocks allow you to specify exactly how a function should behave, including return values, thrown errors, or complex interactions, while also tracking the number of calls and arguments passed.
 
-> \[!NOTE] Best Practices and Common Pitfalls
+> [!NOTE] Best Practices and Common Pitfalls
 > We'll cover this in the slides, but you can review the [best practices and common pitfalls with mocking here](mocking-best-practices.md)
 
 ## Key Features of Mocks
@@ -140,22 +142,6 @@ describe('getConcertDetails', () => {
 
 In this example, `fetchMock` simulates the behavior of the real `fetch` function, allowing us to test the `getConcertDetails` function without making a real network request. We also verify that the mock was called exactly once.
 
-### Auto-Mocking Modules and Functions
-
-Vitest allows you to automatically mock entire modules or specific functions, making it easier to isolate and test code without manually creating mocks for every function. Auto-mocking is particularly useful when you are testing complex systems with many dependencies.
-
-You can automatically mock a module using `vi.mock()`:
-
-```js
-vi.mock('./api', () => ({
-	getConcertDetails: vi
-		.fn()
-		.mockResolvedValue({ band: 'Green Day', venue: 'Madison Square Garden' }),
-}));
-```
-
-This will mock the entire `api` module and replace `getConcertDetails` with a mock function that returns predefined data. Auto-mocking simplifies the process of managing mocks in large tests by allowing you to define mocks upfront.
-
 ### Asserting Interactions and Behavior of Mocks
 
 Mocks in Vitest allow you to assert not only the return values and errors, but also interactions such as how many times the mock was called, what arguments were passed, and the order of calls.
@@ -185,6 +171,3 @@ expect(fetchMock()).toBe('Concert Data');
 In this example, we verify that `fetchMock` was called exactly once, passed the correct argument, and returned the expected value.
 
 Mocks offer full control over both behavior and interactions, making them an essential tool for testing complex systems where you need detailed insights into how functions are being used and what they return.
-
-```ts
-```

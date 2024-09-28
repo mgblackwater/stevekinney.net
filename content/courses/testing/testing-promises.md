@@ -1,7 +1,7 @@
 ---
 title: Testing Promises
 description: Learn how to test promises in Vitest for both resolution and rejection.
-modified: 2024-09-28T18:32:11.191Z
+modified: 2024-09-28T16:05:47-06:00
 ---
 
 You *could* use the strategies from [Testing Asynchronous Code](testing-asynchronous-code.md), but let's dig in just a little bit more on promises, in particular.
@@ -196,6 +196,3 @@ In this example, `vi.useFakeTimers()` allows us to simulate the 3-second delay i
 ## A Quick Summary
 
 Testing promises in Vitest is essential for ensuring that your asynchronous code behaves as expected. Whether you're testing resolved promises, rejected promises, or handling multiple async operations, Vitest provides clear and effective tools like `async/await`, `.resolves`, `.rejects`, and mock functions. Additionally, using fake timers for timeouts ensures that tests remain fast and reliable. By fully testing promises, you can catch edge cases, handle errors properly, and build more robust applications.
-
-```ts
-```

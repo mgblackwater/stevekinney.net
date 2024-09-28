@@ -1,10 +1,8 @@
 ---
 title: Understanding Snapshot Testing
 description: A quick and easy guide to understanding snapshot testing with Vitest.
-modified: 2024-09-28T18:32:11.234Z
+modified: 2024-09-28T15:26:39-06:00
 ---
-
-## Understanding Snapshot Testing
 
 Alright, so here's the deal with **snapshot testing**—it's **quick** and **easy** to write, but like any magic trick, there’s some sleight of hand you should be aware of. A snapshot is basically a serialized version of the output that your component, function, or whatever you’re testing spits out. Vitest (and tools like it) compares this serialized version to the previously saved "snapshot" version on disk during each test.
 
@@ -60,7 +58,7 @@ You don’t need to snapshot everything in your codebase. Like, really, does eve
 
 Snapshots should align with **meaningful outputs**, not **large chunks of data**. If your snapshot is several hundred lines long, you're probably trying to cover too much ground with one test. Break it up.
 
-## Wrapping It Up
+## In Conclusion
 
 Snapshot testing is a great way to add **quick regression checks** to your codebase—just make sure you're **paying attention**. It's so tempting to update snapshots without thinking twice when you're in a rush. Resist the urge.
 

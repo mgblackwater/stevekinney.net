@@ -1,7 +1,7 @@
 ---
 title: Extending A Calculator With A User Interface Using TDD
 description: Learn how to extend a calculator with a basic UI using TDD.
-modified: 2024-09-28T18:32:11.093Z
+modified: 2024-09-28T15:37:56-06:00
 ---
 
 In the [first part of this example](basic-math.md), we built a simple calculator application using Test-Driven Development (TDD) with **Vitest**, focusing solely on pure functions without a user interface. In this second part, we'll extend the calculator by adding a basic web interface using plain JavaScript (no frameworks) and write tests to validate the DOM interactions.
@@ -349,8 +349,6 @@ npm test
 
 Vitest will execute all tests directory and report the results.
 
-## Conclusion
-
 We've successfully extended our calculator application by adding a user interface and testing DOM interactions using Vitest. By following TDD principles, we ensured that our UI behaves as expected before implementing the functionality.
 
 ## Additional Exercises
@@ -375,6 +373,3 @@ For further practice and experimentation, you could consider implementing the fo
 6. **Percentage and Square Root Functions**
    - Add buttons for percentage (`%`) and square root (`√`) operations.
    - Implement the functionality and write corresponding tests.
-
-```ts
-```

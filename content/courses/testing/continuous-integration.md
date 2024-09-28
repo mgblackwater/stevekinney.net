@@ -1,7 +1,7 @@
 ---
 title: Setting Up GitHub Actions to Run Vitest Unit Tests
 description: Learn how to automate testing with GitHub Actions and Vitest.
-modified: 2024-09-28T18:32:11.159Z
+modified: 2024-09-28T14:32:53-06:00
 ---
 
 Continuous Integration (CI) is a crucial practice in modern software development, enabling teams to detect issues early by automatically running tests on code changes. **GitHub Actions** provides a powerful platform for automating workflows directly within your GitHub repository. This guide will walk you through setting up GitHub Actions to run your **Vitest** unit tests on each Pull Request (PR), ensuring that only passing code gets merged.
@@ -21,20 +21,6 @@ Continuous Integration (CI) is a crucial practice in modern software development
 - Node.js and npm configured in your project.
 
 ## Step-by-Step Guide
-
-### Set Up Your Vitest Testing Scripts
-
-Ensure that your `package.json` has a script to run your tests. Typically, you'd have something like:
-
-```json
-{
-	"scripts": {
-		"test": "vitest"
-	}
-}
-```
-
-If you use any specific flags, such as coverage, you can adjust the script accordingly.
 
 ### Create a GitHub Actions Workflow File
 
@@ -84,8 +70,6 @@ jobs:
         run: npm test
 ```
 
-**Explanation:**
-
 - **`name: CI`**: Names the workflow "CI" (Continuous Integration).
 - **`on: pull_request`**: Triggers the workflow on PRs targeting the `main` branch.
 - **`jobs`**: Defines the jobs to run; in this case, a single job named `build`.
@@ -95,15 +79,18 @@ jobs:
 
 ### Breakdown of Workflow Steps
 
-- **Checkout Code**
+#### Checkout the Repository
+
+First things first: Let's tell the action to check out your repository.
 
   ```yaml
   - name: Checkout code
     uses: actions/checkout@v3
   ```
 
-  - Uses the `actions/checkout` action to clone your repository.
-- **Set Up Node.js Environment**
+This uses the `actions/checkout` action to clone your repository.
+
+#### Set Up a Node Environment
 
   ```yaml
   - name: Use Node.js ${{ matrix.node-version }}
@@ -113,24 +100,28 @@ jobs:
       cache: 'npm'
   ```
 
-  - Sets up the specified Node.js version.
-  - Caches `npm` dependencies to speed up the workflow.
-- **Install Dependencies**
+This step:
+
+  - sets up the specified Node version, and
+  - caches `npm` dependencies to speed up the workflow.
+
+#### Install Your Dependencies
 
   ```yaml
   - name: Install dependencies
     run: npm install
   ```
 
-  - Installs project dependencies defined in `package.json`.
-- **Run Tests**
+Nothing particularly special to see here. This installs project dependencies defined in `package.json`.
+
+#### Run the Tests
 
   ```yaml
   - name: Run tests
     run: npm test
   ```
 
-  - Executes the test script defined in your `package.json`.
+This executes the test script defined in your `package.json`.
 
 ### Commit and Push the Workflow File
 
@@ -153,15 +144,13 @@ After pushing the workflow file:
 
 ### Test the Workflow with a Pull Request
 
-To ensure everything is working:
-
-- Create a new branch:
+Create a new branch.
 
   ```bash
   git checkout -b test-ci
   ```
 
-- Make a small change or add a dummy commit:
+Make a small change or add a dummy commit.
 
   ```bash
   touch dummy.txt
@@ -171,9 +160,7 @@ To ensure everything is working:
   ```
 
 - Create a Pull Request targeting the `main` branch.
-
 - The CI workflow should automatically trigger.
-
 - Check the PR page to see the status of the checks.
 
 ### Handling Test Failures
@@ -190,7 +177,7 @@ If your tests fail:
 
 If you want to include coverage reporting:
 
-- Adjust your test script in `package.json`:
+Adjust your test script in `package.json`:
 
   ```json
   {
@@ -200,7 +187,7 @@ If you want to include coverage reporting:
   }
   ```
 
-- Update the workflow to upload coverage artifacts:
+Update the workflow to upload coverage artifacts:
 
   ```yaml
   - name: Run tests with coverage
@@ -213,9 +200,9 @@ If you want to include coverage reporting:
       path: coverage
   ```
 
-- The coverage report will be available in the workflow artifacts.
+The coverage report will be available in the workflow artifacts.
 
-### 10. Enforcing Required Status Checks (Optional)
+### Optional: Enforcing Required Status Checks
 
 To prevent merging code with failing tests:
 
@@ -228,7 +215,7 @@ To prevent merging code with failing tests:
 
 ## Best Practices
 
-- **Use Caching**: Cache dependencies to speed up workflow runs.
+**Use Caching**: Cache dependencies to speed up workflow runs.
 
   ```yaml
   with:
@@ -236,7 +223,7 @@ To prevent merging code with failing tests:
     cache: 'npm'
   ```
 
-- **Test Multiple Node Versions**: Ensure compatibility across different environments.
+**Test Multiple Node Versions**: Ensure compatibility across different environments. This is probably only important if you're testing server-side code.
 
   ```yaml
   strategy:
@@ -244,23 +231,25 @@ To prevent merging code with failing tests:
       node-version: [14.x, 16.x, 18.x]
   ```
 
-- **Fail Fast**: Use the `fail-fast` option to stop running jobs on first failure.
+**Fail Fast**: Use the `fail-fast` option to stop running jobs on first failure.
 
   ```yaml
   strategy:
     fail-fast: true
   ```
 
-- **Parallelize Jobs**: If you have multiple test suites, run them in parallel to reduce total build time.
+**Parallelize Jobs**: If you have multiple test suites, run them in parallel to reduce total build time.
 
-- **Secure Your Secrets**: Avoid hardcoding sensitive information in workflows. Use GitHub's encrypted secrets.
+**Secure Your Secrets**: Avoid hardcoding sensitive information in workflows. Use GitHub's encrypted secrets.
 
-- **Keep Workflows Updated**: Regularly update action versions to benefit from improvements and security patches.
+**Keep Workflows Updated**: Regularly update action versions to benefit from improvements and security patches.
 
 ## Troubleshooting Tips
 
-- **Permission Issues**: Ensure the workflow file is in the default branch (`main` or `master`) to trigger on PRs.
-- **YAML Syntax Errors**: Use a YAML linter or GitHub's workflow editor to validate your YAML files.
+If things go wrong, here are some common things that it might be.
+
+- **Permission Issues**: Ensure the workflow file is in the default branch (e.g., `main`) to trigger on PRs.
+- **Syntax Errors**: YAML isn't code. It's yet another markup language (YAML). Use a YAML linter or GitHub's workflow editor to validate your YAML files.
 - **Caching Not Working**: Verify that the cache key is correctly set and that cache dependencies haven't changed.
 - **Environment Differences**: If tests pass locally but fail in CI, ensure that environment variables and configurations are consistent.
 
@@ -274,8 +263,3 @@ Setting up GitHub Actions to run your Vitest unit tests on each Pull Request enh
 - **GitHub Actions Documentation**: <https://docs.github.com/en/actions>
 - **Caching Dependencies**: [Caching dependencies to speed up workflows](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
 - **GitHub Actions for JavaScript and Node.js**: [Official GitHub guide](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs)
-
-By integrating Vitest with GitHub Actions, you ensure that every piece of code is vetted through your test suite, leading to a more stable and reliable application.
-
-```ts
-```

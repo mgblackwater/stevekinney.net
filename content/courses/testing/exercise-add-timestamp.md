@@ -1,7 +1,7 @@
 ---
-title: Adding A Timestamp Field To An Object
+title: Adding a Timestamp Field To An Object
 description: Implement a function that adds a timestamp field to an object.
-modified: 2024-09-28T18:32:11.193Z
+modified: 2024-09-28T14:54:47-06:00
 ---
 
 **Your mission**: We want a function that takes an object and adds a `timestamp` field to it with the current date.

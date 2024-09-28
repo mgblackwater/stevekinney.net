@@ -1,7 +1,7 @@
 ---
 title: Starting With Simple Tests
 description: Learn how to test basic expressions and functions using Vitest.
-modified: 2024-09-28T18:32:10.905Z
+modified: 2024-09-28T16:14:45-06:00
 ---
 
 Let's start with the world's simplest test.
@@ -19,7 +19,7 @@ At the highest level, we can see the following:
 - There is a functioned called `test` that takes two arguments
   - A string that represents the name of the test.
   - A function that contains the body of the test.
-- Inside of that function, we use an [assertion library](vitest-assertions.md) to make a statement about what we expect to be the way the world works.
+- Inside of that function, we use an assert library to make a statement about what we expect to be the way the world works.
   - In this case, we're expecting this two things to be equal and they are.
 
 Okay, well this works—but, it's a little ridiculous. Let's actually test some expressions or maybe even a function.

@@ -1,7 +1,7 @@
 ---
 title: Arrange-Act-Assert (AAA) Pattern
 description: Learn the AAA pattern for writing clear, maintainable unit tests.
-modified: 2024-09-28T18:32:10.924Z
+modified: 2024-09-28T15:32:46-06:00
 ---
 
 ## Arrange-Act-Assert (AAA) Pattern
@@ -283,11 +283,10 @@ test('fetches user data successfully', async () => {
 
 ### Key Takeaways
 
+With all of that said, here's the gist:
+
 - **Separation of Concerns**: The AAA pattern enforces a clear separation between setup, execution, and verification.
 - **Readability**: Tests become self-explanatory, serving as documentation for the code's expected behavior.
 - **Consistency**: Following a standard pattern reduces cognitive load when switching between different tests or projects.
 - **Maintainability**: Easier to update tests when changes occur in the codebase.
 - **Debugging Efficiency**: Simplifies identifying where a test might be failing.
-
-```ts
-```

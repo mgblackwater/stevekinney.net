@@ -1,10 +1,8 @@
 ---
 title: Understanding Test-Driven Development
 description: A simple explanation of the steps in Test-Driven Development.
-modified: 2024-09-28T18:32:10.977Z
+modified: 2024-09-28T15:35:06-06:00
 ---
-
-## Understanding Test-Driven Development
 
 Test-Driven Developer (TDD) is way simpler than a lot of people want to make it sound. You basically follow these steps:
 
@@ -19,6 +17,3 @@ This cycle is often referred to as **Red-Green-Refactor**:
 - **Red**: Write a failing test.
 - **Green**: Write code to pass the test.
 - **Refactor**: Improve the code.
-
-```ts
-```

@@ -1,16 +1,11 @@
 ---
 title: Install userEvent
 description: Refactor your tests to use userEvent instead of fireEvent.
-modified: 2024-09-28T18:32:11.006Z
+modified: 2024-09-28T13:04:21-06:00
 ---
 
-## Install `userEvent`
-
-I've already done this for you, but I'm going to include this for reference. If you haven’t installed `@testing-library/user-event`, do so:
-
-```bash
-npm install --save-dev @testing-library/user-event
-```
+> [!NOTE] If You're Not Using the Example Repository
+> I've already done this for you, but I'm going to include this for reference. If you haven’t installed `@testing-library/user-event`, you made need to do a `npm install --save-dev @testing-library/user-event`.
 
 ## Refactor the Test File to Use `userEvent`
 
@@ -128,9 +123,3 @@ The `userEvent` API is more asynchronous than `fireEvent`, so we need to use `aw
 - **Async Handling**: Some actions that require browser delays (like typing or multiple clicks) are better handled with `userEvent`.
 
 In this refactored test suite, we used `userEvent` to simulate real user interactions with the `Counter` component. This method is more reliable and representative of how users interact with your app, and it prepares your tests to handle more complex interactions in the future.
-
-```ts
-```
-
-```ts
-```
