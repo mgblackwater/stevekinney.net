@@ -4,7 +4,7 @@ Alright, let's talk about the `poll` method available in Vitest's `expect`. This
 
 ## What does it do?
 
-The `poll` method will repeatedly run your expectation over a period until it passes or a timeout is hit. The idea is that you're testing something where the timing might be unpredictable — like maybe you're waiting for an API response to trigger some UI change, but it doesn’t happen immediately after the first request. If you’ve ever written a test where something intermittently works because the thing you want to verify doesn’t pass right away... This is for you.
+The `poll` method will repeatedly run your expectation over a period until it passes or a timeout is hit. The idea is that you're testing something where the timing might be unpredictable — like maybe you're waiting for an API response to trigger some UI change, but it doesn’t happen immediately after the first request. If you’ve ever written a test where something intermittently works because the thing you want to verify doesn’t pass right away… This is for you.
 
 ## When would I use it?
 
@@ -18,19 +18,19 @@ Consider our music library with a list of songs for the artist Green Day. You wa
 import { expect } from 'vitest';
 
 test('add song to favorites eventually', async () => {
-  const greenDaySong = { title: 'Basket Case', artist: 'Green Day' };
+	const greenDaySong = { title: 'Basket Case', artist: 'Green Day' };
 
-  // Simulate adding a song
-  await addToFavorites(greenDaySong);
+	// Simulate adding a song
+	await addToFavorites(greenDaySong);
 
-  // Wait for the UI to eventually show this song in 'Favorites'
-  await expect(fetchFavoriteSongs()).poll(
-    async (favorites) => {
-      // Check the song exists in the array
-      return favorites.some((song) => song.title === greenDaySong.title);
-    },
-    { interval: 100, timeout: 2000 },
-  ); // Retry every 100ms, for up to 2 seconds
+	// Wait for the UI to eventually show this song in 'Favorites'
+	await expect(fetchFavoriteSongs()).poll(
+		async (favorites) => {
+			// Check the song exists in the array
+			return favorites.some((song) => song.title === greenDaySong.title);
+		},
+		{ interval: 100, timeout: 2000 },
+	); // Retry every 100ms, for up to 2 seconds
 });
 ```
 

@@ -23,9 +23,9 @@ We're going to Vitest to use the `jsdom` environment.
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  test: {
-    environment: 'happy-dom',
-  },
+	test: {
+		environment: 'happy-dom',
+	},
 });
 ```
 
@@ -33,7 +33,7 @@ We have one test that we'll get rid of that just does a sanity check that everyt
 
 ```javascript
 it('is running our test in a browser-like environment', () => {
-  expect(typeof window).not.toBe('undefined');
+	expect(typeof window).not.toBe('undefined');
 });
 ```
 
@@ -56,17 +56,17 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { createCalculator } from './calculator.js';
 
 it('is running our test in a browser-like environment', () => {
-  expect(typeof window).not.toBe('undefined');
+	expect(typeof window).not.toBe('undefined');
 });
 
 describe('Calculator', () => {
-  beforeEach(() => {
-    createCalculator(document.body);
-  });
+	beforeEach(() => {
+		createCalculator(document.body);
+	});
 
-  it('should have a element with the id of "calculator"', () => {
-    expect(document.getElementById('calculator')).not.toBe(null);
-  });
+	it('should have a element with the id of "calculator"', () => {
+		expect(document.getElementById('calculator')).not.toBe(null);
+	});
 });
 ```
 
@@ -80,35 +80,35 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { fireEvent } from '@testing-library/dom';
 
 describe('Calculator', () => {
-  let display;
+	let display;
 
-  beforeEach(() => {
-    renderCalculator(document.body);
+	beforeEach(() => {
+		renderCalculator(document.body);
 
-    display = document.getElementById('display');
-  });
+		display = document.getElementById('display');
+	});
 
-  it('displays number when a number button is clicked', () => {
-    /** @type {NodeListOf<HTMLButtonElement>} */
-    const [button] = document.querySelectorAll('button');
-    const value = button.dataset.value;
+	it('displays number when a number button is clicked', () => {
+		/** @type {NodeListOf<HTMLButtonElement>} */
+		const [button] = document.querySelectorAll('button');
+		const value = button.dataset.value;
 
-    fireEvent.click(button);
+		fireEvent.click(button);
 
-    expect(display.value).toBe(value);
-  });
+		expect(display.value).toBe(value);
+	});
 
-  it('display the sum of multiple numbers when the equals button is clicked', () => {
-    const one = document.getElementById('digit-1');
-    const two = document.getElementById('digit-2');
-    const three = document.getElementById('digit-3');
+	it('display the sum of multiple numbers when the equals button is clicked', () => {
+		const one = document.getElementById('digit-1');
+		const two = document.getElementById('digit-2');
+		const three = document.getElementById('digit-3');
 
-    fireEvent.click(one);
-    fireEvent.click(two);
-    fireEvent.click(three);
+		fireEvent.click(one);
+		fireEvent.click(two);
+		fireEvent.click(three);
 
-    expect(display.value).toBe('123');
-  });
+		expect(display.value).toBe('123');
+	});
 });
 ```
 
@@ -134,19 +134,19 @@ Implement the event listeners in `src/index.js`:
 
 ```javascript
 export function renderCalculator(target) {
-  render(calculator, target);
+	render(calculator, target);
 
-  /** @type {HTMLInputElement} */
-  const display = target.querySelector('#display');
+	/** @type {HTMLInputElement} */
+	const display = target.querySelector('#display');
 
-  /** @type {NodeListOf<HTMLButtonElement>} */
-  const numbers = target.querySelectorAll('.number');
+	/** @type {NodeListOf<HTMLButtonElement>} */
+	const numbers = target.querySelectorAll('.number');
 
-  numbers.forEach((number) => {
-    number.addEventListener('click', () => {
-      display.value += number.dataset.value;
-    });
-  });
+	numbers.forEach((number) => {
+		number.addEventListener('click', () => {
+			display.value += number.dataset.value;
+		});
+	});
 }
 ```
 
@@ -177,15 +177,15 @@ Can you add support for multple button presses?
 
 ```javascript
 it('display the sum of multiple numbers when the equals button is clicked', () => {
-  const one = document.getElementById('digit-1');
-  const two = document.getElementById('digit-2');
-  const three = document.getElementById('digit-3');
+	const one = document.getElementById('digit-1');
+	const two = document.getElementById('digit-2');
+	const three = document.getElementById('digit-3');
 
-  fireEvent.click(one);
-  fireEvent.click(two);
-  fireEvent.click(three);
+	fireEvent.click(one);
+	fireEvent.click(two);
+	fireEvent.click(three);
 
-  expect(display.value).toBe('123');
+	expect(display.value).toBe('123');
 });
 ```
 
@@ -199,17 +199,17 @@ Update `calculator.test.js`:
 
 ```javascript
 it('supports addings two numbers and displaying the result', () => {
-  const one = document.getElementById('digit-1');
-  const two = document.getElementById('digit-2');
-  const add = document.getElementById('add');
-  const equals = document.getElementById('equals');
+	const one = document.getElementById('digit-1');
+	const two = document.getElementById('digit-2');
+	const add = document.getElementById('add');
+	const equals = document.getElementById('equals');
 
-  fireEvent.click(one);
-  fireEvent.click(add);
-  fireEvent.click(two);
-  fireEvent.click(equals);
+	fireEvent.click(one);
+	fireEvent.click(add);
+	fireEvent.click(two);
+	fireEvent.click(equals);
 
-  expect(display.value).toBe('3');
+	expect(display.value).toBe('3');
 });
 ```
 
@@ -235,27 +235,27 @@ Modify `src/calculator.js`:
 
 ```javascript
 export function renderCalculator(target) {
-  // … previous code …
+	// … previous code …
 
-  let buffer = 0;
+	let buffer = 0;
 
-  /** @type {NodeListOf<HTMLButtonElement>} */
-  const operators = target.querySelectorAll('.operator');
+	/** @type {NodeListOf<HTMLButtonElement>} */
+	const operators = target.querySelectorAll('.operator');
 
-  /** @type {HTMLButtonElement} */
-  const equals = target.querySelector('#equals');
+	/** @type {HTMLButtonElement} */
+	const equals = target.querySelector('#equals');
 
-  operators.forEach((operator) => {
-    operator.addEventListener('click', () => {
-      buffer = display.valueAsNumber;
-      display.value = '';
-    });
-  });
+	operators.forEach((operator) => {
+		operator.addEventListener('click', () => {
+			buffer = display.valueAsNumber;
+			display.value = '';
+		});
+	});
 
-  equals.addEventListener('click', () => {
-    const result = buffer + display.valueAsNumber;
-    display.value = String(result);
-  });
+	equals.addEventListener('click', () => {
+		const result = buffer + display.valueAsNumber;
+		display.value = String(result);
+	});
 }
 ```
 
@@ -288,13 +288,13 @@ Add a test for the clear functionality:
 
 ```javascript
 it('clears the display when the clear button is clicked', () => {
-  const one = document.getElementById('digit-1');
-  const clear = document.getElementById('clear');
+	const one = document.getElementById('digit-1');
+	const clear = document.getElementById('clear');
 
-  fireEvent.click(one);
-  fireEvent.click(clear);
+	fireEvent.click(one);
+	fireEvent.click(clear);
 
-  expect(display.value).toBe('');
+	expect(display.value).toBe('');
 });
 ```
 
@@ -313,13 +313,13 @@ The test fails because the clear functionality is not properly implemented.
 Update `src/calculator.js`:
 
 ```javascript
-// ... existing code ...
+// … existing code ...
 /** @type {HTMLButtonElement} */
 const clear = target.querySelector('#clear');
 
 clear.addEventListener('click', () => {
-  buffer = 0;
-  display.value = '';
+	buffer = 0;
+	display.value = '';
 });
 ```
 

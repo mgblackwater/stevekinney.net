@@ -20,17 +20,17 @@ Think of a stub as, “I don’t care what this would normally return—just giv
 import { vi } from 'vitest';
 
 const dependency = {
-  getData: () => 'real data from server', // Pretend this does something real expensive.
+	getData: () => 'real data from server', // Pretend this does something real expensive.
 };
 
 test('should handle data correctly', () => {
-  const stub = vi.spyOn(dependency, 'getData').mockReturnValue('stubbed data');
+	const stub = vi.spyOn(dependency, 'getData').mockReturnValue('stubbed data');
 
-  // Your actual test logic
-  const result = dependency.getData();
-  expect(result).toBe('stubbed data');
+	// Your actual test logic
+	const result = dependency.getData();
+	expect(result).toBe('stubbed data');
 
-  stub.mockRestore(); // Clean up after yourself
+	stub.mockRestore(); // Clean up after yourself
 });
 ```
 
@@ -38,7 +38,7 @@ In this example, you're replacing the real `getData` with your fake, predictable
 
 ## Mocks
 
-Mocks are like that friend who says, "Hey, I'll not only stand in for you, but also pretend I did the whole thing.” It goes a step beyond stubs. With mocks, we not only control function return values (_like_ a stub), but we can also make sure it was called with specific arguments, a specific number of times, or... _however we want_.
+Mocks are like that friend who says, "Hey, I'll not only stand in for you, but also pretend I did the whole thing.” It goes a step beyond stubs. With mocks, we not only control function return values (_like_ a stub), but we can also make sure it was called with specific arguments, a specific number of times, or… _however we want_.
 
 ### Example Time:
 
@@ -46,20 +46,20 @@ Mocks are like that friend who says, "Hey, I'll not only stand in for you, but a
 import { vi } from 'vitest';
 
 const dependency = {
-  getData: () => 'real data from server',
+	getData: () => 'real data from server',
 };
 
 test('should call getData once', () => {
-  const mock = vi.spyOn(dependency, 'getData').mockReturnValue('mocked data');
+	const mock = vi.spyOn(dependency, 'getData').mockReturnValue('mocked data');
 
-  // Act
-  dependency.getData();
+	// Act
+	dependency.getData();
 
-  // Assert
-  expect(mock).toHaveBeenCalledTimes(1); // Ensure it got called exactly once
-  expect(mock).toHaveBeenCalledWith(); // Maybe also care about arguments?
+	// Assert
+	expect(mock).toHaveBeenCalledTimes(1); // Ensure it got called exactly once
+	expect(mock).toHaveBeenCalledWith(); // Maybe also care about arguments?
 
-  mock.mockRestore(); // Same as with stubs—clean up after tests
+	mock.mockRestore(); // Same as with stubs—clean up after tests
 });
 ```
 
@@ -75,20 +75,20 @@ Ahh, spies. Spies are sneaky little things. They poke their heads in and observe
 import { vi } from 'vitest';
 
 const dependency = {
-  getData: () => 'real data from server',
+	getData: () => 'real data from server',
 };
 
 test('should spy on getData and check its behavior', () => {
-  const spy = vi.spyOn(dependency, 'getData');
+	const spy = vi.spyOn(dependency, 'getData');
 
-  // Act
-  dependency.getData();
+	// Act
+	dependency.getData();
 
-  // Assert
-  expect(spy).toHaveBeenCalledTimes(1); // Watch getData in action
-  expect(spy).toHaveBeenCalledWith(); // Check what it’s been called with
+	// Assert
+	expect(spy).toHaveBeenCalledTimes(1); // Watch getData in action
+	expect(spy).toHaveBeenCalledWith(); // Check what it’s been called with
 
-  spy.mockRestore(); // Gotta restore it back to its original self
+	spy.mockRestore(); // Gotta restore it back to its original self
 });
 ```
 

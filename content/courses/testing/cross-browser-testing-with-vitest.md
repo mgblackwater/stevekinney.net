@@ -1,6 +1,6 @@
 # 1. Cross-Browser Testing with Vitest
 
-Alright, let’s talk about cross-browser testing, because let’s be real, the odds that your app is only ever going to be used on the latest Chrome version are about as good as finishing a Friday without hitting _at least_ one merge conflict. You’ve got users out there with different setups—Safari, Firefox, Edge, maybe even IE11 (gasp!). The good news? You can catch a bunch of browser-specific issues before your users find them... with Vitest! And no, it doesn’t have to be painful.
+Alright, let’s talk about cross-browser testing, because let’s be real, the odds that your app is only ever going to be used on the latest Chrome version are about as good as finishing a Friday without hitting _at least_ one merge conflict. You’ve got users out there with different setups—Safari, Firefox, Edge, maybe even IE11 (gasp!). The good news? You can catch a bunch of browser-specific issues before your users find them… with Vitest! And no, it doesn’t have to be painful.
 
 Let’s explore a quick and practical way to set up cross-browser testing so you can handle browser quirks without rage-clicking into oblivion.
 
@@ -24,14 +24,14 @@ Next up: managing browser environments with Vitest. However, before we jump in, 
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  webServer: {
-    command: 'npm run dev',
-    port: 3000,
-  },
-  use: {
-    browserName: 'chromium', // default browser, we'll override this in our tests
-    headless: true, // no need to pop open an actual browser tab
-  },
+	webServer: {
+		command: 'npm run dev',
+		port: 3000,
+	},
+	use: {
+		browserName: 'chromium', // default browser, we'll override this in our tests
+		headless: true, // no need to pop open an actual browser tab
+	},
 });
 ```
 
@@ -47,23 +47,23 @@ First, in your test file, import what we need for automated testing:
 import { test, expect } from '@playwright/test';
 
 test.describe('Cross-browser button test', () => {
-  test('should render a button in Chromium', async ({ page }) => {
-    await page.goto('http://localhost:3000');
-    const button = await page.locator('button');
-    await expect(button).toHaveText('Submit');
-  });
+	test('should render a button in Chromium', async ({ page }) => {
+		await page.goto('http://localhost:3000');
+		const button = await page.locator('button');
+		await expect(button).toHaveText('Submit');
+	});
 
-  test('should render a button in Firefox', async ({ page }) => {
-    await page.goto('http://localhost:3000');
-    const button = await page.locator('button');
-    await expect(button).toHaveText('Submit');
-  });
+	test('should render a button in Firefox', async ({ page }) => {
+		await page.goto('http://localhost:3000');
+		const button = await page.locator('button');
+		await expect(button).toHaveText('Submit');
+	});
 
-  test('should render a button in WebKit', async ({ page }) => {
-    await page.goto('http://localhost:3000');
-    const button = await page.locator('button');
-    await expect(button).toHaveText('Submit');
-  });
+	test('should render a button in WebKit', async ({ page }) => {
+		await page.goto('http://localhost:3000');
+		const button = await page.locator('button');
+		await expect(button).toHaveText('Submit');
+	});
 });
 ```
 
@@ -94,13 +94,13 @@ If you'd rather **test multiple browsers in parallel**, you can modify the synta
 ```typescript
 test.use({ browserName: 'webkit' });
 test('webkit test', async ({ page }) => {
-  await page.goto('https://example.com');
-  // Your test here for WebKit
+	await page.goto('https://example.com');
+	// Your test here for WebKit
 });
 test.use({ browserName: 'firefox' });
 test('firefox test', async ({ page }) => {
-  await page.goto('https://example.com');
-  // Your test here for Firefox
+	await page.goto('https://example.com');
+	// Your test here for Firefox
 });
 ```
 

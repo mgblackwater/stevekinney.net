@@ -2,7 +2,7 @@
 
 Alright, let’s talk about **`toBeLessThanOrEqual`**.
 
-Picture this: you’re building a feature to check the maximum duration of songs you’ll allow in your music library (nobody wants a 10-minute guitar solo... well, _most_ people don’t). You need to write a test to ensure that all new songs added must be at or below a certain time limit. This is where **`toBeLessThanOrEqual`** comes into play!
+Picture this: you’re building a feature to check the maximum duration of songs you’ll allow in your music library (nobody wants a 10-minute guitar solo… well, _most_ people don’t). You need to write a test to ensure that all new songs added must be at or below a certain time limit. This is where **`toBeLessThanOrEqual`** comes into play!
 
 ### What does `toBeLessThanOrEqual` do?
 
@@ -27,19 +27,19 @@ Let’s take our trusty music library example. Say you've got a rule that no son
 import { describe, it, expect } from 'vitest';
 
 describe('Song duration tests', () => {
-  it('should not allow songs longer than 6 minutes', () => {
-    const maxDuration = 360; // seconds (6 minutes)
-    const songDuration = 299; // seconds (a short and snappy Green Day jam)
+	it('should not allow songs longer than 6 minutes', () => {
+		const maxDuration = 360; // seconds (6 minutes)
+		const songDuration = 299; // seconds (a short and snappy Green Day jam)
 
-    expect(songDuration).toBeLessThanOrEqual(maxDuration);
-  });
+		expect(songDuration).toBeLessThanOrEqual(maxDuration);
+	});
 
-  it('should reject songs longer than 6 minutes', () => {
-    const maxDuration = 360; // seconds (6 minutes)
-    const epicSongDuration = 401; // sounds like someone’s trying to add *November Rain*, huh?
+	it('should reject songs longer than 6 minutes', () => {
+		const maxDuration = 360; // seconds (6 minutes)
+		const epicSongDuration = 401; // sounds like someone’s trying to add *November Rain*, huh?
 
-    expect(epicSongDuration).not.toBeLessThanOrEqual(maxDuration);
-  });
+		expect(epicSongDuration).not.toBeLessThanOrEqual(maxDuration);
+	});
 });
 ```
 

@@ -20,7 +20,7 @@ Imagine you’ve got a function that plays a song by calling your `playSong()` f
 
 ```javascript
 function handlePlayButtonClick(playSong) {
-  playSong();
+	playSong();
 }
 ```
 
@@ -35,13 +35,13 @@ import { describe, it, expect, vi } from 'vitest';
 import { handlePlayButtonClick } from './musicPlayer'; // This is where our function lives
 
 describe('handlePlayButtonClick', () => {
-  it('calls playSong when the play button is clicked', () => {
-    const mockPlaySong = vi.fn(); // Create a mock function
+	it('calls playSong when the play button is clicked', () => {
+		const mockPlaySong = vi.fn(); // Create a mock function
 
-    handlePlayButtonClick(mockPlaySong);
+		handlePlayButtonClick(mockPlaySong);
 
-    expect(mockPlaySong).toHaveBeenCalled(); // Check if it was called at least once
-  });
+		expect(mockPlaySong).toHaveBeenCalled(); // Check if it was called at least once
+	});
 });
 ```
 
@@ -57,4 +57,4 @@ describe('handlePlayButtonClick', () => {
 - **When should you use it?** When you need to verify that a specific function was actually called in the course of running your code.
 - **Why’s it handy?** Because _what's more frustrating than a function living its best life in production, only to realize later it wasn't even called during execution?_
 
-With Vitest’s `toHaveBeenCalled`, you can rest easy knowing that, yes, your mocked functions are getting invoked exactly as you expect... unless they aren’t, in which case, you’ve now got some debugging to do. 😅
+With Vitest’s `toHaveBeenCalled`, you can rest easy knowing that, yes, your mocked functions are getting invoked exactly as you expect… unless they aren’t, in which case, you’ve now got some debugging to do. 😅

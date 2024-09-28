@@ -4,7 +4,7 @@ Alright, let's talk about **`toBeNaN`**, one of those handy matchers you can use
 
 ## What Does `toBeNaN` Do?
 
-In Vitest, `toBeNaN` is a matcher that checks whether a value is **precisely** `NaN`. So yeah, we're not just checking whether the value is _not a number_, but that it's actually the special, official `NaN` type in JavaScript—because JavaScript is, y'know... JavaScript. ⚙️
+In Vitest, `toBeNaN` is a matcher that checks whether a value is **precisely** `NaN`. So yeah, we're not just checking whether the value is _not a number_, but that it's actually the special, official `NaN` type in JavaScript—because JavaScript is, y'know… JavaScript. ⚙️
 
 ## When Would You Use It?
 
@@ -18,7 +18,7 @@ Here’s a function that divides the number of albums by the number of songs. Do
 
 ```javascript
 function calculateAlbumsPerSong(albums, songs) {
-  return albums / songs;
+	return albums / songs;
 }
 ```
 
@@ -31,12 +31,12 @@ import { expect, test } from 'vitest';
 import { calculateAlbumsPerSong } from './calculateAlbumsPerSong';
 
 test('returns NaN when songs is 0', () => {
-  const albums = 10;
-  const songs = 0;
+	const albums = 10;
+	const songs = 0;
 
-  const result = calculateAlbumsPerSong(albums, songs);
+	const result = calculateAlbumsPerSong(albums, songs);
 
-  expect(result).toBeNaN();
+	expect(result).toBeNaN();
 });
 ```
 
@@ -44,7 +44,7 @@ Here, we check to ensure that when there are zero songs (`songs = 0`), the divis
 
 ## Why Not Use `toBe`?
 
-Great question! You might think you could compare `result` to `NaN` directly, like `expect(result).toBe(NaN);`, but here’s where JavaScript decides to be… _special_. `NaN` doesn’t equal `NaN`, because... reasons (that's a rabbit hole for another day).
+Great question! You might think you could compare `result` to `NaN` directly, like `expect(result).toBe(NaN);`, but here’s where JavaScript decides to be… _special_. `NaN` doesn’t equal `NaN`, because… reasons (that's a rabbit hole for another day).
 
 So instead, `toBeNaN` opens the backdoor, checks with JavaScript, and says: _“Yes, this is actually NaN, weird as that may seem.”_
 

@@ -1,6 +1,6 @@
 # `expect.rejects`
 
-Alright, so the `rejects` method is your go-to tool when you're dealing with promises that are expected to fail—you know, your classic async "everything's fine... just kidding" situation.
+Alright, so the `rejects` method is your go-to tool when you're dealing with promises that are expected to fail—you know, your classic async "everything's fine… just kidding" situation.
 
 Think about it: sometimes you write functions that return promises, and the thing you explicitly want to test is the behavior when things go wrong. Like, maybe a file doesn't exist, or an API throws a 404, or you requested **The Battle of Los Angeles**, but the system finds some derivative fake album or something. Whatever the case, stuff happens, and you want to make sure your code handles it properly.
 
@@ -16,19 +16,19 @@ Let’s say we’ve got a function `findAlbumById` that searches for albums in o
 
 ```javascript
 function findAlbumById(id) {
-  const albums = {
-    1: { id: 1, title: 'Dookie', artist: 'Green Day' },
-    2: { id: 2, title: 'American Idiot', artist: 'Green Day' },
-  };
+	const albums = {
+		1: { id: 1, title: 'Dookie', artist: 'Green Day' },
+		2: { id: 2, title: 'American Idiot', artist: 'Green Day' },
+	};
 
-  return new Promise((resolve, reject) => {
-    const album = albums[id];
-    if (album) {
-      resolve(album);
-    } else {
-      reject(new Error('Album not found'));
-    }
-  });
+	return new Promise((resolve, reject) => {
+		const album = albums[id];
+		if (album) {
+			resolve(album);
+		} else {
+			reject(new Error('Album not found'));
+		}
+	});
 }
 ```
 
@@ -38,7 +38,7 @@ Now, let’s write a test to **mirror your disappointment** when the album isn�
 import { expect, test } from 'vitest';
 
 test('findAlbumById rejects when the album is not found', async () => {
-  await expect(findAlbumById('999')).rejects.toThrow('Album not found');
+	await expect(findAlbumById('999')).rejects.toThrow('Album not found');
 });
 ```
 

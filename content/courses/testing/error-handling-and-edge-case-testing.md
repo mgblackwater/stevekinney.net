@@ -17,14 +17,14 @@ Let’s dive into an example. Imagine you’ve got a function that converts stri
 ```js
 // utility.js
 export function convertStringToNumber(str) {
-  if (typeof str !== 'string' || isNaN(Number(str))) {
-    throw new Error('Invalid input');
-  }
-  return Number(str);
+	if (typeof str !== 'string' || isNaN(Number(str))) {
+		throw new Error('Invalid input');
+	}
+	return Number(str);
 }
 ```
 
-We’ve got a simple function here that only wants to deal with _valid_ string numbers. But what if a user types `"hello"` or passes `undefined` because... well, users? Errors abound! Let’s make sure our function throws those errors in a controlled way.
+We’ve got a simple function here that only wants to deal with _valid_ string numbers. But what if a user types `"hello"` or passes `undefined` because… well, users? Errors abound! Let’s make sure our function throws those errors in a controlled way.
 
 ### 4. Writing Error Tests with Vitest
 
@@ -35,20 +35,20 @@ import { describe, it, expect } from 'vitest';
 import { convertStringToNumber } from './utility';
 
 describe('convertStringToNumber', () => {
-  it('should convert valid string numbers to actual numbers', () => {
-    const number = convertStringToNumber('42');
-    expect(number).toBe(42);
-  });
+	it('should convert valid string numbers to actual numbers', () => {
+		const number = convertStringToNumber('42');
+		expect(number).toBe(42);
+	});
 
-  it('should throw an error for invalid string input', () => {
-    expect(() => convertStringToNumber('hello')).toThrow('Invalid input');
-  });
+	it('should throw an error for invalid string input', () => {
+		expect(() => convertStringToNumber('hello')).toThrow('Invalid input');
+	});
 
-  it('should throw an error for non-string values', () => {
-    expect(() => convertStringToNumber(null)).toThrow('Invalid input');
-    expect(() => convertStringToNumber(undefined)).toThrow('Invalid input');
-    expect(() => convertStringToNumber({})).toThrow('Invalid input');
-  });
+	it('should throw an error for non-string values', () => {
+		expect(() => convertStringToNumber(null)).toThrow('Invalid input');
+		expect(() => convertStringToNumber(undefined)).toThrow('Invalid input');
+		expect(() => convertStringToNumber({})).toThrow('Invalid input');
+	});
 });
 ```
 
@@ -65,13 +65,13 @@ For example, what happens if the string is an empty string? Or, what about a str
 
 ```js
 describe('Edge cases for convertStringToNumber', () => {
-  it('should throw an error for empty strings', () => {
-    expect(() => convertStringToNumber('')).toThrow('Invalid input');
-  });
+	it('should throw an error for empty strings', () => {
+		expect(() => convertStringToNumber('')).toThrow('Invalid input');
+	});
 
-  it('should throw an error for strings with only spaces', () => {
-    expect(() => convertStringToNumber('    ')).toThrow('Invalid input');
-  });
+	it('should throw an error for strings with only spaces', () => {
+		expect(() => convertStringToNumber('    ')).toThrow('Invalid input');
+	});
 });
 ```
 
@@ -83,13 +83,13 @@ Okay, so we’ve been throwing generic errors like “Invalid input” all aroun
 
 ```js
 export function convertStringToNumber(str) {
-  if (str === '') {
-    throw new Error('Input cannot be empty');
-  }
-  if (typeof str !== 'string' || isNaN(Number(str))) {
-    throw new Error('Input must be a valid string number');
-  }
-  return Number(str);
+	if (str === '') {
+		throw new Error('Input cannot be empty');
+	}
+	if (typeof str !== 'string' || isNaN(Number(str))) {
+		throw new Error('Input must be a valid string number');
+	}
+	return Number(str);
 }
 ```
 
@@ -97,7 +97,7 @@ Then, your corresponding test:
 
 ```js
 it('should throw a specific error for empty strings', () => {
-  expect(() => convertStringToNumber('')).toThrow('Input cannot be empty');
+	expect(() => convertStringToNumber('')).toThrow('Input cannot be empty');
 });
 ```
 

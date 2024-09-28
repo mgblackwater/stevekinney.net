@@ -20,12 +20,12 @@ const btn = document.getElementById('incrementBtn');
 const counterDiv = document.getElementById('counter');
 
 btn.addEventListener('click', () => {
-  count++;
-  counterDiv.textContent = count;
+	count++;
+	counterDiv.textContent = count;
 });
 ```
 
-Now, that seems to work just fine... until it doesn’t. Let’s drop some tests in there using Vitest, so you can sleep easy at night. Sound good? Cool. Let’s go.
+Now, that seems to work just fine… until it doesn’t. Let’s drop some tests in there using Vitest, so you can sleep easy at night. Sound good? Cool. Let’s go.
 
 ## 3. Writing the Test
 
@@ -58,22 +58,22 @@ const btn = document.getElementById('incrementBtn');
 const counterDiv = document.getElementById('counter');
 
 btn.addEventListener('click', () => {
-  count++;
-  counterDiv.textContent = count;
+	count++;
+	counterDiv.textContent = count;
 });
 
 describe('Button Click functionality', () => {
-  it('increments the counter on click', () => {
-    // Grab the button and div that will be changing
-    const btn = document.getElementById('incrementBtn');
-    const counterDiv = document.getElementById('counter');
+	it('increments the counter on click', () => {
+		// Grab the button and div that will be changing
+		const btn = document.getElementById('incrementBtn');
+		const counterDiv = document.getElementById('counter');
 
-    // Simulate the click event
-    btn.click();
+		// Simulate the click event
+		btn.click();
 
-    // Our expectation: the counter should increment to 1
-    expect(counterDiv.textContent).toBe('1');
-  });
+		// Our expectation: the counter should increment to 1
+		expect(counterDiv.textContent).toBe('1');
+	});
 });
 ```
 
@@ -91,16 +91,16 @@ Let’s one-up our previous test and make sure this actually handles multiple cl
 
 ```javascript
 it('increments the counter correctly on multiple clicks', () => {
-  const btn = document.getElementById('incrementBtn');
-  const counterDiv = document.getElementById('counter');
+	const btn = document.getElementById('incrementBtn');
+	const counterDiv = document.getElementById('counter');
 
-  // Simulate three clicks
-  btn.click();
-  btn.click();
-  btn.click();
+	// Simulate three clicks
+	btn.click();
+	btn.click();
+	btn.click();
 
-  // Check the value of the counter
-  expect(counterDiv.textContent).toBe('3');
+	// Check the value of the counter
+	expect(counterDiv.textContent).toBe('3');
 });
 ```
 

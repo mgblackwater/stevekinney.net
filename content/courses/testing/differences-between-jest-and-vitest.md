@@ -6,7 +6,7 @@ Ah yes, Jest—probably one of the first names to pop up when someone says “Ja
 
 ### Jest
 
-Jest has been around the block. Built by Facebook, it's perfect for testing React apps (and others!) and has a reputation for giving you everything you need out of the box—mocking, snapshots, you name it. But here’s the thing. Jest can sometimes feel a little... _slow_. Not glacial slow, but slow enough that you’re going to start wondering if your code has some existential crisis every time the test suite runs. It uses the Node.js runtime exclusively, which is great for stability, but can limit its execution speed compared to other approaches.
+Jest has been around the block. Built by Facebook, it's perfect for testing React apps (and others!) and has a reputation for giving you everything you need out of the box—mocking, snapshots, you name it. But here’s the thing. Jest can sometimes feel a little… _slow_. Not glacial slow, but slow enough that you’re going to start wondering if your code has some existential crisis every time the test suite runs. It uses the Node.js runtime exclusively, which is great for stability, but can limit its execution speed compared to other approaches.
 
 ### Vitest
 
@@ -18,7 +18,7 @@ Vitest? Built on **Vite**—yes, that lightning-fast bundler—and this speed ad
 
 ### Jest
 
-Setting up Jest isn’t the worst thing you’ll face as a dev (ever try to configure Webpack from scratch? Yeah... makes Jest _look_ like a vacation). It does come batteries included, so 90% of the time, you install it, and boom—you’ve got a functional test suite.
+Setting up Jest isn’t the worst thing you’ll face as a dev (ever try to configure Webpack from scratch? Yeah… makes Jest _look_ like a vacation). It does come batteries included, so 90% of the time, you install it, and boom—you’ve got a functional test suite.
 
 But—and it’s a big but—the Jest API array of features can sometimes tip over into the "whoa, okay, let me get back to you in a week" territory. If you're tackling newer features like parallel testing or even type hints sometimes, suddenly you're knee-deep in documentation.
 
@@ -26,7 +26,7 @@ But—and it’s a big but—the Jest API array of features can sometimes tip ov
 
 Vitest, by comparison, is a smoother onboarding if you're _already_ in the Vite ecosystem. The same way Jest “just works” for React, Vitest “just works” for Vite-powered projects. Configuration’s simple, the syntax is almost identical to Jest (so anyone making the switch won’t feel like they’ve been dropped into a foreign country), and it’s very lightweight in terms of setup.
 
-Set up Vite already? Then you’re like 90% of the way there. It’s like Vitest sidled up to you at the coffee shop and quietly said: “Hey... no big deal, but... wanna test this?"
+Set up Vite already? Then you’re like 90% of the way there. It’s like Vitest sidled up to you at the coffee shop and quietly said: “Hey… no big deal, but… wanna test this?"
 
 ---
 
@@ -45,7 +45,7 @@ And boom, you’ve got a mock. It's a favorite feature for many since mocking of
 
 ### Vitest
 
-Vitest can also mock, but it’s not quite at Jest’s level... yet. While it supports mocking modules, functions, and such, some of the more complex use cases, like auto-mocking, are still catching up. However, it does integrate with **Sinon.js** easily and can handle most commonly needed mocks without breaking a sweat.
+Vitest can also mock, but it’s not quite at Jest’s level… yet. While it supports mocking modules, functions, and such, some of the more complex use cases, like auto-mocking, are still catching up. However, it does integrate with **Sinon.js** easily and can handle most commonly needed mocks without breaking a sweat.
 
 ```javascript
 import { vi } from 'vitest';

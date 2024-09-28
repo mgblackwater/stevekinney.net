@@ -18,10 +18,10 @@ So, let’s make sure Vitest ain’t hanging around looking for changes when we 
 
 ```json
 {
-  "scripts": {
-    "test": "vitest",
-    "test:ci": "vitest run"
-  }
+	"scripts": {
+		"test": "vitest",
+		"test:ci": "vitest run"
+	}
 }
 ```
 
@@ -83,11 +83,11 @@ And then update your `vitest.config.js` with:
 
 ```js
 export default {
-  test: {
-    coverage: {
-      provider: 'c8',
-    },
-  },
+	test: {
+		coverage: {
+			provider: 'c8',
+		},
+	},
 };
 ```
 
@@ -101,6 +101,6 @@ Now your CI will also collect and report coverage information. One step closer t
 
 ## 5. Conclusion
 
-And just like that, you’ve injected a bit more confidence into your deploys. Good tests run automatically and give you feedback before your mistakes hit production. Plus, you'll look super pro in front of your team (or at least you won’t be the one causing the 3 A.M. outage... again).
+And just like that, you’ve injected a bit more confidence into your deploys. Good tests run automatically and give you feedback before your mistakes hit production. Plus, you'll look super pro in front of your team (or at least you won’t be the one causing the 3 A.M. outage… again).
 
 There you have it: Vitest happily playing nice with a CI/CD pipeline via GitHub Actions. You can rest easy knowing that a robot watchdog has your back, ready to block anything that’s not up to testing snuff.

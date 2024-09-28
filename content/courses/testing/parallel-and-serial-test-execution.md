@@ -1,6 +1,6 @@
 # 1. Parallel and Serial Test Execution in Vitest
 
-Alright, let’s talk about test execution! You’ve probably been there... staring at a terminal, watching tests crawl through one at a time, making you question your life choices. But there's good news—Vitest can run your tests in parallel or serially. And each has its place, depending on what you're testing. Let’s break it down.
+Alright, let’s talk about test execution! You’ve probably been there… staring at a terminal, watching tests crawl through one at a time, making you question your life choices. But there's good news—Vitest can run your tests in parallel or serially. And each has its place, depending on what you're testing. Let’s break it down.
 
 ## 2. Parallel Test Execution
 
@@ -49,10 +49,10 @@ For example, here’s what a serial test might look like:
 import { test, expect } from 'vitest';
 
 test.serial('should do one thing after another', () => {
-  // Your serial test code here
-  const actual = 1 + 1;
-  const expected = 2;
-  expect(actual).toBe(expected);
+	// Your serial test code here
+	const actual = 1 + 1;
+	const expected = 2;
+	expect(actual).toBe(expected);
 });
 ```
 
@@ -73,4 +73,4 @@ Let's solve the world’s problems (or at least a few testing-related ones):
 
 Vitest has your back when it comes to both parallel and serial execution. Which one should you pick? Well, parallel should be your go-to. It’s fast, it’s efficient, and it keeps your feedback loop nice and tight. But don’t forget you’ve got that sequential ace in your pocket for those tricky tests where order matters.
 
-Try `vitest --run` if things aren’t working quite right, and remember to laugh when you realize it’s all because multiple tests are sharing that one pesky variable. Ah, JavaScript... always keeping us on our toes.
+Try `vitest --run` if things aren’t working quite right, and remember to laugh when you realize it’s all because multiple tests are sharing that one pesky variable. Ah, JavaScript… always keeping us on our toes.

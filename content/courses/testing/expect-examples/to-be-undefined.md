@@ -4,7 +4,7 @@ Alright, let's dive into **expect(...).toBeUndefined**.
 
 ## What It Does
 
-_expect(...).toBeUndefined_ is pretty straightforward. Surprise, surprise... it checks if the value you’re passing is, in fact, `undefined`. If your value is `undefined`, the test is going to pass. If it’s anything else—like `null`, `0`, or an empty string (even though those sorta feel like "nothing" too)—the test is going to throw some red text at you, because nope, that's _not_ `undefined`.
+_expect(...).toBeUndefined_ is pretty straightforward. Surprise, surprise… it checks if the value you’re passing is, in fact, `undefined`. If your value is `undefined`, the test is going to pass. If it’s anything else—like `null`, `0`, or an empty string (even though those sorta feel like "nothing" too)—the test is going to throw some red text at you, because nope, that's _not_ `undefined`.
 
 ## When You’d Use It
 
@@ -20,25 +20,25 @@ Let’s say we’re adding albums to our music library and we want to check if a
 import { describe, it, expect } from 'vitest';
 
 const createAlbum = ({ title, artist, year, description }) => {
-  return {
-    title,
-    artist,
-    year,
-    description,
-  };
+	return {
+		title,
+		artist,
+		year,
+		description,
+	};
 };
 
 describe('createAlbum', () => {
-  it('should have `undefined` as description when no description is provided', () => {
-    // Create an album but forget to pass the description field
-    const album = createAlbum({
-      title: 'Dookie',
-      artist: 'Green Day',
-      year: 1994,
-    });
+	it('should have `undefined` as description when no description is provided', () => {
+		// Create an album but forget to pass the description field
+		const album = createAlbum({
+			title: 'Dookie',
+			artist: 'Green Day',
+			year: 1994,
+		});
 
-    expect(album.description).toBeUndefined();
-  });
+		expect(album.description).toBeUndefined();
+	});
 });
 ```
 

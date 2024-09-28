@@ -4,7 +4,7 @@ Alright, here's the deal: `toHaveBeenCalledTimes` is a matcher in Vitest that, a
 
 ## Why would you use it?
 
-You’d grab this matcher when you're dealing with functions you think are being called more times (or fewer times) than they should. Maybe you set up a `click` event listener and expect it to get hit exactly once, but the button's getting mashed, and it's triggering it... **seven times**. 🤦
+You’d grab this matcher when you're dealing with functions you think are being called more times (or fewer times) than they should. Maybe you set up a `click` event listener and expect it to get hit exactly once, but the button's getting mashed, and it's triggering it… **seven times**. 🤦
 
 This matcher helps you **assert** whether a mock function was called the right number of times, like a bouncer counting how many people came to the party—but instead of a party, it's just stressed out developers and broken promises.
 
@@ -21,9 +21,9 @@ Let’s stick with our ongoing "Mid-2000s Punk Rock Music Library Application." 
 const fetchAlbums = jest.fn();
 
 function displayAlbums(artist) {
-  if (artist === 'Green Day') {
-    fetchAlbums();
-  }
+	if (artist === 'Green Day') {
+		fetchAlbums();
+	}
 }
 ```
 
@@ -33,14 +33,14 @@ Now, let’s write the test for that:
 import { describe, it, expect, vi } from 'vitest';
 
 describe('displayAlbums function', () => {
-  it('should call fetchAlbums once when artist is Green Day', () => {
-    const fetchAlbums = vi.fn();
+	it('should call fetchAlbums once when artist is Green Day', () => {
+		const fetchAlbums = vi.fn();
 
-    // We hit ‘em with the Green Day and make sure the albums are fetched!
-    displayAlbums('Green Day');
+		// We hit ‘em with the Green Day and make sure the albums are fetched!
+		displayAlbums('Green Day');
 
-    expect(fetchAlbums).toHaveBeenCalledTimes(1);
-  });
+		expect(fetchAlbums).toHaveBeenCalledTimes(1);
+	});
 });
 ```
 

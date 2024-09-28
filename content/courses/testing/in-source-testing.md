@@ -1,8 +1,8 @@
 # In-Source Testing in Vitest
 
-Picture this: You’re zipping along, writing your brand-new feature. Everything’s great, maybe even sipping a fresh cup of coffee. And then it hits you—**you forgot to write unit tests**. But the thought of context-switching, creating dedicated test files, setting up more boilerplate... _ugh_. It’s at these moments that the concept of **in-source testing** shines.
+Picture this: You’re zipping along, writing your brand-new feature. Everything’s great, maybe even sipping a fresh cup of coffee. And then it hits you—**you forgot to write unit tests**. But the thought of context-switching, creating dedicated test files, setting up more boilerplate… _ugh_. It’s at these moments that the concept of **in-source testing** shines.
 
-Instead of creating a separate test for every little file in your project, what if you could... test directly **in the source file itself**? Wild? Maybe. Convenient? Oh, absolutely. Vitest supports in-source testing, which can be your secret weapon for rapid experimentation during development. It’s not necessarily what you'd run in production, but for quick scaffolding, it’s gold.
+Instead of creating a separate test for every little file in your project, what if you could… test directly **in the source file itself**? Wild? Maybe. Convenient? Oh, absolutely. Vitest supports in-source testing, which can be your secret weapon for rapid experimentation during development. It’s not necessarily what you'd run in production, but for quick scaffolding, it’s gold.
 
 ## Why Use In-Source Testing?
 
@@ -18,7 +18,7 @@ Imagine you’ve got this tiny utility function that adds two numbers, `add.js`:
 
 ```js
 export function add(a, b) {
-  return a + b;
+	return a + b;
 }
 ```
 
@@ -29,20 +29,20 @@ import { describe, it, expect } from 'vitest';
 
 // Here's your function:
 export function add(a, b) {
-  return a + b;
+	return a + b;
 }
 
-// And now... here's your in-source test!
+// And now… here's your in-source test!
 if (import.meta.vitest) {
-  describe('add', () => {
-    it('adds two numbers correctly', () => {
-      expect(add(2, 3)).toBe(5);
-    });
+	describe('add', () => {
+		it('adds two numbers correctly', () => {
+			expect(add(2, 3)).toBe(5);
+		});
 
-    it('handles negative numbers', () => {
-      expect(add(-2, -3)).toBe(-5);
-    });
-  });
+		it('handles negative numbers', () => {
+			expect(add(-2, -3)).toBe(-5);
+		});
+	});
 }
 ```
 

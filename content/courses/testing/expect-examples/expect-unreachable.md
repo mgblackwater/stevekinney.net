@@ -1,6 +1,6 @@
 # expect.unreachable
 
-Alright, let's be honest. Sometimes code gets a little... weird. You’ve got code paths that **should absolutely never, ever, under any circumstances run**, right? Good news: `expect.unreachable` is your buddy for those cases.
+Alright, let's be honest. Sometimes code gets a little… weird. You’ve got code paths that **should absolutely never, ever, under any circumstances run**, right? Good news: `expect.unreachable` is your buddy for those cases.
 
 You throw it in when you're like, "Yo, if we hit this line of code, something went seriously wrong." It’s kind of like raising your hand in the middle of debugging and saying, _"This shouldn't have happened."_
 
@@ -21,15 +21,15 @@ Let's say we're working on our beloved music library app, and we’re returning 
 
 ```js
 function getSongFormat(song) {
-  switch (song.format) {
-    case 'mp3':
-      return 'MP3 Format';
-    case 'flac':
-      return 'FLAC Format';
-    default:
-      // We should NEVER hit this unless a new unsupported format was accidentally passed
-      expect.unreachable();
-  }
+	switch (song.format) {
+		case 'mp3':
+			return 'MP3 Format';
+		case 'flac':
+			return 'FLAC Format';
+		default:
+			// We should NEVER hit this unless a new unsupported format was accidentally passed
+			expect.unreachable();
+	}
 }
 ```
 
@@ -41,10 +41,10 @@ In this example, if for some reason we pass an unsupported format like `'midi'` 
 import { expect, test } from 'vitest';
 
 test('getSongFormat should not fall into unsupported formats', () => {
-  const song = { title: 'Basket Case', format: 'midi' };
+	const song = { title: 'Basket Case', format: 'midi' };
 
-  // We're testing intentional failure here
-  expect(() => getSongFormat(song)).toThrow('Unreachable');
+	// We're testing intentional failure here
+	expect(() => getSongFormat(song)).toThrow('Unreachable');
 });
 ```
 

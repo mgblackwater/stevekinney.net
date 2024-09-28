@@ -1,6 +1,6 @@
 # Understanding `toBeDefined` in Vitest
 
-Alright, so you’re looking at `toBeDefined`. This one’s pretty straightforward but can come in clutch when you're trying to make sure that something exists, as in it’s not `undefined`. Picture this: You’ve got an object, a variable, or a function return value that _might_ be set... and you want to verify it’s actually defined.
+Alright, so you’re looking at `toBeDefined`. This one’s pretty straightforward but can come in clutch when you're trying to make sure that something exists, as in it’s not `undefined`. Picture this: You’ve got an object, a variable, or a function return value that _might_ be set… and you want to verify it’s actually defined.
 
 ## What does `toBeDefined` do?
 
@@ -18,16 +18,16 @@ Let’s pretend you’re working on a feature that allows users to add their fav
 import { describe, it, expect } from 'vitest';
 
 function addArtist(artistName) {
-  return {
-    name: artistName,
-  };
+	return {
+		name: artistName,
+	};
 }
 
 describe('addArtist', () => {
-  it('should define the name of the artist', () => {
-    const artist = addArtist('Green Day');
-    expect(artist.name).toBeDefined();
-  });
+	it('should define the name of the artist', () => {
+		const artist = addArtist('Green Day');
+		expect(artist.name).toBeDefined();
+	});
 });
 ```
 
@@ -39,4 +39,4 @@ Imagine you forgot to pass a value into `addArtist`, or there was a bug and the 
 
 ---
 
-And that’s `toBeDefined` in a nutshell! You’d use it when you need to verify that something... well, exists—but you don’t care exactly what it is. Just something that isn't `undefined`.
+And that’s `toBeDefined` in a nutshell! You’d use it when you need to verify that something… well, exists—but you don’t care exactly what it is. Just something that isn't `undefined`.

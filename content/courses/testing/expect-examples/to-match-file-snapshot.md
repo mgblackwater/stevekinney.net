@@ -16,19 +16,19 @@ import { promises as fs } from 'fs';
 import { resolve } from 'path';
 
 test('artist profile matches snapshot', async () => {
-  const artistProfile = {
-    name: 'Green Day',
-    genre: 'Punk Rock',
-    albums: ['Dookie', 'American Idiot', 'Nimrod'],
-  };
+	const artistProfile = {
+		name: 'Green Day',
+		genre: 'Punk Rock',
+		albums: ['Dookie', 'American Idiot', 'Nimrod'],
+	};
 
-  const filePath = resolve('artist-profile.json');
+	const filePath = resolve('artist-profile.json');
 
-  // Write it to a file (hypothetically done elsewhere in the app)
-  await fs.writeFile(filePath, JSON.stringify(artistProfile, null, 2));
+	// Write it to a file (hypothetically done elsewhere in the app)
+	await fs.writeFile(filePath, JSON.stringify(artistProfile, null, 2));
 
-  // Now, check if the file we just wrote matches the saved snapshot
-  expect(filePath).toMatchFileSnapshot();
+	// Now, check if the file we just wrote matches the saved snapshot
+	expect(filePath).toMatchFileSnapshot();
 });
 ```
 
@@ -40,4 +40,4 @@ Here’s what happens:
 
 This is great for **regression** testing when you want to lock down the structure and content of certain outputs (like files!) and ensure that changes only happen when you intend them.
 
-So next time you’re testing randomly generated files, big ol’ JSON objects, templates, or... anything where exactness matters, give `toMatchFileSnapshot` a go!
+So next time you’re testing randomly generated files, big ol’ JSON objects, templates, or… anything where exactness matters, give `toMatchFileSnapshot` a go!

@@ -1,6 +1,6 @@
 # expect.addEqualityTesters
 
-Okay, so let’s talk about **`expect.addEqualityTesters`** in Vitest, and when you might use it—though, to be honest, you've probably never had the privilege of needing it... yet.
+Okay, so let’s talk about **`expect.addEqualityTesters`** in Vitest, and when you might use it—though, to be honest, you've probably never had the privilege of needing it… yet.
 
 ## What does it do?
 
@@ -10,7 +10,7 @@ In testing, sometimes the default equality checks just don’t cut it. Like, if 
 
 ## When would you use it?
 
-Imagine you're writing tests for some complex object like... I don’t know... guitars in your music library application! Let’s say two guitars have the same "shape" but different serial numbers—technically they’re the same guitar model, we don’t care about the serials for our tests. Normally, Vitest’s `expect` would fail since the objects are technically not 100% equal. This is where you can tell `expect` to treat them equally based on specific properties.
+Imagine you're writing tests for some complex object like… I don’t know… guitars in your music library application! Let’s say two guitars have the same "shape" but different serial numbers—technically they’re the same guitar model, we don’t care about the serials for our tests. Normally, Vitest’s `expect` would fail since the objects are technically not 100% equal. This is where you can tell `expect` to treat them equally based on specific properties.
 
 Another scenario is when you just need to compare something that's **really** specific—like, I don’t know how often this happens in your life—but say you’ve got some deep recursive structure or maybe a class that doesn't play nicely with JavaScript’s default comparisons.
 
@@ -21,28 +21,28 @@ Here’s an example in your simple music library: Let’s say you have a custom 
 ```javascript
 // Let's say we have a Song class
 class Song {
-  constructor(title, artist, id) {
-    this.title = title;
-    this.artist = artist;
-    this.id = id; // random ID, not important for our tests
-  }
+	constructor(title, artist, id) {
+		this.title = title;
+		this.artist = artist;
+		this.id = id; // random ID, not important for our tests
+	}
 }
 
 // Custom equality tester that ignores the 'id' field
 expect.addEqualityTesters([
-  (first, second) => {
-    if (first instanceof Song && second instanceof Song) {
-      return first.title === second.title && first.artist === second.artist;
-    }
-  },
+	(first, second) => {
+		if (first instanceof Song && second instanceof Song) {
+			return first.title === second.title && first.artist === second.artist;
+		}
+	},
 ]);
 
 // Now let's test!
 test('should compare songs correctly', () => {
-  const song1 = new Song('Basket Case', 'Green Day', 1); // Who doesn't love this one?!
-  const song2 = new Song('Basket Case', 'Green Day', 2); // Different ID, same song otherwise
+	const song1 = new Song('Basket Case', 'Green Day', 1); // Who doesn't love this one?!
+	const song2 = new Song('Basket Case', 'Green Day', 2); // Different ID, same song otherwise
 
-  expect(song1).toEqual(song2); // Should pass because ID is ignored!
+	expect(song1).toEqual(song2); // Should pass because ID is ignored!
 });
 ```
 

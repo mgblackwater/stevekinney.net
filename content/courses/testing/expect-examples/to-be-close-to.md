@@ -1,6 +1,6 @@
 # toBeCloseTo in Vitest
 
-Alright, so here's the deal with `toBeCloseTo`. It's your go-to matcher when you're dealing with numbers that are close but not _exactly_ the same. In the wonderful world of floating-point math, precision can sometimes be... well, a little fuzzy. You know, when you expect `1.2 + 1.2` to give you `2.4`, but JavaScript might hand you something wild like `2.3999999999999995`. Yeah, _that_ nonsense. That's when you'd use `toBeCloseTo`.
+Alright, so here's the deal with `toBeCloseTo`. It's your go-to matcher when you're dealing with numbers that are close but not _exactly_ the same. In the wonderful world of floating-point math, precision can sometimes be… well, a little fuzzy. You know, when you expect `1.2 + 1.2` to give you `2.4`, but JavaScript might hand you something wild like `2.3999999999999995`. Yeah, _that_ nonsense. That's when you'd use `toBeCloseTo`.
 
 The `toBeCloseTo` matcher lets you assert that two numbers are nearly equal, within a tiny margin of error, instead of expecting them to be identical. It becomes particularly useful for those situations where rounding errors pop up, or even when you’re dealing with all sorts of math-heavy code like calculating percentages, measurements, or album durations that rely on floating-point math.
 
@@ -12,12 +12,12 @@ Let’s say we’ve got our little music app that calculates the length of an al
 import { expect, test } from 'vitest';
 
 test('should correctly sum album duration', () => {
-  const song1 = 3.15; // in minutes
-  const song2 = 4.25;
-  const totalDuration = song1 + song2;
+	const song1 = 3.15; // in minutes
+	const song2 = 4.25;
+	const totalDuration = song1 + song2;
 
-  // We expect the total duration to be close to 7.4
-  expect(totalDuration).toBeCloseTo(7.4, 2); // 2 decimal places precision
+	// We expect the total duration to be close to 7.4
+	expect(totalDuration).toBeCloseTo(7.4, 2); // 2 decimal places precision
 });
 ```
 

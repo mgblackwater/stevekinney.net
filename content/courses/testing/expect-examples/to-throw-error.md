@@ -1,6 +1,6 @@
 # The `toThrowError` in Vitest
 
-Ahh, **`toThrowError`**, the superhero assertion when you're dealing with functions that are a little... temperamental. You know those functions I’m talking about: the ones that don’t just return nice and friendly values, but _explode_, throwing errors in your face when things go wrong. Sometimes, they throw an error _on purpose_. And you kinda want to make sure they do that, y'know, for science... or sanity. That’s where **`toThrowError`** comes in.
+Ahh, **`toThrowError`**, the superhero assertion when you're dealing with functions that are a little… temperamental. You know those functions I’m talking about: the ones that don’t just return nice and friendly values, but _explode_, throwing errors in your face when things go wrong. Sometimes, they throw an error _on purpose_. And you kinda want to make sure they do that, y'know, for science… or sanity. That’s where **`toThrowError`** comes in.
 
 ## What it Does
 
@@ -17,11 +17,11 @@ OK, let’s say we’ve got our _naïve music library app_ that we'll nurture in
 ```javascript
 // musicLibrary.js
 export function findArtistByName(artistName) {
-  if (!artistName) {
-    throw new Error('Artist name is required');
-  }
-  // logic to find artist...
-  return { name: artistName, albums: [] };
+	if (!artistName) {
+		throw new Error('Artist name is required');
+	}
+	// logic to find artist...
+	return { name: artistName, albums: [] };
 }
 ```
 
@@ -32,9 +32,9 @@ What we’re doing here is making sure that if the `artistName` is falsy (i.e., 
 import { findArtistByName } from './musicLibrary';
 
 describe('musicLibrary', () => {
-  it('throws an error if artist name is missing', () => {
-    expect(() => findArtistByName('')).toThrowError('Artist name is required');
-  });
+	it('throws an error if artist name is missing', () => {
+		expect(() => findArtistByName('')).toThrowError('Artist name is required');
+	});
 });
 ```
 
