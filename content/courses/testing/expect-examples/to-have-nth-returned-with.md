@@ -4,7 +4,7 @@ description: "Learn how to use Vitest'stoHaveNthReturnedWith matcher."
 modified: 2024-09-28T12:53:47-06:00
 ---
 
-Alright, buckle up folks—this matcher is super handy when you're dealing with functions that return values multiple times (like when you're mocking something that's called repeatedly). The `toHaveNthReturnedWith` matcher lets you check if a function returned a specific value on a specific call.
+Buckle up folks—this matcher is super handy when you're dealing with functions that return values multiple times (like when you're mocking something that's called repeatedly). The `toHaveNthReturnedWith` matcher lets you check if a function returned a specific value on a specific call.
 
 It saves you from tracking every return manually like some sort of test detective. Instead, you ask it, "Hey, on the third time this function ran, did we get _this_ back?"
 

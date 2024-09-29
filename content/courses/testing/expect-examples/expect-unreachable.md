@@ -4,7 +4,7 @@ description: Learn how to use expect.unreachable for unreachable code paths.
 modified: 2024-09-28T12:51:30-06:00
 ---
 
-Alright, let's be honest. Sometimes code gets a little… weird. You’ve got code paths that **should absolutely never, ever, under any circumstances run**, right? Good news: `expect.unreachable` is your buddy for those cases.
+Let's be honest. Sometimes code gets a little… weird. You’ve got code paths that **should absolutely never, ever, under any circumstances run**, right? Good news: `expect.unreachable` is your buddy for those cases.
 
 You throw it in when you're like, "Yo, if we hit this line of code, something went seriously wrong." It’s kind of like raising your hand in the middle of debugging and saying, _"This shouldn't have happened."_
 

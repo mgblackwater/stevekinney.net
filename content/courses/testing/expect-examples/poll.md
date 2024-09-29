@@ -4,7 +4,7 @@ description: "Learn how Vitest'spoll method handles asynchronous conditions."
 modified: 2024-09-28T12:51:37-06:00
 ---
 
-Alright, let's talk about the `poll` method available in Vitest's `expect`. This one is pretty cool but not necessarily the first thing you might think of when writing tests. It’s more like a rescue tool for those annoying async conditions that aren’t immediate but you still want to wait for them to eventually happen before calling something a failure. Think of it as: Vitest gives you a way to check something _eventually_ becomes true.
+Let's talk about the `poll` method available in Vitest's `expect`. This one is pretty cool but not necessarily the first thing you might think of when writing tests. It’s more like a rescue tool for those annoying async conditions that aren’t immediate but you still want to wait for them to eventually happen before calling something a failure. Think of it as: Vitest gives you a way to check something _eventually_ becomes true.
 
 ## What Does it Do?
 

@@ -17,7 +17,7 @@ Here’s when you wanna pull this out of your testing toolbox:
 
 ## Quick Example
 
-Alright, so let’s say we’re working on a **naive music library** app—of course, we’re gonna high-five Green Day in there somewhere. Imagine we mock a function to retrieve albums for an artist, and we just wanna make sure that the function returned **something** when it was called.
+So let’s say we’re working on a **naive music library** app—of course, we’re gonna high-five Green Day in there somewhere. Imagine we mock a function to retrieve albums for an artist, and we just wanna make sure that the function returned **something** when it was called.
 
 ```javascript
 import { describe, expect, it, vi } from 'vitest';

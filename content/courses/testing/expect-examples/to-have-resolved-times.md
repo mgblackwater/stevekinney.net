@@ -4,7 +4,7 @@ description: Learn how to use the toHaveResolvedTimes matcher for promises.
 modified: 2024-09-28T12:53:55-06:00
 ---
 
-Alright, let's talk about `toHaveResolvedTimes`. Imagine you're calling a promise-based function and you need to ensure that during your test, this function resolves a specific number of times. That's exactly where `toHaveResolvedTimes` comes into play!
+Let's talk about `toHaveResolvedTimes`. Imagine you're calling a promise-based function and you need to ensure that during your test, this function resolves a specific number of times. That's exactly where `toHaveResolvedTimes` comes into play!
 
 This is essentially a matcher built to test how many times a promise successfully resolves. It's super useful when you're working with asynchronous code and want to ensure that a promise was resolved a certain number of times—like for instance, if you're testing that a certain API call was made repeatedly or that your music library only makes the necessary album fetch requests.
 

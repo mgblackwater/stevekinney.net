@@ -1,5 +1,5 @@
 ---
-title: "Setting The Stage: Testing React Hooks"
+title: 'Setting The Stage: Testing React Hooks'
 description: Learn how to test React hooks using Vitest and Testing Library.
 modified: 2024-09-28T15:45:56-06:00
 ---
@@ -55,7 +55,7 @@ describe('useCoffeeCounter', () => {
 });
 ```
 
-Alright, let’s break it down.
+Let’s break it down.
 
 - `renderHook` is the main player here. It lets you run your hook just like you would in a component, but without any of the rendering nonsense.
 - `result.current` is essentially the return value of your hook. It’s where your state and functions, like `cups` and `drinkCoffee`, live.
@@ -88,7 +88,7 @@ export function useCoffeeCounter() {
 }
 ```
 
-Now the hook also tracks productivity based on cups of coffee consumed. Alright, new tests coming right up:
+Now the hook also tracks productivity based on cups of coffee consumed. New tests coming right up:
 
 ```javascript
 describe('useCoffeeCounter', () => {

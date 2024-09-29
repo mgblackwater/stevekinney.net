@@ -4,7 +4,7 @@ description: Capture error messages in a snapshot for consistent testing.
 modified: 2024-09-28T12:55:13-06:00
 ---
 
-Alright, so let’s break this down. You know when you're writing function tests, and sometimes things go _boom_? Like, errors happen, it's expected, it's part of the program—even Green Day had a couple of rough albums, right? So you want to test that your function deals with things going wrong _exactly_ the way you expect.
+So let’s break this down. You know when you're writing function tests, and sometimes things go _boom_? Like, errors happen, it's expected, it's part of the program—even Green Day had a couple of rough albums, right? So you want to test that your function deals with things going wrong _exactly_ the way you expect.
 
 `toThrowErrorMatchingSnapshot` allows you to capture not just _any error_, but _the whole error message_, and store it in a snapshot. You'll compare that snapshot every time you run the test to ensure nothing fishy changes in your error messages later on. So if an error message changes unexpectedly, boom, you know you’ve caught it.
 

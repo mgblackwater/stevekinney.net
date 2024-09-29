@@ -4,7 +4,7 @@ description: Learn how to use toBeGreaterThan matcher in Vitest for number compa
 modified: 2024-09-28T12:52:02-06:00
 ---
 
-Alright, so you've got `toBeGreaterThan`, and it's a matcher you're gonna love when you're working with numbers. You use it when you want to check that **a value is greater than some other value**. Pretty straightforward.
+So you've got `toBeGreaterThan`, and it's a matcher you're gonna love when you're working with numbers. You use it when you want to check that **a value is greater than some other value**. Pretty straightforward.
 
 ## When Would You Use This?
 

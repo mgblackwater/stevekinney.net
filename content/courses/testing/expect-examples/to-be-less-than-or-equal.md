@@ -4,7 +4,7 @@ description: Learn how to usetoBeLessThanOrEqual in Vitest testing scenarios.
 modified: 2024-09-28T12:52:17-06:00
 ---
 
-Alright, let’s talk about **`toBeLessThanOrEqual`**.
+Let’s talk about **`toBeLessThanOrEqual`**.
 
 Picture this: you’re building a feature to check the maximum duration of songs you’ll allow in your music library (nobody wants a 10-minute guitar solo… well, _most_ people don’t). You need to write a test to ensure that all new songs added must be at or below a certain time limit. This is where **`toBeLessThanOrEqual`** comes into play!
 

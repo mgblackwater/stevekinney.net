@@ -10,7 +10,7 @@ Ah, **`toHaveProperty`**—this little gem is one of those matchers that once yo
 
 **When you’d use it:** When you're working with objects and you want to ensure that they contain a particular property, or that a property holds a specific value. Think about testing an album object. Maybe we want to make sure that it has an artist and an array of songs. That's a perfect time to break out `toHaveProperty`.
 
-Alright, let’s hit this with some code. You know we love a good Green Day example over here, so let’s assume we’ve got an album object.
+Let’s hit this with some code. You know we love a good Green Day example over here, so let’s assume we’ve got an album object.
 
 ## Example
 

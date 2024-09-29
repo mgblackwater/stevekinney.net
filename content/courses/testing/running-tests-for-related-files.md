@@ -4,7 +4,7 @@ description: Learn how to run only related tests in Vitest to save time.
 modified: 2024-09-28T15:23:09-06:00
 ---
 
-Alright, picture this: You’ve been cranking away on some code, making changes, darting between files like a superhero full of caffeine. Then comes the dreaded moment—time to rerun the tests. All. Of. Them.
+Picture this: You’ve been cranking away on some code, making changes, darting between files like a superhero full of caffeine. Then comes the dreaded moment—time to rerun the tests. All. Of. Them.
 
 Eh, not so fast.
 
@@ -83,4 +83,4 @@ This is perfect for those “whoops” moments where you’re unsure if you just
 
 To wrap it all up, **`vitest related`** is your ticket to quick, efficient test runs based on what you're currently touching in the code. It’s painless, saves a ton of time, and keeps you in the flow without smashing the brakes of the full test suite. Even better? It feels good. Like sipping a fresh coffee after realizing your tests do, in fact, pass.
 
-Alright, time to put this knowledge to work! Keep those tests focused and fast, and remember: Just because you _can_ run the entire suite doesn't always mean you _should_.
+Time to put this knowledge to work! Keep those tests focused and fast, and remember: Just because you _can_ run the entire suite doesn't always mean you _should_.

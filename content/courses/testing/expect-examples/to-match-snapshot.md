@@ -4,7 +4,7 @@ description: An overview of using toMatchSnapshot for snapshot testing in Vitest
 modified: 2024-09-28T12:54:48-06:00
 ---
 
-Alright, so **toMatchSnapshot**—kind of sounds fancy, right? But it's actually here to make your life easier, especially in situations where manually checking a ton of output would make you want to quit and open a taco truck instead. Here’s the deal:
+So **toMatchSnapshot**—kind of sounds fancy, right? But it's actually here to make your life easier, especially in situations where manually checking a ton of output would make you want to quit and open a taco truck instead. Here’s the deal:
 
 ## What Does it Do?
 

@@ -127,7 +127,7 @@ Both **JSDOM** and **Happy DOM** are JavaScript libraries used to simulate the b
 
 ## A Couple of Gotchas
 
-Alright, real talk—nothing’s perfect. There are a few things to keep in mind when running tests in browser mode:
+Real talk—nothing’s perfect. There are a few things to keep in mind when running tests in browser mode:
 
 1. **It’s still not a real browser.** You're not getting every subtlety of a specific Chrome or Firefox version. Remember, this is JSDOM-ified, meaning it's designed to act like a browser rather than being one.
 2. **Performance.** Running tests with `jsdom` can be a bit slower than straight-up Node tests. It’s the cost of emulating browser stuff.

@@ -4,7 +4,7 @@ description: Learn how to useexpect.any to assert types in Vitest tests.
 modified: 2024-09-28T12:50:58-06:00
 ---
 
-Alright, so here’s what’s going on with `expect.any`: You’ll likely run into situations where you don’t care _exactly_ what a value is, but you do care about its **type**. Maybe you’re not concerned if a function returns a string that says "hello" or "goodbye"—but you do need to know that it’s, well, **a string**.
+So here’s what’s going on with `expect.any`: You’ll likely run into situations where you don’t care _exactly_ what a value is, but you do care about its **type**. Maybe you’re not concerned if a function returns a string that says "hello" or "goodbye"—but you do need to know that it’s, well, **a string**.
 
 This is where `expect.any` shines. Instead of checking for super-specific values, you use it to check that the value is of a certain type—like a string, number, or even a class instance.
 

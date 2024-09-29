@@ -4,7 +4,7 @@ description: Learn how to useexpect.stringMatching for pattern matching in tests
 modified: 2024-09-28T12:51:28-06:00
 ---
 
-Alright, let's talk about **`expect.stringMatching`**. This method is handy when you’re writing tests and you don’t care about the _exact_ string as long as it matches a particular pattern. Think about it like this: You’re not policing the string for the _exact words_, you just want to make sure it’s at least _heading in the right direction_.
+Let's talk about **`expect.stringMatching`**. This method is handy when you’re writing tests and you don’t care about the _exact_ string as long as it matches a particular pattern. Think about it like this: You’re not policing the string for the _exact words_, you just want to make sure it’s at least _heading in the right direction_.
 
 ## What Does it Do?
 

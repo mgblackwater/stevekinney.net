@@ -4,7 +4,7 @@ description: How to use the toBeCloseTo matcher when dealing with floating-point
 modified: 2024-09-28T12:51:53-06:00
 ---
 
-Alright, so here's the deal with `toBeCloseTo`. It's your go-to matcher when you're dealing with numbers that are close but not _exactly_ the same. In the wonderful world of floating-point math, precision can sometimes be… well, a little fuzzy. You know, when you expect `1.2 + 1.2` to give you `2.4`, but JavaScript might hand you something wild like `2.3999999999999995`. Yeah, _that_ nonsense. That's when you'd use `toBeCloseTo`.
+So here's the deal with `toBeCloseTo`. It's your go-to matcher when you're dealing with numbers that are close but not _exactly_ the same. In the wonderful world of floating-point math, precision can sometimes be… well, a little fuzzy. You know, when you expect `1.2 + 1.2` to give you `2.4`, but JavaScript might hand you something wild like `2.3999999999999995`. Yeah, _that_ nonsense. That's when you'd use `toBeCloseTo`.
 
 The `toBeCloseTo` matcher lets you assert that two numbers are nearly equal, within a tiny margin of error, instead of expecting them to be identical. It becomes particularly useful for those situations where rounding errors pop up, or even when you’re dealing with all sorts of math-heavy code like calculating percentages, measurements, or album durations that rely on floating-point math.
 

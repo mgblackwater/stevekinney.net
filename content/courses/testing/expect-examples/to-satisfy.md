@@ -4,7 +4,7 @@ description: "Learn how to use Vitest's toSatisfy matcher with custom logic."
 modified: 2024-09-28T12:54:53-06:00
 ---
 
-Alright, so let’s talk about `toSatisfy`. This matcher, my friend, is kind of a wildcard—it lets you write your own custom logic to say whether a value matches what you're expecting. It's like Vitest saying, "Listen, I usually have an opinion on whether something passes, but right now, that's all you."
+So let’s talk about `toSatisfy`. This matcher, my friend, is kind of a wildcard—it lets you write your own custom logic to say whether a value matches what you're expecting. It's like Vitest saying, "Listen, I usually have an opinion on whether something passes, but right now, that's all you."
 
 ## What It Does
 

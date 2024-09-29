@@ -5,7 +5,7 @@ modified: 2024-09-28T12:51:40-06:00
 tags: [999]
 ---
 
-Alright, so the `rejects` method is your go-to tool when you're dealing with promises that are expected to fail—you know, your classic async "everything's fine… just kidding" situation.
+So the `rejects` method is your go-to tool when you're dealing with promises that are expected to fail—you know, your classic async "everything's fine… just kidding" situation.
 
 Think about it: sometimes you write functions that return promises, and the thing you explicitly want to test is the behavior when things go wrong. Like, maybe a file doesn't exist, or an API throws a 404, or you requested **The Battle of Los Angeles**, but the system finds some derivative fake album or something. Whatever the case, stuff happens, and you want to make sure your code handles it properly.
 

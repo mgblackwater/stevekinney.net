@@ -4,7 +4,7 @@ description: Learn about the toHaveReturnedWith matcher with a practical example
 modified: 2024-09-28T12:54:07-06:00
 ---
 
-Alright, let's dive into **`toHaveReturnedWith`** with an example that _might_ just hit home.
+Let's dive into **`toHaveReturnedWith`** with an example that _might_ just hit home.
 
 ## What It Does
 

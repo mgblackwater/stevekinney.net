@@ -4,7 +4,7 @@ description: Learn how to use the toMatch method in Vitest for string testing.
 modified: 2024-09-28T12:54:10-06:00
 ---
 
-Alright, let's talk about `toMatch`. When you're working with strings in JavaScript, sometimes you want to say, "Hey, does **part** of this string match something I'm expecting?" That's where `toMatch` comes in.
+Let's talk about `toMatch`. When you're working with strings in JavaScript, sometimes you want to say, "Hey, does **part** of this string match something I'm expecting?" That's where `toMatch` comes in.
 
 Basically, you use `toMatch` when you’re testing if a string contains a substring or if it matches a regular expression. This is perfect if you don’t care about the entire string, just some part of it. Instead of trying to go full-on pattern detective yourself, you just let Vitest do the heavy lifting.
 

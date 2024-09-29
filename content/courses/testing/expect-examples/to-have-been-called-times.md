@@ -4,7 +4,7 @@ description: Learn how to use the toHaveBeenCalledTimes matcher in Vitest.
 modified: 2024-09-28T12:53:19-06:00
 ---
 
-Alright, here's the deal: `toHaveBeenCalledTimes` is a matcher in Vitest that, as the name suggests, checks how many times a **mock function** (or spy, or jest-like "hey, what's _this_ thing doing?") has been called during a test. It's super useful when you want to test whether certain functions, like event handlers or API calls, are being executed the correct number of times.
+Here's the deal: `toHaveBeenCalledTimes` is a matcher in Vitest that, as the name suggests, checks how many times a **mock function** (or spy, or jest-like "hey, what's _this_ thing doing?") has been called during a test. It's super useful when you want to test whether certain functions, like event handlers or API calls, are being executed the correct number of times.
 
 ## Why Would You Use It?
 

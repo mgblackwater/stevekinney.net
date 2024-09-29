@@ -4,7 +4,7 @@ description: Learn how expect(...).toBeUndefined checks if a value is undefined.
 modified: 2024-09-28T12:53:02-06:00
 ---
 
-Alright, let's dive into **expect(…).toBeUndefined**.
+Let's dive into **expect(…).toBeUndefined**.
 
 ## What It Does
 

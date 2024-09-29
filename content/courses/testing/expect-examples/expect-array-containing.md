@@ -4,7 +4,7 @@ description: Learn how to use expect.arrayContaining to test array subsets.
 modified: 2024-09-28T12:51:04-06:00
 ---
 
-Alright, let’s talk about **`expect.arrayContaining`**—one of those methods that sounds like it’s just begging for a real-world example. And I’ve got just the thing for you!
+Let’s talk about **`expect.arrayContaining`**—one of those methods that sounds like it’s just begging for a real-world example. And I’ve got just the thing for you!
 
 ## What Does it Do?
 

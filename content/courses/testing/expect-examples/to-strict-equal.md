@@ -4,7 +4,7 @@ description: Understanding toStrictEqual for detailed object comparisons in test
 modified: 2024-09-28T12:55:01-06:00
 ---
 
-Alright, so let's talk about `toStrictEqual`. It’s like that extra-picky friend everyone has. You know the type—the one that notices _everything_ and won't let anything slide. In the realm of testing, `toStrictEqual` is your tool to ensure that what you're comparing checks out down to the tiniest little details.
+So let's talk about `toStrictEqual`. It’s like that extra-picky friend everyone has. You know the type—the one that notices _everything_ and won't let anything slide. In the realm of testing, `toStrictEqual` is your tool to ensure that what you're comparing checks out down to the tiniest little details.
 
 ## What Does it Do?
 

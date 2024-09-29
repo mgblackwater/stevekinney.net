@@ -4,7 +4,7 @@ description: Check if a Promise resolves with the expected value using Vitest.
 modified: 2024-09-28T12:53:58-06:00
 ---
 
-Alright, so let's talk about **`toHaveResolvedWith`**. Picture this: you’ve got yourself a **Promise**, maybe it's an API call, maybe it's some async function doing the heavy lifting in your app. You expect it to resolve with a certain value.
+So let's talk about **`toHaveResolvedWith`**. Picture this: you’ve got yourself a **Promise**, maybe it's an API call, maybe it's some async function doing the heavy lifting in your app. You expect it to resolve with a certain value.
 
 Now, if it resolves successfully and gives you that expected output, **`toHaveResolvedWith`** is your testing buddy that checks whether the resolution matches the value you expect. This comes in handy when you're testing asynchronous code, and you want to make sure those Promises resolve with the right stuff. Testing async logic used to feel like wrestling a greased pig, but **Vitest** makes it way less slippery with this matcher.
 
@@ -19,7 +19,7 @@ Think of **`toHaveResolvedWith`** as a cousin to **`toEqual`** but specialized f
 
 ## Example in Action
 
-Alright, let's assume you're working on that _naïve music library_ and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
+Let's assume you're working on that _naïve music library_ and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
 
 ```javascript
 // musicLibrary.js
@@ -35,7 +35,7 @@ export function getArtistInfo() {
 }
 ```
 
-Alright, we've got our async function working in some distant land called **the event loop**. Now, let’s test that the value it resolves with is what we expect!
+We've got our async function working in some distant land called **the event loop**. Now, let’s test that the value it resolves with is what we expect!
 
 ```javascript
 import { getArtistInfo } from './musicLibrary';

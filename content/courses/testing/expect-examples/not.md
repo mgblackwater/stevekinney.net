@@ -4,7 +4,7 @@ description: Learn how to use thenot modifier in Vitest for negative testing.
 modified: 2024-09-28T12:51:33-06:00
 ---
 
-Alright, so you’re cooking along, writing some sweet tests. Everything’s passing… and then it hits you. You _don't_ just need to check if something is true. Nope. You need to be _sure_ that something is **not** true.
+So you’re cooking along, writing some sweet tests. Everything’s passing… and then it hits you. You _don't_ just need to check if something is true. Nope. You need to be _sure_ that something is **not** true.
 
 Enter: `not`. This little helper lets you flip the script on your expectations. Instead of checking if something is what you expect, you can ask, "Yo, is this **NOT** that?"
 

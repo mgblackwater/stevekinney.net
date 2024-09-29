@@ -4,7 +4,7 @@ description: Understand the behavior of toBeFalsy() in JavaScript testing.
 modified: 2024-09-28T12:51:59-06:00
 ---
 
-Alright, let’s talk **toBeFalsy()**. This one’s like that friend who’s skeptical of everything—they’re not easily convinced. When you use `toBeFalsy()`, you're basically saying, “I want this thing to be one of the JavaScript values that’s considered falsey.”
+Let’s talk **toBeFalsy()**. This one’s like that friend who’s skeptical of everything—they’re not easily convinced. When you use `toBeFalsy()`, you're basically saying, “I want this thing to be one of the JavaScript values that’s considered falsey.”
 
 Now, what does that mean? In JavaScript, “falsy” values include:
 

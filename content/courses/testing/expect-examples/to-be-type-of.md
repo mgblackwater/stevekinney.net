@@ -4,7 +4,7 @@ description: Learn about thetoBeTypeOf method and its usage in Vitest.
 modified: 2024-09-28T12:53:00-06:00
 ---
 
-Alright, let’s talk about **`toBeTypeOf`**, one of those handy matchers in Vitest that you’re going to use far more often than you realize. If you’ve ever had to figure out why your function started acting funny because _someone_ (totally not you, of course) passed in a string instead of a number, `toBeTypeOf` is your new best friend.
+Let’s talk about **`toBeTypeOf`**, one of those handy matchers in Vitest that you’re going to use far more often than you realize. If you’ve ever had to figure out why your function started acting funny because _someone_ (totally not you, of course) passed in a string instead of a number, `toBeTypeOf` is your new best friend.
 
 ## What Does `toBeTypeOf` Do?
 

@@ -4,7 +4,7 @@ description: Using toBeInstanceOf to verify object instances in tests.
 modified: 2024-09-28T12:52:10-06:00
 ---
 
-Alright, so let's chat about `toBeInstanceOf`. Imagine you're trying to figure out if a certain object is of a specific class or type. You might have a custom class or constructor function, and you're just trying to ensure that the object you got is, in fact, an instance of that particular class.
+So let's chat about `toBeInstanceOf`. Imagine you're trying to figure out if a certain object is of a specific class or type. You might have a custom class or constructor function, and you're just trying to ensure that the object you got is, in fact, an instance of that particular class.
 
 Vitest’s `toBeInstanceOf` matcher is your friend here. It allows you to check whether an object is an instance of a constructor (function or class). So, if you've got some fancy Artist class with properties like `name` and `genre`, `toBeInstanceOf` can step in and help verify that something is, in fact, an instance of the artist.
 

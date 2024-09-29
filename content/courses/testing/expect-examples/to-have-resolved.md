@@ -4,7 +4,7 @@ description: Understanding how to use the toHaveResolved matcher in Vitest.
 modified: 2024-09-28T12:53:52-06:00
 ---
 
-Great question! Alright, let’s dive in. The `toHaveResolved` matcher in Vitest is all about promises. Specifically, you'd use it when you want to test that a promise **resolves** successfully, meaning the promise doesn't throw an error and "fulfilled" without blowing things up.
+Great question! Let’s dive in. The `toHaveResolved` matcher in Vitest is all about promises. Specifically, you'd use it when you want to test that a promise **resolves** successfully, meaning the promise doesn't throw an error and "fulfilled" without blowing things up.
 
 If you're working with anything asynchronous in JavaScript—especially promises—you’ll find yourself needing to check whether a specific promise got resolved (versus being rejected). In real life, you'd likely use it when you're writing some async code: fetching data, interacting with APIs, that sort of thing.
 

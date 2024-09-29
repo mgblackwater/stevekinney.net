@@ -4,7 +4,7 @@ description: Learn how to use the toBe matcher in Vitest for strict equality.
 modified: 2024-09-28T12:51:50-06:00
 ---
 
-Alright, let's talk about `toBe`. In Vitest (and other testing frameworks like Jest), `toBe` is a _matcher_, which is just a fancy word for "the thing we use to check if two values are the same."
+Let's talk about `toBe`. In Vitest (and other testing frameworks like Jest), `toBe` is a _matcher_, which is just a fancy word for "the thing we use to check if two values are the same."
 
 ## What Does `toBe` Do?
 

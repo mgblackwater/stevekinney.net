@@ -446,7 +446,7 @@ export const Warning: Story = {
 };
 ```
 
-In addition to make a whole bunch of stories, I went ahead and move some of the default arguments to the `meta` for the component. Alright, now we need to get to the icons.
+In addition to make a whole bunch of stories, I went ahead and move some of the default arguments to the `meta` for the component. Now we need to get to the icons.
 
 ## Getting the Icon for the Callout Variation
 

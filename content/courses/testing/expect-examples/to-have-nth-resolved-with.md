@@ -4,7 +4,7 @@ description: Learn how to use toHaveNthResolvedWith for testing async calls.
 modified: 2024-09-28T12:53:44-06:00
 ---
 
-Alright, let's dive into the nitty-gritty of `toHaveNthResolvedWith`. First off, let’s address **what it does**:
+Let's dive into the nitty-gritty of `toHaveNthResolvedWith`. First off, let’s address **what it does**:
 
 `toHaveNthResolvedWith` is a matcher in Vitest that allows you to check the result of **Promise resolution** in a **specific position** for a mock function that’s been **called multiple times**. Think of it like this: You're testing a function that's dealing with async operations (like fetching data), and you want to know if the second, third, or nth call to the function resolved with some specific value.
 

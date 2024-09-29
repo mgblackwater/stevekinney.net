@@ -4,7 +4,7 @@ description: Learn how to use expect.soft for non-blocking assertions in Vitest.
 modified: 2024-09-28T12:51:46-06:00
 ---
 
-Alright, so here's the deal: **`expect.soft`** is kind of like your chill friend who says, "Hey, you messed up, but I'm not gonna block everything because of it. Keep going." In traditional tests, if an **expectation fails**, the test says, "Nope, I'm out of here," and the test run stops right there. With **`expect.soft`**, Vitest lets you fail an individual assertion while continuing through the rest of the test. It won't stop the party just because one thing didn't go as expected—so you can see all the failures at once without running the whole suite again.
+So here's the deal: **`expect.soft`** is kind of like your chill friend who says, "Hey, you messed up, but I'm not gonna block everything because of it. Keep going." In traditional tests, if an **expectation fails**, the test says, "Nope, I'm out of here," and the test run stops right there. With **`expect.soft`**, Vitest lets you fail an individual assertion while continuing through the rest of the test. It won't stop the party just because one thing didn't go as expected—so you can see all the failures at once without running the whole suite again.
 
 You'd use **`expect.soft`** in scenarios where you care about multiple assertions at once and want to evaluate all of them before calling it quits on the test. This is especially helpful when you're dealing with more complex objects or functions and don't want to keep re-running your test just to uncover additional failures.
 

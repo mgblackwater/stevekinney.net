@@ -6,7 +6,7 @@ modified: 2024-09-28T12:53:38-06:00
 
 est
 
-Alright, my friend. Let’s talk about _one of those matcher methods_ you bust out when you're dealing with mock functions, aka the unsung heroes of your tests. Specifically, we're looking at `toHaveLastReturnedWith`, which is kinda like saying, _"Hey, I need to make sure that the **last** time this mock function was called, it returned exactly this value."_
+My friend. Let’s talk about _one of those matcher methods_ you bust out when you're dealing with mock functions, aka the unsung heroes of your tests. Specifically, we're looking at `toHaveLastReturnedWith`, which is kinda like saying, _"Hey, I need to make sure that the **last** time this mock function was called, it returned exactly this value."_
 
 ## When Would You Use It?
 

@@ -6,7 +6,7 @@ modified: 2024-09-28T12:51:56-06:00
 
 t
 
-Alright, so you’re looking at `toBeDefined`. This one’s pretty straightforward but can come in clutch when you're trying to make sure that something exists, as in it’s not `undefined`. Picture this: You’ve got an object, a variable, or a function return value that _might_ be set… and you want to verify it’s actually defined.
+So you’re looking at `toBeDefined`. This one’s pretty straightforward but can come in clutch when you're trying to make sure that something exists, as in it’s not `undefined`. Picture this: You’ve got an object, a variable, or a function return value that _might_ be set… and you want to verify it’s actually defined.
 
 ## What Does `toBeDefined` Do?
 

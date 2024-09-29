@@ -4,7 +4,7 @@ description: A guide to using toEqual for deep equality checks in Vitest.
 modified: 2024-09-28T12:53:12-06:00
 ---
 
-Alright, let's talk about **toEqual**. This one’s your go-to for checking **deep equality** between objects or arrays. If you’ve got an object or array that you want to compare with something else, and you care about its contents rather than its identity in memory (i.e., you’re not expecting the same object reference), **toEqual** is what you want.
+Let's talk about **toEqual**. This one’s your go-to for checking **deep equality** between objects or arrays. If you’ve got an object or array that you want to compare with something else, and you care about its contents rather than its identity in memory (i.e., you’re not expecting the same object reference), **toEqual** is what you want.
 
 ## When Would You Use It?
 

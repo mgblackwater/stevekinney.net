@@ -4,7 +4,7 @@ description: Use toContainEqual to check deep equality in arrays of objects.
 modified: 2024-09-28T12:53:09-06:00
 ---
 
-Alright, picture this: You've got an array, and that array is filled with objects. Now, you want to make sure that it contains an object that matches another object you're testing against. This is where `toContainEqual` comes in clutch.
+Picture this: You've got an array, and that array is filled with objects. Now, you want to make sure that it contains an object that matches another object you're testing against. This is where `toContainEqual` comes in clutch.
 
 **When should you use it?**
 

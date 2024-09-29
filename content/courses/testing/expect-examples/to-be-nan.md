@@ -4,7 +4,7 @@ description: Learn about thetoBeNaN matcher to handle NaN values in Vitest.
 modified: 2024-09-28T12:52:19-06:00
 ---
 
-Alright, let's talk about **`toBeNaN`**, one of those handy matchers you can use when dealing with numbers that just _decide_ not to be numbers. If you're working with JavaScript for longer than, I don’t know, 5 minutes, you’ve probably seen _NaN_ pop up when a calculation goes sideways. Stuff like dividing by zero or performing arithmetic with something that isn’t a number. Good times, right?
+Let's talk about **`toBeNaN`**, one of those handy matchers you can use when dealing with numbers that just _decide_ not to be numbers. If you're working with JavaScript for longer than, I don’t know, 5 minutes, you’ve probably seen _NaN_ pop up when a calculation goes sideways. Stuff like dividing by zero or performing arithmetic with something that isn’t a number. Good times, right?
 
 ## What Does `toBeNaN` Do?
 

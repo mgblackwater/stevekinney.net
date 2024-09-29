@@ -4,7 +4,7 @@ description: Learn how to use toHaveBeenCalledWith to verify function calls.
 modified: 2024-09-28T12:53:24-06:00
 ---
 
-Alright, so _toHaveBeenCalledWith_ is like when you catch your roommate “borrowing” your stuff, and you need the _receipts_. You’re not just interested in whether something got called—you’re like, “I want to know exactly HOW it was called!” Vitest’s _toHaveBeenCalledWith_ is perfect for asserting that a function (especially a mock function—trust me, you’ll mock a lot of things in testing) was called with a specific set of arguments.
+So _toHaveBeenCalledWith_ is like when you catch your roommate “borrowing” your stuff, and you need the _receipts_. You’re not just interested in whether something got called—you’re like, “I want to know exactly HOW it was called!” Vitest’s _toHaveBeenCalledWith_ is perfect for asserting that a function (especially a mock function—trust me, you’ll mock a lot of things in testing) was called with a specific set of arguments.
 
 ## When Should I Use _toHaveBeenCalledWith_?
 

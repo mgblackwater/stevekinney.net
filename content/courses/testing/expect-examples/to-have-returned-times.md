@@ -4,7 +4,7 @@ description: Learn how to use toHaveReturnedTimes in your Vitest tests.
 modified: 2024-09-28T12:54:04-06:00
 ---
 
-Alright, let’s talk **toHaveReturnedTimes**. This matcher comes into play when you want to make sure that a **mock function** (or **spy**) has returned a specific number of times during your test. I'll bet you've been there—your function is firing off correctly, but now you need to verify how many times it actually returns something useful, right? That's exactly what **toHaveReturnedTimes** helps you confirm.
+Let’s talk **toHaveReturnedTimes**. This matcher comes into play when you want to make sure that a **mock function** (or **spy**) has returned a specific number of times during your test. I'll bet you've been there—your function is firing off correctly, but now you need to verify how many times it actually returns something useful, right? That's exactly what **toHaveReturnedTimes** helps you confirm.
 
 You’d typically use this when your function is expected to complete successfully multiple times, and you'd like to ensure that behavior. Maybe you’ve got something like a function that fetches details about your favorite punk bands, and you need to make sure it returned as many times as you expected.
 

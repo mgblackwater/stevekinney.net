@@ -4,7 +4,7 @@ description: Ensure the last resolved value of a mock matches the expected resul
 modified: 2024-09-28T12:53:35-06:00
 ---
 
-Alright, so let's talk about **`toHaveLastResolvedWith`**. It's kind of like that one band member who always hits the perfect note right at the end—this matcher is all about making sure the last resolved value of a mocked promise was exactly what you were expecting.
+So let's talk about **`toHaveLastResolvedWith`**. It's kind of like that one band member who always hits the perfect note right at the end—this matcher is all about making sure the last resolved value of a mocked promise was exactly what you were expecting.
 
 ## What it Does
 

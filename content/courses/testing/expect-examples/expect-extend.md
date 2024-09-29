@@ -4,7 +4,7 @@ description: Learn how to use expect.extend to create custom matchers in Vitest.
 modified: 2024-09-28T12:51:16-06:00
 ---
 
-Alright, let's talk about something _pretty neat_ in Vitest: `expect.extend`. This is like giving yourself superpowers when it comes to assertions. Most folks are used to using the built-in matchers like `toBe`, `toEqual`, and `toHaveBeenCalledWith`—and, believe me, those are fantastic! But sometimes you want an assertion method that’s a little more _specific_ to your domain, like, I don't know, checking if a band has released at least one multi-platinum album, and `toBe` just isn't going to cut it. That’s where `expect.extend` shines. It lets you write **custom matchers** tailored to your specific problem space.
+Let's talk about something _pretty neat_ in Vitest: `expect.extend`. This is like giving yourself superpowers when it comes to assertions. Most folks are used to using the built-in matchers like `toBe`, `toEqual`, and `toHaveBeenCalledWith`—and, believe me, those are fantastic! But sometimes you want an assertion method that’s a little more _specific_ to your domain, like, I don't know, checking if a band has released at least one multi-platinum album, and `toBe` just isn't going to cut it. That’s where `expect.extend` shines. It lets you write **custom matchers** tailored to your specific problem space.
 
 ## When Would You Use It?
 

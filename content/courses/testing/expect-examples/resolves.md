@@ -4,7 +4,7 @@ description: Learn how to test promises using resolves in Vitest.
 modified: 2024-09-28T12:51:43-06:00
 ---
 
-Alright, let’s talk about promises. You’ve got this nice promise, but testing them isn't always as smooth as you’d like, right? Enter `resolves`. In Vitest, `expect(…).resolves` is something you're going to use when you're working with promises that need a little expectation love.
+Let’s talk about promises. You’ve got this nice promise, but testing them isn't always as smooth as you’d like, right? Enter `resolves`. In Vitest, `expect(…).resolves` is something you're going to use when you're working with promises that need a little expectation love.
 
 In short, if you’ve got a function that returns a promise and you want to test what happens when that promise _resolves_, you use `resolves`. It basically says, “Hey, Vitest, I expect this promise to _actually fulfill_ and when it does, here's what I expect to be delivered on that promise.”
 

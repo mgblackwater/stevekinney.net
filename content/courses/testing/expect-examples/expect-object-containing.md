@@ -4,7 +4,7 @@ description: Learn how to use expect.objectContaining in Vitest testing.
 modified: 2024-09-28T12:51:21-06:00
 ---
 
-Alright, let’s break down `expect.objectContaining`. This is one of those matchers that’s like your friend who always shows up _just enough_ to help you out—but not too much to overwhelm you. You’ll use this when you’re testing an object but you don’t really care about _all_ the properties it has, just a few key ones.
+Let’s break down `expect.objectContaining`. This is one of those matchers that’s like your friend who always shows up _just enough_ to help you out—but not too much to overwhelm you. You’ll use this when you’re testing an object but you don’t really care about _all_ the properties it has, just a few key ones.
 
 In practice, it’s super useful when you want to ensure that an object has a certain set of properties and values **but you don’t necessarily want to enforce the complete structure** of the object. Your test would pass if the object contains _just_ those expected properties, even if it has a bunch of extra ones hanging around.
 

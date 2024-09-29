@@ -47,4 +47,4 @@ export const Large: Story = {
 };
 ```
 
-Alright, as promised, it's time to talk about [default arguments](default-args.md).
+As promised, it's time to talk about [default arguments](default-args.md).

@@ -4,7 +4,7 @@ description: Learn how to usetoMatchInlineSnapshot in Vitest for testing.
 modified: 2024-09-28T12:54:17-06:00
 ---
 
-Alright, so **`toMatchInlineSnapshot`** — this is one of those sneaky little helpers that most people don’t even realize they need until they use it, and then BAM, they can’t live without it. But let’s unpack it a little.
+So **`toMatchInlineSnapshot`** — this is one of those sneaky little helpers that most people don’t even realize they need until they use it, and then BAM, they can’t live without it. But let’s unpack it a little.
 
 ## What Does it Do?
 

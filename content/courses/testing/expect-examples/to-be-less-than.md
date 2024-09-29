@@ -4,7 +4,7 @@ description: Learn about the toBeLessThan matcher and its practical uses.
 modified: 2024-09-28T12:52:13-06:00
 ---
 
-Alright, so you're probably wondering, _"When would I ever need `toBeLessThan`? I'm a software developer, not a mathematician!"_ But trust me, this comes in handy more than you'd think.
+So you're probably wondering, _"When would I ever need `toBeLessThan`? I'm a software developer, not a mathematician!"_ But trust me, this comes in handy more than you'd think.
 
 ## What is `toBeLessThan`?
 

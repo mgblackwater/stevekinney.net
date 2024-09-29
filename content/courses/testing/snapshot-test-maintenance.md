@@ -4,7 +4,7 @@ description: A quick and easy guide to understanding snapshot testing with Vites
 modified: 2024-09-28T15:26:39-06:00
 ---
 
-Alright, so here's the deal with **snapshot testing**—it's **quick** and **easy** to write, but like any magic trick, there’s some sleight of hand you should be aware of. A snapshot is basically a serialized version of the output that your component, function, or whatever you’re testing spits out. Vitest (and tools like it) compares this serialized version to the previously saved "snapshot" version on disk during each test.
+So here's the deal with **snapshot testing**—it's **quick** and **easy** to write, but like any magic trick, there’s some sleight of hand you should be aware of. A snapshot is basically a serialized version of the output that your component, function, or whatever you’re testing spits out. Vitest (and tools like it) compares this serialized version to the previously saved "snapshot" version on disk during each test.
 
 If the outputs match, Vitest tells you all is good. If they don't, it's basically like Vitest coming back and saying, "Hey, something’s different. Did you mean to change this?" That’s when you get to decide: **Is this exactly what I expected?** or **Did I accidentally mess something up?**
 
@@ -34,9 +34,9 @@ Take a close look at that diff. Does it look like a developer (you) did this on 
 
 ### Step 2: Update Intentionally, Not Blindly
 
-Look, I know we're all busy and deadlines are looming, but **don't just automatically update the snapshot** without thinking. I mean, come on, that's just asking for it. 😅
+I know we're all busy and deadlines are looming, but **don't just automatically update the snapshot** without thinking. I mean, come on, that's just asking for it. 😅
 
-If the changes are valid—such as a visual tweak or expected output changes—*then* you can confidently run:
+If the changes are valid—such as a visual tweak or expected output changes—_then_ you can confidently run:
 
 ```bash
 npx vitest --update
