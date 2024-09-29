@@ -32,12 +32,27 @@ export default defineConfig({
 });
 ```
 
+You can also set the environment on a per-file basis at the top of your test file.
+
+```js
+// @vitest-environment jsdom
+```
+
 ## What's the Difference?
 
 ### TL;DR
 
 - Choose **JSDOM** if you need **accuracy** and a more realistic browser environment for testing.
 - Choose **Happy DOM** if you need **speed** and don't require full browser standards for your tests.
+
+| Feature          | **JSDOM**                                     | **Happy DOM**                             |
+| ---------------- | --------------------------------------------- | ----------------------------------------- |
+| **Focus**        | Browser-like accuracy                         | Performance and speed                     |
+| **Performance**  | Slower, more memory usage                     | Faster, low memory usage                  |
+| **API Coverage** | More comprehensive                            | Focuses on essential web APIs             |
+| **Use Case**     | Full browser simulation in tests              | Lightweight testing with speed            |
+| **Integration**  | Popular in Jest, Mocha                        | Popular in Vitest, fast test environments |
+| **Best for**     | Complex web apps, real-world browser behavior | Fast unit/integration tests, simple DOM   |
 
 ### Comparison Between **JSDOM** and **Happy DOM**
 
@@ -110,21 +125,10 @@ Both **JSDOM** and **Happy DOM** are JavaScript libraries used to simulate the b
 - Gaining popularity due to its integration with **Vitest** and its speed benefits.
 - Still developing its ecosystem but is growing in adoption, especially for performance-sensitive projects.
 
-### Quick Summary
-
-| Feature          | **JSDOM**                                     | **Happy DOM**                             |
-| ---------------- | --------------------------------------------- | ----------------------------------------- |
-| **Focus**        | Browser-like accuracy                         | Performance and speed                     |
-| **Performance**  | Slower, more memory usage                     | Faster, low memory usage                  |
-| **API Coverage** | More comprehensive                            | Focuses on essential web APIs             |
-| **Use Case**     | Full browser simulation in tests              | Lightweight testing with speed            |
-| **Integration**  | Popular in Jest, Mocha                        | Popular in Vitest, fast test environments |
-| **Best for**     | Complex web apps, real-world browser behavior | Fast unit/integration tests, simple DOM   |
-
 ## A Couple of Gotchas
 
 Alright, real talk—nothing’s perfect. There are a few things to keep in mind when running tests in browser mode:
 
 1. **It’s still not a real browser.** You're not getting every subtlety of a specific Chrome or Firefox version. Remember, this is JSDOM-ified, meaning it's designed to act like a browser rather than being one.
 2. **Performance.** Running tests with `jsdom` can be a bit slower than straight-up Node tests. It’s the cost of emulating browser stuff.
-3. **Browser-specific issues.** Just because something works in Vitest browser mode doesn’t mean it’ll work in *all* browsers. (I’m looking at you, Internet Explorer.)
+3. **Browser-specific issues.** Just because something works in Vitest browser mode doesn’t mean it’ll work in _all_ browsers. (I’m looking at you, Internet Explorer.)

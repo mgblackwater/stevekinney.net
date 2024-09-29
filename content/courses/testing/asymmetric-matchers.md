@@ -1,12 +1,12 @@
 ---
 title: Understanding Asymmetric Matchers in Testing
 description: Why asymmetric matchers are essential to writing flexible tests.
-modified: 2024-09-28T13:32:26-06:00
+modified: 2024-09-29T16:13:52-06:00
 ---
 
 Why are they called asymmetric matchers? I don't know. But, that's what the [Jest documentation calls them](https://jestjs.io/docs/expect#asymmetric-matchers), so that's what I'm calling them. (The Vitest documentation doesn't call them anything in particular.)
 
-**Philosophy Time™**! Here are two of my many hot takes around testing:
+Here are two of my _many_ hot takes around testing:
 
 - Tests solely exist to give us confidence that we can make changes to our code base—large or small—without accidentally breaking things.
 - Tests that are more annoying then they are helpful will lead to your and your team deleting them and/or just abandoning testing.
@@ -15,17 +15,13 @@ Winston Churchill said that "perfection is the enemy of progress." And this is s
 
 Secondly, when a test fails, it would be nice if the failure was laser focused to what went wrong. A minor change might break a whole suite of tests. This could be dozens or even hundreds of tests. Good luck tracking down exactly what the culprit was.
 
-Consider this code for a moment:
+Consider this `Person` from `examples/characters/person.js` for a moment:
 
 ```javascript
 import { v4 as id } from 'uuid';
 
 export class Person {
 	constructor(firstName, lastName) {
-		if (!firstName || !lastName) {
-			throw new Error('First name and last name are required');
-		}
-
 		this.id = 'person-' + id();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -52,7 +48,7 @@ it('should create a person with a first name and last name', () => {
 
 ![The test fails because of a random id](assets/failing-test-due-to-random-id.png)
 
-We don't really care what the `id` is but maybe we want to make sure that there *is* an `id` and that it's a string.
+We don't really care what the `id` is but maybe we want to make sure that there _is_ an `id` and that it's a string.
 
 ```javascript
 it('should create a person with a first name and last name', () => {
@@ -89,14 +85,14 @@ Here’s the big thing: asymmetric matchers only care about one side of the comp
 You’ve got some giant object returning all kinds of extra data, but you only care about a few key properties? Perfect, `objectContaining` is your bud.
 
 ```js
-const userProfile = {
+const strongestAvenger = {
 	name: 'Thor Odinson',
 	age: 1500,
 	weapon: 'Stormbreaker',
 	occupation: 'God of Thunder',
 };
 
-expect(userProfile).toEqual(
+expect(strongestAvenger).toEqual(
 	expect.objectContaining({
 		name: 'Thor Odinson',
 		weapon: 'Stormbreaker',
@@ -106,21 +102,24 @@ expect(userProfile).toEqual(
 
 Even though the original object has `age` and `occupation`, we only care about his name and his weapon of choice. Calling `objectContaining` lets us be specific about the parts that matter, and ignore the rest (because honestly, how many characters do we need on screen, right?).
 
+> [!example] Exercise
+> Can you refactor the test for the person constructor to use `expect.objectContaining` just to make sure it's got the correct first and last name?
+
 ## Let’s Not Sweat Every Item: `expect.arrayContaining`
 
 So right after you launch a new feature, your API doesn’t return exactly what you expected. Maybe there’s a new field randomly sliding into position two. Well, `arrayContaining` is like, “Hey, don’t worry about it, as long as your important stuff's in there somewhere.”
 
 ```js
-const avengers = ['Iron Man', 'Cap', 'Hulk', 'Black Widow'];
+const avengers = ['Iron Man', 'Captain America', 'Hulk', 'Black Widow'];
 
-expect(avengers).toEqual(expect.arrayContaining(['Hulk', 'Cap']));
+expect(avengers).toEqual(expect.arrayContaining(['Hulk', 'Captain America']));
 ```
 
 Notice that we’re not matching the exact sequence or every single Avenger in that list. We’re just making sure Cap and Hulk show up somewhere. It’s the “as long as they’re invited to the party” kind of test.
 
 ## Searching for That Needle in a Hay Stack: `expect.stringMatching`
 
-Ever had a string like an error message or some user input where you don’t know the exact wording, but you’re pretty sure it belongs? Welcome to `stringMatching`. Using regex (yes, the *wizardry* beloved by developers and feared by future maintainers), you can check if your log message or output string passes the vibe check.
+Ever had a string like an error message or some user input where you don’t know the exact wording, but you’re pretty sure it belongs? Welcome to `stringMatching`. Using regex (yes, the _wizardry_ beloved by developers and feared by future maintainers), you can check if your log message or output string passes the vibe check.
 
 ```js
 const logMessage = 'User admin123 successfully logged in at 12:30 AM';
@@ -140,7 +139,7 @@ So when should you use these? Here’s the pro tip: when **exact matches don't m
 
 Let’s be honest, as developers, we live in a world where APIs change, object structures pick up random fields, and arrays never seem to behave long-term. Keeping your tests passing without sacrificing thoroughness is key.
 
-## When *Not* to Use Them
+## When _Not_ to Use Them
 
 Use asymmetric matchers sparingly, though. They can be a slippery slope. You don’t want to end up with every test being so flexible that they’re practically meaningless. Save these matchers for when being exact won’t provide much value and will just clutter your tests.
 

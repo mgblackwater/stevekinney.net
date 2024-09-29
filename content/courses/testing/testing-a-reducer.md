@@ -1,7 +1,7 @@
 ---
-title: Let's Build A Packing List
+title: "Let's Build a Packing List"
 description: Build a packing list using TypeScript and reducers.
-modified: 2024-09-28T18:32:10.818Z
+modified: 2024-09-29T16:30:58-06:00
 ---
 
 Let's say we're building a packing list and it keeps track of items in the following manner:
@@ -19,7 +19,7 @@ And, let's assume we have a `reducer` that supports the following state:
 ```ts
 const items = [
 	{
-		id: 2,
+		id: 1,
 		name: 'iPhone',
 		packed: true,
 	},

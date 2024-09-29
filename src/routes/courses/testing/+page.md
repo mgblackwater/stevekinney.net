@@ -16,6 +16,15 @@ Testing increases your confidence that your applications will function as expect
 - Familiarity with the command line
 - Experience with Node and npm
 
+## The Basics
+
+Here are some topics that we'll cover while we're doing some of the hands on activities, but I also wanted to include some content for you to reference later.
+
+- [Running Tests](/courses/testing/running-tests)
+- [How Tests Work](/courses/testing/how-tests-work)
+- [Filtering Tests](/courses/testing/filtering-tests)
+- [Organizing and Annotating Tests](/courses/testing/organizing-and-annotating-tests)
+
 ## Additional Reading
 
 In this course, we're going try to have a bias towards being hands-on and only delve into the philosophical bits when absolutely necessary. I'd prefer we spend our time writing tests rather than talking about writing tests. That said, I do have a bunch of materials on the thinking around best practices in terms of testing and you're more than welcome to go through them at your leisure.
@@ -38,6 +47,8 @@ Throughout this course, we'll be leveraging the following libraries.
 - [Playwright](https://playwright.dev/)
 
 Even if you use [Jest](https://jestjs.io/), _almost_ all of the content in this course applies. If you're curious, you can read more in [The Differences Between Jest and Vitest](/courses/testing/differences-between-jest-and-vitest).
+
+### Digging Deeper into Vitest
 
 Additionally, I also have some further reading on some more advanced topics that are beyond the scope of this course.
 

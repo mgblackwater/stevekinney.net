@@ -113,3 +113,4 @@ But first, let's take a hot minute to talk about [how tests work](how-tests-work
 - [Running Tests](running-tests.md)
 - [How Tests Work](how-tests-work.md)
 - [Filtering Tests](filtering-tests.md)
+- [Organizing and Annotating Tests](organizing-and-annotating-tests.md)

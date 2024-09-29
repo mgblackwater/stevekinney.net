@@ -1,5 +1,5 @@
 ---
-title: Setting Up and Writing Tests with Testing Library and Vitest
+title: Using Testing Library
 description: Learn to write user-focused tests using Testing Library with Vitest.
 modified: 2024-09-28T16:00:32-06:00
 ---
@@ -329,7 +329,7 @@ test('loads and displays data', async () => {
 
 ## Conclusion
 
-Testing Library, when used with Vitest, provides a powerful combination for testing React components effectively. By focusing on user interactions and component behavior, you can write tests that are reliable, maintainable, and reflective of real-world usage.
+Testing Library, when used with Vitest, provides a super powerful combination for testing DOM (or React or Vue or Svelte) components effectively. By focusing on user interactions and component behavior, you can write tests that are reliable, maintainable, and reflective of real-world usage.
 
 ## Key Takeaways
 
@@ -338,8 +338,6 @@ Testing Library, when used with Vitest, provides a powerful combination for test
 - **Avoid Implementation Details**: Prevent tests from breaking due to internal changes.
 - **Handle Asynchronous Code**: Properly wait for updates with `findBy` and `waitFor`.
 - **Leverage `userEvent`**: Simulate user interactions more accurately.
-
-By adopting these practices, you can create a robust test suite that enhances the quality and reliability of your React applications.
 
 ## When to Use Testing Library
 
@@ -351,5 +349,3 @@ By adopting these practices, you can create a robust test suite that enhances th
 
 - **Not for Snapshot Testing**: Testing Library focuses on behavior, not on exact DOM structures.
 - **Over-Mocking Can Reduce Test Effectiveness**: Be cautious not to mock too much, which can lead to tests that don't reflect actual behavior.
-
-By understanding these aspects, you can use Testing Library effectively in your testing strategy, ensuring that your components meet the needs of your users and function correctly within your application.

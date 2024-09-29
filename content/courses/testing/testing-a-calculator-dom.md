@@ -4,7 +4,7 @@ description: Learn how to extend a calculator with a basic UI using TDD.
 modified: 2024-09-28T15:37:56-06:00
 ---
 
-In the [first part of this example](basic-math.md), we built a simple calculator application using Test-Driven Development (TDD) with **Vitest**, focusing solely on pure functions without a user interface. In this second part, we'll extend the calculator by adding a basic web interface using plain JavaScript (no frameworks) and write tests to validate the DOM interactions.
+In the [first part of this example](basic-math.md).
 
 We'll continue to use TDD principles, writing tests before implementing the functionality. This time, we'll focus on testing the user interface and ensuring that user interactions produce the expected results.
 

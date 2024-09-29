@@ -1,10 +1,10 @@
 ---
 title: Using Async/Await
 description: Handling asynchronous code with async/await in Vitest.
-modified: 2024-09-28T15:40:44-06:00
+modified: 2024-09-29T16:32:15-06:00
 ---
 
-As with almost everything in JavaScript, asynchronous code makes everything harder.
+As with almost everything in JavaScript, asynchronous code makes everything harder. (**Spoiler**: But, also—as with almost everything in JavaScript relating to asynchronous code, `async`/`await` tends to make that hard part easier.)
 
 Consider this test for a moment:
 

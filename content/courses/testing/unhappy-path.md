@@ -1,19 +1,25 @@
 ---
-title: Testing The Unhappy Path
+title: Unhappy Path
 description: Learn how to test edge cases and errors to improve robustness.
-modified: 2024-09-28T16:12:21-06:00
+modified: 2024-09-29T15:30:11-06:00
 ---
 
-In software testing, the "happy path" refers to the scenario where everything works as expected—inputs are valid, conditions are ideal, and no errors occur. However, real-world applications must be resilient enough to handle unexpected situations. This is where testing the **unhappy path™** comes in. The unhappy path tests how your code behaves when things go wrong—invalid inputs, failed operations, or unexpected conditions.
+No, this is _not_ my new band name.
+
+The "happy path" refers to the scenario where everything works as expected—inputs are valid, conditions are ideal, and no errors occur. However, the Real World™ is nowhere near as kind.
+
+This is where testing the **unhappy path™** comes in. The unhappy path tests how your code behaves when things go wrong—invalid inputs, failed operations, or unexpected conditions.
 
 Testing the unhappy path ensures your application handles edge cases, errors, and unexpected inputs gracefully. Vitest provides various tools to test these scenarios effectively.
 
 ## Why Test the Unhappy Path?
 
+I suspect that I don't really need to sell you on this, but just in case:
+
 - **Robustness**: By testing how your code behaves under abnormal conditions, you ensure your application is robust and can handle real-world issues like invalid input, network failures, and more.
 - **Error Handling**: Verifying that your code throws and catches errors correctly is essential to ensure smooth recovery from failures.
 - **Security**: Testing edge cases helps prevent unexpected behaviors that could expose vulnerabilities.
-- **User Experience**: Gracefully handling errors provides better user experiences by preventing crashes or unhandled exceptions.
+- **User Experience**: Users do the strangest things—right? Gracefully handling errors provides better user experiences by preventing crashes or unhandled exceptions.
 
 ## Common Unhappy Path Scenarios
 
@@ -26,6 +32,30 @@ Unhappy path testing involves various failure scenarios, such as:
 
 ## Testing Invalid Input
 
+It it takes is like 3 minutes of talking to someone who writes some other programming language to hear the jokes about JavaScript.
+
+- `true + true === 2`
+- `1 + '1' === '11'`
+- `NaN !== NaN`
+
+The list goes on—but we have better things to get to. Surely out basic arithmetic functions from earlier are susceptible to this right? What would happen in the following cases?
+
+- `add(1)`
+- `add(null, 1)`
+- `add('1', 2)`
+- `add(2, 'potato')`
+- `subtract('1', 1)`
+- `divide(5, 0)`
+
+So on and so forth. The only _wrong_ answer here is `:shrug:`. Really in any of these cases, we have about a grand total of two options:
+
+- Fail gracefully.
+- Flip a table (a.k.a. throw an error)
+
+Our tests _need_ to cover these edge cases and this is one of the nuances of test-driven development. There is nothing about TDD that precludes you from doing these things—but, calling a day after your red-green-refactor cycle is _also_ not going to get you all the way there.
+
+### Additional Examples of Invalid Input
+
 A common unhappy path is when the user provides invalid input. You should test how your code behaves when it receives input that doesn’t meet expectations.
 
 ```js
@@ -35,7 +65,7 @@ function parseAge(age) {
 		throw new Error('Invalid age format');
 	}
 	if (age < 0 || age > 120) {
-		throw new Error('Age must be between 0 and 120');
+		throw new Error('Age must be between 0 and 129');
 	}
 	return age;
 }
@@ -69,6 +99,9 @@ In this example:
 - We test different invalid inputs (a string and `null`) and expect the function to throw an error.
 - We test out-of-range numbers to ensure the function throws an error when the input is outside the acceptable range.
 - The happy path is also included to check that the function behaves correctly with valid input.
+
+> [!example] Let's Learn How to Test The Unhappy Path
+> There a bunch of other examples below, but let's take a moment to look at how to add a little bit more resiliency to the example we've currently been working with in [Testing Error Handling and Edge Cases](error-handling-and-edge-case-testing.md).
 
 ## Testing Errors in Asynchronous Functions
 

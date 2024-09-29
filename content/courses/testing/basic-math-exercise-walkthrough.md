@@ -1,21 +1,22 @@
 ---
-title: "Walkthrough: Basic Math Exercise"
+title: 'Walkthrough: Basic Math Exercise'
 description: A short walk through for the Basic Math exercise.
-modified: 2024-09-29T13:51:12-06:00
+modified: 2024-09-29T15:58:56-06:00
 ---
 
 Here is a walkthrough for the exercise at the end of the section on [implementing some basic tests](basic-math.md).
+
 ## Subtraction Function
 
 Ideally, I did `add` for you—so, let's get started by implementing the opposite.
 
 ### Step 1: Write the Test (Red)
 
-Add tests for the `subtract` function in `calculator.test.js`:
+Add tests for the `subtract` function in `examples/basic-math/src/arithmetic.test.js`:
 
 ```javascript
-// src/calculator.test.js
-import { subtract } from '../src/calculator';
+// examples/basic-math/src/arithmetic.test.js
+import { subtract } from './calculator';
 
 describe('subtract', () => {
 	it('subtracts two positive numbers', () => {
@@ -32,7 +33,7 @@ describe('subtract', () => {
 });
 ```
 
-**Note:** Remember to import `subtract` from `calculator.js`.
+**Note:** Remember to import `subtract` from `arithmetic.js`.
 
 ### Step 2: Run the Test and See It Fail
 
@@ -46,10 +47,10 @@ You'll get an error: `subtract` is not defined.
 
 ### Step 3: Write Minimal Code to Pass the Test (Green)
 
-Implement `subtract` in `calculator.js`:
+Implement `subtract` in `arithmetic.js`:
 
 ```javascript
-// src/calculator.js
+// example/basic-math/src/arithmetic.js
 export const add = (a, b) => {
 	return a + b;
 };
@@ -77,11 +78,11 @@ Again, the code is simple and needs no refactoring.
 
 ### Step 1: Write the Test (Red)
 
-Add tests for `multiply` in `calculator.test.js`:
+Add tests for `multiply` in `examples/basic-math/src/arithmetic.test.js`:
 
 ```javascript
-// src/calculator.test.js
-import { multiply } from '../src/calculator';
+// examples/basic-math/src/arithmetic.test.js
+import { multiply } from './calculator';
 
 describe('multiply', () => {
 	it('multiplies two positive numbers', () => {
@@ -114,10 +115,10 @@ Error: `multiply` is not defined.
 
 ### Step 3: Write Minimal Code to Pass the Test (Green)
 
-Implement `multiply` in `calculator.js`:
+Implement `multiply` in `arithmetic.js`:
 
 ```javascript
-// src/calculator.js
+// example/basic-math/src/arithmetic.js
 export const add = (a, b) => {
 	return a + b;
 };
@@ -149,11 +150,11 @@ No refactoring needed. Life is so simple right now.
 
 ### Step 1: Write the Test (Red)
 
-Add tests for `divide` in `calculator.test.js`:
+Add tests for `divide` in `examples/basic-math/src/arithmetic.test.js`:
 
 ```javascript
-// src/calculator.test.js
-import { divide } from '../src/calculator';
+// examples/basic-math/src/arithmetic.test.js
+import { divide } from './calculator';
 
 describe('divide', () => {
 	it('divides two positive numbers', () => {
@@ -190,10 +191,10 @@ Error: `divide` is not defined.
 
 ### Step 3: Write Minimal Code to Pass the Test (Green)
 
-Implement `divide` in `calculator.js`:
+Implement `divide` in `arithmetic.js`:
 
 ```javascript
-// src/calculator.js
+// example/basic-math/src/arithmetic.js
 export const add = (a, b) => {
 	return a + b;
 };
