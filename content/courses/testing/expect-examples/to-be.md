@@ -4,7 +4,7 @@ description: Learn how to use the toBe matcher in Vitest for strict equality.
 modified: 2024-09-28T12:51:50-06:00
 ---
 
-Alright, let's talk about `toBe`. In Vitest (and other testing frameworks like Jest), `toBe` is a *matcher*, which is just a fancy word for "the thing we use to check if two values are the same."
+Alright, let's talk about `toBe`. In Vitest (and other testing frameworks like Jest), `toBe` is a _matcher_, which is just a fancy word for "the thing we use to check if two values are the same."
 
 ## What Does `toBe` Do?
 
@@ -47,7 +47,7 @@ describe('getAlbumCount', () => {
 
 ### What's Happening?
 
-In that first test, we expect `getAlbumCount('Green Day')` to return the exact value `13`. `toBe(13)` ensures that the function’s return value matches *exactly* what we’re expecting.
+In that first test, we expect `getAlbumCount('Green Day')` to return the exact value `13`. `toBe(13)` ensures that the function’s return value matches _exactly_ what we’re expecting.
 
 In the second test, for a band not in the library, we’re expecting the fallback value of `0`, and `toBe(0)` checks if the returned value is indeed `0`.
 
@@ -56,6 +56,3 @@ If `getAlbumCount` returned `13` for Green Day, the test passes. If it returned 
 ## Summary
 
 Use `toBe` when you need to check if two values are exactly equal, including types. It’s your go-to matcher when dealing with basic JavaScript values like strings, numbers, and booleans. Save the more complex matchers for objects and arrays!
-
-```ts
-```

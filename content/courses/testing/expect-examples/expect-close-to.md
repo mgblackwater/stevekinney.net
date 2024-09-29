@@ -8,7 +8,7 @@ So, **`expect.closeTo`**—this is your buddy when you're dealing with **floatin
 
 ## When You Would Use It
 
-Let's say you’re testing a function that performs calculations—maybe something’s dividing, adding, or doing a bit of trigonometry. Floating-point numbers don’t always give you that **perfect** match you hoped for. Instead of pulling out your calculator to verify down to the twelfth decimal point, you can use **`expect.closeTo`** to deal with these *"eh, close enough"* scenarios. It allows you to check if a number is "close" to another, within a certain tolerance (known as *delta*, the margin of error you're willing to accept).
+Let's say you’re testing a function that performs calculations—maybe something’s dividing, adding, or doing a bit of trigonometry. Floating-point numbers don’t always give you that **perfect** match you hoped for. Instead of pulling out your calculator to verify down to the twelfth decimal point, you can use **`expect.closeTo`** to deal with these _"eh, close enough"_ scenarios. It allows you to check if a number is "close" to another, within a certain tolerance (known as _delta_, the margin of error you're willing to accept).
 
 ## Example of it Being Used
 
@@ -43,7 +43,4 @@ Without **`closeTo`**, you'd be comparing exact values like a tyrant. No need to
 1. Floating-point results are a fact of life (many times with division or multiplying decimals).
 2. You're okay with values not being 100% equal but "close enough."
 
-Given these quirks, *`expect.closeTo`* will help you sleep better at night when you're dealing with funky math results. 😅
-
-```ts
-```
+Given these quirks, _`expect.closeTo`_ will help you sleep better at night when you're dealing with funky math results. 😅

@@ -32,13 +32,10 @@ test('Album should have the correct properties', () => {
 });
 ```
 
-Without **`expect.soft`**, the test would fail immediately at the first `expect(album.title).toBe('American Idiot')` because Green Day released *Dookie*, not *American Idiot*. But, with **`expect.soft`**, Vitest just raises an eyebrow, throws that failure in the results, and moves on to check the other soft assertions. You’ll get the full picture of the failures at the end of the test run instead of stopping at the first one.
+Without **`expect.soft`**, the test would fail immediately at the first `expect(album.title).toBe('American Idiot')` because Green Day released _Dookie_, not _American Idiot_. But, with **`expect.soft`**, Vitest just raises an eyebrow, throws that failure in the results, and moves on to check the other soft assertions. You’ll get the full picture of the failures at the end of the test run instead of stopping at the first one.
 
 ## When Would I Use It?
 
 If you're testing something complex with multiple important assertions—and especially in real-world projects that might have lots of tests—you probably don’t want to stop the whole show at the first red flag. That's where **`expect.soft`** shines. It helps you capture more opportunities for failure in one shot, which means fewer re-runs of your tests. Translation: less rage clicking rerun, more time to actually fix bugs.
 
 Happy testing!
-
-```ts
-```

@@ -4,7 +4,7 @@ description: Learn how to assert errors with inline snapshots in Vitest.
 modified: 2024-09-28T12:55:10-06:00
 ---
 
-Alright, so here’s the deal: `expect().toThrowErrorMatchingInlineSnapshot()` is used to assert that a function throws an error **matching a predefined inline snapshot**. This might sound a little abstract, but it’s incredibly useful when you need to make sure that a function is not just throwing *any* ol' error, but that it's throwing THE EXACT error message you expect. And to make things better (and less annoying), it allows you to **“snapshot” the error message** within your tests, often auto-generating it the first time it runs. Vitest will take a mental picture of the error and then compare future test runs against that snapshot to ensure the error doesn’t mysteriously change.
+Alright, so here’s the deal: `expect().toThrowErrorMatchingInlineSnapshot()` is used to assert that a function throws an error **matching a predefined inline snapshot**. This might sound a little abstract, but it’s incredibly useful when you need to make sure that a function is not just throwing _any_ ol' error, but that it's throwing THE EXACT error message you expect. And to make things better (and less annoying), it allows you to **“snapshot” the error message** within your tests, often auto-generating it the first time it runs. Vitest will take a mental picture of the error and then compare future test runs against that snapshot to ensure the error doesn’t mysteriously change.
 
 So why would you use this? Well, it's great if you’ve got a function that should throw a specific type of error, and you don’t want to hard-code and maintain that error message inside every test. Instead, Vitest remembers it for you. One less thing for us developers to have to keep in our brains. Woohoo.
 
@@ -25,7 +25,7 @@ function addSongToAlbum(album, song) {
 }
 ```
 
-Now, let’s write a test to verify that error gets thrown when we try to add a song that’s *way* too long. We’ll use `toThrowErrorMatchingInlineSnapshot` to assert that the error we get matches the message we're aiming for:
+Now, let’s write a test to verify that error gets thrown when we try to add a song that’s _way_ too long. We’ll use `toThrowErrorMatchingInlineSnapshot` to assert that the error we get matches the message we're aiming for:
 
 ```javascript
 import { describe, it, expect } from 'vitest';
@@ -58,6 +58,3 @@ You want this when:
 - You’re a lazy dev that loves Vitest doing the bulk of the work (no shame!).
 
 There you go—a way to make error testing easy and maintainable, and keep your code free of unnecessary hardcoded artifacts!
-
-```ts
-```

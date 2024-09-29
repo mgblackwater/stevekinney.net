@@ -45,6 +45,3 @@ Here’s what happens:
 This is great for **regression** testing when you want to lock down the structure and content of certain outputs (like files!) and ensure that changes only happen when you intend them.
 
 So next time you’re testing randomly generated files, big ol’ JSON objects, templates, or… anything where exactness matters, give `toMatchFileSnapshot` a go!
-
-```ts
-```

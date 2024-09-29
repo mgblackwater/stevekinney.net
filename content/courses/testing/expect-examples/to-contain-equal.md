@@ -40,11 +40,8 @@ describe('Music Library', () => {
 
 Boom. In this scenario, even though the `americanIdiot` object is a separate instance, as long as it matches an object in the `albums` array (structurally speaking), `toContainEqual` will give the green light.
 
-***
+---
 
-**Key takeaway:** Use `toContainEqual` when you’ve got arrays filled with objects, and you want to verify that an object with the same structure is in that array, without worrying about it being the *exact* same instance of the object.
+**Key takeaway:** Use `toContainEqual` when you’ve got arrays filled with objects, and you want to verify that an object with the same structure is in that array, without worrying about it being the _exact_ same instance of the object.
 
 Just remember, for simple arrays (like checking for a specific string or number), you can stick with the good ol' `toContain`. For objects? That's `toContainEqual` territory.
-
-```ts
-```

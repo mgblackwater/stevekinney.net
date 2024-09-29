@@ -94,6 +94,3 @@ In case you wanted to see a full list of the events that you can fire, I looked 
 - `popState`
 - `offline`
 - `online`
-
-```ts
-```

@@ -4,7 +4,7 @@ description: "Learn how Vitest's toHaveBeenCalled can test function calls."
 modified: 2024-09-28T12:53:15-06:00
 ---
 
-Ah, `toHaveBeenCalled`. This is one of those simple but oh-so-satisfying matchers that reminds you *why* you're testing in the first place: to find out if stuff actually happens the way it's supposed to.
+Ah, `toHaveBeenCalled`. This is one of those simple but oh-so-satisfying matchers that reminds you _why_ you're testing in the first place: to find out if stuff actually happens the way it's supposed to.
 
 So, what does `toHaveBeenCalled` do? It checks if a **mocked** function (like one you might mock during a test) was called at least once. It's like saying, "Hey, did this function even get invoked?" Pretty useful, right?
 
@@ -12,7 +12,7 @@ So, what does `toHaveBeenCalled` do? It checks if a **mocked** function (like on
 
 You'd typically use `toHaveBeenCalled` when you want to confirm that some function—a callback, an API call, a band manager adding yet another reunion tour—actually ran during your test.
 
-Let’s say you have an app that plays songs when you click a "play" button (because, you know, people gotta jam to *Basket Case*). You want to make sure that when your user clicks "play," your `playSong()` function got called. That’s a perfect job for `toHaveBeenCalled`.
+Let’s say you have an app that plays songs when you click a "play" button (because, you know, people gotta jam to _Basket Case_). You want to make sure that when your user clicks "play," your `playSong()` function got called. That’s a perfect job for `toHaveBeenCalled`.
 
 ## Example Time!
 
@@ -59,9 +59,6 @@ describe('handlePlayButtonClick', () => {
 
 - **What does it do?** Checks if a mocked function was called at least once.
 - **When should you use it?** When you need to verify that a specific function was actually called in the course of running your code.
-- **Why’s it handy?** Because *what's more frustrating than a function living its best life in production, only to realize later it wasn't even called during execution?*
+- **Why’s it handy?** Because _what's more frustrating than a function living its best life in production, only to realize later it wasn't even called during execution?_
 
 With Vitest’s `toHaveBeenCalled`, you can rest easy knowing that, yes, your mocked functions are getting invoked exactly as you expect… unless they aren’t, in which case, you’ve now got some debugging to do. 😅
-
-```ts
-```

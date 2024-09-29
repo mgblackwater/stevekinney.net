@@ -54,6 +54,3 @@ describe('playAlbum', () => {
 ## Bringing it home
 
 In this example, `mockLogPlayback` represents that function we're testing, and we’re making sure that on the **second call** it’s passed the argument `'When I Come Around'`. This is what `toHaveBeenNthCalledWith` is all about, helping you check that functions are not just called but called **with the right data at the right time**. Perfect for when your functions get chatty, and you wanna keep them in check.
-
-```ts
-```

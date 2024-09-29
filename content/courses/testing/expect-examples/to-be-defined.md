@@ -6,15 +6,15 @@ modified: 2024-09-28T12:51:56-06:00
 
 t
 
-Alright, so you’re looking at `toBeDefined`. This one’s pretty straightforward but can come in clutch when you're trying to make sure that something exists, as in it’s not `undefined`. Picture this: You’ve got an object, a variable, or a function return value that *might* be set… and you want to verify it’s actually defined.
+Alright, so you’re looking at `toBeDefined`. This one’s pretty straightforward but can come in clutch when you're trying to make sure that something exists, as in it’s not `undefined`. Picture this: You’ve got an object, a variable, or a function return value that _might_ be set… and you want to verify it’s actually defined.
 
 ## What Does `toBeDefined` Do?
 
-At its core, `toBeDefined` is checking that a variable or property doesn’t have the value of `undefined`. That’s it. If the thing has been defined with *anything* (even `null`), this test will pass.
+At its core, `toBeDefined` is checking that a variable or property doesn’t have the value of `undefined`. That’s it. If the thing has been defined with _anything_ (even `null`), this test will pass.
 
 ## When Would I Use It?
 
-You’d use `toBeDefined` when you’re expecting *anything*, as long as it isn’t `undefined`—which is often used as a signal that something went wrong or is missing. Let’s say you’re calling a function that adds a new artist to your music library, and you want to ensure that the resulting object includes the artist’s name and not some spooky `undefined` value!
+You’d use `toBeDefined` when you’re expecting _anything_, as long as it isn’t `undefined`—which is often used as a signal that something went wrong or is missing. Let’s say you’re calling a function that adds a new artist to your music library, and you want to ensure that the resulting object includes the artist’s name and not some spooky `undefined` value!
 
 ## Example
 
@@ -43,9 +43,6 @@ In this code, we define a super simple function called `addArtist`—it takes a 
 
 Imagine you forgot to pass a value into `addArtist`, or there was a bug and the function wasn’t assigning the `artistName` properly. Your test would fail if `artist.name` were `undefined`, which is exactly what we’re checking for.
 
-***
+---
 
 And that’s `toBeDefined` in a nutshell! You’d use it when you need to verify that something… well, exists—but you don’t care exactly what it is. Just something that isn't `undefined`.
-
-```ts
-```

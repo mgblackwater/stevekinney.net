@@ -18,7 +18,7 @@ In real-world terms—imagine you’re testing that an album title contains at l
 
 ## Example of `toSatisfy`
 
-Let’s say we have a `Song` object. We want to verify that the song’s title is sufficiently rebellious: it must be at least 5 characters long and contain no lame punctuation like exclamation marks (a Green Day song title is loud *because of the music*, not gimmicky punctuation!).
+Let’s say we have a `Song` object. We want to verify that the song’s title is sufficiently rebellious: it must be at least 5 characters long and contain no lame punctuation like exclamation marks (a Green Day song title is loud _because of the music_, not gimmicky punctuation!).
 
 ```javascript
 import { describe, it, expect } from 'vitest';
@@ -51,6 +51,3 @@ If both conditions are true, `toSatisfy` will return `true` and the test passes.
 Because **you** get to decide what "satisfy" means. No need to struggle with convoluted combinations of built-in methods. Just write a quick custom function, and you're off to the races.
 
 Now, don’t go crazy throwing `toSatisfy` on everything—you still want readable tests! But when you need some custom logic, it’s a solid tool to make your tests as punk rock as your code.
-
-```ts
-```

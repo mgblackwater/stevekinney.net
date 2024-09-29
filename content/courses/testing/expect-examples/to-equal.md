@@ -44,11 +44,8 @@ describe('getBandInfo', () => {
 ### What’s Happening Here?
 
 - **`expect(result).toEqual(…)`**: We’re saying, “Yo, `result` should deeply equal this object.” We don’t care if it’s literally the same object in memory—we just need these key-value pairs.
-- The test will pass if the fields of the object match the expected values (even if they aren’t the *same* object but just *look like* the same tightly-packed block of data).
+- The test will pass if the fields of the object match the expected values (even if they aren’t the _same_ object but just _look like_ the same tightly-packed block of data).
 
-***
+---
 
 So, that’s **toEqual**! Think of it like comparing the content rather than identity. It comes in handy for objects, arrays—you know, things that might look alike but aren’t exact copies in memory.
-
-```ts
-```

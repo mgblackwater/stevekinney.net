@@ -56,6 +56,3 @@ expect(summary).toMatch(/Green\s+Day/); // Matches 'Green Day' with possible spa
 If you're finding tons of unnecessary errors because you're strictly matching exact strings all the time—step back and think about `toMatch`. It gives you a nice, flexible way of saying, "Hey, I don’t need **everything** to be perfect, I just need this **part** to match."
 
 And just like that, you'll be writing more flexible tests that'll cause you fewer headaches when things like spaces or punctuation decide to mess with you.
-
-```ts
-```

@@ -19,7 +19,7 @@ Think of **`toHaveResolvedWith`** as a cousin to **`toEqual`** but specialized f
 
 ## Example in Action
 
-Alright, let's assume you're working on that *naïve music library* and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
+Alright, let's assume you're working on that _naïve music library_ and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
 
 ```javascript
 // musicLibrary.js
@@ -57,6 +57,3 @@ test('getArtistInfo resolves with correct artist data', async () => {
 - **`toHaveResolvedWith`** checks whether the Promise resolves with the expected artist data.
 
 Boom. Green Day data comes back, the test passes, and you get to lean back and sip your beverage of choice knowing your code isn’t gonna let you down.
-
-```ts
-```

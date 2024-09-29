@@ -13,7 +13,7 @@ modified: 2024-09-28T16:00:32-06:00
 - **Improved Test Reliability**: Leads to tests that are more robust and less prone to breakage due to refactoring.
 - **Accessible Queries**: Encourages testing with queries that reflect accessibility best practices.
 
- In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `happy-dom`). Just like we did in [Testing the DOM](testing-the-dom.md).
+In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `happy-dom`). Just like we did in [Testing the DOM](testing-the-dom.md).
 
 ```javascript
 // vitest.config.js
@@ -353,6 +353,3 @@ By adopting these practices, you can create a robust test suite that enhances th
 - **Over-Mocking Can Reduce Test Effectiveness**: Be cautious not to mock too much, which can lead to tests that don't reflect actual behavior.
 
 By understanding these aspects, you can use Testing Library effectively in your testing strategy, ensuring that your components meet the needs of your users and function correctly within your application.
-
-```ts
-```

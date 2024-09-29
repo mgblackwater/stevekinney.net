@@ -4,7 +4,7 @@ description: Learn about the toBeLessThan matcher and its practical uses.
 modified: 2024-09-28T12:52:13-06:00
 ---
 
-Alright, so you're probably wondering, *"When would I ever need `toBeLessThan`? I'm a software developer, not a mathematician!"* But trust me, this comes in handy more than you'd think.
+Alright, so you're probably wondering, _"When would I ever need `toBeLessThan`? I'm a software developer, not a mathematician!"_ But trust me, this comes in handy more than you'd think.
 
 ## What is `toBeLessThan`?
 
@@ -31,11 +31,8 @@ describe('Green Day Album Duration', () => {
 });
 ```
 
-In this test, `toBeLessThan` is making sure that the *legendary* "Dookie" album length is less than 100 minutes. And if Green Day decides to drop some epic 2-hour-long experimental concept album (*perish the thought*), this test would fail. Perfect for keeping bloated albums at bay!
+In this test, `toBeLessThan` is making sure that the _legendary_ "Dookie" album length is less than 100 minutes. And if Green Day decides to drop some epic 2-hour-long experimental concept album (_perish the thought_), this test would fail. Perfect for keeping bloated albums at bay!
 
 So, whenever you're in a situation where you need to compare and ensure that one number is **less than** another, pull out your trusty `toBeLessThan`. It’s simple, and doesn’t hurt to write!
 
 ✌️ Test on, my friend!
-
-```ts
-```

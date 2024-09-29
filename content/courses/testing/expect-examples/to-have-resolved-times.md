@@ -46,6 +46,3 @@ In this example:
 You’d use this matcher when you care about the number of successful resolves and need to check for precision in async behavior.
 
 Isn’t it sweet when your tests make sure async code behaves like you expect? Now get out there and control your promises!
-
-```ts
-```

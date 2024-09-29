@@ -32,7 +32,7 @@ export class Polygon {
 }
 ```
 
-Maybe we want to test that we're getting the correct name depending on the number of sides. It's *not* that hard to write a bunch of tests for this, but you can put on your imagination hats for a moment and imagine a world where you have a lot more cases.
+Maybe we want to test that we're getting the correct name depending on the number of sides. It's _not_ that hard to write a bunch of tests for this, but you can put on your imagination hats for a moment and imagine a world where you have a lot more cases.
 
 `describe.each` and `it.each` (or, `test.each`) allow us to use an array or table to automatically generate tests for ourselves.
 
@@ -126,6 +126,3 @@ Take a look at `src/examples/parameterizing-tests/polygon.test.ts`. Can you gene
 **Nota bene**: This is part of a series of tips and tricks that are definitely bad ideas. That said, they're surprising effective and sometimes you have to break the rules, right?
 
 I know. I have TypeScript to verify that a function will only get the arguments that I say it will. But, TypeScript can only analyze your code base. If a piece of my code has any interaction with the outside world, I might choose to add some guards in order to make sure it doesn't blow up. I'll use test parameters to make this easy for myself.
-
-```ts
-```

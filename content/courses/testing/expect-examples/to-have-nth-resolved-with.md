@@ -57,6 +57,3 @@ This makes it super easy to locate and test specific async responses in a list o
 ## TL;DR
 
 Use `toHaveNthResolvedWith` to assert what value a **specific call** to a mock async function resolves with. It’s awesome for testing multiple async requests and making sure responses happen in the sequence you expect. Now go fetch those artists! 🎶
-
-```ts
-```

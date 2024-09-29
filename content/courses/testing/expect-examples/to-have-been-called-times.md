@@ -4,7 +4,7 @@ description: Learn how to use the toHaveBeenCalledTimes matcher in Vitest.
 modified: 2024-09-28T12:53:19-06:00
 ---
 
-Alright, here's the deal: `toHaveBeenCalledTimes` is a matcher in Vitest that, as the name suggests, checks how many times a **mock function** (or spy, or jest-like "hey, what's *this* thing doing?") has been called during a test. It's super useful when you want to test whether certain functions, like event handlers or API calls, are being executed the correct number of times.
+Alright, here's the deal: `toHaveBeenCalledTimes` is a matcher in Vitest that, as the name suggests, checks how many times a **mock function** (or spy, or jest-like "hey, what's _this_ thing doing?") has been called during a test. It's super useful when you want to test whether certain functions, like event handlers or API calls, are being executed the correct number of times.
 
 ## Why Would You Use It?
 
@@ -51,7 +51,7 @@ describe('displayAlbums function', () => {
 ### Key Takeaways
 
 - We expect `fetchAlbums` to be called **exactly once**. If it was called zero times or two times, the test would fail.
-- If you swap `'Green Day'` with another band like (dare we say) *Coldplay*, and the function doesn't call `fetchAlbums()`, we can infer our logic is nice and conditional.
+- If you swap `'Green Day'` with another band like (dare we say) _Coldplay_, and the function doesn't call `fetchAlbums()`, we can infer our logic is nice and conditional.
 
 ## Real-World Scenarios
 
@@ -59,6 +59,3 @@ describe('displayAlbums function', () => {
 - **API calls**: Making sure we’re not accidentally hitting endpoints multiple times with redundant information. Or worse—missing a call!
 
 That’s it! Calm the chaos in your functions. `toHaveBeenCalledTimes` is like traffic control for your functions, making sure they behave themselves.
-
-```ts
-```

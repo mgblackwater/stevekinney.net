@@ -116,7 +116,7 @@ it('supports marking all items as unpacked', () => {
 });
 ```
 
-We *could* go even father with the asymmetric matching, but I'm not going to just to prove a point: It's all about the trade offs considering what provides the most value? *If* we found that this data structure was changing a lot and a little bit more more flexibility was helpful, then I might go for it. But, until then I'm adopting a [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) philosophy about this in a half-baked attempt to set an example for you.
+We _could_ go even father with the asymmetric matching, but I'm not going to just to prove a point: It's all about the trade offs considering what provides the most value? _If_ we found that this data structure was changing a lot and a little bit more more flexibility was helpful, then I might go for it. But, until then I'm adopting a [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) philosophy about this in a half-baked attempt to set an example for you.
 
 ## Next Steps
 
@@ -124,6 +124,3 @@ There are the tests I write when I am developing the code and the tests that I w
 
 - I might combine the first few tests into one test since if any part of that failed, I'd get a decent failure message.
 - If I ended up adding something like `dateCreated` or `lastModified`, you would definitely see me getting a little looser with those later tests.
-
-```ts
-```

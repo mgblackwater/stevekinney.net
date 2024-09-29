@@ -4,9 +4,9 @@ description: Learn how to use the toHaveReturned matcher in unit testing.
 modified: 2024-09-28T12:54:01-06:00
 ---
 
-Okay, so *toHaveReturned* is one of those handy matchers that give you the power to assert if a **mock function** has been called and has successfully returned **any value** at least once. It's like checking if the function did its job and didn't just fail silently or throw an error.
+Okay, so _toHaveReturned_ is one of those handy matchers that give you the power to assert if a **mock function** has been called and has successfully returned **any value** at least once. It's like checking if the function did its job and didn't just fail silently or throw an error.
 
-You'd use this in scenarios where you're dealing with functions that should produce a return value. For instance, let’s say you have some complex logic, and you don’t care what the return value is (we’re keeping it simple for now)—you just want to make sure that the function *actually* completed successfully.
+You'd use this in scenarios where you're dealing with functions that should produce a return value. For instance, let’s say you have some complex logic, and you don’t care what the return value is (we’re keeping it simple for now)—you just want to make sure that the function _actually_ completed successfully.
 
 Think of this like ensuring that your coffee machine at least brewed you something, even if you're hoping it tastes better than bitter disappointment.
 
@@ -44,9 +44,6 @@ describe('Music Library', () => {
 
 ## When To Use It
 
-You’ll grab **`toHaveReturned`** when you’re writing tests and you only care that the function executed successfully enough to return *something*—meaning no exceptions, no weird "undefined" situations. It’s like a pulse check for your function. If you’re getting more picky later (like checking that it returns the *correct* value), you’ve got other matchers like `toReturnWith` or `toEqual` to get more specific.
+You’ll grab **`toHaveReturned`** when you’re writing tests and you only care that the function executed successfully enough to return _something_—meaning no exceptions, no weird "undefined" situations. It’s like a pulse check for your function. If you’re getting more picky later (like checking that it returns the _correct_ value), you’ve got other matchers like `toReturnWith` or `toEqual` to get more specific.
 
 Simple test, simple peace of mind.
-
-```ts
-```

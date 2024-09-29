@@ -6,13 +6,13 @@ modified: 2024-09-28T12:53:47-06:00
 
 Alright, buckle up folks—this matcher is super handy when you're dealing with functions that return values multiple times (like when you're mocking something that's called repeatedly). The `toHaveNthReturnedWith` matcher lets you check if a function returned a specific value on a specific call.
 
-It saves you from tracking every return manually like some sort of test detective. Instead, you ask it, "Hey, on the third time this function ran, did we get *this* back?"
+It saves you from tracking every return manually like some sort of test detective. Instead, you ask it, "Hey, on the third time this function ran, did we get _this_ back?"
 
 ## When You’d Use It
 
 Suppose you’re testing a function that gets called multiple times (maybe inside a loop or in response to user actions), and you want to ensure that the nth time it’s invoked, it returns a specific value. You'd use `toHaveNthReturnedWith` to confirm that the right stuff is coming out at specific "checkpoints."
 
-This is *especially* useful when you're testing **mocks** or **spies** that simulate real-life code interactions, like mimicking an API call or database query. Rather than sifting through every return value in order manually, you point to the exact call you’re interested in.
+This is _especially_ useful when you're testing **mocks** or **spies** that simulate real-life code interactions, like mimicking an API call or database query. Rather than sifting through every return value in order manually, you point to the exact call you’re interested in.
 
 ## Example
 
@@ -53,7 +53,4 @@ This is awesome when you expect different return values on repeated calls, like 
 
 Picture it: You’re manually tracking down call return values. Call one, call two, call three—sweating all over the console log trying to figure out what’s going on.
 
-Now with `toHaveNthReturnedWith`, you just tell the test which call and what you expect it to return. It cuts down on the frustration *immensely*, especially when mocking repeated calls.
-
-```ts
-```
+Now with `toHaveNthReturnedWith`, you just tell the test which call and what you expect it to return. It cuts down on the frustration _immensely_, especially when mocking repeated calls.
