@@ -5,13 +5,22 @@
 </script>
 
 {#if dev}
-	<a
-		class="my-4 flex rounded-md border-2 border-primary-200 bg-primary-100 p-2 text-sm font-semibold shadow-sm transition-colors hover:border-primary-300 hover:bg-primary-200 dark:border-primary-900 dark:bg-primary-800 dark:text-primary-200"
-		href="vscode://file/{projectRoot}/content{$page.url.pathname}.md"
+	<div
+		class="my-4 flex flex-col gap-2 rounded-md border-2 border-primary-200 bg-primary-100 p-2 text-sm shadow-sm dark:border-primary-900 dark:bg-primary-800 dark:text-primary-200"
 	>
-		<span class="block">Open in Visual Studio Code.</span>
-		<span class="block text-primary-800">&rarr;</span>
-	</a>
+		<a
+			href="vscode://file/{projectRoot}/content{$page.url.pathname}.md"
+			class="group block decoration-primary-500"
+		>
+			Open in <span class="font-semibold group-hover:underline">Visual Studio Code</span>. &rarr;
+		</a>
+		<a
+			href="obsidian://open?value=content&file={$page.url.pathname}"
+			class="group block decoration-primary-500"
+		>
+			Open in <span class="font-semibold group-hover:underline">Obsidian</span>. &rarr;
+		</a>
+	</div>
 {/if}
 
 <header>

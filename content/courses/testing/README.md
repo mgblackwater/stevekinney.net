@@ -1,7 +1,7 @@
 ---
 title: The Basics
 description: A basic guide on writing and running tests along with mock setups.
-modified: 2024-09-28T17:41:54-06:00
+modified: 2024-09-29T13:51:29-06:00
 base: /courses/testing
 layout: contents
 exclude: true
@@ -11,10 +11,8 @@ exclude: true
 
 - [Writing Your First Tests](the-basics.md)
 - [How Tests Work](how-tests-work.md)
-- [Running Tests](running-tests.md)
-- [Filtering Tests](filtering-tests.md)
+- [Implementing Some Basic Tests](basic-math.md)
 - [Organizing and Annotating Tests](organizing-and-annotating-tests.md)
-- [Basic Mathematics](basic-math.md)
 - [Error Handling and Edge Cases](error-handling-and-edge-case-testing.md) ([Exercise](testing-for-errors-exercise.md))
 - [Strict vs. Referential Equality](beyond-strict-equality.md)
 - [Asymmetric Matchers](asymmetric-matchers.md) ([Exercise](asymmetric-matchers-exercise.md), [Solution](asymmetric-matchers-solution.md))

@@ -1,8 +1,15 @@
 ---
-title: Describe
+title: Organizing and Annotating Tests
 description: Learn how to use describe for organizing tests in suites.
-modified: 2024-09-28T18:32:11.017Z
+modified: 2024-09-29T13:44:04-06:00
 ---
+
+There are two primary ways in which we can organize our tests:
+
+1. We can break them out into different files.
+2. We can use `describe` to create some kind of logical grouping.
+
+I respect you too much to explain how files work to you, so let's focus our attention on the second item.
 
 ## `describe`
 
@@ -10,12 +17,8 @@ You can group a set of tests into a suite using `describe`. If you don't use `de
 
 The is primarily used for organizing your tests. It's helpful because it allows you to skip or isolate a particular group of tests.
 
-> If you provide a `string` after `npm test` or `npx vitest`, then Vitest will only run the rests with that `string` in the filename. Let's say we have two test files: `math.test.ts` and `words.test.ts`. Running `npm test math` will *only* run `math.test.ts` and *not* `words.test.ts`.
-
-For example, if we ran our suite against `examples/02-test-suites/math.test.ts` (using `npm test math --reporter="verbose" --run`, just to make a point), we would see something like this:
-
 ```ts
-✓ math.test.ts (8)
+✓ arithmetic.ts (8)
   ✓ add (2)
     ✓ should add two numbers correctly
     ✓ should not add two numbers incorrectly
@@ -30,6 +33,12 @@ For example, if we ran our suite against `examples/02-test-suites/math.test.ts` 
     ✓ should not multiply two numbers incorrectly
 ```
 
+### Benefits of Using `describe`
+
+- **Improved Readability**: Logical grouping makes it easier to understand what is being tested.
+- **Shared Setup and Teardown**: Utilize hooks like `beforeEach` and `afterEach` within a `describe` block for shared setup.
+- **Selective Execution**: Run or skip entire groups of tests during development.
+- **Hierarchical Organization**: Reflect the structure of your application in your tests.
 ## Hooks
 
 Using `describe` allows you to pass a name to your suite, which is helpful when you're debugging. It also gives you access to some helpful hooks:
@@ -38,6 +47,8 @@ Using `describe` allows you to pass a name to your suite, which is helpful when 
 - `afterEach`: Runs after each and every test.
 - `beforeAll`: Runs at the very beginning when the suite starts.
 - `afterAll`: Runs after all of the tests in the suite have completed.
+
+We'll cover this a bit more when we get to [setting up and tearing down with hooks](setting-up-and-tearing-down-with-hooks.md).
 
 ## Annotations
 
@@ -49,32 +60,11 @@ These are fairly similar to what we saw with our individual tests.
 - `describe.skipIf`: Skip this suite if the provided value is truthy.
 - `describe.only`: Only run this suite (and any others that use `.only` as well, of course). You probably *don't* want to accidentally commit this. Trust me. It's embarassing.
 - `describe.todo`: Marks a suite as something you're going to implement later. This is helpful when you know the kinds of tests that you'll need and and want to keep track of how many you have less.
-- `describe.each`: Used for generating a multiple suites on based on a collection of data. We'll talk about this more in [Parameterizing Tests](parameterizing-tests.md).
-- `describe.concurrent`: Run all of the tests in this suite concurrently. We'll talk about this more in [parallelizing-tests](parallelizing-tests.md).
+- `describe.each`: Used for generating a multiple suites on based on a collection of data. This is covered more in [Parameterizing Tests](parameterizing-tests.md).
+- `describe.concurrent`: Run all of the tests in this suite concurrently. This is covered more in [Parallelizing Tests](parallelizing-tests.md).
 - `describe.shuffle`: Run these tests in a random order.
 
-## Organizing Test Suites and Test Cases
-
-The `describe` function allows you to group related tests together. It takes two arguments:
-
-- A string that names the test suite.
-- A callback function that contains the tests or nested `describe` blocks.
-
-The basic syntax looks something like this.
-
-```javascript
-describe('Test Suite Name', () => {
-	// Nested tests or describe blocks
-});
-```
-
-### Benefits of Using `describe`
-
-- **Improved Readability**: Logical grouping makes it easier to understand what is being tested.
-- **Shared Setup and Teardown**: Utilize hooks like `beforeEach` and `afterEach` within a `describe` block for shared setup.
-- **Selective Execution**: Run or skip entire groups of tests during development.
-- **Hierarchical Organization**: Reflect the structure of your application in your tests.
-
+This is also covered a bit in [Filtering Tests](filtering-tests.md).
 ### Best Practices
 
 #### Group Tests by Functionality
@@ -122,7 +112,7 @@ describe('User Module', () => {
 Names should clearly state what is being tested.
 
 ```javascript
-describe('Array Methods', () => {
+describe('Array', () => {
 	describe('push', () => {
 		test('adds an element to the end of the array', () => {
 			// Test code
@@ -173,7 +163,7 @@ describe('String Manipulation', () => {
 
 #### Avoid Excessive Nesting
 
-Too much nesting can make tests hard to read. Keep the structure as flat as possible while maintaining clarity.
+Too much nesting can make tests hard to read. Keep the structure as flat as possible while maintaining clarity. Don't get carried away.
 
 ```javascript
 // Instead of deeply nested describes
@@ -234,18 +224,7 @@ describe.skip('Deprecated Functionality Tests', () => {
 
 Remember to remove `.only` and `.skip` before finalizing your code to ensure all tests are executed.
 
-#### Mirror Project Structure in Test Files
-
-Organize test files to reflect the structure of your source code, enhancing navigation and maintainability.
-
-```ts
-src / utils / calculate.js;
-format.js;
-tests / utils / calculate.test.js;
-format.test.js;
-```
-
-#### 10. Document Complex Test Cases
+#### Document Complex Test Cases
 
 Add comments to explain non-obvious tests or setups within `describe` blocks.
 
@@ -254,98 +233,6 @@ describe('Edge Cases for Date Parsing', () => {
 	// Tests for leap years and time zones
 	test('correctly parses leap day', () => {
 		// Test code
-	});
-});
-```
-
-### Examples
-
-#### Example 1: Testing Utility Functions
-
-```javascript
-// utils.js
-export function isEven(number) {
-	return number % 2 === 0;
-}
-
-export function isOdd(number) {
-	return !isEven(number);
-}
-```
-
-**Test Suite:**
-
-```javascript
-// utils.test.js
-import { describe, test, expect } from 'vitest';
-import { isEven, isOdd } from './utils';
-
-describe('Utility Functions', () => {
-	describe('isEven', () => {
-		test('returns true for even numbers', () => {
-			expect(isEven(4)).toBe(true);
-		});
-
-		test('returns false for odd numbers', () => {
-			expect(isEven(5)).toBe(false);
-		});
-	});
-
-	describe('isOdd', () => {
-		test('returns true for odd numbers', () => {
-			expect(isOdd(5)).toBe(true);
-		});
-
-		test('returns false for even numbers', () => {
-			expect(isOdd(4)).toBe(false);
-		});
-	});
-});
-```
-
-#### Example 2: Testing API Endpoints
-
-```javascript
-// api.js
-export async function fetchData(id) {
-	const response = await fetch(`/api/data/${id}`);
-	return response.json();
-}
-```
-
-**Test Suite:**
-
-```javascript
-// api.test.js
-import { describe, test, expect, beforeEach } from 'vitest';
-import { fetchData } from './api';
-import { setupServer } from 'msw/node';
-import { rest } from 'msw';
-
-const server = setupServer(
-	rest.get('/api/data/:id', (req, res, ctx) => {
-		return res(ctx.json({ id: req.params.id, value: 'test data' }));
-	}),
-);
-
-beforeAll(() => server.listen());
-afterAll(() => server.close());
-afterEach(() => server.resetHandlers());
-
-describe('API Functions', () => {
-	test('fetches data successfully', async () => {
-		const data = await fetchData(1);
-		expect(data).toEqual({ id: '1', value: 'test data' });
-	});
-
-	test('handles server errors gracefully', async () => {
-		server.use(
-			rest.get('/api/data/:id', (req, res, ctx) => {
-				return res(ctx.status(500));
-			}),
-		);
-
-		await expect(fetchData(1)).rejects.toThrow();
 	});
 });
 ```
@@ -360,6 +247,3 @@ describe('API Functions', () => {
 - **Reflect Project Structure**: Organize test files to mirror the source code layout.
 - **Focus During Development**: Use `.only` and `.skip` to streamline the testing process.
 - **Documentation**: Comment complex tests or setups for future reference.
-
-```ts
-```

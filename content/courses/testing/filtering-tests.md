@@ -1,7 +1,7 @@
 ---
-title: Filtering By File Name
+title: Filtering Tests
 description: Learn how to filter tests in Vitest by name, directory, and more.
-modified: 2024-09-28T16:19:29-06:00
+modified: 2024-09-29T14:05:40-06:00
 ---
 
 Vitest gives you a bunch of interesting ways to only run *some* of your tests. Let's walking some of the more popular ones.
@@ -10,7 +10,7 @@ Vitest gives you a bunch of interesting ways to only run *some* of your tests. L
 If you provide an argument to Vitest, then it'll filter your tests and only try to match the ones with that name.
 
 ```sh
-vitest close-enough
+npx vitest arithmetic
 ```
 
 This will run `src/close-enough.test.js`, but none of the other ones.
@@ -137,14 +137,3 @@ This will run tests related to whatever file you provide. (So, this is like filt
 ## `vitest --changed`
 
 Runs tests related to files that changed. Out of the box, this will be against any uncommitted files. But, you can also do cool stuff like `--changed HEAD~1` or give it a branch name to compare to or a particular commit.
-
-## 👩🏾‍🔬 Experiment @TODO
-
-Inside of `examples/getting-started`:
-
-1. Run `npx vitest --run` and look at which test files run.
-2. Run `npx vitest words --run` and look at which test files run.
-3. Run `npx vitest related ./math.ts --run` and look at which test files run.
-4. Run `npx vitest related ./exponent.ts --run` and look at which test files run.
-5. Assuming you don't have any un-staged or uncommitted changes, run `npx vitest --changed HEAD --run` and look at which test files—umm—*didn't* run.
-6. Make a change to `words.ts` (or any other file, really) and then run `npx vitest --changed HEAD --run` and see what tests run.
