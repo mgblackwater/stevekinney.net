@@ -10,7 +10,7 @@ The TL;DR of mocking is that sometimes we need to swap out things we don't contr
 
 A *mock* is a more powerful and flexible type of [test doubles](test-doubles.md) that can both define behavior (like a [stub](stubs.md)) and record information (like a [spy](spies.md)). Mocks allow you to specify exactly how a function should behave, including return values, thrown errors, or complex interactions, while also tracking the number of calls and arguments passed.
 
-> [!NOTE] Best Practices and Common Pitfalls
+> \[!NOTE] Best Practices and Common Pitfalls
 > We'll cover this in the slides, but you can review the [best practices and common pitfalls with mocking here](mocking-best-practices.md)
 
 ## Key Features of Mocks

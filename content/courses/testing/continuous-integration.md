@@ -83,43 +83,43 @@ jobs:
 
 First things first: Let's tell the action to check out your repository.
 
-  ```yaml
-  - name: Checkout code
-    uses: actions/checkout@v3
-  ```
+```yaml
+- name: Checkout code
+  uses: actions/checkout@v3
+```
 
 This uses the `actions/checkout` action to clone your repository.
 
 #### Set Up a Node Environment
 
-  ```yaml
-  - name: Use Node.js ${{ matrix.node-version }}
-    uses: actions/setup-node@v3
-    with:
-      node-version: ${{ matrix.node-version }}
-      cache: 'npm'
-  ```
+```yaml
+- name: Use Node.js ${{ matrix.node-version }}
+  uses: actions/setup-node@v3
+  with:
+    node-version: ${{ matrix.node-version }}
+    cache: 'npm'
+```
 
 This step:
 
-  - sets up the specified Node version, and
-  - caches `npm` dependencies to speed up the workflow.
+- sets up the specified Node version, and
+- caches `npm` dependencies to speed up the workflow.
 
 #### Install Your Dependencies
 
-  ```yaml
-  - name: Install dependencies
-    run: npm install
-  ```
+```yaml
+- name: Install dependencies
+  run: npm install
+```
 
 Nothing particularly special to see here. This installs project dependencies defined in `package.json`.
 
 #### Run the Tests
 
-  ```yaml
-  - name: Run tests
-    run: npm test
-  ```
+```yaml
+- name: Run tests
+  run: npm test
+```
 
 This executes the test script defined in your `package.json`.
 
@@ -146,18 +146,18 @@ After pushing the workflow file:
 
 Create a new branch.
 
-  ```bash
-  git checkout -b test-ci
-  ```
+```bash
+git checkout -b test-ci
+```
 
 Make a small change or add a dummy commit.
 
-  ```bash
-  touch dummy.txt
-  git add dummy.txt
-  git commit -m "Test CI workflow"
-  git push origin test-ci
-  ```
+```bash
+touch dummy.txt
+git add dummy.txt
+git commit -m "Test CI workflow"
+git push origin test-ci
+```
 
 - Create a Pull Request targeting the `main` branch.
 - The CI workflow should automatically trigger.
@@ -179,26 +179,26 @@ If you want to include coverage reporting:
 
 Adjust your test script in `package.json`:
 
-  ```json
-  {
-  	"scripts": {
-  		"test": "vitest --coverage"
-  	}
-  }
-  ```
+```json
+{
+	"scripts": {
+		"test": "vitest --coverage"
+	}
+}
+```
 
 Update the workflow to upload coverage artifacts:
 
-  ```yaml
-  - name: Run tests with coverage
-    run: npm test
+```yaml
+- name: Run tests with coverage
+  run: npm test
 
-  - name: Upload coverage report
-    uses: actions/upload-artifact@v3
-    with:
-      name: coverage-report
-      path: coverage
-  ```
+- name: Upload coverage report
+  uses: actions/upload-artifact@v3
+  with:
+    name: coverage-report
+    path: coverage
+```
 
 The coverage report will be available in the workflow artifacts.
 
@@ -217,26 +217,26 @@ To prevent merging code with failing tests:
 
 **Use Caching**: Cache dependencies to speed up workflow runs.
 
-  ```yaml
-  with:
-    node-version: ${{ matrix.node-version }}
-    cache: 'npm'
-  ```
+```yaml
+with:
+  node-version: ${{ matrix.node-version }}
+  cache: 'npm'
+```
 
 **Test Multiple Node Versions**: Ensure compatibility across different environments. This is probably only important if you're testing server-side code.
 
-  ```yaml
-  strategy:
-    matrix:
-      node-version: [14.x, 16.x, 18.x]
-  ```
+```yaml
+strategy:
+  matrix:
+    node-version: [14.x, 16.x, 18.x]
+```
 
 **Fail Fast**: Use the `fail-fast` option to stop running jobs on first failure.
 
-  ```yaml
-  strategy:
-    fail-fast: true
-  ```
+```yaml
+strategy:
+  fail-fast: true
+```
 
 **Parallelize Jobs**: If you have multiple test suites, run them in parallel to reduce total build time.
 

@@ -5,6 +5,7 @@ modified: 2024-09-29T14:05:40-06:00
 ---
 
 Vitest gives you a bunch of interesting ways to only run *some* of your tests. Let's walking some of the more popular ones.
+
 ## Filtering by File Name
 
 If you provide an argument to Vitest, then it'll filter your tests and only try to match the ones with that name.

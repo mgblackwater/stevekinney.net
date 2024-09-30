@@ -28,9 +28,8 @@ exclude: true
 - [The Setup](testing-the-dom.md)
 - [A Basic Example](testing-the-dom-example.md)
 - [Testing Local Storage](testing-local-storage.md)
-- [Testing Event Listeners](testing-event-listeners-and-user-interactions.md)
 - [Using Testing Library](testing-library.md)
-- [User Event](user-event.md)
+- [Testing Library's Matchers](testing-library-matchers.md)
 
 ## Faking It
 

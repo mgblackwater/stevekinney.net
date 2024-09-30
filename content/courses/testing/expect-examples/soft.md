@@ -32,7 +32,7 @@ test('Album should have the correct properties', () => {
 });
 ```
 
-Without **`expect.soft`**, the test would fail immediately at the first `expect(album.title).toBe('American Idiot')` because Green Day released _Dookie_, not _American Idiot_. But, with **`expect.soft`**, Vitest just raises an eyebrow, throws that failure in the results, and moves on to check the other soft assertions. You’ll get the full picture of the failures at the end of the test run instead of stopping at the first one.
+Without **`expect.soft`**, the test would fail immediately at the first `expect(album.title).toBe('American Idiot')` because Green Day released *Dookie*, not *American Idiot*. But, with **`expect.soft`**, Vitest just raises an eyebrow, throws that failure in the results, and moves on to check the other soft assertions. You’ll get the full picture of the failures at the end of the test run instead of stopping at the first one.
 
 ## When Would I Use It?
 

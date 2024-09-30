@@ -4,7 +4,7 @@ description: Learn the difference between toBe and toEqual in Vitest testing.
 modified: 2024-09-29T15:44:49-06:00
 ---
 
-Most of us have been living in the "everything should be immutable" world long enough to know that there is a difference between comparing objects by reference and comparing it with object that _looks_ the same in terms of its value, but has a difference reference in memory.
+Most of us have been living in the "everything should be immutable" world long enough to know that there is a difference between comparing objects by reference and comparing it with object that *looks* the same in terms of its value, but has a difference reference in memory.
 
 ## toBe
 
@@ -40,7 +40,7 @@ test('BigInts should be strickly equal', () => {
 });
 ```
 
-But, things get a little trickier when comparing objects (arrays _and_ functions are objects in JavaScript).
+But, things get a little trickier when comparing objects (arrays *and* functions are objects in JavaScript).
 
 ```ts
 describe('toBe', () => {
@@ -85,7 +85,7 @@ it('should generate fibonacci sequence', () => {
 
 And like, Vitest knows that they serialize to the same thing. But it's forcing us to be more specific. Instead, when we're comparing two objects that are not referentially equal, we can use `toEqual`. I'm just going to [quote the documentation](https://vitest.dev/api/expect.html#toequal) for a hot minute:
 
-> [!NOTE] Naming Things is Hard
+> \[!NOTE] Naming Things is Hard
 > `toEqual` asserts if actual value is equal to received one or has the same structure, if it is an object (compares them recursively).
 
 Let's look at another example:
@@ -119,7 +119,7 @@ describe('toEqual', () => {
 
 `toStrictEqual` is a little bit more… strict.
 
-- `{ a: 1, b: undefined }` and `{ a: 1 }` are equal but not _strictly_ equal.
+- `{ a: 1, b: undefined }` and `{ a: 1 }` are equal but not *strictly* equal.
 - A object literal and a class instance with the exact same properties are also not strictly equal.
 
 Here are some tests that you can review that might help clarify the difference. You can also play around with these tests in `examples/strictly-speaking/strictly-speaking.test.js`.
@@ -158,7 +158,7 @@ test('instances are not strictly equal to object literals with the same properti
 
 ## Further Reading
 
-Here are some assertions that you _may_ want to consider:
+Here are some assertions that you *may* want to consider:
 
 - [`toBe`](https://vitest.dev/api/expect.html#tobe)
 - [`toBeCloseTo`](https://vitest.dev/api/expect.html#tobecloseto)

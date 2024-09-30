@@ -13,6 +13,7 @@ We'll get into the specifics of each in a moment, but let's just compare them at
 - **Clear**: You’ve created some complex mock logic, and now you're retracing steps, clearing call history to test cleanly.
 - **Reset**: You made a mess with return values or `.mockImplementation`—and now you just want to start over without rebuilding the mock.
 - **Restore**: You’re done mocking, you want to reinstate the original functionality, and walk away like nothing ever happened.
+
 ## Clearing Mocks
 
 Clearing a mock removes all *invocation history*. Let's say you've got a mock that's been called a few times, and you want to reset the call count back to zero. That’s *clearing* in action.
@@ -32,7 +33,7 @@ console.log(myFunc.mock.calls.length); // Ah, nice! Back to 0.
 
 Use `mockClear()` when you want to ensure that your tests are checking fresh invocation data. This way, you’re not being haunted by any ghost calls from previous tests. Common use case? When you're running the same mock across multiple assertions but want a clean slate for each.
 
-> [!TIP] Pro Tip
+> \[!TIP] Pro Tip
 > If your tests rely on the **number of times** a function is called, reset that call count before each test—so you're always getting fresh numbers.
 
 ## Resetting Mocks
@@ -54,7 +55,7 @@ console.log(myFunc()); // undefined
 
 When should you reset? Think of it as hitting *undo*. If you’ve changed what the mock returns, and you’re like, "Nope, never should've done that,” then this is your ticket to sanity.
 
-> [!WARNING] A Word on Resetting
+> \[!WARNING] A Word on Resetting
 > With reset, you'll still *have* the mock object, but it behaves like it did out of the box—call count set to `0`, and no return values or side effects.
 
 ## Restoring Mocks

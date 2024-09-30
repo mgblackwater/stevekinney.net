@@ -8,7 +8,7 @@ Ah, `expect.assertions`—a handy little tool that can save you from pulling you
 
 `expect.assertions(number)` tells Vitest, "**Yo, Vitest!** I expect exactly `number` assertions to be called during this test." It comes in super useful when you’re dealing with asynchronous code—especially when you want to double-check that **all** your assertions actually ran.
 
-Without this, you might write a test that _looks_ like it works but sneaks out the back door before the important stuff actually happens. Cue weeks of confusion as you try to figure out why something wasn’t properly tested 😡.
+Without this, you might write a test that *looks* like it works but sneaks out the back door before the important stuff actually happens. Cue weeks of confusion as you try to figure out why something wasn’t properly tested 😡.
 
 ## When Would You Use It?
 
@@ -79,6 +79,6 @@ In both tests, `expect.assertions(1)` is basically saying, "Hey! I fully expect 
 
 And that’s it! You’ve now got a handy tool in your testing toolbox to make sure your **assertions don't ghost you mid-test**. 😉
 
----
+***
 
 Honestly, if you’ve ever lost precious debugging time only to realize your test wasn’t making it to that crucial `expect` statement, this method will feel like a mini superhero strapped right into your test suite.

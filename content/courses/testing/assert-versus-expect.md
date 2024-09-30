@@ -4,7 +4,7 @@ description: Differences in usage patterns and APIs between assert and expect.
 modified: 2024-09-28T13:25:43-06:00
 ---
 
-> [!NOTE] We Won't Be Covering This in the Course
+> \[!NOTE] We Won't Be Covering This in the Course
 > This *honestly* isn't all that important. I'm including it here just in case you get curious.
 
 The key difference between `assert` and `expect` lies in their **usage patterns** and **API styles** in testing libraries. Both are used for writing assertions (i.e., verifying that certain conditions hold true in your tests), but they differ in syntax, style, and flexibility.

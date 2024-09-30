@@ -39,6 +39,7 @@ The is primarily used for organizing your tests. It's helpful because it allows 
 - **Shared Setup and Teardown**: Utilize hooks like `beforeEach` and `afterEach` within a `describe` block for shared setup.
 - **Selective Execution**: Run or skip entire groups of tests during development.
 - **Hierarchical Organization**: Reflect the structure of your application in your tests.
+
 ## Hooks
 
 Using `describe` allows you to pass a name to your suite, which is helpful when you're debugging. It also gives you access to some helpful hooks:
@@ -65,6 +66,7 @@ These are fairly similar to what we saw with our individual tests.
 - `describe.shuffle`: Run these tests in a random order.
 
 This is also covered a bit in [Filtering Tests](filtering-tests.md).
+
 ### Best Practices
 
 #### Group Tests by Functionality

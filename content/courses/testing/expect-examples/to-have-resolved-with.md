@@ -19,7 +19,7 @@ Think of **`toHaveResolvedWith`** as a cousin to **`toEqual`** but specialized f
 
 ## Example in Action
 
-Let's assume you're working on that _naïve music library_ and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
+Let's assume you're working on that *naïve music library* and you have a function called `getArtistInfo` that fetches details about everyone’s favorite band—Green Day. You want to test that when the Promise resolves, it returns the proper artist info.
 
 ```javascript
 // musicLibrary.js

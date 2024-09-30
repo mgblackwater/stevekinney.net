@@ -18,7 +18,7 @@ In real-world terms—imagine you’re testing that an album title contains at l
 
 ## Example of `toSatisfy`
 
-Let’s say we have a `Song` object. We want to verify that the song’s title is sufficiently rebellious: it must be at least 5 characters long and contain no lame punctuation like exclamation marks (a Green Day song title is loud _because of the music_, not gimmicky punctuation!).
+Let’s say we have a `Song` object. We want to verify that the song’s title is sufficiently rebellious: it must be at least 5 characters long and contain no lame punctuation like exclamation marks (a Green Day song title is loud *because of the music*, not gimmicky punctuation!).
 
 ```javascript
 import { describe, it, expect } from 'vitest';

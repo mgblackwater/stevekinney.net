@@ -6,6 +6,28 @@ modified: 2024-09-28T16:00:32-06:00
 
 [Testing Library](https://testing-library.com/) is designed to help you out with writing tests that focus on user behavior rather than implementation details. It provides utilities to query and interact with the DOM in a way that's similar to how users would.
 
+Let's review the example from the [previous section](testing-local-storage.md).
+
+```javascript
+it('should store the value in localStorage', () => {
+	const secretInput = createSecretInput();
+	const input = secretInput.querySelector('input');
+	const button = secretInput.querySelector('button');
+
+	input.value = 'my secret';
+	button.click();
+
+	expect(localStorage.getItem('secret')).toBe('my secret');
+});
+```
+
+This test passes. So, technically it works. But, there are some caveats that make it not super great for testing real world behavior:
+
+1. We're setting the `input` element's value manually rather than simulating a user typing into it.
+2. We're calling a method on the button instead of actually clicking on it.
+
+One of the goals of Testing Library is to help us simulate actual user interactions.
+
 ## Why Use Testing Library?
 
 - **User-Centric Testing**: Focuses on testing components from the user's perspective.
@@ -13,331 +35,84 @@ modified: 2024-09-28T16:00:32-06:00
 - **Improved Test Reliability**: Leads to tests that are more robust and less prone to breakage due to refactoring.
 - **Accessible Queries**: Encourages testing with queries that reflect accessibility best practices.
 
-In your `vitest.config.js` file, set the `test` environment to `'jsdom'` (or `happy-dom`). Just like we did in [Testing the DOM](testing-the-dom.md).
+## Components of Testing Library
+
+Generally speaking you can think of Testing Library has two parts:
+
+1. **A framework-specific flavor of helper methods**: For example, there is the core [`@testing-library/dom`](https://npm.im/@testing-library/dom). But there is also: [`@testing-library/react`](https://npm.im/@testing-library/react), [`@testing-library/vue`](https://npm.im/@testing-library/vue), [`@testing-library/svelte`](https://npm.im/@testing-library/svelte), etc.
+2. **User Event** (`@testing-library/user-event`): A framework agnostic helper library for simulating user events.
+
+## Refactoring the Secret Input
+
+> [!WARNING] User Event is Asynchronous
+> The methods provided by `userEvent` are asynchronous, which means your tests will need to use `async`/`await`.
+
+Let's look at this test re-imagined using Testing Library. We'll look at the whole thing and then we'll break it down piece by piece.
 
 ```javascript
-// vitest.config.js
-export default {
-	test: {
-		environment: 'jsdom',
-	},
-};
-```
-
-## Writing Tests with Testing Library
-
-Okay, let's imagine that we have this very, very simple component.
-
-```jsx
-// Greeting.js
-import React from 'react';
-
-export function Greeting({ name }) {
-	return <h1>Hello, {name}!</h1>;
-}
-```
-
-The tests might look something like this.
-
-```jsx
-// Greeting.test.jsx
-import { render, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
-import { Greeting } from './Greeting';
-
-test('renders greeting message', () => {
-	const name = 'Alice';
-
-	render(<Greeting name={name} />);
-
-	expect(screen.getByText(`Hello, ${name}!`)).toBeInTheDocument();
-});
-```
-
-## Best Practices with Testing Library
-
-### Querying Elements the Right Way
-
-Testing Library provides various queries:
-
-- **Preferred Queries**: `getByRole`, `getByLabelText`, `getByPlaceholderText`, `getByText`, etc.
-- **Less Preferred**: `getByTestId`
-
-So, for this `<Button />` component:
-
-```jsx
-// Button.js
-export function Button({ onClick, children }) {
-	return <button onClick={onClick}>{children}</button>;
-}
-```
-
-You'd maybe have a test that looks something like this:
-
-```jsx
-test('calls onClick when clicked', () => {
-	const handleClick = vi.fn();
-	render(<Button onClick={handleClick}>Click Me</Button>);
-
-	const button = screen.getByRole('button', { name: /click me/i });
-	button.click();
-
-	expect(handleClick).toHaveBeenCalledTimes(1);
-});
-```
-
-Using `getByRole('button')` is preferred as it reflects how users (including those using assistive technologies) interact with the application.
-
-### Avoid Testing Implementation Details
-
-Focus on what the component renders, not how it renders it. So, you'd want to **avoid** doing something like this:
-
-```jsx
-const { container } = render(<Component />);
-const div = container.querySelector('.my-class');
-```
-
-Instead, you'd **prefer** to do something like this:
-
-```jsx
-const element = screen.getByText(/some text/i);
-```
-
-### Use `userEvent` for Simulating User Interactions
-
-`userEvent` simulates real user interactions more accurately than `fireEvent`.
-
-**Example:**
-
-```jsx
-import userEvent from '@testing-library/user-event';
-
-test('checkbox toggles correctly', async () => {
-	render(<CheckboxComponent />);
-	const checkbox = screen.getByRole('checkbox');
-
-	await userEvent.click(checkbox);
-	expect(checkbox).toBeChecked();
-});
-```
-
-### Async-Await with Asynchronous Updates
-
-When testing components that update asynchronously, use `findBy` queries and `waitFor`.
-
-**Example:**
-
-```jsx
-test('loads and displays data', async () => {
-	render(<AsyncComponent />);
-	expect(screen.getByText(/loading/i)).toBeInTheDocument();
-
-	const dataElement = await screen.findByText(/loaded data/i);
-	expect(dataElement).toBeInTheDocument();
-});
-```
-
-### Clean Up After Tests
-
-Testing Library automatically cleans up the DOM after each test, but if you have additional cleanup, handle it in `afterEach`.
-
-### Use `jest-dom` Matchers
-
-Enhance your assertions with matchers like `toBeInTheDocument`, `toBeVisible`, etc.
-
-```jsx
-import '@testing-library/jest-dom';
-
-expect(element).toBeVisible();
-```
-
-## When is Testing Library Beneficial?
-
-### Testing User Interactions
-
-- **Benefit**: Ensures that components behave correctly when users interact with them.
-- **Example**: Testing form submissions, button clicks, input changes.
-
-### Ensuring Accessibility
-
-- **Benefit**: Encourages the use of accessible selectors (`getByRole`, `getByLabelText`).
-- **Example**: Verifying that all interactive elements are accessible via screen readers.
-
-### Component Behavior Testing
-
-- **Benefit**: Validates that components render the correct output based on props and state.
-- **Example**: Testing conditional rendering, list outputs, error messages.
-
-### Avoiding Fragile Tests
-
-- **Benefit**: Tests are less likely to break due to changes in implementation details (like class names or DOM structure).
-- **Example**: Refactoring a component without changing its external behavior won't break the tests.
-
-## Potential Pitfalls and How to Avoid Them
-
-### Over-Reliance on `getByTestId`
-
-**Issue**: Using `data-testid` attributes can lead to tests that are more coupled to implementation details.
-
-**Solution**:
-
-- Prefer queries that reflect how users interact with the UI.
-- Use `getByTestId` only when no other query is suitable.
-
-### Ignoring Accessibility Considerations
-
-**Issue**: Not using accessible queries can miss out on testing the component's accessibility.
-
-**Solution**:
-
-- Use queries like `getByRole`, `getByLabelText`, which encourage accessible coding practices.
-
-### Not Waiting for Asynchronous Updates
-
-**Issue**: Tests may pass or fail inconsistently if they don't account for asynchronous state updates.
-
-**Solution**:
-
-- Use `findBy` queries or `waitFor` to wait for asynchronous changes.
-
-### Testing Implementation Details
-
-**Issue**: Querying specific DOM nodes or component internals can make tests fragile.
-
-**Solution**:
-
-- Focus on the component's output and user interactions.
-- Avoid reaching into component internals or relying on specific HTML structures.
-
-### Mocking Too Much
-
-**Issue**: Over-mocking components and modules can lead to tests that don't reflect actual behavior.
-
-**Solution**:
-
-- Mock external dependencies like network requests.
-- Avoid mocking components unless necessary.
-
-## Examples in Practice
-
-### Testing Form Submission
-
-```jsx
-// LoginForm.js
-export function LoginForm({ onSubmit }) {
-	return (
-		<form
-			onSubmit={(e) => {
-				e.preventDefault();
-				const { username, password } = e.target.elements;
-				onSubmit({
-					username: username.value,
-					password: password.value,
-				});
-			}}
-		>
-			<label>
-				Username:
-				<input name="username" />
-			</label>
-			<label>
-				Password:
-				<input name="password" type="password" />
-			</label>
-			<button type="submit">Login</button>
-		</form>
-	);
-}
-```
-
-**Test:**
-
-```jsx
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { expect, test, vi } from 'vitest';
-import { LoginForm } from './LoginForm';
-
-test('submits the form with username and password', async () => {
-	const handleSubmit = vi.fn();
-	render(<LoginForm onSubmit={handleSubmit} />);
-
-	await userEvent.type(screen.getByLabelText(/username/i), 'myUser');
-	await userEvent.type(screen.getByLabelText(/password/i), 'myPass');
-	await userEvent.click(screen.getByRole('button', { name: /login/i }));
-
-	expect(handleSubmit).toHaveBeenCalledWith({
-		username: 'myUser',
-		password: 'myPass',
+describe('createSecretInput', async () => {
+	beforeEach(() => {
+		document.innerHTML = '';
+		document.body.appendChild(createSecretInput());
+		localStorage.clear();
+	});
+
+	it('should store the value in localStorage', async () => {
+		const input = screen.getByLabelText('Secret');
+		const button = screen.getByRole('button', { name: 'Store Secret' });
+
+		await userEvent.type(input, 'my secret');
+		await userEvent.click(button);
+
+		expect(localStorage.getItem('secret')).toBe('my secret');
 	});
 });
 ```
 
-**Explanation:**
+### Pulling in Our Dependencies
 
-- Simulates user typing into inputs and clicking the submit button.
-- Verifies that `onSubmit` is called with the correct data.
+So, first I need to pull in that helper library—the one that I said was "framework-flavored" earlier. In this case, we're just using vanilla JavaScript. So, we're going with `@testing-library/dom`. We'll also pull in `@testing-library/user-event` for interacting with the DOM as a user might.
 
-### Testing Component with Asynchronous Data
-
-```jsx
-// DataLoader.js
-import React, { useEffect, useState } from 'react';
-
-export function DataLoader() {
-	const [data, setData] = useState(null);
-
-	useEffect(() => {
-		fetch('/api/data')
-			.then((res) => res.json())
-			.then(setData);
-	}, []);
-
-	if (!data) return <div>Loading…</div>;
-	return <div>Data: {data.value}</div>;
-}
+```javascript
+import { screen } from '@testing-library/dom';
+import userEvent from '@testing-library/user-event';
 ```
 
-**Test:**
+### Setting Up the DOM
 
-```jsx
-import { render, screen } from '@testing-library/react';
-import { expect, test, vi } from 'vitest';
-import { DataLoader } from './DataLoader';
+In the previous iteration, I was just playing around with the elements in memory. They were never rendered to the page. This time around, let's render them into the document. I'm also going to make sure I clear out the `document` before each test.
 
-test('loads and displays data', async () => {
-	global.fetch = vi.fn(() =>
-		Promise.resolve({
-			json: () => Promise.resolve({ value: 'Test Data' }),
-		}),
-	);
+```javascript
+beforeEach(() => {
+	// Clear out the DOM.
+	document.innerHTML = '';
 
-	render(<DataLoader />);
-	expect(screen.getByText(/loading/i)).toBeInTheDocument();
+	// Clear out `localStorage`.
+	localStorage.clear();
 
-	const dataElement = await screen.findByText(/data: test data/i);
-	expect(dataElement).toBeInTheDocument();
-
-	global.fetch.mockRestore();
+	// Render our little component.
+	document.body.appendChild(createSecretInput());
 });
 ```
 
-**Explanation:**
+### Interact with the DOM
 
-- Mocks `fetch` to return test data.
-- Uses `findByText` to wait for the asynchronous update.
+Now, we're going to use some accessibility selectors. `screen` is basically the browser window. This means that your `id` could change or be randomly generated or whatever. We're using the same functionality that a screen reader might use in order to find the elements.
 
-## Conclusion
+```javascript
+it('should store the value in localStorage', async () => {
+	const input = screen.getByLabelText('Secret');
+	const button = screen.getByRole('button', { name: 'Store Secret' });
 
-Testing Library, when used with Vitest, provides a super powerful combination for testing DOM (or React or Vue or Svelte) components effectively. By focusing on user interactions and component behavior, you can write tests that are reliable, maintainable, and reflective of real-world usage.
+	await user.type(input, 'my secret');
+	await user.click(button);
 
-## Key Takeaways
+	expect(localStorage.getItem('secret')).toBe('my secret');
+});
+```
 
-- **User-Focused Testing**: Emphasize testing how users interact with your components.
-- **Accessible Queries**: Use queries that reflect accessibility best practices.
-- **Avoid Implementation Details**: Prevent tests from breaking due to internal changes.
-- **Handle Asynchronous Code**: Properly wait for updates with `findBy` and `waitFor`.
-- **Leverage `userEvent`**: Simulate user interactions more accurately.
+> [!danger] Make Sure You're Awaiting Your User Events
+> As an experiment—go ahead and remove those `await` keywords and see what happens. **Spoiler**: It's not good.
 
 ## When to Use Testing Library
 
@@ -345,7 +120,16 @@ Testing Library, when used with Vitest, provides a super powerful combination fo
 - **Accessibility Compliance**: Ensuring components are accessible and interact as expected.
 - **Behavior Verification**: Validating that components render and update correctly based on props and state.
 
-## Potential Limitations
+> [!example] Exercise
+> Can you refactor our button from [this section](testing-the-dom-example.md) (found in `examples/button-factory/src/button.js`) to use Testing Library and User Event? You can see a potential solution [here](testing-library-solution.md).
 
-- **Not for Snapshot Testing**: Testing Library focuses on behavior, not on exact DOM structures.
-- **Over-Mocking Can Reduce Test Effectiveness**: Be cautious not to mock too much, which can lead to tests that don't reflect actual behavior.
+## Additional Reading
+
+`@testing-library/dom` has a function called `fireEvent` that will fire raw events at DOM nodes. This is useful when you need it, but—generally-speaking—you should aim to use `user-event` instead since it will better simulate a user interaction. For example, a simple user event might consist of multiple DOM events.
+
+- The user might click to focus on the field (`click`, `focus`).
+- They might press a key (`keydown`, `keypress`).
+- They'll probably release that key (`keyup`).
+- That'll trigger a `change` event on the input field.
+
+I wrote a bit more on [`user-event` here](user-event.md).

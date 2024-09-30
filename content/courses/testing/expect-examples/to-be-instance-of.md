@@ -35,7 +35,7 @@ test('creates an instance of Artist', () => {
 });
 ```
 
-In this example, we’ve got an `Artist` class and a `createArtist` function that returns a new instance of it. We’re using `toBeInstanceOf` to make sure that whatever `createArtist` spits out when handed the string `'Green Day'` actually _is_ an instance of `Artist`.
+In this example, we’ve got an `Artist` class and a `createArtist` function that returns a new instance of it. We’re using `toBeInstanceOf` to make sure that whatever `createArtist` spits out when handed the string `'Green Day'` actually *is* an instance of `Artist`.
 
 If `createArtist` started returning something wild like an empty object `{}`, this test would fail because that’s not an instance of `Artist`. It helps you catch those weird bugs before they escape into the wild and end up on your production servers.
 

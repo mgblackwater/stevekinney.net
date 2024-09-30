@@ -4,7 +4,7 @@ description: Learn how to mock modules in Vitest using vi.mock and vi.doMock.
 modified: 2024-09-28T15:11:48-06:00
 ---
 
-> [!warning] A Word on Module Systems
+> \[!warning] A Word on Module Systems
 > `vi.mock` works only for modules that were imported with the `import` keyword. It doesn't work with `require`.
 
 Vitest provides `vi.mock`, which allows you to mock any import that you provide a path for. It's got the following signature:

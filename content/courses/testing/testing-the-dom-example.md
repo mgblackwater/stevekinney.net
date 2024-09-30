@@ -1,23 +1,22 @@
 ---
-title: Testing the DOM with Vitest
+title: Testing a DOM Element
 description: Learn how to test DOM interactions using Vitest and DOM Testing Library.
 modified: 2024-09-28T16:08:44-06:00
 ---
 
-Imagine you have a button, and when you click it, something happens. Classic case, right? Let’s whip up a basic test for that interaction.
-
-Here’s a simple function that creates our DOM structure and adds some behavior:
+Imagine you have a button, and when you click it, something happens. Classic case, right? Let’s whip up a basic test for that interaction. Here’s a simple function, found in `examples/button-factory/src/button.js`, that creates our DOM structure and adds some behavior:
 
 ```javascript
-function createButton() {
-	const btn = document.createElement('button');
-	btn.textContent = 'Click Me';
+// examples/button-factory/src/button.js
+export function createButton() {
+	const button = document.createElement('button');
+	button.textContent = 'Click Me';
 
-	btn.addEventListener('click', () => {
-		btn.textContent = 'Clicked!';
+	button.addEventListener('click', () => {
+		button.textContent = 'Clicked!';
 	});
 
-	document.body.appendChild(btn);
+	return button;
 }
 ```
 
@@ -28,43 +27,26 @@ Nothing fancy—just a button that says "Click Me," and when you click it, it ch
 Now let's test this sucker and make sure it's not lying to us. We’ll add a new test case to ensure the button successfully changes text on click.
 
 ```javascript
-import { beforeEach, afterEach, describe, it, expect } from 'vitest';
-import { fireEvent } from '@testing-library/dom';
-import { createButton } from './your-button-module'; // adjust as per your file structure
+import { it, expect, describe } from 'vitest';
+import { createButton } from './button.js';
 
-describe('Button DOM interaction', () => {
-	beforeEach(() => {
-		// Clean slate. Make sure nothing weird from previous tests is hanging around.
-		document.body.innerHTML = '';
+describe('createButton', () => {
+	it('should create a button element', () => {
+		const button = createButton();
+		expect(button.tagName).toBe('BUTTON');
 	});
 
-	afterEach(() => {
-		// Clean up after ourselves.
-		document.body.innerHTML = '';
-	});
-
-	it('should change button text on click', () => {
-		// Step 1: Set up the DOM.
-		createButton();
-
-		// Step 2: Select the button you created.
-		const button = document.querySelector('button');
-		expect(button).not.toBeNull();
+	it('should have the text "Click Me"', () => {
+		const button = createButton();
 		expect(button.textContent).toBe('Click Me');
+	});
 
-		// Step 3: Simulate the click event.
-		fireEvent.click(button);
-
-		// Step 4: Assert the text has changed.
+	it('should change the text to "Clicked!" when clicked', () => {
+		const button = createButton();
+		button.click();
 		expect(button.textContent).toBe('Clicked!');
 	});
 });
 ```
 
-## What's Happening Here?
-
-- **beforeEach** and **afterEach**: We clean up the DOM before and after every test so no icky states leak between tests. If you don’t clean up, welcome to Flaky Test City—nobody likes it there.
-- **fireEvent**: This handy method lets us simulate user interactions. No more manually triggering events. fireEvent lets you simulate clicks, typing, mouseovers—it's your one-stop-shop for mocking user behavior.
-- **Assertions**: We’re using **expect** to check if that sneaky button is doing what it’s supposed to. We’re making sure the initial state says, "Click Me." Then, once a user interaction happens (the click), we expect it to say, "Clicked!"
-
-If you run your test suite and everything passes, congratulations! You’ve just successfully tamed the DOM in a test.
+Whether you're using `jsdom` or `happy-dom`, all of the DOM methods have been filled in for you. The code is still running in Node, technically—but it has access to all of the methods that you might otherwise only find in the browser.

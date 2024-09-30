@@ -32,7 +32,7 @@ describe('getBandInfo function', () => {
 
 In this case, we're calling `mockGetBandInfo()` three times and using `toHaveReturnedTimes(3)` to check whether it successfully returned something three times. If it didn’t? Well, the test would let you know about your shenanigans.
 
----
+***
 
 ## Real-World Use
 

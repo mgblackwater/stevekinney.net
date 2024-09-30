@@ -4,7 +4,7 @@ description: Learn how to useexpect.any to assert types in Vitest tests.
 modified: 2024-09-28T12:50:58-06:00
 ---
 
-So here’s what’s going on with `expect.any`: You’ll likely run into situations where you don’t care _exactly_ what a value is, but you do care about its **type**. Maybe you’re not concerned if a function returns a string that says "hello" or "goodbye"—but you do need to know that it’s, well, **a string**.
+So here’s what’s going on with `expect.any`: You’ll likely run into situations where you don’t care *exactly* what a value is, but you do care about its **type**. Maybe you’re not concerned if a function returns a string that says "hello" or "goodbye"—but you do need to know that it’s, well, **a string**.
 
 This is where `expect.any` shines. Instead of checking for super-specific values, you use it to check that the value is of a certain type—like a string, number, or even a class instance.
 
@@ -20,7 +20,7 @@ It’s super useful when:
 
 ## Example
 
-Let’s play with this in the context of our _music library_. Imagine you’ve got a function that adds an artist. It’ll return an object that includes the artist’s name and a timestamp. We want to check that this timestamp exists and is a **number**, but we don’t care about the actual value of the timestamp (because, you know, it’ll change every time).
+Let’s play with this in the context of our *music library*. Imagine you’ve got a function that adds an artist. It’ll return an object that includes the artist’s name and a timestamp. We want to check that this timestamp exists and is a **number**, but we don’t care about the actual value of the timestamp (because, you know, it’ll change every time).
 
 ```js
 // Our function to test
@@ -44,6 +44,6 @@ test('should add artist with a valid timestamp', () => {
 });
 ```
 
-**What’s happening here?** We’re verifying that the result includes a `createdAt` value, but instead of nailing down the exact number (because matching dynamic timestamps—yikes, no thanks!), we tell Vitest we _expect_ that this will be a `Number`. And that, my friends, is `expect.any` in action!
+**What’s happening here?** We’re verifying that the result includes a `createdAt` value, but instead of nailing down the exact number (because matching dynamic timestamps—yikes, no thanks!), we tell Vitest we *expect* that this will be a `Number`. And that, my friends, is `expect.any` in action!
 
-It’s like saying: "Hey Vitest, as long as you've got _something_ here that fits this type, we're good."
+It’s like saying: "Hey Vitest, as long as you've got *something* here that fits this type, we're good."

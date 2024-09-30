@@ -4,7 +4,7 @@ description: "Comparing Jest and Vitest's ecosystems, speed, and features."
 modified: 2024-09-28T14:49:45-06:00
 ---
 
-> [!WARNING] You Don't Need to Read This
+> \[!WARNING] You Don't Need to Read This
 > They're barely different and it probably doesn't matter which one you pick. I use Vitest because I work on projects that typically use [Vite](https://vite.dev). It's as simple as that.
 
 ## Which Testing Framework Should I Use?
@@ -18,6 +18,7 @@ But, if you really wanted to know my heuristic, here it is:
 - [Angular](https://angular.io/guide/testing) uses Jasmine by default. But, like I said, Jest is based on Jasmine and Vitest is a drop-in replacement for Jest.
 
 ## Speed and Performance
+
 ### Jest
 
 Jest has been around the block. Built by Facebook, it's perfect for testing React apps (and others!) and has a reputation for giving you everything you need out of the box—mocking, snapshots, you name it. But here’s the thing. Jest can sometimes feel a little… *slow*. Not glacial slow, but slow enough that you’re going to start wondering if your code has some existential crisis every time the test suite runs. It uses the Node runtime exclusively, which is great for stability, but can limit its execution speed compared to other approaches.
@@ -90,6 +91,7 @@ Instant peace of mind.
 ### Vitest
 
 Vitest also supports snapshots. However, if you’ve built up a mountain of Jest snapshots, they aren’t *directly* transferable. That means switching might require a bit of work converting, and Vitest’s snapshot functionality doesn’t have the same level of maturity—for now. It gets the job done, but I wouldn’t print the victory cake about switching just for snapshots alone.
+
 ## Which One Is Right for You?
 
 At the end of the day *both* are great for testing your JavaScript projects. But here’s the real-world takeaway:

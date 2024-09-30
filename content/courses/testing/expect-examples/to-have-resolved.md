@@ -44,4 +44,4 @@ it('should resolve the promise for fetching albums', async () => {
 
 ## Quick Recap
 
-Use `toHaveResolved` when you want to be sure that a promise didn’t fail or stay unresolved. It’s like a bouncer at the door going, “Hey, did the band show up on time?” without caring too much _what_ they're playing once they do show up (we’ll worry about that in another test!).
+Use `toHaveResolved` when you want to be sure that a promise didn’t fail or stay unresolved. It’s like a bouncer at the door going, “Hey, did the band show up on time?” without caring too much *what* they're playing once they do show up (we’ll worry about that in another test!).

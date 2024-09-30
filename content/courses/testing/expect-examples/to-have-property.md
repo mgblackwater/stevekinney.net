@@ -4,7 +4,7 @@ description: Learn how to use the toHaveProperty matcher in Vitest.
 modified: 2024-09-28T12:53:50-06:00
 ---
 
-Ah, **`toHaveProperty`**—this little gem is one of those matchers that once you get the hang of it, you'll find yourself using it _all the time_. Here's what it does in a nutshell:
+Ah, **`toHaveProperty`**—this little gem is one of those matchers that once you get the hang of it, you'll find yourself using it *all the time*. Here's what it does in a nutshell:
 
 **What it does:** It checks if an object has a specific property, and optionally, it checks if that property has a specific value. Kind of like "Do you have the thing? And if you’ve got the thing, is it set to what I told you to set it to?" This helps you verify if your object structures are as expected, which is pretty crucial for things like making sure responses from an API, or things like album objects in your music library, have the expected shape.
 
@@ -41,8 +41,8 @@ Notice what’s going on here? First, we’re checking to see if the album objec
 
 Then, we’re going a step further to ensure that the `artist` property is specifically `'Green Day'`. This is great for when you not only need the property to exist but also want to double-check its value.
 
-This keeps your tests clean, concise, and readable, and it prevents that tough debugging headache when something _almost_ works… but not quite.
+This keeps your tests clean, concise, and readable, and it prevents that tough debugging headache when something *almost* works… but not quite.
 
 ## Closing Thoughts
 
-In the end, **`toHaveProperty`** is a down-to-business kind of matcher. You call it when you _probably_ have an object, but you need to make sure it's the right kind of object. Maybe it's missing the `artist`, or maybe the `title` is wrong—who knows? But `toHaveProperty` ensures things are _where they're supposed to be_. And honestly, isn’t that what we all want in life and code?
+In the end, **`toHaveProperty`** is a down-to-business kind of matcher. You call it when you *probably* have an object, but you need to make sure it's the right kind of object. Maybe it's missing the `artist`, or maybe the `title` is wrong—who knows? But `toHaveProperty` ensures things are *where they're supposed to be*. And honestly, isn’t that what we all want in life and code?

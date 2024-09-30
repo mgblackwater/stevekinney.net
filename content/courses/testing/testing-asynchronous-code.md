@@ -88,5 +88,5 @@ The first test fails with the following error:
 + Received "Promise {}"
 ```
 
-> [!TIP] Working with Promises
+> \[!TIP] Working with Promises
 > If you're working with Promises, [Vitest also has some special functionality](testing-promises.md) that you could optionally use.

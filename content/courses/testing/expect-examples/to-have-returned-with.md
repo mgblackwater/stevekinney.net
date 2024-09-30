@@ -4,17 +4,17 @@ description: Learn about the toHaveReturnedWith matcher with a practical example
 modified: 2024-09-28T12:54:07-06:00
 ---
 
-Let's dive into **`toHaveReturnedWith`** with an example that _might_ just hit home.
+Let's dive into **`toHaveReturnedWith`** with an example that *might* just hit home.
 
 ## What It Does
 
-**`toHaveReturnedWith`** is a matcher that checks if a _mocked function_ (aka a simulated version of a real function) returned a specific value—at least one time during its executions.
+**`toHaveReturnedWith`** is a matcher that checks if a *mocked function* (aka a simulated version of a real function) returned a specific value—at least one time during its executions.
 
 So, you're basically asking: "Hey, was this the value that came back from this function at any point?"
 
 ## When Would You Use It?
 
-You'll use this when you need to verify that a _mocked function_ actually returned the expected value during its run time, and not just what it was called _with_ (there’s another matcher, `toHaveBeenCalledWith`, for that!). This is ripe for those cases where you want to ensure that your function did its job and spat out the right result. Think of processing something or calculating a value instead of just verifying inputs.
+You'll use this when you need to verify that a *mocked function* actually returned the expected value during its run time, and not just what it was called *with* (there’s another matcher, `toHaveBeenCalledWith`, for that!). This is ripe for those cases where you want to ensure that your function did its job and spat out the right result. Think of processing something or calculating a value instead of just verifying inputs.
 
 ## Example Time
 

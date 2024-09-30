@@ -1,10 +1,10 @@
 ---
-title: Starting With Simple Tests
+title: Starting with Simple Tests
 description: Learn how to test basic expressions and functions using Vitest.
 modified: 2024-09-29T14:04:33-06:00
 ---
 
-> [!TIP] Sample Code Repository
+> \[!TIP] Sample Code Repository
 > If you haven't already, now is a good time to clone [the repository with the sample code for this course](https://github.com/stevekinney/introduction-to-testing).
 
 Let's start with the world's simplest test. I have an example of this code in `examples/scratchpad/index.test.js`, but you probably don't need to worry about running it just yet.
@@ -17,7 +17,7 @@ it('is a super simple test', () => {
 });
 ```
 
-You _could_ run this test by running `npm test` from the command line, but don't expect any surprises.
+You *could* run this test by running `npm test` from the command line, but don't expect any surprises.
 
 At the highest level, we can see the following:
 
@@ -27,7 +27,7 @@ At the highest level, we can see the following:
 - Inside of that function, we use an assert library to make a statement about what we expect to be the way the world works.
   - In this case, we're expecting this two things to be equal and they are.
 
-> [!TIP] Pro-Tip
+> \[!TIP] Pro-Tip
 > You'll see other tests where instead of `test`, we use `it`. There is literally no difference between these two functions. They are aliases of each other. You can use them interchangeably.
 
 Okay, well this works—but, it's a little ridiculous. Let's actually test some expressions or maybe even a function.
@@ -45,13 +45,13 @@ test('a test with a function', () => {
 });
 ```
 
-The selling point here is that when we write tests, we can make a bunch of statements about how we _expect_ our code to work. Our test suite's job is to save us the hassle of having to manually check on all of these things. Instead, the test runner will grab our code and make sure that everything still works the way that we expect as we go about our business adding features and refactoring code.
+The selling point here is that when we write tests, we can make a bunch of statements about how we *expect* our code to work. Our test suite's job is to save us the hassle of having to manually check on all of these things. Instead, the test runner will grab our code and make sure that everything still works the way that we expect as we go about our business adding features and refactoring code.
 
 Generally speaking, it's unlikely that our `add` function would live inside of a test. More likely, it's a utility function of some kind that we'd use in our application.
 
 We'll keep our scratchpad around in the repository for anytime we want to do some quick experiments, but let's hop over to `examples/basic-math/src/arithmetic.js` instead.
 
-We can pull out our _very_ exciting function into it's own file like we might otherwise expect to see in our normal day-to-day.
+We can pull out our *very* exciting function into it's own file like we might otherwise expect to see in our normal day-to-day.
 
 ```javascript
 // arithmetic.js

@@ -4,7 +4,7 @@ description: Refactor your tests to use userEvent instead of fireEvent.
 modified: 2024-09-28T13:04:21-06:00
 ---
 
-> [!NOTE] If You're Not Using the Example Repository
+> \[!NOTE] If You're Not Using the Example Repository
 > I've already done this for you, but I'm going to include this for reference. If you haven’t installed `@testing-library/user-event`, you made need to do a `npm install --save-dev @testing-library/user-event`.
 
 ## Refactor the Test File to Use `userEvent`

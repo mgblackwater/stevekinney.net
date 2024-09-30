@@ -11,11 +11,11 @@ The `toHaveLength` matcher is used to check that an object, array, or string has
 
 ## When Would I Use It?
 
-- You’ve got an array of albums, and it better have _exactly_ the number of albums you expect.
+- You’ve got an array of albums, and it better have *exactly* the number of albums you expect.
 - You’re testing a string input, like the name of an artist, and you need to check it’s not too short (seriously, no artist name should have just one letter).
 - You’ve got an object that has a length property—because, JavaScript, of course!
 
-Basically, if you want to assert the count of _anything_, `toHaveLength` is your jam.
+Basically, if you want to assert the count of *anything*, `toHaveLength` is your jam.
 
 ## Example
 
@@ -43,7 +43,7 @@ describe('Music Library', () => {
 
 **What’s happening here?**
 
-- We’re saying, _"Hey, those albums for Green Day? That should be exactly 2."_
+- We’re saying, *"Hey, those albums for Green Day? That should be exactly 2."*
   If the length is off, Vitest will call you out and tell you what you got wrong.
 
 Pretty straightforward, right? You just watch for an array, string, or anything else that has a `length` and drop `toHaveLength` on it to make sure you're not surprised during runtime.
