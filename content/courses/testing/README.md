@@ -1,13 +1,11 @@
 ---
 title: The Basics
 description: A basic guide on writing and running tests along with mock setups.
-modified: 2024-09-30T07:14:48-06:00
+modified: 2024-09-30T14:13:46-06:00
 base: /courses/testing
 layout: contents
 exclude: true
 ---
-
-- [Start Here](.)
 
 ## The Basics
 
@@ -35,19 +33,14 @@ exclude: true
 
 - [Test Doubles](test-doubles.md)
 - [Stubs](stubs.md), [Spies](spies.md), and [Mocks](mocks.md)
-- [Auto-Mocking](auto-mocking.md)
 - [Clearing, Restoring, and Resetting Mocks](clearing-restoring-and-resetting-mocks.md)
-- [Testing Function Arguments](testing-function-arguments.md)
-- [Overriding Object Properties](overriding-object-properties.md)
-- [Mocking Fetch and Network Requests](mocking-fetch-and-network-requests.md)
-- [Mocking Modules and Imports](mocking-modules.md)
-- [Mocking Dependencies](mocking-dependencies.md)
-- [Mocking Globals](mocking-globals.md)
+- [Spying on Function Arguments](testing-function-arguments.md)
+- [Mocking and Spying on Built-in Methods](mock-spy-secret-input-example.md)
 - [Mocking Environment Variables](mocking-environment-variables.md)
-- [Mocking the File System](mocking-the-file-system.md)
+- [Mocking Dependencies](mocking-dependencies.md)
+- [Mocking Fetch and Network Requests](mocking-fetch-and-network-requests.md)
 - [Testing Time](mocking-time.md) ([Add Timestamp](exercise-add-timestamp.md))
 - [Mock Service Worker](testing-with-mock-service-worker.md)
-- [Mocking DOM Methods](mocking-dom-methods.md)
 - [Alternatives to Using Test Doubles](alternatives-to-using-test-doubles.md)
 - [Dependency Injection](dependency-injection.md)
 
