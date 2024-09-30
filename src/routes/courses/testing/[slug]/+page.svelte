@@ -1,6 +1,8 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo.svelte';
 	import Date from '$lib/components/date.svelte';
+	import Resources from './resources.svelte';
+	import Edit from './edit.svelte';
 
 	export let data;
 </script>
@@ -14,6 +16,8 @@
 <div class="space-y-10">
 	<hgroup class="space-y-2">
 		<h1 class="text-4xl font-bold">{data.meta.title}</h1>
+		<Resources />
+		<Edit />
 	</hgroup>
 
 	<svelte:component this={data.content} class="prose dark:prose-invert" as="article" />

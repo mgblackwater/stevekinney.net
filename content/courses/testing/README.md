@@ -1,7 +1,7 @@
 ---
 title: The Basics
 description: A basic guide on writing and running tests along with mock setups.
-modified: 2024-09-29T15:59:33-06:00
+modified: 2024-09-30T07:14:48-06:00
 base: /courses/testing
 layout: contents
 exclude: true
