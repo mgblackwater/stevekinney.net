@@ -1,5 +1,5 @@
 ---
-title: Creating The Character Using A Hook
+title: Creating the Character Using a Hook
 description: Learn how to create the Character class using a hook.
 modified: 2024-09-28T16:12:42-06:00
 ---

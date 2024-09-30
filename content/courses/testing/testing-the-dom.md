@@ -1,5 +1,5 @@
 ---
-title: Testing The DOM
+title: 'Testing the DOM: The Setup'
 description: Learn about JSDOM and Happy DOM for testing in Vitest.
 modified: 2024-09-28T14:02:19-06:00
 ---

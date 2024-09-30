@@ -1,5 +1,5 @@
 ---
-title: Understanding Snapshot Testing
+title: Maintaining Snapshot Tests
 description: A quick and easy guide to understanding snapshot testing with Vitest.
 modified: 2024-09-28T15:26:39-06:00
 ---

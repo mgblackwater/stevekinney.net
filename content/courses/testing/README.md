@@ -7,6 +7,8 @@ layout: contents
 exclude: true
 ---
 
+- [Start Here](.)
+
 ## The Basics
 
 - [Writing Your First Tests](the-basics.md)

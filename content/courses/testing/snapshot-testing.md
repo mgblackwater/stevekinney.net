@@ -1,5 +1,5 @@
 ---
-title: Snapshot Testing With Vitest
+title: Snapshot Testing
 description: Learn how to implement snapshot testing using Vitest framework.
 modified: 2024-09-28T15:30:02-06:00
 ---

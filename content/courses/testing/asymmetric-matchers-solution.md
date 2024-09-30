@@ -1,5 +1,5 @@
 ---
-title: Implementing Tests For The Character Class
+title: Implementing Tests for the Character Class
 description: Example of how to implement tests for the Character class.
 modified: 2024-09-28T18:32:10.999Z
 ---

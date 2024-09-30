@@ -24,11 +24,18 @@ Code coverage quantifies the amount of code executed during automated tests. It 
 - **Functions Coverage**: Percentage of executed functions or methods.
 - **Lines Coverage**: Percentage of executed lines in the source code.
 
+## Why Use Code Coverage?
+
+- **Identify Untested Code**: Highlights areas of the codebase not covered by tests.
+- **Improve Test Quality**: Encourages writing comprehensive tests.
+- **Maintain Code Health**: Helps prevent regressions by ensuring critical code paths are tested.
+- **Metric for Progress**: Serves as a measurable indicator of testing efforts.
+
 ## Installing a Code Coverage Tool
 
 If you _don't_ have a coverage reporter installed, Vitest will prompt you to install the dependency.
 
-```ts
+```
 > vitest exercise.test.ts --coverage
 
  MISSING DEP  Can not find dependency '@vitest/coverage-c8'
@@ -117,92 +124,15 @@ export default defineConfig({
 });
 ```
 
-You can see all of the options \[here]\([GitHub - bcoe/c8: output coverage reports using Node.js' built in coverage](https://github.com/bcoe/c8#cli-options--configuration)).
+You can see all of the options [here](https://github.com/bcoe/c8#cli-options--configuration).
 
 The cool one here is the ability to set thresholds at which your build will fail if you dip below a certain amount.
 
-```ts
-statements: 54.92,
-thresholdAutoUpdate: true,
+```json
+{ "statements": 54.92, "thresholdAutoUpdate": true }
 ```
 
 These options will stop you from dropping at the very least and if you go up, it sets that as the new baseline.
-
-## Longer Version
-
-Code coverage is a metric used to measure the proportion of your source code that is executed during testing. High code coverage can increase confidence in your tests and help identify untested parts of your application.
-
-### Why Use Code Coverage?
-
-- **Identify Untested Code**: Highlights areas of the codebase not covered by tests.
-- **Improve Test Quality**: Encourages writing comprehensive tests.
-- **Maintain Code Health**: Helps prevent regressions by ensuring critical code paths are tested.
-- **Metric for Progress**: Serves as a measurable indicator of testing efforts.
-
-### Setting Up Code Coverage in Vitest
-
-Vitest uses **C8**, a code coverage tool based on **V8 JavaScript engine's** built-in code coverage capabilities. Here's how to set it up.
-
-#### Install Vitest (if Not Already installed)
-
-```bash
-npm install --save-dev vitest
-```
-
-#### Configure Vitest
-
-Create a `vitest.config.js` file in your project's root directory if you haven't already.
-
-```javascript
-// vitest.config.js
-import { defineConfig } from 'vitest/config';
-
-export default defineConfig({
-	test: {
-		// Configuration options go here
-	},
-});
-```
-
-#### Enable Code Coverage
-
-You can enable code coverage by adding the `--coverage` flag when running Vitest.
-
-```bash
-npx vitest --coverage
-```
-
-Alternatively, update your `vitest.config.js` to include coverage options:
-
-```javascript
-// vitest.config.js
-export default defineConfig({
-	test: {
-		coverage: {
-			provider: 'c8', // or 'istanbul'
-			reporter: ['text', 'html'],
-			// include: ['src/**/*.{js,jsx}'], // Specify files to include
-			// exclude: ['node_modules'], // Specify files to exclude
-		},
-	},
-});
-```
-
-**Explanation:**
-
-- **`provider`**: Specifies the coverage provider (`'c8'` is the default).
-- **`reporter`**: Determines the output formats (e.g., `'text'`, `'html'`, `'lcov'`).
-- **`include`/`exclude`**: Controls which files are included or excluded from coverage analysis.
-
-#### Run Tests with Coverage
-
-Execute Vitest with the coverage option:
-
-```bash
-npx vitest --coverage
-```
-
-This command runs your tests and generates a coverage report.
 
 ### Interpreting Coverage Reports
 
@@ -214,7 +144,7 @@ Vitest generates coverage reports in the specified formats. Commonly used report
 
 #### Console Output Example
 
-```bash
+```sh
 ---------------|---------|----------|---------|---------|-------------------
 File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ---------------|---------|----------|---------|---------|-------------------
