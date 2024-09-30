@@ -6,7 +6,7 @@ description: 'The solution for the Accident Counter exercise in the "Introductio
 
 Your code might look a bit different, but here is one possible solution.
 
-```javascript
+```jsx
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 

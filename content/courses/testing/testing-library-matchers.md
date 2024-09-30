@@ -12,7 +12,7 @@ Let's head on over to `examples/accident-counter`.
 
 In `examples/accident-counter/src/counter.test.jsx`, we can extend the methods provided by `expect` by pulling in `@testing-library/jest-dom`.
 
-```javascript
+```jsx
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
