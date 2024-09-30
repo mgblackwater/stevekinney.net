@@ -1,41 +1,51 @@
 ---
-title: Resetting VITE_ENV With Vitest
+title: Testing Environment-Dependent Code with Spies
 description: Learn how to reset VITE_ENV in Vitest using beforeEach and vi.stubEnv.
 modified: 2024-09-28T15:08:07-06:00
 ---
 
 Maybe you want to make sure your code behaves as expected given different environment variables. You could get really fancy in the way you filter your tests—or, you could just mock those environment variables for a hot minute.
 
+Consider this example in `examples/logjam/src/log.test.js`.
+
 ```ts
-import { beforeEach, expect, it } from 'vitest';
+describe('development', () => {
+	beforeEach(() => {
+		vi.stubEnv('MODE', 'development');
+	});
 
-// you can reset it in beforeEach hook manually
-const originalViteEnv = import.meta.env.VITE_ENV;
+	afterEach(() => {
+		vi.restoreAllMocks();
+	});
 
-beforeEach(() => {
-	import.meta.env.VITE_ENV = originalViteEnv;
-});
+	it('logs to the console in development mode', () => {
+		const spy = vi.spyOn(console, 'log');
 
-it('changes value', () => {
-	import.meta.env.VITE_ENV = 'staging';
-	expect(import.meta.env.VITE_ENV).toBe('staging');
+		log('Hello, world!');
+
+		expect(spy).toHaveBeenCalledWith('Hello, world!');
+	});
 });
 ```
 
-Okay, but what if we went about it like this:
+More importantly, we probably want to make sure that _doesn't_ log in production.
 
 ```ts
-import { expect, it, vi } from 'vitest';
+describe('production', () => {
+	beforeEach(() => {
+		vi.stubEnv('MODE', 'production');
+	});
 
-// before running tests "VITE_ENV" is "test"
-import.meta.env.VITE_ENV === 'test';
+	afterEach(() => {
+		vi.restoreAllMocks();
+	});
 
-it('changes value', () => {
-	vi.stubEnv('VITE_ENV', 'staging');
-	expect(import.meta.env.VITE_ENV).toBe('staging');
-});
+	it('does not log to the console in production mode', () => {
+		const spy = vi.spyOn(console, 'log');
 
-it('the value is restored before running an other test', () => {
-	expect(import.meta.env.VITE_ENV).toBe('test');
+		log('Hello, world!');
+
+		expect(spy).not.toHaveBeenCalledWith('Hello, world!');
+	});
 });
 ```

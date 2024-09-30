@@ -16,32 +16,23 @@ In unit testing, one of the key tasks is verifying that functions are called wit
 
 [Spies](spies.md) in Vitest can track how a function is called, including the arguments passed to it. The `vi.spyOn()` method allows you to monitor existing functions and check their arguments without modifying their behavior.
 
-Here’s how you create a spy and check the arguments:
+Here’s how you create a spy and check the arguments. Let's take a look at `examples/logjam/src/log.test.js`.
 
 ```js
-// A very important function that needs to be tested
-function logMessage(message) {
-	console.log(message);
-}
+describe('logger', () => {
+	it('logs to the console in development mode', () => {
+		const spy = vi.spyOn(console, 'log');
 
-describe('logMessage', () => {
-	it('should call console.log with the correct message', () => {
-		// Spy on console.log
-		const logSpy = vi.spyOn(console, 'log');
+		log('Hello, world!');
 
-		// Call the function under test
-		logMessage('Hello, world!');
+		expect(spy).toHaveBeenCalledWith('Hello, world!');
 
-		// Check that console.log was called with the correct argument
-		expect(logSpy).toHaveBeenCalledWith('Hello, world!');
-
-		// Restore the original console.log
-		logSpy.mockRestore();
+		spy.mockRestore();
 	});
 });
 ```
 
-In this example, `logSpy` tracks the calls to `console.log`. The `expect(logSpy).toHaveBeenCalledWith('Hello, world!')` assertion checks that the function was called with the correct argument.
+In this example, `spy` tracks the calls to `console.log`. The `expect(spy).toHaveBeenCalledWith('Hello, world!')` assertion checks that the function was called with the correct argument.
 
 ## Using Mocks to Check Function Arguments
 
