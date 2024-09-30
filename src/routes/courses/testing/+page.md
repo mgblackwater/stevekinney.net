@@ -13,8 +13,8 @@ Testing increases your confidence that your applications will function as expect
 ## Prerequisites
 
 - A fundamental understanding JavaScript
-- Familiarity with the command line
-- Experience with Node and npm
+- Familiarity with the command line (e.g just enough to navigate around directories and run a few commands)
+- Experience with Node, `npm`, `git`, and Github.
 
 ## The Basics
 
