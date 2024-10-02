@@ -4,11 +4,11 @@ description: Learn to test error handling and edge cases using Vitest.
 modified: 2024-09-29T15:57:54-06:00
 ---
 
-Let's talk about those error-prone, sneaky little troublemakers we like to call *edge cases*. You know—the weird stuff users (and co-workers) do that you didn’t see coming.
+Let's talk about those error-prone, sneaky little troublemakers we like to call _edge cases_. You know—the weird stuff users (and co-workers) do that you didn’t see coming.
 
 ## Why Test Error Handling?
 
-Errors happen. [Murphy’s Law](https://en.wikipedia.org/wiki/Murphy%27s_law) comes for all of us. The point is: Your code *will* break. That’s a given. Proper error-handling tests let you at least break in *style*. A well-placed `try/catch` will not only keep a production app from imploding but will also give you valuable feedback on what went wrong.
+Errors happen. [Murphy’s Law](https://en.wikipedia.org/wiki/Murphy%27s_law) comes for all of us. The point is: Your code _will_ break. That’s a given. Proper error-handling tests let you at least break in _style_. A well-placed `try/catch` will not only keep a production app from imploding but will also give you valuable feedback on what went wrong.
 
 - **Ensure Proper Error Handling**: Verifying that functions throw errors correctly helps ensure your application behaves as expected when things go wrong.
 - **Prevent Silent Failures**: Testing for thrown errors helps avoid situations where the code fails silently, making debugging difficult.
@@ -33,7 +33,7 @@ export const stringToNumber = (value) => {
 };
 ```
 
-We’ve got a simple function here that only wants to deal with *valid* string numbers. But what if a user types `"hello"` or passes `undefined` because… well, users? Errors abound! Let’s make sure our function throws those errors in a controlled way.
+We’ve got a simple function here that only wants to deal with _valid_ string numbers. But what if a user types `"hello"` or passes `undefined` because… well, users? Errors abound! Let’s make sure our function throws those errors in a controlled way.
 
 ## Writing Error Tests with Vitest
 
@@ -51,7 +51,7 @@ describe('stringToNumber', () => {
 So far, so good. But, let's begin to walk through some of the edge cases. We know the following things:
 
 1. Throwing an error in a test results in the test failing.
-2. We want to test a case where the function *should* throw an error.
+2. We want to test a case where the function _should_ throw an error.
 
 We might be tempted to write something like this:
 
@@ -66,7 +66,7 @@ But that's gross.
 1. Sure, it passes. But, maybe not for the reason we think?
 2. We haven't asserted anything about the way it failed.
 
-For example the following is a *real* mistake that I made while I was writing this.
+For example the following is a _real_ mistake that I made while I was writing this.
 
 ```javascript
 it.fails('throws an error if given a string that is not a number', () => {
@@ -110,7 +110,7 @@ We can validate that it throws the error we're expecting.
 
 ```javascript
 it('throws an error if given a string that is not a number', () => {
-	expect(() => stringToNumber('foo')).toThrowError(`'foo' cannot be parsed as a number.`);
+	expect(() => stringToNumber('foo')).toThrow(`'foo' cannot be parsed as a number.`);
 });
 ```
 
@@ -119,7 +119,7 @@ I might pull out the value since it's being used twice.
 ```javascript
 it('throws an error if given a string that is not a number', () => {
 	const value = 'foo';
-	expect(() => stringToNumber(value)).toThrowError(`'${value}' cannot be parsed as a number.`);
+	expect(() => stringToNumber(value)).toThrow(`'${value}' cannot be parsed as a number.`);
 });
 ```
 
@@ -128,15 +128,15 @@ You can also use part of the message or a regular expression if you only want to
 ```javascript
 it('throws an error if given a string that is not a number', () => {
 	const value = 'foo';
-	expect(() => stringToNumber(value)).toThrowError('cannot be parsed as a number');
+	expect(() => stringToNumber(value)).toThrow('cannot be parsed as a number');
 });
 ```
 
 ## Testing for Edge Cases
 
-Now that we’ve got error handling covered, let's throw in some edge cases. Edge cases are those wacky scenarios that you would *never* expect, but you soon learn you must *always* expect. Part of this involves putting on your imagination caps. And this really relates to both the tests you write as well as the implementation.
+Now that we’ve got error handling covered, let's throw in some edge cases. Edge cases are those wacky scenarios that you would _never_ expect, but you soon learn you must _always_ expect. Part of this involves putting on your imagination caps. And this really relates to both the tests you write as well as the implementation.
 
-Off the top of my head, here is all of the junk that I *could* pass in:
+Off the top of my head, here is all of the junk that I _could_ pass in:
 
 - `string`
 - `number`
@@ -156,14 +156,14 @@ For each of these, you have the same two choices:
 
 For example you could just decide that `true` and `false` are fine because they'll get converted to `1` and `0` respectively. You could decide that a number is okay I guess since it'll harmless pass through. In this case, you probably need to rename the function. Otherwise, we probably need another conditional and an error message because if your intention is that numbers and booleans are going to throw an error—well, they're not going to.
 
-If you *are* going to throw an error. Then you owe it your furture self to have good error messages. The current error message doesn't really describe the problem and in a large more complicated code base, `'[object Object]' cannot be parsed as a number` is decidedly unhelpful.
+If you _are_ going to throw an error. Then you owe it your furture self to have good error messages. The current error message doesn't really describe the problem and in a large more complicated code base, `'[object Object]' cannot be parsed as a number` is decidedly unhelpful.
 
 > \[!example] Exercise
-> Can you add tests for some of these less desireable types? Start with the failing test before adding another check for the particular edge case.
+> Can you add tests for some of these less desirable types? Start with the failing test before adding another check for the particular edge case.
 
 ### Taking It Even Further
 
-There is another class of arguments that we *could* try to throw errors for: A `string` that is totally valid, but might not be what we expect. For example, what happens if the string is an empty string? (**Spoiler**: It's `0`.) Or, what about a string that’s, like, *all* spaces? Let’s throw those cases into the mix and see what happens:
+There is another class of arguments that we _could_ try to throw errors for: A `string` that is totally valid, but might not be what we expect. For example, what happens if the string is an empty string? (**Spoiler**: It's `0`.) Or, what about a string that’s, like, _all_ spaces? Let’s throw those cases into the mix and see what happens:
 
 ```js
 it('should throw an error for empty strings', () => {

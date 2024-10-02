@@ -1,7 +1,7 @@
 ---
 title: Using Async/Await
 description: Handling asynchronous code with async/await in Vitest.
-modified: 2024-09-29T16:32:15-06:00
+modified: 2024-09-30T14:27:33-06:00
 ---
 
 As with almost everything in JavaScript, asynchronous code makes everything harder. (**Spoiler**: But, also—as with almost everything in JavaScript relating to asynchronous code, `async`/`await` tends to make that hard part easier.)
@@ -88,5 +88,10 @@ The first test fails with the following error:
 + Received "Promise {}"
 ```
 
-> \[!TIP] Working with Promises
+> [!TIP] Working with Promises
 > If you're working with Promises, [Vitest also has some special functionality](testing-promises.md) that you could optionally use.
+
+## Further Reading
+
+- [Testing Promises](testing-promises.md)
+- [Testing Asynchronous Errors](testing-asynchronous-errors.md)

@@ -121,7 +121,7 @@ it('should store the value in localStorage', async () => {
 - **Behavior Verification**: Validating that components render and update correctly based on props and state.
 
 > [!example] Exercise
-> Can you refactor our button from [this section](testing-the-dom-example.md) (found in `examples/button-factory/src/button.js`) to use Testing Library and User Event? You can see a potential solution [here](testing-library-solution.md).
+> Can you refactor our button from [this section](testing-the-dom-example.md) (found in `examples/element-factory/src/button.js`) to use Testing Library and User Event? You can see a potential solution [here](testing-library-solution.md).
 
 ## Additional Reading
 

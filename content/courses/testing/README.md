@@ -1,7 +1,7 @@
 ---
 title: The Basics
 description: A basic guide on writing and running tests along with mock setups.
-modified: 2024-09-30T14:13:46-06:00
+modified: 2024-09-30T14:27:45-06:00
 base: /courses/testing
 layout: contents
 exclude: true
@@ -18,8 +18,6 @@ exclude: true
 - [Asymmetric Matchers](asymmetric-matchers.md) ([Exercise](asymmetric-matchers-exercise.md), [Solution](asymmetric-matchers-solution.md))
 - [Before and After Hooks](setting-up-and-tearing-down-with-hooks.md) ([Exercise](vitests-hooks-exercise.md), [Solution](vitest-hooks-solution.md))
 - [Testing Asynchronous Code](testing-asynchronous-code.md)
-- [Testing Asynchronous Errors](testing-asynchronous-errors.md)
-- [Testing Promises](testing-promises.md)
 
 ## Testing the DOM
 

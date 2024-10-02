@@ -18,7 +18,7 @@ it('should properly assign to localStorage', () => {
 
 ## One More Time: With Some DOM Interaction
 
-Consider this function that creates some elements for storing a secret into `localStorage`. You can find this example in `examples/button-factory/src/secret-input.js`.
+Consider this function that creates some elements for storing a secret into `localStorage`. You can find this example in `examples/element-factory/src/secret-input.js`.
 
 ```javascript
 export function createSecretInput() {
@@ -50,7 +50,7 @@ export function createSecretInput() {
 }
 ```
 
-We could write the following tests to verify that that it does what we think it ought to do. Check out `examples/button-factory/src/secret-input.test.js`:
+We could write the following tests to verify that that it does what we think it ought to do. Check out `examples/element-factory/src/secret-input.test.js`:
 
 ```javascript
 import { describe, expect, it, beforeEach } from 'vitest';

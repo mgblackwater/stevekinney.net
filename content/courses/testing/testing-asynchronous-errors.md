@@ -1,5 +1,5 @@
 ---
-modified: 2024-09-28T15:42:15-06:00
+modified: 2024-09-30T14:26:06-06:00
 title: Testing Asynchronous Errors
 description: Learn how to write unit tests that test for asynchronous errors.
 ---
@@ -49,36 +49,3 @@ In this example:
 
 - `fetchUserData()` returns a rejected promise.
 - The test checks that the promise is rejected and the error message matches `'User not found'`.
-
-## Ensuring a Function Does Not Throw
-
-In some cases, you might want to test that a function **does not** throw an error under certain conditions. In Vitest, you can check that a function doesn’t throw using `not.toThrow()`.
-
-```js
-describe('divide', () => {
-	it('should not throw an error for valid division', () => {
-		// Ensure the function does not throw
-		expect(() => divide(10, 2)).not.toThrow();
-	});
-});
-```
-
-Here, `expect(() => divide(10, 2)).not.toThrow()` checks that dividing by a non-zero number does not result in an error.
-
-## Combining Error Testing with Other Assertions
-
-You can combine error checking with other assertions to ensure that the function behaves correctly after throwing or catching an error.
-
-```js
-describe('divide', () => {
-	it('should throw an error for division by zero and return undefined', () => {
-		try {
-			divide(10, 0);
-		} catch (e) {
-			expect(e.message).toBe('Division by zero');
-		}
-	});
-});
-```
-
-In this example, the `try/catch` block is used to manually catch the error and assert the error message.
